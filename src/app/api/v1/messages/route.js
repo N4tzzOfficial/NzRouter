@@ -1,5 +1,6 @@
 import { handleChat } from "@/sse/handlers/chat.js";
 import { initTranslators } from "open-sse/translator/index.js";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 let initialized = false;
 
@@ -29,8 +30,8 @@ export async function OPTIONS() {
 /**
  * POST /v1/messages - Claude format (auto convert via handleChat)
  */
-export async function POST(request) {
+export const POST = withApiKey(async (request) => {
   await ensureInitialized();
   return await handleChat(request);
-}
+});
 

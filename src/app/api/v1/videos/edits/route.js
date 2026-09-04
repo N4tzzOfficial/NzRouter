@@ -1,4 +1,5 @@
 import { handleVideoCreate } from "@/sse/handlers/videoGeneration.js";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 export async function OPTIONS() {
   return new Response(null, {
@@ -11,6 +12,6 @@ export async function OPTIONS() {
 }
 
 /** POST /v1/videos/edits - async video edit (xAI Grok Imagine) */
-export async function POST(request) {
+export const POST = withApiKey(async (request) => {
   return await handleVideoCreate(request, "edits");
-}
+});

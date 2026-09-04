@@ -10,7 +10,7 @@ let tempDir;
 let sqliteDb;
 
 beforeAll(async () => {
-  tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "9router-db-compare-"));
+  tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "NzRouter-db-compare-"));
   process.env.DATA_DIR = tempDir;
   vi.resetModules();
   sqliteDb = await import("@/lib/db/index.js");
@@ -285,3 +285,4 @@ describe("DB SQLite layer — public API parity", () => {
     expect(data).toHaveLength(7);
   });
 });
+

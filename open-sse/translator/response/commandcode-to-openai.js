@@ -13,7 +13,7 @@
  *   {"type":"finish",...}
  *
  * Each upstream "event" arrives as one JSON object per line — we receive it as a string chunk
- * already split per line by the upstream SSE/JSON-line reader in 9router.
+ * already split per line by the upstream SSE/JSON-line reader in nzrouter.
  */
 import { register } from "../index.js";
 import { FORMATS } from "../formats.js";
@@ -182,3 +182,4 @@ export function commandCodeToOpenAIResponse(chunk, state) {
 }
 
 register(FORMATS.COMMANDCODE, FORMATS.OPENAI, null, commandCodeToOpenAIResponse);
+

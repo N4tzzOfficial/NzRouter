@@ -3,7 +3,7 @@
  * the same wire format. MiniMax-M3 declares a Claude target for compatibility,
  * but an OpenAI client should use MiniMax's matching OpenAI transport without
  * an OpenAI -> Claude translation.
- * Regression: https://github.com/decolua/9router/issues/3418
+ * Regression: https://github.com/decolua/NzRouter/issues/3418
  */
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
@@ -187,3 +187,4 @@ describe("MiniMax-M3 multi-transport routing", () => {
     expect(executeMock.mock.calls[0][0].credentials.runtimeTransport.format).toBe("openai");
   });
 });
+

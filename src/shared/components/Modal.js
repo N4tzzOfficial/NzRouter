@@ -47,7 +47,7 @@ export default function Modal({
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       {/* Overlay */}
       <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-[2px] fade-in"
+        className="absolute inset-0 bg-black/50 backdrop-blur-[2px] modal-overlay"
         onClick={closeOnOverlay ? onClose : undefined}
       />
 
@@ -57,7 +57,7 @@ export default function Modal({
           "relative w-full bg-surface",
           "border border-border-subtle",
           "rounded-[14px] shadow-[var(--shadow-elev)]",
-          "fade-in",
+          "modal-content",
           sizes[size],
           className
         )}

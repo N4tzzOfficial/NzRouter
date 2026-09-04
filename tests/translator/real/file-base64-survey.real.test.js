@@ -87,7 +87,7 @@ function targetProviders() {
     const path = require("path");
     const dbPath = process.env.DATA_DIR
       ? path.join(process.env.DATA_DIR, "db", "data.sqlite")
-      : path.join(os.homedir(), ".9router", "db", "data.sqlite");
+      : path.join(os.homedir(), ".NzRouter", "db", "data.sqlite");
     const db = new Database(dbPath, { readonly: true });
     const rows = db.prepare("SELECT DISTINCT provider FROM providerConnections WHERE isActive = 1").all();
     db.close();
@@ -166,3 +166,4 @@ describe.skipIf(!RUN_REAL)("REAL file base64 survey", () => {
     w("\n================ END SURVEY ================\n");
   });
 });
+

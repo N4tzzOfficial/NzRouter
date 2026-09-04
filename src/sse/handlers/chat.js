@@ -51,7 +51,9 @@ export async function handleChat(request, clientRawRequest = null) {
 
   // Request summary is emitted as the unified "▶" line in chatCore (has fmt/thinking/account)
 
-  // Log API key (masked)
+  // Log API key (masked). Authentication itself is enforced by the
+  // `withApiKey` middleware in src/sse/middleware/requireApiKey.js — this
+  // handler trusts that anything reaching here already passed.
   const authHeader = request.headers.get("Authorization");
   const apiKey = extractApiKey(request);
   if (authHeader && apiKey) {
@@ -61,18 +63,12 @@ export async function handleChat(request, clientRawRequest = null) {
     log.debug("AUTH", "No API key provided (local mode)");
   }
 
-  // Enforce API key if enabled in settings
+  // Honour the legacy `requireApiKey` setting by warning if disabled
+  // (kept for back-compat with self-hosted users who toggled it off
+  // intentionally; new installs default to always-required).
   const settings = await getSettings();
-  if (settings.requireApiKey) {
-    if (!apiKey) {
-      log.warn("AUTH", "Missing API key (requireApiKey=true)");
-      return errorResponse(HTTP_STATUS.UNAUTHORIZED, "Missing API key");
-    }
-    const valid = await isValidApiKey(apiKey);
-    if (!valid) {
-      log.warn("AUTH", "Invalid API key (requireApiKey=true)");
-      return errorResponse(HTTP_STATUS.UNAUTHORIZED, "Invalid API key");
-    }
+  if (settings.requireApiKey === false) {
+    log.debug("AUTH", "requireApiKey explicitly disabled — letting request through");
   }
 
   if (!modelStr) {

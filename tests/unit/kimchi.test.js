@@ -113,7 +113,7 @@ function mapKimchiMetadata(raw) {
 }
 
 describe("kimchiModels", () => {
-  it("maps Kimchi metadata entries to 9router model shape", () => {
+  it("maps Kimchi metadata entries to NzRouter model shape", () => {
     const raw = [{
       slug: "glm-5.2-fp8",
       display_name: "GLM 5.2",
@@ -232,3 +232,4 @@ describe("kimchi OAuth dedup", () => {
     assert.equal(findExistingOAuth([ws1], ws2), undefined);
   });
 });
+

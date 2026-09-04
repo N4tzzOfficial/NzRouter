@@ -1,8 +1,8 @@
 import { UPDATER_CONFIG } from "@/shared/constants/config";
 
 // Browser-local endpoint presets shared by every CLI tool card
-const STORAGE_KEY = "9router.cliToolEndpointPresets";
-const CHANGE_EVENT = "9router:endpoint-presets-changed";
+const STORAGE_KEY = "nzrouter.cliToolEndpointPresets";
+const CHANGE_EVENT = "nzrouter:endpoint-presets-changed";
 
 const stripSlash = (url) => (url || "").replace(/\/+$/, "");
 

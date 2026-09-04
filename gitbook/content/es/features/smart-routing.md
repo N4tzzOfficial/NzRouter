@@ -1,15 +1,15 @@
 # Enrutamiento inteligente y fallback automático
 
-9Router enruta automáticamente tus solicitudes a través del mejor proveedor disponible usando un sistema de fallback de 3 niveles. Nunca dejes de codificar debido a límites de cuota o rate-limiting.
+NzRouter enruta automáticamente tus solicitudes a través del mejor proveedor disponible usando un sistema de fallback de 3 niveles. Nunca dejes de codificar debido a límites de cuota o rate-limiting.
 
 ---
 
 ## Cómo funciona
 
-9Router usa enrutamiento inteligente para maximizar tus suscripciones existentes, minimizar costos y garantizar disponibilidad 24/7:
+NzRouter usa enrutamiento inteligente para maximizar tus suscripciones existentes, minimizar costos y garantizar disponibilidad 24/7:
 
 ```
-Solicitud → 9Router → Verificar Nivel 1 (Suscripción)
+Solicitud → NzRouter → Verificar Nivel 1 (Suscripción)
                        ↓ cuota agotada
                        Verificar Nivel 2 (Barato)
                        ↓ límite de presupuesto
@@ -47,7 +47,7 @@ Solicitud → 9Router → Verificar Nivel 1 (Suscripción)
 
 ## Cambio automático
 
-9Router monitorea la cuota en tiempo real y cambia de proveedor automáticamente:
+NzRouter monitorea la cuota en tiempo real y cambia de proveedor automáticamente:
 
 ### Escenario 1: Cuota de suscripción agotada
 
@@ -89,7 +89,7 @@ Solicitud del usuario → cc/claude-opus-4-5
 
 ## Lógica de selección de modelo
 
-9Router selecciona el mejor modelo según:
+NzRouter selecciona el mejor modelo según:
 
 1. **Disponibilidad de cuota** - Verifica si el proveedor tiene cuota restante
 2. **Nivel de costo** - Prefiere suscripción → barato → gratis
@@ -138,7 +138,7 @@ Dashboard → Settings → Budget Control
 → Límite mensual: $50
 ```
 
-Cuando se alcanza el presupuesto, 9Router cambia automáticamente al nivel gratis.
+Cuando se alcanza el presupuesto, NzRouter cambia automáticamente al nivel gratis.
 
 **3. Configurar el orden de fallback**
 
@@ -405,3 +405,4 @@ Dashboard → Analytics:
 
 - [Combos](./combos.md) - Crea cadenas de fallback personalizadas
 - [Seguimiento de cuota](./quota-tracking.md) - Monitorea uso y costos
+

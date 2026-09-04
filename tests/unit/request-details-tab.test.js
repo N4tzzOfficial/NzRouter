@@ -17,7 +17,7 @@ async function saveDetail(detail) {
 }
 
 beforeAll(async () => {
-  tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "9router-details-tab-"));
+  tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "NzRouter-details-tab-"));
   process.env.DATA_DIR = tempDir;
   vi.resetModules();
   db = await import("@/lib/db/index.js");
@@ -128,7 +128,7 @@ describe("backupDbLite — excludes requestDetails, keeps critical data", () => 
     const { backupDbLite } = await import("@/lib/db/backup.js");
     await saveDetail({ id: "bk-1", provider: "openai", model: "m", status: "ok", tokens: {}, request: {}, response: {} });
 
-    const backupDir = fs.mkdtempSync(path.join(os.tmpdir(), "9router-bklite-"));
+    const backupDir = fs.mkdtempSync(path.join(os.tmpdir(), "NzRouter-bklite-"));
     const dest = backupDbLite(adapter, backupDir);
     expect(fs.existsSync(dest)).toBe(true);
 
@@ -250,3 +250,4 @@ describe("API route contract — validation boundary", () => {
     expect(body.pagination).toMatchObject({ page: 1, pageSize: 20 });
   });
 });
+

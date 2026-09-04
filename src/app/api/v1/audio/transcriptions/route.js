@@ -1,4 +1,5 @@
 import { handleStt } from "@/sse/handlers/stt.js";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 // Allow large audio uploads — 5min for processing large files
 export const maxDuration = 300;
@@ -14,6 +15,6 @@ export async function OPTIONS() {
 }
 
 /** POST /v1/audio/transcriptions - OpenAI Whisper compatible STT */
-export async function POST(request) {
+export const POST = withApiKey(async (request) => {
   return await handleStt(request);
-}
+});

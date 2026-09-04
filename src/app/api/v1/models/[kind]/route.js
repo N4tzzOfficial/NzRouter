@@ -1,4 +1,5 @@
 import { buildModelsList } from "../route.js";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 // URL slug → service kind(s). `web` covers both webSearch and webFetch.
 const KIND_SLUG_MAP = {
@@ -23,8 +24,10 @@ export async function OPTIONS() {
 /**
  * GET /v1/models/{kind} - OpenAI-compatible models list filtered by capability.
  * Supported kinds: image, tts, stt, embedding, image-to-text, web.
+ * Per-kind model catalog requires auth (it can enumerate which providers the
+ * server is configured for, which is sensitive).
  */
-export async function GET(_request, { params }) {
+export const GET = withApiKey(async (_request, { params }) => {
   try {
     const { kind } = await params;
     const kindFilter = KIND_SLUG_MAP[kind];
@@ -52,4 +55,4 @@ export async function GET(_request, { params }) {
       { status: 500 }
     );
   }
-}
+});

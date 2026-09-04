@@ -11,6 +11,7 @@ export default function Card({
   padding = "md",
   hover = false,
   elev = false,
+  glass = false,
   className,
   ...props
 }) {
@@ -25,9 +26,9 @@ export default function Card({
   return (
     <div
       className={cn(
-        "bg-surface border border-border-subtle",
+        glass ? "card-glass" : "bg-surface border border-border-subtle",
         elev ? "rounded-[14px] shadow-[var(--shadow-elev)]" : "rounded-[14px] shadow-[var(--shadow-soft)]",
-        hover && "hover:shadow-[var(--shadow-warm)] hover:border-brand-500/30 transition-all cursor-pointer",
+        hover && "hover-lift hover-glow cursor-pointer",
         paddings[padding],
         className
       )}
@@ -37,7 +38,7 @@ export default function Card({
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-3">
             {icon && (
-              <div className="p-2 rounded-[10px] bg-bg text-text-muted">
+              <div className="p-2 rounded-[10px] bg-bg text-text-muted hover-scale transition-premium">
                 <span className="material-symbols-outlined text-[20px]">{icon}</span>
               </div>
             )}

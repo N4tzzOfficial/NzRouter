@@ -8,7 +8,7 @@ let tempDir;
 const originalDataDir = process.env.DATA_DIR;
 
 beforeEach(() => {
-  tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "9router-chain-"));
+  tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "NzRouter-chain-"));
   process.env.DATA_DIR = tempDir;
   delete global._dbAdapter;
   vi.resetModules();
@@ -57,3 +57,4 @@ describe("Driver fallback chain", () => {
     expect(db.driver).toBe("sql.js");
   });
 });
+

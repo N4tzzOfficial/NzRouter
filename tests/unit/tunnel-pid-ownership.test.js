@@ -7,7 +7,7 @@ describe("cloudflared PID ownership", () => {
   let dataDir;
 
   beforeEach(() => {
-    dataDir = fs.mkdtempSync(path.join(os.tmpdir(), "9router-tunnel-pid-"));
+    dataDir = fs.mkdtempSync(path.join(os.tmpdir(), "NzRouter-tunnel-pid-"));
     process.env.DATA_DIR = dataDir;
     vi.resetModules();
   });
@@ -37,3 +37,4 @@ describe("cloudflared PID ownership", () => {
     expect(source.match(/cloudflaredProcess === child/g)).toHaveLength(2);
   });
 });
+

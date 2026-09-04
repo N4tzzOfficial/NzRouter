@@ -1,10 +1,10 @@
 # Other Tools Integration
 
-9Router is compatible with any tool that supports the OpenAI API format. This guide covers generic integration patterns for various tools and custom applications.
+NzRouter is compatible with any tool that supports the OpenAI API format. This guide covers generic integration patterns for various tools and custom applications.
 
 ## Overview
 
-9Router provides an OpenAI-compatible API endpoint that works with:
+NzRouter provides an OpenAI-compatible API endpoint that works with:
 - Custom scripts and applications
 - API clients and testing tools
 - CLI tools and utilities
@@ -13,20 +13,20 @@
 
 ## Generic Setup Pattern
 
-Any OpenAI-compatible tool can connect to 9Router using these settings:
+Any OpenAI-compatible tool can connect to NzRouter using these settings:
 
-**Local 9Router:**
+**Local NzRouter:**
 ```
 Base URL: http://localhost:20128/v1
 API Key: your-api-key-from-dashboard
-Model: any 9Router model (cc/*, cx/*, glm/*, etc.)
+Model: any NzRouter model (cc/*, cx/*, glm/*, etc.)
 ```
 
-**Cloud 9Router:**
+**Cloud NzRouter:**
 ```
-Base URL: https://9router.com/v1
+Base URL: https://NzRouter.com/v1
 API Key: your-api-key-from-dashboard
-Model: any 9Router model (cc/*, cx/*, glm/*, etc.)
+Model: any NzRouter model (cc/*, cx/*, glm/*, etc.)
 ```
 
 ## Available Models
@@ -318,9 +318,9 @@ def chat_with_retry(prompt, max_retries=3):
 
 ### Connection Issues
 
-**Problem:** Cannot connect to 9Router
+**Problem:** Cannot connect to NzRouter
 ```bash
-# Check if 9Router is running
+# Check if NzRouter is running
 curl http://localhost:20128/health
 
 # Expected response:
@@ -328,7 +328,7 @@ curl http://localhost:20128/health
 ```
 
 **Solution:**
-- Verify 9Router is running
+- Verify NzRouter is running
 - Check port 20128 is not blocked
 - Ensure correct base URL (include `/v1`)
 
@@ -366,7 +366,7 @@ Error: Request timed out after 30s
 **Solution:**
 - Increase timeout in client configuration
 - Use faster models for time-sensitive tasks
-- Check network connection to 9Router
+- Check network connection to NzRouter
 
 ### Rate Limiting
 
@@ -414,3 +414,4 @@ Error: Rate limit exceeded
 - [Explore CLI usage](../cli/basic-usage.md)
 - [Learn about model selection](../models/overview.md)
 - [API Reference](../api/reference.md)
+

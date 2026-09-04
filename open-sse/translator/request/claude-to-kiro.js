@@ -11,7 +11,7 @@
  * repairs partial parallel calls, and flattens compacted structured references
  * that can no longer be represented safely.
  *
- * It also handles the 9router-synthetic `-agentic` / `-thinking` suffixes and
+ * It also handles the nzrouter-synthetic `-agentic` / `-thinking` suffixes and
  * the `<thinking_mode>enabled</thinking_mode>` reasoning trigger, matching
  * buildKiroPayload.
  */
@@ -349,3 +349,4 @@ export function claudeToKiroRequest(model, body, stream, credentials) {
 }
 
 register(FORMATS.CLAUDE, FORMATS.KIRO, claudeToKiroRequest, null);
+

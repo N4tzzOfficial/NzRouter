@@ -26,7 +26,14 @@ const nextConfig = {
   },
   outputFileTracingRoot: tracingRoot,
   outputFileTracingExcludes: {
-    "*": ["./gitbook/**/*"]
+    "*": [
+      "./gitbook/**/*",
+      // Exclude Windows system telemetry files that webpack tracer walks into
+      // when traversing parent directories of the project root.
+      "**/Intel/**/*",
+      "**/SUR/**/*",
+      "**/AppData/Local/Intel/**",
+    ],
   },
   images: {
     unoptimized: true

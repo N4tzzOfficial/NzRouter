@@ -90,7 +90,11 @@ export async function POST(request) {
 
     const isNoAuth = AI_PROVIDERS[provider]?.noAuth === true;
     if (!provider || (!apiKey && provider !== "ollama-local" && !isNoAuth)) {
-      return NextResponse.json({ error: "Provider and API key required" }, { status: 400 });
+      return NextResponse.json({
+        error: "Provider and API key required",
+        message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
+        creator: "N4tzzTeam"
+      }, { status: 400 });
     }
 
     let isValid = false;
@@ -110,7 +114,7 @@ export async function POST(request) {
         isValid = res.ok;
         return NextResponse.json({
           valid: isValid,
-          error: isValid ? null : "Invalid API key",
+          error: isValid ? null : "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
         });
       }
 
@@ -141,7 +145,7 @@ export async function POST(request) {
         isValid = embedRes.status !== 401 && embedRes.status !== 403;
         return NextResponse.json({
           valid: isValid,
-          error: isValid ? null : "Invalid API key",
+          error: isValid ? null : "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
         });
       }
 
@@ -178,7 +182,7 @@ export async function POST(request) {
         isValid = res.status !== 401 && res.status !== 403;
         return NextResponse.json({
           valid: isValid,
-          error: isValid ? null : "Invalid API key",
+          error: isValid ? null : "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
         });
       }
 

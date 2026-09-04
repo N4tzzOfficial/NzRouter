@@ -1,4 +1,4 @@
-# 9Router Embeddings Tests
+# NzRouter Embeddings Tests
 
 Unit tests for the `/v1/embeddings` endpoint implementation.
 
@@ -50,3 +50,4 @@ npx vitest run --reporter=verbose --config ./vitest.config.js
 - Rate limiting: all accounts rate-limited → 503 + Retry-After, no credentials → 400
 - Error propagation: non-fallback errors passed through, 429 exhausts accounts
 - machineId override: validates key, rejects wrong key
+

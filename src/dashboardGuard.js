@@ -4,8 +4,8 @@ import { getConsistentMachineId } from "@/shared/utils/machineId";
 import { verifyDashboardAuthToken } from "@/lib/auth/dashboardSession";
 import { hasTrustedPeerHeaders } from "@/lib/auth/trustedPeer";
 
-const CLI_TOKEN_HEADER = "x-9r-cli-token";
-const CLI_TOKEN_SALT = "9r-cli-auth";
+const CLI_TOKEN_HEADER = "x-nzr-cli-token";
+const CLI_TOKEN_SALT = "nzr-cli-auth";
 
 let cachedCliToken = null;
 async function getCliToken() {
@@ -117,7 +117,7 @@ function isLoopbackPeer(request) {
   return false;
 }
 
-export function isLocalRequest(request) {
+function isLocalRequest(request) {
   // Stamped by custom-server.js when forwarding headers exist: request came through
   // a reverse proxy, so the loopback socket is the proxy hop, not the end-user.
   if (request.headers.get("x-9r-via-proxy")) return false;
@@ -198,13 +198,29 @@ export const __test__ = {
   canAccessLocalOnlyRoute,
 };
 
+export { isLocalRequest };
+
 export async function proxy(request) {
   const { pathname } = request.nextUrl;
+
+  // Disable browser caching for the login page so any pending HMR/client-cache
+  // update reaches the next visit without a manual hard-refresh.
+  if (pathname === "/login") {
+    const res = NextResponse.next();
+    res.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+    res.headers.set("Pragma", "no-cache");
+    res.headers.set("Expires", "0");
+    return res;
+  }
 
   // Local-only gate for spawn-capable / host-secret routes.
   if (LOCAL_ONLY_PATHS.some((p) => pathname.startsWith(p))) {
     if (!(await canAccessLocalOnlyRoute(request))) {
-      return NextResponse.json({ error: "Local only: CLI token required" }, { status: 403 });
+      return NextResponse.json({
+        error: "Local only: CLI token required",
+        message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
+        creator: "N4tzzTeam"
+      }, { status: 403 });
     }
   }
 
@@ -212,12 +228,20 @@ export async function proxy(request) {
   if (ALWAYS_PROTECTED.some((p) => pathname.startsWith(p))) {
     if (await hasValidCliToken(request) || await hasValidToken(request))
       return NextResponse.next();
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({
+      error: "Unauthorized",
+      message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
+      creator: "N4tzzTeam"
+    }, { status: 401 });
   }
 
   if (isPublicLlmApi(pathname)) {
     if (await canAccessPublicLlmApi(request)) return NextResponse.next();
-    return NextResponse.json({ error: "API key required for remote API access" }, { status: 401 });
+    return NextResponse.json({
+      error: "API key required for remote API access",
+      message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
+      creator: "N4tzzTeam"
+    }, { status: 401 });
   }
 
   // Deny-by-default for /api/* — public allow-list bypasses, everything else requires auth.
@@ -225,7 +249,11 @@ export async function proxy(request) {
     if (isPublicApi(pathname)) return NextResponse.next();
     if (await hasValidCliToken(request) || await isAuthenticated(request))
       return NextResponse.next();
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return NextResponse.json({
+      error: "Unauthorized",
+      message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
+      creator: "N4tzzTeam"
+    }, { status: 401 });
   }
 
   // Protect all dashboard routes

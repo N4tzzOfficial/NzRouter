@@ -25,11 +25,11 @@ test("isSamlConfigured checks required fields", () => {
 test("generateSamlMetadata produces valid SP XML", () => {
   const settings = {
     samlEntryPoint: "https://idp.example.com/sso",
-    samlIssuer: "urn:9router:sp",
+    samlIssuer: "urn:NzRouter:sp",
     samlCert: "MIIC123456789012345678901234567890123456789012345678901234567890",
   };
   const xml = generateSamlMetadata("https://localhost:20127", settings);
-  assert.match(xml, /entityID="urn:9router:sp"/);
+  assert.match(xml, /entityID="urn:NzRouter:sp"/);
   assert.match(xml, /Location="https:\/\/localhost:20127\/api\/auth\/saml\/acs"/);
 });
 
@@ -38,3 +38,4 @@ test("Claims Extraction pickSamlEmail & pickSamlDisplayName", () => {
   assert.equal(pickSamlEmail(profile, {}), "test@example.com");
   assert.equal(pickSamlDisplayName(profile, {}), "Test User");
 });
+

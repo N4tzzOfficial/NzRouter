@@ -1,6 +1,7 @@
 import { PROVIDER_MODELS } from "open-sse/config/providerModels.js";
 import { AI_PROVIDERS, ALIAS_TO_ID } from "@/shared/constants/providers";
 import { getModelKind } from "@/shared/constants/models";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 const KIND_ENDPOINT = {
   llm: "/v1/chat/completions",
@@ -83,7 +84,7 @@ export async function OPTIONS() {
 }
 
 // GET /v1/models/info?id={alias}/{modelId} — metadata for a single model
-export async function GET(request) {
+export const GET = withApiKey(async (request) => {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get("id");
   const kind = searchParams.get("kind");
@@ -101,4 +102,4 @@ export async function GET(request) {
     );
   }
   return Response.json(info, { headers: { "Access-Control-Allow-Origin": "*" } });
-}
+});

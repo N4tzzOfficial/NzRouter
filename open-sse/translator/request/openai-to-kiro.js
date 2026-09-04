@@ -291,7 +291,7 @@ function convertMessages(messages, model) {
 /**
  * Build Kiro payload from OpenAI format
  *
- * Two 9router-specific behaviours implemented here:
+ * Two nzrouter-specific behaviours implemented here:
  *
  * 1. `-agentic` model suffix. Synthetic variant — same upstream model, but we
  *    inject a chunked-write system prompt to keep large file writes under
@@ -442,3 +442,4 @@ export function openaiToKiroRequest(model, body, stream, credentials) {
 }
 
 register(FORMATS.OPENAI, FORMATS.KIRO, openaiToKiroRequest, null);
+

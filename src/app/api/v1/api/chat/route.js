@@ -1,6 +1,7 @@
 import { handleChat } from "@/sse/handlers/chat.js";
 import { initTranslators } from "open-sse/translator/index.js";
 import { transformToOllama } from "open-sse/utils/ollamaTransform.js";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 let initialized = false;
 
@@ -21,9 +22,9 @@ export async function OPTIONS() {
   });
 }
 
-export async function POST(request) {
+export const POST = withApiKey(async (request) => {
   await ensureInitialized();
-  
+
   const clonedReq = request.clone();
   let modelName = "llama3.2";
   try {
@@ -33,5 +34,5 @@ export async function POST(request) {
 
   const response = await handleChat(request);
   return transformToOllama(response, modelName);
-}
+});
 

@@ -36,7 +36,7 @@ const getErrorMessage = (error) => {
 
 // Get status-specific error message for /models endpoint
 const getModelsErrorMessage = (status) => {
-  if (status === 401 || status === 403) return "API key unauthorized";
+  if (status === 401 || status === 403) return "Wow, you idiot, NzRouter won't work without the API KEY, you idiot";
   if (status === 404) return "/models endpoint not found - try chat validation with model ID";
   if (status >= 500) return "Server error - try again later";
   return `Unexpected response (${status})`;
@@ -44,7 +44,7 @@ const getModelsErrorMessage = (status) => {
 
 // Get status-specific error message for /chat/completions endpoint
 const getChatErrorMessage = (status) => {
-  if (status === 401 || status === 403) return "API key unauthorized";
+  if (status === 401 || status === 403) return "Wow, you idiot, NzRouter won't work without the API KEY, you idiot";
   if (status === 400) return "Invalid model or bad request";
   if (status === 404) return "Chat endpoint not found";
   if (status >= 500) return "Server error - try again later";
@@ -58,7 +58,11 @@ export async function POST(request) {
     const { baseUrl, apiKey, type, modelId } = body;
 
     if (!baseUrl || !apiKey) {
-      return NextResponse.json({ error: "Base URL and API key required" }, { status: 400 });
+      return NextResponse.json({
+        error: "Base URL and API key required",
+        message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
+        creator: "N4tzzTeam"
+      }, { status: 400 });
     }
 
     // Validate URL format
@@ -79,7 +83,12 @@ export async function POST(request) {
     if (type === "custom-embedding") {
       const normalizedBase = baseUrl.trim().replace(/\/$/, "");
       if (!modelId?.trim()) {
-        return NextResponse.json({ valid: false, error: "Model ID required for embedding validation" });
+        return NextResponse.json({
+        valid: false,
+        error: "Model ID required for embedding validation",
+        message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
+        creator: "N4tzzTeam"
+      });
       }
       const embedRes = await fetchWithTimeout(`${normalizedBase}/embeddings`, {
         method: "POST",
@@ -95,7 +104,7 @@ export async function POST(request) {
         return NextResponse.json({ valid: true, method: "embeddings", dimensions: dims });
       }
       if (embedRes.status === 401 || embedRes.status === 403) {
-        return NextResponse.json({ valid: false, error: "API key unauthorized" });
+        return NextResponse.json({ valid: false, error: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot" });
       }
       const errBody = await embedRes.text().catch(() => "");
       return NextResponse.json({
@@ -126,7 +135,7 @@ export async function POST(request) {
 
       // Auth errors - no point trying chat fallback
       if (res.status === 401 || res.status === 403) {
-        return NextResponse.json({ valid: false, error: "API key unauthorized" });
+        return NextResponse.json({ valid: false, error: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot" });
       }
 
       // Fallback: try chat/completions if modelId provided
@@ -168,7 +177,7 @@ export async function POST(request) {
 
     // Auth errors - no point trying chat fallback
     if (res.status === 401 || res.status === 403) {
-      return NextResponse.json({ valid: false, error: "API key unauthorized" });
+      return NextResponse.json({ valid: false, error: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot" });
     }
 
     // Fallback: try chat/completions if modelId provided

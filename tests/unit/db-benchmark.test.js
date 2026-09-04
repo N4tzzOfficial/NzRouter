@@ -26,14 +26,14 @@ async function bench(label, fn) {
 
 beforeAll(async () => {
   // SQLite setup
-  tempSqlite = fs.mkdtempSync(path.join(os.tmpdir(), "9router-bench-sqlite-"));
+  tempSqlite = fs.mkdtempSync(path.join(os.tmpdir(), "NzRouter-bench-sqlite-"));
   process.env.DATA_DIR = tempSqlite;
   vi.resetModules();
   sqliteDb = await import("@/lib/db/index.js");
   await sqliteDb.initDb();
 
   // Lowdb setup — direct lowdb usage (mimics legacy behavior)
-  tempLowdb = fs.mkdtempSync(path.join(os.tmpdir(), "9router-bench-lowdb-"));
+  tempLowdb = fs.mkdtempSync(path.join(os.tmpdir(), "NzRouter-bench-lowdb-"));
   const { Low } = await import("lowdb");
   const { JSONFile } = await import("lowdb/node");
   const dbFile = path.join(tempLowdb, "db.json");
@@ -172,3 +172,4 @@ describe("DB Benchmark — SQLite vs Lowdb", () => {
     console.log(`  → SQLite is ${speedup}x faster`);
   }, 60000);
 });
+

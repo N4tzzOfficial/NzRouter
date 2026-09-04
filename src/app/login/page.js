@@ -26,6 +26,21 @@ export default function LoginPage() {
     return () => clearInterval(id);
   }, [retryAfter]);
 
+  // Post-hydration safety net: keeps the native-submit guard installed in case
+  // any other code re-attaches a default-action submit handler later. We only
+  // preventDefault() (block native navigation) but do NOT stopPropagation() —
+  // React's onSubmit still needs to receive the event so its async handler can
+  // run. Without this, the guard would swallow the event before React sees it.
+  useEffect(() => {
+    function blockNativeSubmit(e) {
+      if (!e.defaultPrevented) {
+        e.preventDefault();
+      }
+    }
+    document.addEventListener("submit", blockNativeSubmit, true);
+    return () => document.removeEventListener("submit", blockNativeSubmit, true);
+  }, []);
+
   useEffect(() => {
     async function checkAuth() {
       const controller = new AbortController();
@@ -44,6 +59,9 @@ export default function LoginPage() {
             window.location.assign("/dashboard");
             return;
           }
+          // Show form immediately (we render before this returns); only the
+          // SSO/mode flags are gated on this response so we don't block the
+          // user staring at a spinner for 1-2 s on every login page load.
           setHasPassword(!!data.hasPassword);
           setAuthMode(data.authMode || "password");
           setSsoType(data.ssoType || "oidc");
@@ -52,7 +70,7 @@ export default function LoginPage() {
           setSamlConfigured(data.samlConfigured === true);
           setSamlLoginLabel(data.samlLoginLabel || "Sign in with SAML SSO");
         } else {
-          // Safe fallback on non-OK response to avoid infinite loading state.
+          // Safe fallback on non-OK response.
           setHasPassword(true);
         }
       } catch (err) {
@@ -64,7 +82,7 @@ export default function LoginPage() {
   }, []);
 
   const handleLogin = async (e) => {
-    e.preventDefault();
+    if (e && typeof e.preventDefault === "function") e.preventDefault();
     setLoading(true);
     setError("");
     setResetHint("");
@@ -98,7 +116,7 @@ export default function LoginPage() {
 
   // Force a new password before entering the dashboard (default + remote).
   const handleSetNewPassword = async (e) => {
-    e.preventDefault();
+    if (e && typeof e.preventDefault === "function") e.preventDefault();
     setLoading(true);
     setError("");
     try {
@@ -137,25 +155,39 @@ export default function LoginPage() {
 
   const passwordAvailable = authMode === "password" || authMode === "both" || !ssoAvailable;
 
-  // Show loading state while checking password
-  if (hasPassword === null) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-bg p-4">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
-          <p className="text-text-muted mt-4">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+  // Render the form immediately. The /api/auth/status fetch in useEffect runs in the
+  // background and only updates SSO/mode flags - it no longer gates the form itself,
+  // so the user can type their password right away instead of staring at a spinner.
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-bg p-4 relative overflow-hidden">
-      {/* Faint grid background */}
+      {/* Pre-hydration submit guard. Runs synchronously inside the SSR HTML
+          before React hydrates, so any submit attempt that lands before
+          hydration is intercepted and prevented. React's onSubmit takes
+          over once the page hydrates; this listener is left in place as a
+          safety net. We additionally self-destruct the script node after it
+          runs so a hot-reload that re-renders this section doesn't install
+          duplicate listeners. */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){if(window.__nzLoginGuard)return;window.__nzLoginGuard=1;function b(e){if(!e.defaultPrevented){e.preventDefault();}}document.addEventListener('submit',b,true);var s=document.currentScript;if(s&&s.parentNode){s.parentNode.removeChild(s);}})();`,
+        }}
+      />
+      {/* Premium dark background effects */}
+      <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 dark:bg-primary/5 rounded-full blur-[100px] pointer-events-none z-0" />
+      <div className="fixed bottom-0 right-0 w-[600px] h-[600px] bg-primary/10 dark:bg-primary/5 rounded-full blur-[120px] pointer-events-none z-0 translate-y-1/3 translate-x-1/3" />
       <div className="landing-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
       <div className="relative z-10 w-full max-w-md">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-primary mb-2">9Router</h1>
+          {/* NzRouter Logo */}
+          <div className="flex justify-center mb-6">
+            <img
+              src="https://avatars.githubusercontent.com/u/181945053?v=4"
+              alt="NzRouter"
+              className="size-20 rounded-[16px] shadow-[var(--shadow-glass)] ring-1 ring-border-subtle"
+            />
+          </div>
+          <h1 className="text-3xl font-bold text-text-main mb-2">NzRouter</h1>
           <p className="text-text-muted">
             {samlAvailable
               ? "Sign in with SAML 2.0 Single Sign-On"
@@ -165,10 +197,10 @@ export default function LoginPage() {
           </p>
         </div>
 
-        <Card>
+        <Card className="card-glass border-border/50">
           {mustChange ? (
             <form onSubmit={handleSetNewPassword} className="flex flex-col gap-4">
-              <p className="text-sm text-amber-600 dark:text-amber-400 text-center">
+              <p className="text-sm text-warning text-center">
                 Set a new password before accessing the dashboard remotely.
               </p>
               <div className="flex flex-col gap-2">
@@ -181,9 +213,16 @@ export default function LoginPage() {
                   required
                   autoFocus
                 />
-                {error && <p className="text-xs text-red-500">{error}</p>}
+                {error && <p className="text-xs text-danger">{error}</p>}
               </div>
-              <Button type="submit" variant="primary" className="w-full" loading={loading} disabled={!newPassword}>
+              <Button
+                type="button"
+                variant="primary"
+                className="w-full"
+                loading={loading}
+                disabled={!newPassword}
+                onClick={handleSetNewPassword}
+              >
                 Set password
               </Button>
             </form>
@@ -204,9 +243,12 @@ export default function LoginPage() {
             {ssoAvailable && passwordAvailable && <div className="h-px bg-border/60" />}
 
             {passwordAvailable ? (
-              <form onSubmit={handleLogin} className="flex flex-col gap-4">
+              <form
+                onSubmit={handleLogin}
+                className="flex flex-col gap-4"
+              >
                 {isSsoEnabled && !ssoAvailable && (
-                  <p className="text-xs text-amber-600 dark:text-amber-400 text-center">
+                  <p className="text-xs text-warning text-center">
                     {activeSsoType === "saml" ? "SAML SSO" : "OIDC"} login is enabled, but configuration is incomplete. Password login is still available for recovery.
                   </p>
                 )}
@@ -227,44 +269,46 @@ export default function LoginPage() {
                     required
                     autoFocus={!oidcAvailable}
                   />
-                  {error && <p className="text-xs text-red-500">{error}</p>}
+                  {error && <p className="text-xs text-danger">{error}</p>}
                   {retryAfter > 0 && (
-                    <p className="text-xs text-amber-600 dark:text-amber-400">
+                    <p className="text-xs text-warning">
                       Locked. Retry in <span className="font-mono">{retryAfter}s</span>.
                     </p>
                   )}
                   {resetHint && (
                     <p className="text-xs text-text-muted">
-                      Forgot password? Open <code className="bg-sidebar px-1 rounded">9router</code> CLI on the host → <b>Settings</b> → <b>Reset Password to Default</b>.
+                      Forgot password? Open <code className="bg-surface-2 px-1 rounded">nzrouter</code> CLI on the host → <b>Settings</b> → <b>Reset Password to Default</b>.
                     </p>
                   )}
                 </div>
 
                 <Button
-                  type="submit"
+                  type="button"
                   variant="primary"
                   className="w-full"
                   loading={loading}
                   disabled={retryAfter > 0}
+                  onClick={handleLogin}
                 >
                   {retryAfter > 0 ? `Wait ${retryAfter}s` : "Login"}
                 </Button>
 
-                <p className="text-xs text-center text-text-muted mt-2">
-                  Default password is <code className="bg-sidebar px-1 rounded">123456</code>
-                </p>
-                {hasPassword === false && (
-                  <p className="text-xs text-center text-amber-600 dark:text-amber-400">
+                                {hasPassword === false && (
+                  <p className="text-xs text-center text-warning">
                     Security risk: no password set. You will be asked to set one when logging in remotely.
                   </p>
                 )}
               </form>
             ) : (
-              error && <p className="text-xs text-red-500">{error}</p>
+              error && <p className="text-xs text-danger">{error}</p>
             )}
           </div>
           )}
         </Card>
+
+        <p className="text-xs text-center text-text-subtle mt-6">
+          N4tzzTeam — AI Infrastructure Management
+        </p>
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ let tempDir;
 let db;
 
 beforeAll(async () => {
-  tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "9router-cached-e2e-"));
+  tempDir = fs.mkdtempSync(path.join(os.tmpdir(), "NzRouter-cached-e2e-"));
   process.env.DATA_DIR = tempDir;
   vi.resetModules();
   db = await import("@/lib/db/index.js");
@@ -82,3 +82,4 @@ describe("cached-token end-to-end (persist + aggregate + cost)", () => {
     expect(hist[0].tokens.cached_tokens).toBe(600);
   });
 });
+

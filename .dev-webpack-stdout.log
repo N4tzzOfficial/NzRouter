@@ -1,0 +1,28 @@
+▲ Next.js 16.3.4 (webpack)
+- Local:         http://localhost:20514
+- Network:       http://100.73.12.7:20514
+✓ Ready in 5.9s
+✓ Running next.config.mjs took 97ms
+- Experiments (use with caution):
+  · optimizePackageImports
+  · proxyClientMaxBodySize: "128mb"
+
+○ Compiling proxy ...
+○ Compiling /login ...
+[DB] Driver: better-sqlite3 | file: C:\Users\N4tzz\AppData\Roaming\nzrouter\db\data.sqlite
+ GET /login 200 in 64s (next.js: 61s, proxy.ts: 1297ms, application-code: 1462ms)
+[21:41:47] ℹ️  [BG_TOKEN_REFRESH] Scheduler started {"intervalMs":300000,"initialDelayMs":10000,"leadMs":1800000}
+ GET /manifest.webmanifest 200 in 2.5s (next.js: 2.4s, proxy.ts: 37ms, application-code: 59ms)
+[InitApp] MITM was enabled, auto-starting...
+[21:41:48] [MITM] 🔐 Cert: not trusted → installing...
+[InitApp] MITM auto-start failed: Failed to trust certificate: Failed to install certificate: The string is missing the terminator: '.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : TerminatorExpectedAtEndOfString
+ 
+
+[21:41:57] ℹ️  [BG_TOKEN_REFRESH] Refreshing due OAuth connections {"due":1,"ids":["babab9c2-c786-4286-a6f0-b2d1465e488c"]}
+[21:41:57] ℹ️  [TOKEN_REFRESH] Refreshing provider credentials proactively {"provider":"kimi","expiresIn":530,"refreshLeadMs":300000,"lastRefreshAt":"2026-09-04T14:35:47.666Z"}
+[21:41:58] ℹ️  [TOKEN_REFRESH] Successfully refreshed token for kimi {"hasNewAccessToken":true,"hasNewRefreshToken":true,"expiresIn":900}
+[21:41:58] ℹ️  [TOKEN_REFRESH] Credentials updated in localDb {"connectionId":"babab9c2-c786-4286-a6f0-b2d1465e488c","success":true}
+[21:41:58] ℹ️  [BG_TOKEN_REFRESH] Connection refresh finished {"id":"babab9c2-c786-4286-a6f0-b2d1465e488c","provider":"kimi"}
+ GET /login 200 in 676ms (next.js: 82ms, proxy.ts: 8ms, application-code: 586ms)

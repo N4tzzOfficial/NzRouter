@@ -6,7 +6,7 @@ Theo dõi tiêu thụ token thời gian thực, giám sát giới hạn quota, �
 
 ## Tổng quan
 
-9Router cung cấp quota tracking toàn diện cho mọi provider:
+NzRouter cung cấp quota tracking toàn diện cho mọi provider:
 
 - **Tiêu thụ token thời gian thực** - Xem tokens dùng mỗi request
 - **Giới hạn quota & còn lại** - Theo dõi usage so với giới hạn
@@ -669,7 +669,7 @@ Response:
 1. Refresh dashboard (F5)
 2. Kiểm tra thời gian hệ thống đúng
 3. Xác minh cài đặt timezone
-4. Khởi động lại 9Router nếu vẫn lỗi
+4. Khởi động lại NzRouter nếu vẫn lỗi
 
 **Issue: Không nhận được cảnh báo**
 
@@ -685,3 +685,4 @@ Response:
 
 - [Smart Routing](./smart-routing.md) - Auto fallback dựa trên quota
 - [Combos](./combos.md) - Tạo chuỗi fallback tùy chỉnh
+

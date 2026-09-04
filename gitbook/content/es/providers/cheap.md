@@ -45,10 +45,10 @@ Dashboard → API Keys → Create New
 → Copia la API key (comienza con "zhipu-")
 ```
 
-**Paso 3: Agregar a 9Router**
+**Paso 3: Agregar a NzRouter**
 
 ```bash
-9router
+NzRouter
 # Dashboard → Providers → Add API Key
 
 Provider: glm
@@ -117,10 +117,10 @@ Dashboard → API Management → Create Key
 → Copia la API key
 ```
 
-**Paso 3: Agregar a 9Router**
+**Paso 3: Agregar a NzRouter**
 
 ```bash
-9router
+NzRouter
 # Dashboard → Providers → Add API Key
 
 Provider: minimax
@@ -190,10 +190,10 @@ Dashboard → API Keys → Create New
 → Copia la API key
 ```
 
-**Paso 3: Agregar a 9Router**
+**Paso 3: Agregar a NzRouter**
 
 ```bash
-9router
+NzRouter
 # Dashboard → Providers → Add API Key
 
 Provider: kimi
@@ -255,7 +255,7 @@ Total: 10M tokens = $9 plano
 ```
 Settings → Models → Advanced:
   OpenAI API Base URL: http://localhost:20128/v1
-  OpenAI API Key: [desde el dashboard de 9router]
+  OpenAI API Key: [desde el dashboard de NzRouter]
   Model: glm/glm-4.7
 ```
 
@@ -460,3 +460,4 @@ Mensual: $30 límite
 - **Agregar fallback gratis:** [Proveedores gratis](./free.md)
 - **Configurar suscripciones:** [Proveedores de suscripción](./subscription.md)
 - **Crear combos:** Dashboard → Combos → Create New
+

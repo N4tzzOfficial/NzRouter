@@ -1,0 +1,105 @@
+⚠ Blocked cross-origin request to Next.js dev resource /_next/hmr from "127.0.0.1".
+Cross-origin access to Next.js dev resources is blocked by default for safety.
+
+To allow this host in development, add it to "allowedDevOrigins" in next.config.js and restart the dev server:
+
+// next.config.js
+module.exports = {
+  allowedDevOrigins: ['127.0.0.1'],
+}
+
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[ProjectId] onboardUser attempt 1 failed: onboardUser done but no project_id in response, retrying...
+[ProjectId] onboardUser attempt 1 failed: onboardUser done but no project_id in response, retrying...
+[ProjectId] onboardUser attempt 2 failed: onboardUser done but no project_id in response, retrying...
+[ProjectId] onboardUser attempt 2 failed: onboardUser done but no project_id in response, retrying...
+[ProjectId] onboardUser attempt 3 failed: onboardUser done but no project_id in response, retrying...
+[ProjectId] onboardUser attempt 3 failed: onboardUser done but no project_id in response, retrying...
+[ProjectId] onboardUser attempt 4 failed: onboardUser done but no project_id in response, retrying...
+[ProjectId] onboardUser attempt 4 failed: onboardUser done but no project_id in response, retrying...
+[ProjectId] onboardUser failed after 5 attempts: onboardUser done but no project_id in response
+[ProjectId] could not fetch projectId for connection 2a0f8bcb
+[ProjectId] onboardUser failed after 5 attempts: onboardUser done but no project_id in response
+[ProjectId] could not fetch projectId for connection d70ac6fd
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed
+[ProjectId] Error fetching project ID: fetch failed

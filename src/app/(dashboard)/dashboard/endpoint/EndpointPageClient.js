@@ -977,11 +977,16 @@ export default function APIPageClient({ machineId }) {
 
         <div className="flex items-center justify-between pb-4 mb-4 border-b border-border">
           <div>
-            <p className="font-medium">Require API key</p>
+            <p className="font-medium flex items-center gap-2">
+              Require API key
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-primary/10 text-primary">
+                Always on
+            </span>
+          </p>
             <p className="text-sm text-text-muted">
-              Requests without a valid key will be rejected
-            </p>
-          </div>
+              All /v1/* requests without a valid key are rejected — including from localhost. Disable only if you have another auth layer in front.
+          </p>
+        </div>
           <Toggle
             checked={requireApiKey}
             onChange={() => handleRequireApiKey(!requireApiKey)}
@@ -1160,7 +1165,7 @@ export default function APIPageClient({ machineId }) {
                   Cloudflare Tunnel
                 </p>
                 <p className="text-sm text-text-muted">
-                  Expose your local 9Router to the internet. No port forwarding, no static IP needed. Share endpoint URL with your team or use it in Cursor, Cline, and other AI tools from anywhere.
+                  Expose your local NzRouter to the internet. No port forwarding, no static IP needed. Share endpoint URL with your team or use it in Cursor, Cline, and other AI tools from anywhere.
                 </p>
               </div>
             </div>

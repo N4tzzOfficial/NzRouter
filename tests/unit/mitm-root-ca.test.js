@@ -24,7 +24,7 @@ function loadRootCAWithDataDir(dataDir) {
 
 describe("MITM Root CA generation", () => {
   it("creates Root CA files synchronously for direct server startup", () => {
-    const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), "9router-mitm-ca-"));
+    const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), "NzRouter-mitm-ca-"));
     const { generateRootCA } = loadRootCAWithDataDir(dataDir);
 
     generateRootCA();
@@ -33,3 +33,4 @@ describe("MITM Root CA generation", () => {
     expect(fs.existsSync(path.join(dataDir, "mitm", "rootCA.crt"))).toBe(true);
   });
 });
+

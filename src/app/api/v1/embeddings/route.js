@@ -1,4 +1,5 @@
 import { handleEmbeddings } from "@/sse/handlers/embeddings.js";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 /**
  * Handle CORS preflight
@@ -16,6 +17,6 @@ export async function OPTIONS() {
 /**
  * POST /v1/embeddings - OpenAI-compatible embeddings endpoint
  */
-export async function POST(request) {
+export const POST = withApiKey(async (request) => {
   return await handleEmbeddings(request);
-}
+});

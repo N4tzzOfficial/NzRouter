@@ -1,5 +1,6 @@
 import { handleChat } from "@/sse/handlers/chat.js";
 import { initTranslators } from "open-sse/translator/index.js";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 let initialized = false;
 
@@ -26,10 +27,7 @@ export async function OPTIONS() {
   });
 }
 
-export async function POST(request) {  
-  // Fallback to local handling
+export const POST = withApiKey(async (request) => {
   await ensureInitialized();
-  
   return await handleChat(request);
-}
-
+});

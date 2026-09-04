@@ -1,4 +1,5 @@
 import { handleImageGeneration } from "@/sse/handlers/imageGeneration.js";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 export async function OPTIONS() {
   return new Response(null, {
@@ -11,6 +12,6 @@ export async function OPTIONS() {
 }
 
 /** POST /v1/images/generations - OpenAI-compatible image generation endpoint */
-export async function POST(request) {
+export const POST = withApiKey(async (request) => {
   return await handleImageGeneration(request);
-}
+});
