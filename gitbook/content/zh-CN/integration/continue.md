@@ -1,13 +1,13 @@
 # Continue VSCode 扩展集成
 
-将 NzRouter 与 Continue 扩展集成,直接在 Visual Studio Code 中获得 AI 协助。
+将 N4tzzOfficial 与 Continue 扩展集成,直接在 Visual Studio Code 中获得 AI 协助。
 
 ## 前置要求
 
 - 已安装 Visual Studio Code
 - 从 VSCode 市场安装了 Continue 扩展
-- 来自 [仪表盘](https://NzRouter.com/dashboard) 的 NzRouter API key
-- NzRouter 正在运行(本地或云端)
+- 来自 [仪表盘](https://n4tzz.com/dashboard) 的 N4tzzOfficial API key
+- N4tzzOfficial 正在运行(本地或云端)
 
 ## 配置步骤
 
@@ -18,7 +18,7 @@
 3. 输入 "Continue: Open Config" 并选择
 4. 这会打开 `~/.continue/config.json`
 
-### 2. 添加 NzRouter 模型配置
+### 2. 添加 N4tzzOfficial 模型配置
 
 将以下配置添加到 `config.json`:
 
@@ -27,7 +27,7 @@
 {
   "models": [
     {
-      "title": "NzRouter - Claude Opus",
+      "title": "N4tzzOfficial - Claude Opus",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
@@ -42,28 +42,28 @@
 {
   "models": [
     {
-      "title": "NzRouter - Claude Opus (Best)",
+      "title": "N4tzzOfficial - Claude Opus (Best)",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - Claude Sonnet (Balanced)",
+      "title": "N4tzzOfficial - Claude Sonnet (Balanced)",
       "provider": "openai",
       "model": "cc/claude-sonnet-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - DeepSeek Chat (Code)",
+      "title": "N4tzzOfficial - DeepSeek Chat (Code)",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - Claude Haiku (Fast)",
+      "title": "N4tzzOfficial - Claude Haiku (Fast)",
       "provider": "openai",
       "model": "cc/claude-haiku-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
@@ -73,10 +73,10 @@
 }
 ```
 
-**云端 NzRouter:**
+**云端 N4tzzOfficial:**
 将 `apiBase` 替换为:
 ```json
-"apiBase": "https://NzRouter.com/v1"
+"apiBase": "https://n4tzz.com/v1"
 ```
 
 ### 3. 保存并重新加载
@@ -89,7 +89,7 @@
 
 1. 打开 Continue 侧边栏(点击左侧 Continue 图标)
 2. 点击顶部模型选择下拉菜单
-3. 选择你偏好的 NzRouter 模型
+3. 选择你偏好的 N4tzzOfficial 模型
 
 ## 可用模型
 
@@ -139,7 +139,7 @@
 {
   "models": [
     {
-      "title": "NzRouter - Code Expert",
+      "title": "N4tzzOfficial - Code Expert",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key",
@@ -158,7 +158,7 @@
 {
   "models": [
     {
-      "title": "NzRouter - Creative Writer",
+      "title": "N4tzzOfficial - Creative Writer",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key",
@@ -204,13 +204,13 @@
 ## 故障排除
 
 ### 模型无响应
-- 确认 NzRouter 正在运行:`curl http://localhost:20128/health`
+- 确认 N4tzzOfficial 正在运行:`curl http://localhost:20128/health`
 - 检查 config.json 中的 API key
 - 查看 VSCode 开发者控制台错误:`Help` → `Toggle Developer Tools`
 
 ### 选错模型
 - 点击 Continue 侧边栏的模型下拉菜单
-- 选择正确的 NzRouter 模型
+- 选择正确的 N4tzzOfficial 模型
 - 模型名必须完全匹配(大小写敏感)
 
 ### 配置未加载
@@ -221,7 +221,7 @@
 ### 性能缓慢
 - 切换到更快的模型(haiku、flash)
 - 在 contextProviders 中减少上下文大小
-- 检查到 NzRouter 的网络延迟
+- 检查到 N4tzzOfficial 的网络延迟
 
 ## 最佳实践
 
@@ -247,4 +247,5 @@
 - [设置 Roo](roo.md) AI 助手
 - [探索 CLI 用法](../cli/basic-usage.md)
 - [了解模型选择](../models/overview.md)
+
 

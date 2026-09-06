@@ -1,6 +1,6 @@
 # Cài đặt
 
-Hướng dẫn cài đặt chi tiết cho NzRouter với mẹo troubleshooting.
+Hướng dẫn cài đặt chi tiết cho N4tzzOfficial với mẹo troubleshooting.
 
 ---
 
@@ -31,37 +31,37 @@ npm --version
 
 ### Cách 1: Cài Global (Khuyên dùng)
 
-Cài NzRouter toàn cục để dùng ở bất kỳ đâu:
+Cài N4tzzOfficial toàn cục để dùng ở bất kỳ đâu:
 
 ```bash
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
-**Khởi động NzRouter:**
+**Khởi động N4tzzOfficial:**
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 **Lợi ích:**
 - ✅ Chạy từ mọi thư mục
-- ✅ Lệnh đơn giản: `NzRouter`
-- ✅ Auto-update với `npm update -g NzRouter`
+- ✅ Lệnh đơn giản: `N4tzzOfficial`
+- ✅ Auto-update với `npm update -g N4tzzOfficial`
 
 ### Cách 2: Cài Local
 
 Cài trong project cụ thể:
 
 ```bash
-mkdir my-NzRouter
-cd my-NzRouter
-npm install NzRouter
+mkdir my-N4tzzOfficial
+cd my-N4tzzOfficial
+npm install N4tzzOfficial
 ```
 
-**Khởi động NzRouter:**
+**Khởi động N4tzzOfficial:**
 
 ```bash
-npx NzRouter
+npx N4tzzOfficial
 ```
 
 **Lợi ích:**
@@ -74,8 +74,8 @@ npx NzRouter
 Clone và build từ GitHub:
 
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install
 npm run build
 npm start
@@ -93,13 +93,13 @@ npm start
 ### Khởi động Server
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 **Điều gì xảy ra:**
 1. Server khởi động tại `http://localhost:20128`
 2. Dashboard tự động mở trong browser
-3. Data directory được tạo tại `~/.NzRouter`
+3. Data directory được tạo tại `~/.N4tzzOfficial`
 4. API key được tạo tự động
 
 ### Đăng nhập Dashboard
@@ -193,7 +193,7 @@ export JWT_SECRET="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
 
 # Storage
-export DATA_DIR="~/.NzRouter"
+export DATA_DIR="~/.N4tzzOfficial"
 
 # Server
 export PORT="20128"
@@ -205,11 +205,11 @@ export ENABLE_REQUEST_LOGS="false"
 
 ### Data Directory
 
-**Vị trí mặc định:** `~/.NzRouter`
+**Vị trí mặc định:** `~/.N4tzzOfficial`
 
 **Nội dung:**
 ```
-~/.NzRouter/
+~/.N4tzzOfficial/
   ├── db.json           # Database (providers, combos, usage)
   ├── api-keys.json     # API keys
   └── logs/             # Request logs (if enabled)
@@ -219,7 +219,7 @@ export ENABLE_REQUEST_LOGS="false"
 
 ```bash
 export DATA_DIR="/custom/path"
-NzRouter
+N4tzzOfficial
 ```
 
 ### Cấu hình Port
@@ -230,13 +230,13 @@ NzRouter
 
 ```bash
 export PORT="3000"
-NzRouter
+N4tzzOfficial
 ```
 
 **Hoặc dùng command line:**
 
 ```bash
-NzRouter --port 3000
+N4tzzOfficial --port 3000
 ```
 
 ---
@@ -263,14 +263,14 @@ kill -9 <PID>
 **Giải pháp 2: Dùng port khác**
 
 ```bash
-NzRouter --port 3000
+N4tzzOfficial --port 3000
 ```
 
 ### Permission Denied
 
 **Lỗi:**
 ```
-Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/NzRouter'
+Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/N4tzzOfficial'
 ```
 
 **Giải pháp: Dùng sudo (không khuyến nghị) hoặc fix npm permissions**
@@ -283,7 +283,7 @@ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
 # Then install again
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
 ### Node.js Phiên bản quá cũ
@@ -345,23 +345,23 @@ Dashboard → Provider → Disconnect → Reconnect
 
 ### Sử dụng RAM cao
 
-**Vấn đề:** NzRouter dùng quá nhiều RAM
+**Vấn đề:** N4tzzOfficial dùng quá nhiều RAM
 
 **Giải pháp: Khởi động lại server**
 
 ```bash
 # Stop
-pkill -f NzRouter
+pkill -f N4tzzOfficial
 
 # Start
-NzRouter
+N4tzzOfficial
 ```
 
 **Hoặc dùng PM2 để auto-restart:**
 
 ```bash
 npm install -g pm2
-pm2 start NzRouter --name NzRouter
+pm2 start N4tzzOfficial --name N4tzzOfficial
 pm2 save
 ```
 
@@ -372,8 +372,8 @@ pm2 save
 ### Phát triển cục bộ
 
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 ```
 
 **Use case:** Code cá nhân, testing
@@ -382,7 +382,7 @@ NzRouter
 
 ```bash
 # Install
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 
 # Configure
 export JWT_SECRET="your-secure-secret"
@@ -391,7 +391,7 @@ export NODE_ENV="production"
 
 # Start with PM2
 npm install -g pm2
-pm2 start NzRouter --name NzRouter
+pm2 start N4tzzOfficial --name N4tzzOfficial
 pm2 save
 pm2 startup
 ```
@@ -401,15 +401,15 @@ pm2 startup
 ### Docker
 
 ```bash
-docker pull NzRouter/NzRouter:latest
+docker pull N4tzzOfficial/N4tzzOfficial:latest
 
 docker run -d \
   -p 20128:20128 \
   -e JWT_SECRET="your-secure-secret" \
   -e INITIAL_PASSWORD="your-password" \
-  -v NzRouter-data:/root/.NzRouter \
-  --name NzRouter \
-  NzRouter/NzRouter:latest
+  -v N4tzzOfficial-data:/root/.N4tzzOfficial \
+  --name N4tzzOfficial \
+  N4tzzOfficial/N4tzzOfficial:latest
 ```
 
 **Use case:** Containerized deployment, Kubernetes
@@ -444,13 +444,13 @@ server {
 ### Gỡ Global Installation
 
 ```bash
-npm uninstall -g NzRouter
+npm uninstall -g N4tzzOfficial
 ```
 
 ### Xóa Data Directory
 
 ```bash
-rm -rf ~/.NzRouter
+rm -rf ~/.N4tzzOfficial
 ```
 
 ### Xóa Cấu hình
@@ -458,7 +458,7 @@ rm -rf ~/.NzRouter
 ```bash
 # Remove environment variables from shell config
 nano ~/.bashrc  # or ~/.zshrc
-# Delete NzRouter-related exports
+# Delete N4tzzOfficial-related exports
 ```
 
 ---
@@ -473,7 +473,8 @@ nano ~/.bashrc  # or ~/.zshrc
 
 ## Cần trợ giúp?
 
-- **Website**: [NzRouter.com](https://NzRouter.com)
-- **GitHub**: [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues**: [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **Website**: [n4tzz.com](https://n4tzz.com)
+- **GitHub**: [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
+- **Issues**: [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
+
 

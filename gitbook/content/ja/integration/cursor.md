@@ -11,7 +11,7 @@ NzRouterをCursor IDEと統合し、AIリクエストをNzRouterのインテリ�
 
 ## ⚠️ 重要な注意点
 
-> **クラウドエンドポイントが必要**: Cursorは独自のサーバー経由でリクエストをルーティングし、localhostエンドポイントをサポートしません。NzRouterクラウドエンドポイント `https://NzRouter.com` を使用する必要があります。
+> **クラウドエンドポイントが必要**: Cursorは独自のサーバー経由でリクエストをルーティングし、localhostエンドポイントをサポートしません。NzRouterクラウドエンドポイント `https://n4tzz.com` を使用する必要があります。
 
 > **Cursor Proが必要**: この機能はカスタムAPIエンドポイントを使用するためにCursor Proアカウントが必要です。
 
@@ -33,12 +33,12 @@ NzRouterをCursor IDEと統合し、AIリクエストをNzRouterのインテリ�
 Base URLをNzRouterクラウドエンドポイントに設定:
 
 ```
-https://NzRouter.com
+https://n4tzz.com
 ```
 
 **手順:**
 1. Models設定で **Base URL** フィールドを見つける
-2. 入力: `https://NzRouter.com`
+2. 入力: `https://n4tzz.com`
 3. **Save** をクリック
 
 ### 4. APIキーを追加
@@ -66,8 +66,8 @@ Cursor設定は次のようになります:
 
 ```
 OpenAI API: ✓ Enabled
-Base URL: https://NzRouter.com
-API Key: sk-NzRouter-xxxxxxxxxxxxx
+Base URL: https://n4tzz.com
+API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Custom Models: gpt-4, claude-opus-4-5, gemini-2.0-flash
 ```
 
@@ -110,7 +110,7 @@ NzRouterダッシュボードで設定されたモデルを使用できます。
 ### 「Invalid API Key」エラー
 
 1. NzRouterダッシュボードでAPIキーを確認
-2. `sk-NzRouter-` プレフィックスを含むキー全体をコピーしたか確認
+2. `sk-N4tzzOfficial-` プレフィックスを含むキー全体をコピーしたか確認
 3. APIキーが期限切れでないか確認
 4. 新しいAPIキーを再生成してみる
 
@@ -123,14 +123,14 @@ NzRouterダッシュボードで設定されたモデルを使用できます。
 
 ### 接続の問題
 
-1. クラウドエンドポイントを使用しているか確認: `https://NzRouter.com`
+1. クラウドエンドポイントを使用しているか確認: `https://n4tzz.com`
 2. インターネット接続を確認
 3. NzRouterクラウドサービスが運用中か確認
 4. VPNまたはプロキシが有効な場合は無効化してみる
 
 ### Localhostが動作しない
 
-> **覚えておいてください**: Cursorはlocalhostエンドポイントをサポートしません。クラウドエンドポイント `https://NzRouter.com` を使用する必要があります。ローカルNzRouterインスタンスを使用したい場合は、ngrokなどのトンネリングサービスを検討してローカルエンドポイントを公開してください。
+> **覚えておいてください**: Cursorはlocalhostエンドポイントをサポートしません。クラウドエンドポイント `https://n4tzz.com` を使用する必要があります。ローカルNzRouterインスタンスを使用したい場合は、ngrokなどのトンネリングサービスを検討してローカルエンドポイントを公開してください。
 
 ## クラウドエンドポイントのセットアップ
 
@@ -147,4 +147,5 @@ NzRouterダッシュボードで設定されたモデルを使用できます。
 2. **使用量をモニター**: NzRouterダッシュボードで使用統計とコストを確認
 3. **APIキーをローテーション**: セキュリティのためAPIキーを定期的にローテーション
 4. **モデルをテスト**: ユースケースに最適なモデルを見つけるため、異なるモデルを試す
+
 

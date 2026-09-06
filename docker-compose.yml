@@ -1,6 +1,6 @@
 services:
   nzrouter:
-    image: decolua/nzrouter:latest
+    image: N4tzzOfficial/NzRouter:latest
     container_name: nzrouter
     restart: always
     ports:

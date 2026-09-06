@@ -1,9 +1,9 @@
 นี่คือเอกสารแปลภาษาไทยของไฟล์ Markdown ต้นฉบับ โดยรักษาโครงสร้างและซินแท็กซ์ทางเทคนิคทั้งหมดไว้เหมือนเดิม
 
 <div align="center">
-  <img src="../images/NzRouter.png?1" alt="แดชบอร์ด NzRouter" width="800"/>
+  <img src="../images/NzRouter.png?1" alt="แดชบอร์ด N4tzzOfficial" width="800"/>
   
-  # NzRouter - Free AI Router
+  # N4tzzOfficial - Free AI Router
   
   **ไม่ต้องหยุดเขียนโค้ด ประหยัดโทเค็น 20-40% ด้วย RTK + สลับอัตโนมัติไปยังโมเดล AI ฟรีและราคาถูก**
   
@@ -13,16 +13,16 @@
     <img src="../public/providers/openclaw.png" alt="OpenClaw" width="80"/>
   </p>
   
-  [![npm](https://img.shields.io/npm/v/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![Downloads](https://img.shields.io/npm/dm/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![License](https://img.shields.io/npm/l/NzRouter.svg)](https://github.com/decolua/NzRouter/blob/main/LICENSE)
+  [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
   
-  [🚀 เริ่มต้นใช้งาน](#-quick-start) • [💡 ฟีเจอร์](#-key-features) • [📖 การตั้งค่า](#-setup-guide) • [🌐 เว็บไซต์](https://NzRouter.com)
+  [🚀 เริ่มต้นใช้งาน](#-quick-start) • [💡 ฟีเจอร์](#-key-features) • [📖 การตั้งค่า](#-setup-guide) • [🌐 เว็บไซต์](https://n4tzz.com)
 </div>
 
 ---
 
-## 🤔 ทำไมต้อง NzRouter?
+## 🤔 ทำไมต้อง N4tzzOfficial?
 
 **หยุดเสียเงินและเจอขีดจำกัด:**
 
@@ -31,7 +31,7 @@
 - ❌ ค่า API แพง ($20-50/เดือน ต่อผู้ให้บริการแต่ละราย)
 - ❌ ต้องสลับผู้ให้บริการด้วยตนเอง
 
-**NzRouter แก้ปัญหาเหล่านี้:**
+**N4tzzOfficial แก้ปัญหาเหล่านี้:**
 
 - ✅ **ประหยัดโทเค็น RTK** - บีบอัดผลลัพธ์จากเครื่องมือ (`git diff`, `grep`, `ls`...) ก่อนส่งให้ LLM
 - ✅ **เพิ่มประสิทธิภาพสมาชิก** - ติดตามโควตา ใช้ทุกบิตก่อนรีเซ็ต
@@ -51,7 +51,7 @@
        │ http://localhost:20128/v1
        ↓
 ┌─────────────────────────────────────────────┐
-│           NzRouter (Smart Router)            │
+│           N4tzzOfficial (Smart Router)            │
 │  • RTK Token Saver (ตัดโทเค็น tool_result) │
 │  • แปลงรูปแบบ (OpenAI ↔ Claude)           │
 │  • ติดตามโควตา                              │
@@ -74,8 +74,8 @@
 **1. ติดตั้งแบบ Global:**
 
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 ```
 
 🎉 เปิดแดชบอร์ดที่ `http://localhost:20128`
@@ -120,7 +120,7 @@ URL ค่าเริ่มต้น:
 
 ## 🛠️ เครื่องมือ CLI ที่รองรับ
 
-NzRouter ทำงานได้อย่างราบรื่นกับเครื่องมือเขียนโค้ด AI ทุกประเภท:
+N4tzzOfficial ทำงานได้อย่างราบรื่นกับเครื่องมือเขียนโค้ด AI ทุกประเภท:
 
 <div align="center">
   <table>
@@ -365,10 +365,10 @@ NzRouter ทำงานได้อย่างราบรื่นกับ�
 
 ### 🧠 Headroom Token Saver
 
-Headroom เป็นตัวเลือกและทำงานแยกกัน NzRouter เรียก endpoint `/v1/compress` ของ Headroom จากนั้นยังคงเลือกเส้นทาง, fallback, auth และติดตามการใช้งานตามปกติ:
+Headroom เป็นตัวเลือกและทำงานแยกกัน N4tzzOfficial เรียก endpoint `/v1/compress` ของ Headroom จากนั้นยังคงเลือกเส้นทาง, fallback, auth และติดตามการใช้งานตามปกติ:
 
 ```
-Client → NzRouter → Headroom /v1/compress → NzRouter → provider
+Client → N4tzzOfficial → Headroom /v1/compress → N4tzzOfficial → provider
 ```
 
 ตั้งค่าท้องถิ่น:
@@ -387,7 +387,7 @@ headroom proxy --port 8787
 http://host.docker.internal:8787
 ```
 
-ถ้า Headroom ดับหรือคืน error, NzRouter จะ fail open และส่งคำขอต้นฉบับ
+ถ้า Headroom ดับหรือคืน error, N4tzzOfficial จะ fail open และส่งคำขอต้นฉบับ
 
 ### 🐴 Ponytail (Lazy Senior Dev)
 
@@ -428,7 +428,7 @@ Combo: "my-coding-stack"
 
 แปลงรูปแบบได้อย่างราบรื่น:
 - **OpenAI** ↔ **Claude** ↔ **Gemini** ↔ **Cursor** ↔ **Kiro** ↔ **Vertex** ↔ **Antigravity** ↔ **Ollama** ↔ **OpenAI Responses**
-- เครื่องมือ CLI ของคุณส่งรูปแบบ OpenAI → NzRouter แปลง → ผู้ให้บริการได้รับรูปแบบต้นฉบับ
+- เครื่องมือ CLI ของคุณส่งรูปแบบ OpenAI → N4tzzOfficial แปลง → ผู้ให้บริการได้รับรูปแบบต้นฉบับ
 - ใช้ได้กับเครื่องมือใดก็ได้ที่รองรับ custom OpenAI endpoints
 
 ### 👥 รองรับหลายบัญชี
@@ -569,16 +569,16 @@ Combo: "openclaw-free"
 ## ❓ คำถามที่พบบ่อย
 
 <details>
-<summary><b>💳 NzRouter เก็บเงินฉันหรือไม่?</b></summary>
+<summary><b>💳 N4tzzOfficial เก็บเงินฉันหรือไม่?</b></summary>
 
-**ไม่.** NzRouter เป็นซอฟต์แวร์ฟรีแบบ open source ที่ทำงานบนเครื่องของคุณเอง มันไม่มีวันเรียกเก็บเงินจากคุณ
+**ไม่.** N4tzzOfficial เป็นซอฟต์แวร์ฟรีแบบ open source ที่ทำงานบนเครื่องของคุณเอง มันไม่มีวันเรียกเก็บเงินจากคุณ
 
 **คุณจ่ายเงินเฉพาะ:**
 - ✅ **ผู้ให้บริการสมาชิก** (Claude Code $20/เดือน, Codex $20-200/เดือน) → จ่ายตรงให้พวกเขาบนเว็บไซต์ของพวกเขา
-- ✅ **ผู้ให้บริการราคาถูก** (GLM, MiniMax) → จ่ายตรงให้พวกเขา, NzRouter แค่เลือกเส้นทางคำขอของคุณ
-- ❌ **ตัว NzRouter เอง** → **ไม่มีวันเรียกเก็บเงินใดๆ ทั้งสิ้น**
+- ✅ **ผู้ให้บริการราคาถูก** (GLM, MiniMax) → จ่ายตรงให้พวกเขา, N4tzzOfficial แค่เลือกเส้นทางคำขอของคุณ
+- ❌ **ตัว N4tzzOfficial เอง** → **ไม่มีวันเรียกเก็บเงินใดๆ ทั้งสิ้น**
 
-NzRouter เป็น proxy/router ท้องถิ่น มันไม่มีบัตรเครดิตของคุณ, ไม่สามารถส่งใบแจ้งหนี้ได้ และไม่มีระบบชำระเงิน เป็นซอฟต์แวร์ฟรีทั้งหมด
+N4tzzOfficial เป็น proxy/router ท้องถิ่น มันไม่มีบัตรเครดิตของคุณ, ไม่สามารถส่งใบแจ้งหนี้ได้ และไม่มีระบบชำระเงิน เป็นซอฟต์แวร์ฟรีทั้งหมด
 
 </details>
 
@@ -592,7 +592,7 @@ NzRouter เป็น proxy/router ท้องถิ่น มันไม่�
 - **OpenCode Free**: ไม่ต้องยืนยันตัวตน, ดึงโมเดลอัตโนมัติ
 - **Vertex AI**: $300 เครดิตฟรีสำหรับ Gemini 3 Pro
 
-NzRouter แค่เลือกเส้นทางคำขอของคุณไปหาพวกเขา — ไม่มี "กับดัก" หรือการเรียกเก็บเงินในอนาคต เป็นบริการที่ฟรีจริงๆ และ NzRouter ทำให้ใช้งานง่ายด้วยการรองรับ fallback
+N4tzzOfficial แค่เลือกเส้นทางคำขอของคุณไปหาพวกเขา — ไม่มี "กับดัก" หรือการเรียกเก็บเงินในอนาคต เป็นบริการที่ฟรีจริงๆ และ N4tzzOfficial ทำให้ใช้งานง่ายด้วยการรองรับ fallback
 
 </details>
 
@@ -616,7 +616,7 @@ NzRouter แค่เลือกเส้นทางคำขอของค�
    **ค่าใช้จ่ายเพิ่มเติม:** จ่ายเฉพาะที่ใช้
 
 3. **ใช้ผู้ให้บริการสมาชิก** ก็ต่อเมื่อมีอยู่แล้ว:
-   - NzRouter ช่วยเพิ่มประสิทธิภาพมูลค่าของพวกเขาผ่านการติดตามโควตา
+   - N4tzzOfficial ช่วยเพิ่มประสิทธิภาพมูลค่าของพวกเขาผ่านการติดตามโควตา
 
 **ผลลัพธ์:** ผู้ใช้ส่วนใหญ่สามารถทำงานที่ $0/เดือน โดยใช้เฉพาะชั้นฟรี!
 
@@ -635,7 +635,7 @@ NzRouter แค่เลือกเส้นทางคำขอของค�
 - เพิ่ม combo: `cc/claude-opus-4-6 → glm/glm-5.1 → kr/claude-sonnet-4.5`
 
 **OAuth Token หมดอายุ**
-- รีเฟรชอัตโนมัติโดย NzRouter
+- รีเฟรชอัตโนมัติโดย N4tzzOfficial
 - ถ้าปัญหายังคงอยู่: แดชบอร์ด → ผู้ให้บริการ → เชื่อมต่อใหม่
 
 **ค่าใช้จ่ายสูง**
@@ -698,17 +698,17 @@ Authorization: Bearer your-api-key
 
 ## 📧 สนับสนุน
 
-- **เว็บไซต์**: [NzRouter.com](https://NzRouter.com)
-- **GitHub**: [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues**: [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **เว็บไซต์**: [n4tzz.com](https://n4tzz.com)
+- **GitHub**: [github.com/N4tzzOfficial/NzRouter](https://github.com/N4tzzOfficial/NzRouter)
+- **Issues**: [github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
 ---
 
 ## 👥 ผู้มีส่วนร่วม
 
-ขอขอบคุณผู้มีส่วนร่วมทุกคนที่ช่วยทำให้ NzRouter ดียิ่งขึ้น!
+ขอขอบคุณผู้มีส่วนร่วมทุกคนที่ช่วยทำให้ N4tzzOfficial ดียิ่งขึ้น!
 
-[![Contributors](https://contrib.rocks/image?repo=decolua/NzRouter&max=150&columns=15&anon=1)](https://github.com/decolua/NzRouter/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=N4tzzOfficial/N4tzzOfficial&max=150&columns=15&anon=1)](https://github.com/N4tzzOfficial/NzRouter/graphs/contributors)
 
 ---
 
@@ -721,4 +721,6 @@ MIT License - ดู [LICENSE](../LICENSE) สำหรับรายละเ�
 <div align="center">
   <sub>สร้างด้วย ❤️ สำหรับนักพัฒนาที่เขียนโค้ด 24/7</sub>
 </div>
+
+
 

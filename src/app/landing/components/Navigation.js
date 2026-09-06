@@ -17,19 +17,19 @@ export default function Navigation() {
           aria-label="Navigate to home"
         >
           <img
-            src="https://i.imgur.com/U2JAm7E.png"
-            alt="NzRouter Logo"
+            src="https://avatars.githubusercontent.com/u/181945053?v=4"
+            alt="N4tzzOfficial"
             className="size-8 rounded-lg ring-2 ring-primary/30"
           />
-          <h2 className="text-white text-xl font-black tracking-tight">NzRouter</h2>
+          <h2 className="text-white text-xl font-black tracking-tight">N4tzzOfficial</h2>
         </button>
 
         {/* Desktop menu */}
         <div className="hidden md:flex items-center gap-8">
           <a className="text-text-muted hover:text-white text-sm font-medium transition-colors" href="#features">Features</a>
           <a className="text-text-muted hover:text-white text-sm font-medium transition-colors" href="#how-it-works">How it Works</a>
-          <a className="text-text-muted hover:text-white text-sm font-medium transition-colors" href="https://github.com/decolua/nzrouter#readme" target="_blank" rel="noopener noreferrer">Docs</a>
-          <a className="text-text-muted hover:text-white text-sm font-medium transition-colors flex items-center gap-1" href="https://github.com/decolua/nzrouter" target="_blank" rel="noopener noreferrer">
+          <a className="text-text-muted hover:text-white text-sm font-medium transition-colors" href="https://github.com/N4tzzOfficial/NzRouter#readme" target="_blank" rel="noopener noreferrer">Docs</a>
+          <a className="text-text-muted hover:text-white text-sm font-medium transition-colors flex items-center gap-1" href="https://github.com/N4tzzOfficial/NzRouter" target="_blank" rel="noopener noreferrer">
             GitHub <span className="material-symbols-outlined text-[14px]">open_in_new</span>
           </a>
         </div>
@@ -57,8 +57,8 @@ export default function Navigation() {
           <div className="flex flex-col gap-4 p-6">
             <a className="text-text-muted hover:text-white text-sm font-medium transition-colors" href="#features" onClick={() => setMobileMenuOpen(false)}>Features</a>
             <a className="text-text-muted hover:text-white text-sm font-medium transition-colors" href="#how-it-works" onClick={() => setMobileMenuOpen(false)}>How it Works</a>
-            <a className="text-text-muted hover:text-white text-sm font-medium transition-colors" href="https://github.com/decolua/nzrouter#readme" target="_blank" rel="noopener noreferrer">Docs</a>
-            <a className="text-text-muted hover:text-white text-sm font-medium transition-colors" href="https://github.com/decolua/nzrouter" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a className="text-text-muted hover:text-white text-sm font-medium transition-colors" href="https://github.com/N4tzzOfficial/NzRouter#readme" target="_blank" rel="noopener noreferrer">Docs</a>
+            <a className="text-text-muted hover:text-white text-sm font-medium transition-colors" href="https://github.com/N4tzzOfficial/NzRouter" target="_blank" rel="noopener noreferrer">GitHub</a>
             <button
               onClick={() => router.push("/dashboard")}
               className="h-9 rounded-lg bg-primary hover:bg-primary-hover text-white text-sm font-bold"

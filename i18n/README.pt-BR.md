@@ -1,21 +1,21 @@
 <div align="center">
-  <img src="../images/NzRouter.png?1" alt="Painel do NzRouter" width="800"/>
+  <img src="../images/NzRouter.png?1" alt="Painel do N4tzzOfficial" width="800"/>
   
-  # NzRouter — roteador de IA GRATUITO e economizador de tokens
+  # N4tzzOfficial — roteador de IA GRATUITO e economizador de tokens
   
   **Nunca pare de codificar. Economize 20-40% de tokens com RTK + fallback automático para modelos de IA GRATUITOS e baratos.**
   
   **Conecte todas as ferramentas de código de IA (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) a mais de 40 provedores de IA e mais de 100 modelos.**
   
-  [![npm](https://img.shields.io/npm/v/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![Downloads](https://img.shields.io/npm/dm/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![Docker Pulls](https://img.shields.io/docker/pulls/decolua/NzRouter.svg?logo=docker&label=Docker%20pulls)](https://hub.docker.com/r/decolua/NzRouter)
-  [![GHCR](https://img.shields.io/badge/GHCR-decolua%2FNzRouter-blue?logo=github)](https://github.com/decolua/NzRouter/pkgs/container/NzRouter)
-  [![Licença](https://img.shields.io/npm/l/NzRouter.svg)](https://github.com/decolua/NzRouter/blob/main/LICENSE)
+  [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![Docker Pulls](https://img.shields.io/docker/pulls/N4tzzOfficial/N4tzzOfficial.svg?logo=docker&label=Docker%20pulls)](https://hub.docker.com/r/N4tzzOfficial/N4tzzOfficial)
+  [![GHCR](https://img.shields.io/badge/GHCR-decolua%2FNzRouter-blue?logo=github)](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/N4tzzOfficial)
+  [![Licença](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
 
 <a href="https://trendshift.io/repositories/22628" target="_blank"><img src="https://trendshift.io/api/badge/repositories/22628" alt="decolua%2FNzRouter | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
-[🚀 Início rápido](#-início-rápido) • [💡 Recursos](#-principais-recursos) • [📖 Configuração](#-guia-de-configuração) • [🌐 Site](https://NzRouter.com)
+[🚀 Início rápido](#-início-rápido) • [💡 Recursos](#-principais-recursos) • [📖 Configuração](#-guia-de-configuração) • [🌐 Site](https://n4tzz.com)
 
 [🇺🇸 English](../README.md) • [🇻🇳 Tiếng Việt](./README.vi.md) • [🇨🇳 中文](./README.zh-CN.md) • [🇯🇵 日本語](./README.ja-JP.md) • [🇷🇺 Русский](./README.ru.md) • [🇹🇭 ไทย](./README.th.md) • [🇮🇷 فارسی](./README.fa_IR.md) • [🇮🇩 Indonesia](./README.id-ID.md)
 
@@ -23,7 +23,7 @@
 
 ---
 
-## 🤔 Por que NzRouter?
+## 🤔 Por que N4tzzOfficial?
 
 **Pare de desperdiçar dinheiro, tokens e atingir limites:**
 
@@ -33,7 +33,7 @@
 - ❌ APIs caras ($20–50/mês por provedor)
 - ❌ Troca manual entre provedores
 
-**NzRouter resolve isso:**
+**N4tzzOfficial resolve isso:**
 
 - ✅ **RTK Token Saver** - Compactação automática do conteúdo de `tool_result`, economize 20-40% de tokens por solicitação
 - ✅ **Maximize as assinaturas** - Rastreie a cota, aproveite toda a cota antes da renovação
@@ -53,7 +53,7 @@
        │ http://localhost:20128/v1
        ↓
 ┌─────────────────────────────────────────────┐
-│           NzRouter (Roteador inteligente)            │
+│           N4tzzOfficial (Roteador inteligente)            │
 │  • RTK Token Saver (reduz tokens de `tool_result`) │
 │  • Tradução de formatos (OpenAI ↔ Claude)     │
 │  • Acompanhamento de cotas                           │
@@ -76,8 +76,8 @@ Resultado: programe sem interrupções, com custo mínimo e economia de 20% a 40
 **1. Instale globalmente:**
 
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 ```
 
 🎉 O painel abre em `http://localhost:20128`
@@ -129,31 +129,31 @@ URLs padrão:
   <tr>
     <td align="center" width="320">
       <a href="https://www.youtube.com/watch?v=X69n5Lm06Yw">
-        <img src="https://img.youtube.com/vi/X69n5Lm06Yw/maxresdefault.jpg" alt="Tiết kiệm chi phí LLM với NzRouter" width="300"/>
+        <img src="https://img.youtube.com/vi/X69n5Lm06Yw/maxresdefault.jpg" alt="Tiết kiệm chi phí LLM với N4tzzOfficial" width="300"/>
 </a><br/>
       <b>🇻🇳 Tiếng Việt</b><br/>
-      <sub>Tiết kiệm chi phí LLM cho OpenClaw no NzRouter<br/>por <a href="https://www.youtube.com/c/M%C3%ACAIblog">Mì AI</a></sub>
+      <sub>Tiết kiệm chi phí LLM cho OpenClaw no N4tzzOfficial<br/>por <a href="https://www.youtube.com/c/M%C3%ACAIblog">Mì AI</a></sub>
     </td>
     <td align="center" width="320">
       <a href="https://youtu.be/VQAw612S27Y">
-        <img src="https://img.youtube.com/vi/VQAw612S27Y/maxresdefault.jpg" alt="NzRouter + Claude Code FREE Unlimited Setup" width="300"/>
+        <img src="https://img.youtube.com/vi/VQAw612S27Y/maxresdefault.jpg" alt="N4tzzOfficial + Claude Code FREE Unlimited Setup" width="300"/>
       </a><br/>
       <b>🇵🇰 اردو / हिन्दी</b><br/>
-      <sub>NzRouter + Claude Code Configuração ilimitada GRATUITA<br/>por <a href="https://www.youtube.com/@BuildAIWithHamid">Construir IA com Hamid</a></sub>
+      <sub>N4tzzOfficial + Claude Code Configuração ilimitada GRATUITA<br/>por <a href="https://www.youtube.com/@BuildAIWithHamid">Construir IA com Hamid</a></sub>
     </td>
     <td align="center" width="320">
 <a href="https://www.youtube.com/watch?v=raEyZPg5xE0">
-        <img src="https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg" alt="NzRouter Setup Tutorial" width="300"/>
+        <img src="https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg" alt="N4tzzOfficial Setup Tutorial" width="300"/>
       </a><br/>
       <b>🇺🇸 Inglês</b><br/>
-      <sub>NzRouter + Claude Code Configuração GRATUITA<br/>por <a href="https://www.youtube.com/@BuildAIWithHamid">Construir IA com Hamid</a></sub>
+      <sub>N4tzzOfficial + Claude Code Configuração GRATUITA<br/>por <a href="https://www.youtube.com/@BuildAIWithHamid">Construir IA com Hamid</a></sub>
     </td>
     <td align="center" width="320">
       <a href="https://youtu.be/3dF5GIYMrcQ?si=bAyfyiHbARJQAHj_">
-        <img src="https://img.youtube.com/vi/3dF5GIYMrcQ/hqdefault.jpg" alt="NzRouter Setup Tutorial" width="300"/>
+        <img src="https://img.youtube.com/vi/3dF5GIYMrcQ/hqdefault.jpg" alt="N4tzzOfficial Setup Tutorial" width="300"/>
       </a><br/>
       <b>🇺🇸 Inglês</b><br/>
-      <sub>NzRouter + Claude Code Configuração GRATUITA<br/>por <a href="https://www.youtube.com/@BuildAIWithHamid">Construir IA com Hamid</a></sub>
+      <sub>N4tzzOfficial + Claude Code Configuração GRATUITA<br/>por <a href="https://www.youtube.com/@BuildAIWithHamid">Construir IA com Hamid</a></sub>
 </td>
     <td align="center" width="320">
       <a href="https://www.youtube.com/watch?v=o3qYCyjrFYg">
@@ -169,14 +169,14 @@ URLs padrão:
 <img src="https://img.youtube.com/vi/Ttpc26m39Dw/maxresdefault.jpg" alt="Claude CLI Free Setup" width="300"/>
       </a><br/>
       <b>🇺🇸 Inglês</b><br/>
-      Configuração gratuita <sub>Claude CLI com NzRouter 🚀<br/>por <a href="https://www.youtube.com/@CodeVerseSoban">CodeVerse Soban</a></sub>
+      Configuração gratuita <sub>Claude CLI com N4tzzOfficial 🚀<br/>por <a href="https://www.youtube.com/@CodeVerseSoban">CodeVerse Soban</a></sub>
     </td>
     <td align="center" width="320">
       <a href="https://www.youtube.com/watch?v=G-5A_D5Pm6Y">
         <img src="https://img.youtube.com/vi/G-5A_D5Pm6Y/maxresdefault.jpg" alt="Cài đặt OpenClaw Free A-Z" width="300"/>
       </a><br/>
       <b>🇻🇳 Tiếng Việt</b><br/>
-      <sub>Cài Đặt OpenClaw Free Từ A-Z + NzRouter<br/>por <a href="https://www.youtube.com/@maigia">Mai Gia</a></sub>
+      <sub>Cài Đặt OpenClaw Free Từ A-Z + N4tzzOfficial<br/>por <a href="https://www.youtube.com/@maigia">Mai Gia</a></sub>
     </td>
 <td align="center" width="320">
       <a href="https://www.youtube.com/watch?v=JXmg8_gccgE">
@@ -190,14 +190,14 @@ URLs padrão:
         <img src="https://img.youtube.com/vi/CkVZZUSTXAI/mqdefault.jpg" alt="Claude CLI Free Setup" width="300"/>
       </a><br/>
       <b>🇮🇩 Indonésia</b><br/>
-<sub>Koding 24 Jam Anti Rate Limit! Hemat Token AI 65% | Tutorial Configuração Rápida NzRouter 🚀<br/>por <a href="https://www.youtube.com/@krisswuh">Krisswuh</a></sub>
+<sub>Koding 24 Jam Anti Rate Limit! Hemat Token AI 65% | Tutorial Configuração Rápida N4tzzOfficial 🚀<br/>por <a href="https://www.youtube.com/@krisswuh">Krisswuh</a></sub>
     </td>
     <td align="center" width="320">
       <a href="https://www.youtube.com/watch?v=TXGv4eofe1I">
-        <img src="https://img.youtube.com/vi/TXGv4eofe1I/mqdefault.jpg" alt="Cara Deploy NzRouter di Hugging Face GRATIS Non-Stop! | Alternatif VPS RAM 16GB" width="300"/>
+        <img src="https://img.youtube.com/vi/TXGv4eofe1I/mqdefault.jpg" alt="Cara Deploy N4tzzOfficial di Hugging Face GRATIS Non-Stop! | Alternatif VPS RAM 16GB" width="300"/>
       </a><br/>
       <b>🇮🇩 Indonésia</b><br/>
-      <sub>Cara Implante NzRouter no Hugging Face GRATUITAMENTE sem parar! | Alternativa VPS RAM 16GB<br/>por <a href="https://www.youtube.com/@krisswuh">Krisswuh</a></sub>
+      <sub>Cara Implante N4tzzOfficial no Hugging Face GRATUITAMENTE sem parar! | Alternativa VPS RAM 16GB<br/>por <a href="https://www.youtube.com/@krisswuh">Krisswuh</a></sub>
     </td>
   </tr>
   <tr>
@@ -210,10 +210,10 @@ URLs padrão:
     </td>
     <td align="center" width="320">
       <a href="https://www.youtube.com/watch?v=hPusYX-5Pmw">
-        <img src="https://img.youtube.com/vi/hPusYX-5Pmw/maxresdefault.jpg" alt="Hướng Dẫn Setup OpenClaw + NzRouter: Tạo Bot Zalo AI Tự Động Từ A-Z" width="300"/>
+        <img src="https://img.youtube.com/vi/hPusYX-5Pmw/maxresdefault.jpg" alt="Hướng Dẫn Setup OpenClaw + N4tzzOfficial: Tạo Bot Zalo AI Tự Động Từ A-Z" width="300"/>
       </a><br/>
       <b>🇻🇳 Tiếng Việt</b><br/>
-      <sub>Hướng Dẫn Setup OpenClaw + NzRouter: Tạo Bot Zalo AI Tự Động Từ A-Z<br/>por <a href="https://github.com/tuanminhhole">tuanminhhole</a></sub>
+      <sub>Hướng Dẫn Setup OpenClaw + N4tzzOfficial: Tạo Bot Zalo AI Tự Động Từ A-Z<br/>por <a href="https://github.com/tuanminhhole">tuanminhhole</a></sub>
 </td>
     <td align="center" width="320"></td>
     <td align="center" width="320"></td>
@@ -223,13 +223,13 @@ URLs padrão:
 
 </div>
 
-> 🎬 **Fez um vídeo sobre o NzRouter?** Envie um [Pull Request](https://github.com/decolua/NzRouter/pulls) adicionando seu vídeo a esta seção - nós o mesclaremos!
+> 🎬 **Fez um vídeo sobre o N4tzzOfficial?** Envie um [Pull Request](https://github.com/N4tzzOfficial/NzRouter/pulls) adicionando seu vídeo a esta seção - nós o mesclaremos!
 
 ---
 
 ## 🛠️ Ferramentas CLI suportadas
 
-NzRouter funciona perfeitamente com todas as principais ferramentas de codificação de IA:
+N4tzzOfficial funciona perfeitamente com todas as principais ferramentas de codificação de IA:
 
 <div align="center">
   <table>
@@ -549,10 +549,10 @@ Com RTK: 28 mil tokens enviados ao LLM (40% de economia · mesmo contexto · mes
 
 ### 🧠 Headroom Token Saver
 
-O headroom é opcional e funciona separadamente. NzRouter chama o endpoint `/v1/compress` local do Headroom e, em seguida, mantém roteamento normal, fallback, autenticação e rastreamento de uso:
+O headroom é opcional e funciona separadamente. N4tzzOfficial chama o endpoint `/v1/compress` local do Headroom e, em seguida, mantém roteamento normal, fallback, autenticação e rastreamento de uso:
 
 ```
-Cliente → NzRouter → Headroom /v1/compress → NzRouter → provedor
+Cliente → N4tzzOfficial → Headroom /v1/compress → N4tzzOfficial → provedor
 ```
 
 Configuração local:
@@ -574,7 +574,7 @@ http://headroom:8787
 http://host.docker.internal:8787
 ```
 
-Se o Headroom estiver inativo ou retornar um erro, o o NzRouter seguirá em modo aberto e enviará a solicitação original.
+Se o Headroom estiver inativo ou retornar um erro, o o N4tzzOfficial seguirá em modo aberto e enviará a solicitação original.
 
 ### 🐴 Ponytail (desenvolvedor sênior preguiçoso)
 
@@ -616,7 +616,7 @@ Combo: "my-coding-stack"
 Tradução perfeita entre formatos:
 
 - **OpenAI** ↔ **Claude** ↔ **Gemini** ↔ **Cursor** ↔ **Kiro** ↔ **Vertex** ↔ **Antigravity** ↔ **Ollama** ↔ **OpenAI Responses**
-- Sua ferramenta CLI envia formato OpenAI → NzRouter traduz → Provedor recebe formato nativo
+- Sua ferramenta CLI envia formato OpenAI → N4tzzOfficial traduz → Provedor recebe formato nativo
 - Funciona com qualquer ferramenta que suporte endpoints OpenAI personalizados
 
 ### 👥 Suporte para múltiplas contas
@@ -670,13 +670,13 @@ Tradução perfeita entre formatos:
 > **💡 IMPORTANTE - Compreendendo os custos do painel:**
 >
 > O "custo" exibido no Usage Analytics é **apenas para fins de rastreamento e comparação**.
-> O próprio NzRouter **nunca cobra** nada. Você paga apenas aos provedores diretamente (se usar serviços pagos).
+> O próprio N4tzzOfficial **nunca cobra** nada. Você paga apenas aos provedores diretamente (se usar serviços pagos).
 >
 > **Exemplo:** Se o seu painel mostrar "Custo total $290" ao usar modelos gratuitos do Kiro, isso representa
 > o que você pagaria usando APIs pagas diretamente. Seu custo real = **$0** (nível gratuito do Kiro: ~50 créditos/mês).
 >
 > Pense nisso como um "rastreador de economia" que mostra quanto você está economizando usando modelos gratuitos ou
-> roteamento através do NzRouter!
+> roteamento através do N4tzzOfficial!
 
 ### 🌐 Implante em qualquer lugar
 
@@ -709,15 +709,15 @@ Tradução perfeita entre formatos:
 
 ---
 
-### 📊 Compreendendo os custos e faturamento do NzRouter
+### 📊 Compreendendo os custos e faturamento do N4tzzOfficial
 
-**Como funciona o faturamento do NzRouter:**
+**Como funciona o faturamento do N4tzzOfficial:**
 
-✅ **Software NzRouter = GRATUITO para sempre** (código aberto, nunca cobra)  
+✅ **Software N4tzzOfficial = GRATUITO para sempre** (código aberto, nunca cobra)  
 ✅ **Painel "custos" = Somente exibição/rastreamento** (não são cobranças reais)  
 ✅ **Você paga diretamente aos provedores** (assinaturas ou taxas de API)  
 ✅ **Provedores GRATUITOS permanecem GRATUITOS** (Kiro ~50 créditos/mês, OpenCode Free, créditos do Vertex $300 = $0 dentro dos limites do nível gratuito) — observe que os níveis gratuitos do iFlow/Qwen/Gemini CLI foram descontinuados em 2026
-❌ **NzRouter nunca envia faturas** ou cobra seu cartão
+❌ **N4tzzOfficial nunca envia faturas** ou cobra seu cartão
 
 **Como funciona a exibição de custos:**
 
@@ -740,9 +740,9 @@ Custo real:
 **Regras de pagamento:**
 
 - **Provedores de assinatura** (Claude Code, Codex): pague diretamente por meio de seus sites
-- **Provedores baratos** (GLM, MiniMax): pague diretamente, NzRouter apenas roteia
+- **Provedores baratos** (GLM, MiniMax): pague diretamente, N4tzzOfficial apenas roteia
 - **Provedores GRATUITOS** (iFlow, Kiro, Qwen): Genuinamente grátis para sempre, sem taxas ocultas
-- **NzRouter**: Nunca cobra nada
+- **N4tzzOfficial**: Nunca cobra nada
 
 ---
 
@@ -821,7 +821,7 @@ Acesso por: WhatsApp, Telegram, Slack, Discord, iMessage, Signal...
 <details>
 <summary><b>📊 Por que meu painel mostra custos altos?</b></summary>
 
-O painel rastreia o uso do token e exibe **custos estimados** como se você estivesse usando APIs pagas diretamente. Este **não é faturamento real** - é uma referência para mostrar quanto você está economizando usando modelos gratuitos ou assinaturas existentes através do NzRouter.
+O painel rastreia o uso do token e exibe **custos estimados** como se você estivesse usando APIs pagas diretamente. Este **não é faturamento real** - é uma referência para mostrar quanto você está economizando usando modelos gratuitos ou assinaturas existentes através do N4tzzOfficial.
 
 **Exemplo:**
 
@@ -835,17 +835,17 @@ A exibição de custos é um "rastreador de economia" para ajudá-lo a entender 
 </details>
 
 <details>
-<summary><b>💳 Serei cobrado pelo NzRouter?</b></summary>
+<summary><b>💳 Serei cobrado pelo N4tzzOfficial?</b></summary>
 
-**Não.** NzRouter é um software gratuito e de código aberto que roda em seu próprio computador. Nunca cobra nada.
+**Não.** N4tzzOfficial é um software gratuito e de código aberto que roda em seu próprio computador. Nunca cobra nada.
 
 **Você só paga:**
 
 - ✅ **Provedores de assinatura** (Claude Code $20/mo, Codex $20-200/mo) → Pague-os diretamente em seus sites
-- ✅ **Provedores baratos** (GLM, MiniMax) → Pague diretamente, NzRouter apenas encaminha suas solicitações
-- ❌ **NzRouter em si** → **Nunca carrega nada, nunca**
+- ✅ **Provedores baratos** (GLM, MiniMax) → Pague diretamente, N4tzzOfficial apenas encaminha suas solicitações
+- ❌ **N4tzzOfficial em si** → **Nunca carrega nada, nunca**
 
-NzRouter é um proxy/roteador local. Não possui cartão de crédito, não pode enviar faturas e não possui sistema de cobrança. É um software totalmente gratuito.
+N4tzzOfficial é um proxy/roteador local. Não possui cartão de crédito, não pode enviar faturas e não possui sistema de cobrança. É um software totalmente gratuito.
 
 </details>
 
@@ -860,7 +860,7 @@ Estes são serviços gratuitos oferecidos pelas respectivas empresas:
 - **OpenCode Free**: proxy de passagem sem autenticação, modelos buscados automaticamente em `opencode.ai/zen/v1/models`. A lista de modelos gratuitos varia com o tempo (alguns modelos são gratuitos apenas para promoções limitadas) — sujeita a alterações sem aviso prévio.
 - **Vertex AI**: créditos gratuitos $300 para novas contas do Google Cloud (90 dias). Desde março de 2026, o endpoint da API Gemini não consome mais esses créditos. Em vez disso, use o endpoint **Vertex AI Studio**.
 
-O NzRouter apenas encaminha suas solicitações para eles - não há pegadinhas ou cobrança futura do próprio NzRouter. Eles são serviços verdadeiramente gratuitos e o NzRouter os torna fáceis de usar com suporte alternativo.
+O N4tzzOfficial apenas encaminha suas solicitações para eles - não há pegadinhas ou cobrança futura do próprio N4tzzOfficial. Eles são serviços verdadeiramente gratuitos e o N4tzzOfficial os torna fáceis de usar com suporte alternativo.
 
 **Níveis gratuitos descontinuados (não mais recomendados):**
 
@@ -895,7 +895,7 @@ O NzRouter apenas encaminha suas solicitações para eles - não há pegadinhas 
 
 3. **Use os provedores de assinatura por último:**
    - Somente se você já os tiver
-- NzRouter ajuda a maximizar seu valor por meio do rastreamento de cotas
+- N4tzzOfficial ajuda a maximizar seu valor por meio do rastreamento de cotas
 
 **Resultado:** A maioria dos usuários pode operar em $0/mês usando apenas níveis gratuitos!
 
@@ -904,22 +904,22 @@ O NzRouter apenas encaminha suas solicitações para eles - não há pegadinhas 
 <details>
 <summary><b>📈 E se meu uso aumentar repentinamente?</b></summary>
 
-O fallback inteligente do NzRouter evita cobranças surpresa:
+O fallback inteligente do N4tzzOfficial evita cobranças surpresa:
 
 **Cenário:** você está em um sprint de codificação e ultrapassa suas cotas
 
-**Sem NzRouter:**
+**Sem N4tzzOfficial:**
 
 - ❌ Limite de requisições atingido → Paradas de trabalho → Frustração
 - ❌ Ou: acidentalmente acumular enormes contas de API
 
-**Com NzRouter:**
+**Com N4tzzOfficial:**
 
 - ✅ Assinatura atinge o limite → Retorno automático para nível barato
 - ✅ O nível barato fica caro → Retorno automático para o nível gratuito
 - ✅ Nunca pare de codificar → Custos previsíveis
 
-**Você está no controle:** Defina limites de gastos por provedor no painel e o NzRouter os respeita.
+**Você está no controle:** Defina limites de gastos por provedor no painel e o N4tzzOfficial os respeita.
 
 </details>
 
@@ -944,7 +944,7 @@ Modelos:
   cc/claude-haiku-4-5-20251001
 ```
 
-**Dica profissional:** Use o Opus para tarefas complexas e o Sonnet para velocidade. NzRouter rastreia cota por modelo!
+**Dica profissional:** Use o Opus para tarefas complexas e o Sonnet para velocidade. N4tzzOfficial rastreia cota por modelo!
 
 ### OpenAI Codex (Plus/Pro)
 
@@ -1125,7 +1125,7 @@ Custo: $0 (+ economia de 20–40% de tokens com RTK)!
 ```
 Configurações → Modelos → Avançado:
   OpenAI API Base URL: http://localhost:20128/v1
-  OpenAI API Key: [copie do painel do NzRouter]
+  OpenAI API Key: [copie do painel do N4tzzOfficial]
   Model: cc/claude-opus-4-7
 ```
 
@@ -1166,13 +1166,13 @@ Painel → Ferramentas CLI → OpenClaw → Selecionar modelo → Aplicar
   "agents": {
     "defaults": {
       "model": {
-        "primary": "NzRouter/kr/claude-sonnet-4.5"
+        "primary": "N4tzzOfficial/kr/claude-sonnet-4.5"
       }
     }
   },
   "models": {
     "providers": {
-      "NzRouter": {
+      "N4tzzOfficial": {
         "baseUrl": "http://127.0.0.1:20128/v1",
         "apiKey": "sk_NzRouter",
         "api": "openai-completions",
@@ -1188,7 +1188,7 @@ Painel → Ferramentas CLI → OpenClaw → Selecionar modelo → Aplicar
 }
 ```
 
-> **Nota:** OpenClaw só funciona com NzRouter local. Use `127.0.0.1` em vez de `localhost` para evitar problemas de resolução IPv6.
+> **Nota:** OpenClaw só funciona com N4tzzOfficial local. Use `127.0.0.1` em vez de `localhost` para evitar problemas de resolução IPv6.
 
 ### Cline / Continue / RooCode
 
@@ -1208,20 +1208,20 @@ Model: cc/claude-opus-4-7
 
 ```bash
 # Clonar e instalar
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter
+git clone https://github.com/N4tzzOfficial/NzRouter.git
+cd N4tzzOfficial
 npm install
 npm run build
 
 # Configurar
 export JWT_SECRET="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
-export DATA_DIR="/var/lib/NzRouter"
+export DATA_DIR="/var/lib/N4tzzOfficial"
 export PORT="20128"
 export HOSTNAME="0.0.0.0"
 export NODE_ENV="production"
 export NEXT_PUBLIC_BASE_URL="http://localhost:20128"
-export NEXT_PUBLIC_CLOUD_URL="https://NzRouter.com"
+export NEXT_PUBLIC_CLOUD_URL="https://n4tzz.com"
 export API_KEY_SECRET="endpoint-proxy-api-key-secret"
 export MACHINE_ID_SALT="endpoint-proxy-salt"
 
@@ -1230,7 +1230,7 @@ npm run start
 
 # Ou usar PM2
 npm install -g pm2
-pm2 start npm --name NzRouter -- start
+pm2 start npm --name N4tzzOfficial -- start
 pm2 save
 pm2 startup
 ```
@@ -1239,18 +1239,18 @@ pm2 startup
 
 Imagens publicadas (multiplataforma `linux/amd64` + `linux/arm64`):
 
-- Hub Docker: [`decolua/NzRouter`](https://hub.docker.com/r/decolua/NzRouter)
-- GHCR: [`ghcr.io/decolua/NzRouter`](https://github.com/decolua/NzRouter/pkgs/container/NzRouter)
+- Hub Docker: [`N4tzzOfficial/N4tzzOfficial`](https://hub.docker.com/r/N4tzzOfficial/N4tzzOfficial)
+- GHCR: [`ghcr.io/N4tzzOfficial/N4tzzOfficial`](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/N4tzzOfficial)
 
 **Início rápido (use imagem publicada):**
 
 ```bash
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 20128:20128 \
-  -v "$HOME/.NzRouter:/app/data" \
+  -v "$HOME/.N4tzzOfficial:/app/data" \
   -e DATA_DIR=/app/data \
-  decolua/NzRouter:latest
+  N4tzzOfficial/N4tzzOfficial:latest
 ```
 
 → Abra http://localhost:20128
@@ -1258,11 +1258,11 @@ docker run -d \
 **Compilar a partir do código-fonte (desenvolvedor):**
 
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
-docker build -t NzRouter .
-docker run -d --name NzRouter -p 20128:20128 \
-  -v "$HOME/.NzRouter:/app/data" -e DATA_DIR=/app/data NzRouter
+git clone https://github.com/N4tzzOfficial/NzRouter.git
+cd N4tzzOfficial/app
+docker build -t N4tzzOfficial .
+docker run -d --name N4tzzOfficial -p 20128:20128 \
+  -v "$HOME/.N4tzzOfficial:/app/data" -e DATA_DIR=/app/data N4tzzOfficial
 ```
 
 **Padrões do contêiner:**
@@ -1273,28 +1273,28 @@ docker run -d --name NzRouter -p 20128:20128 \
 **Comandos úteis:**
 
 ```bash
-docker logs -f NzRouter
-docker restart NzRouter
-docker stop NzRouter && docker rm NzRouter
-docker pull decolua/NzRouter:latest   # atualizar para a versão mais recente
+docker logs -f N4tzzOfficial
+docker restart N4tzzOfficial
+docker stop N4tzzOfficial && docker rm N4tzzOfficial
+docker pull N4tzzOfficial/N4tzzOfficial:latest   # atualizar para a versão mais recente
 ```
 
-**Persistência de dados:** `$HOME/.NzRouter/db/data.sqlite` no host ↔ `/app/data/db/data.sqlite` no contêiner.
+**Persistência de dados:** `$HOME/.N4tzzOfficial/db/data.sqlite` no host ↔ `/app/data/db/data.sqlite` no contêiner.
 
 ### Variáveis de Ambiente
 
 | Variável | Padrão | Descrição |
 | ---------------------------------------------------- | ---------------------------------------- | ----------------------------------------------------------------------------------- |
-| `JWT_SECRET` | Gerado automaticamente (`~/.NzRouter/jwt-secret`) | Segredo de assinatura JWT para cookie de autenticação do painel (substituir para compartilhar entre instâncias) |
+| `JWT_SECRET` | Gerado automaticamente (`~/.N4tzzOfficial/jwt-secret`) | Segredo de assinatura JWT para cookie de autenticação do painel (substituir para compartilhar entre instâncias) |
 | `INITIAL_PASSWORD` | `123456` | Primeira senha de login quando não existe hash salvo |
-| `DATA_DIR` | `~/.NzRouter` | Localização principal dos dados do aplicativo (SQLite em `$DATA_DIR/db/data.sqlite`) |
+| `DATA_DIR` | `~/.N4tzzOfficial` | Localização principal dos dados do aplicativo (SQLite em `$DATA_DIR/db/data.sqlite`) |
 | `PORT` | padrão da estrutura | Porta de serviço (`20128` nos exemplos) |
 | `HOSTNAME` | padrão da estrutura | Host de vinculação (o padrão do Docker é `0.0.0.0`) |
 | `NODE_ENV` | padrão de tempo de execução | Definir `production` para implantação |
 | `BASE_URL` | `http://localhost:20128` | URL base interna do lado do servidor usada por trabalhos de sincronização na nuvem |
-| `CLOUD_URL` | `https://NzRouter.com` | URL base do endpoint de sincronização na nuvem do lado do servidor |
+| `CLOUD_URL` | `https://n4tzz.com` | URL base do endpoint de sincronização na nuvem do lado do servidor |
 | `NEXT_PUBLIC_BASE_URL` | `http://localhost:3000` | URL de base pública/compatível com versões anteriores (prefira `BASE_URL` para tempo de execução do servidor) |
-| `NEXT_PUBLIC_CLOUD_URL` | `https://NzRouter.com` | URL de nuvem pública/compatível com versões anteriores (prefira `CLOUD_URL` para tempo de execução do servidor) |
+| `NEXT_PUBLIC_CLOUD_URL` | `https://n4tzz.com` | URL de nuvem pública/compatível com versões anteriores (prefira `CLOUD_URL` para tempo de execução do servidor) |
 | `API_KEY_SECRET` | `endpoint-proxy-api-key-secret` | Segredo HMAC para chaves de API geradas |
 | `MACHINE_ID_SALT` | `endpoint-proxy-salt` | Salt para hashing estável de ID de máquina |
 | `ENABLE_REQUEST_LOGS` | `false` | Habilita logs de solicitação/resposta em `logs/` |
@@ -1315,7 +1315,7 @@ Notas:
 - Estado principal do aplicativo: `${DATA_DIR}/db/data.sqlite` (SQLite — provedores, combos, aliases, chaves, configurações, histórico de uso)
 - Backups automáticos: `${DATA_DIR}/db/backups/`
 - Logs opcionais de solicitação/tradutor: `<repo>/logs/...` quando `ENABLE_REQUEST_LOGS=true`
-- `${DATA_DIR}` e `~/.NzRouter` resolvem para o mesmo local em um contêiner Docker — o link simbólico `/root/.NzRouter -> /app/data` é criado no momento da construção.
+- `${DATA_DIR}` e `~/.N4tzzOfficial` resolvem para o mesmo local em um contêiner Docker — o link simbólico `/root/.N4tzzOfficial -> /app/data` é criado no momento da construção.
 
 </details>
 
@@ -1412,7 +1412,7 @@ Notas:
 
 **O token OAuth expirou**
 
-- Atualizado automaticamente pelo NzRouter
+- Atualizado automaticamente pelo N4tzzOfficial
 - Se os problemas persistirem: Painel → Provedor → Reconectar
 
 **Custos elevados**
@@ -1477,27 +1477,27 @@ Authorization: Bearer your-api-key
 
 ## 📧 Suporte
 
-- **Site**: [NzRouter.com](https://NzRouter.com)
-- **GitHub**: [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues**: [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **Site**: [n4tzz.com](https://n4tzz.com)
+- **GitHub**: [github.com/N4tzzOfficial/NzRouter](https://github.com/N4tzzOfficial/NzRouter)
+- **Issues**: [github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
 ---
 
 ## 👥 Colaboradores
 
-Obrigado a todos os colaboradores que ajudaram a tornar o NzRouter melhor!
+Obrigado a todos os colaboradores que ajudaram a tornar o N4tzzOfficial melhor!
 
-[![Contribuidores](https://contrib.rocks/image?repo=decolua/NzRouter&max=150&columns=15&anon=1&v=20260309)](https://github.com/decolua/NzRouter/graphs/contributors)
+[![Contribuidores](https://contrib.rocks/image?repo=N4tzzOfficial/N4tzzOfficial&max=150&columns=15&anon=1&v=20260309)](https://github.com/N4tzzOfficial/NzRouter/graphs/contributors)
 
 ---
 
 ## 📊 Gráfico de estrelas
 
-[![Gráfico de estrelas](https://starchart.cc/decolua/NzRouter.svg?variant=adaptive)](https://starchart.cc/decolua/NzRouter)
+[![Gráfico de estrelas](https://starchart.cc/N4tzzOfficial/N4tzzOfficial.svg?variant=adaptive)](https://starchart.cc/N4tzzOfficial/N4tzzOfficial)
 
 ## 🔀 Forks
 
-**[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** — Um fork TypeScript completo do NzRouter. Adiciona mais de 36 provedores, fallback automático de 4 camadas, APIs multimodais (imagens, incorporações, áudio, TTS), disjuntor, cache semântico, avaliações LLM e um painel sofisticado. Mais de 368 testes de unidade. Disponível via npm e Docker.
+**[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** — Um fork TypeScript completo do N4tzzOfficial. Adiciona mais de 36 provedores, fallback automático de 4 camadas, APIs multimodais (imagens, incorporações, áudio, TTS), disjuntor, cache semântico, avaliações LLM e um painel sofisticado. Mais de 368 testes de unidade. Disponível via npm e Docker.
 
 ---
 
@@ -1506,11 +1506,11 @@ Obrigado a todos os colaboradores que ajudaram a tornar o NzRouter melhor!
 Construído sobre ombros de gigantes:
 
 - **[CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI)** — implementação Go original que inspirou esta versão JavaScript.
-- **[RTK](https://github.com/rtk-ai/rtk)** ![Stars](https://img.shields.io/github/stars/rtk-ai/rtk?style=flat&color=yellow) — Economizador de tokens em Rust. O NzRouter porta seu pipeline de compactação para JS → **−20-40% de tokens de entrada** em cada solicitação.
-- **[Caveman](https://github.com/JuliusBrussee/caveman)** ![Stars](https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&color=yellow) por **[@JuliusBrussee](https://github.com/JuliusBrussee)** — viral _"por que usar muitos tokens quando poucos tokens resolvem"_. NzRouter adapta seu prompt → **−65% tokens de saída**.
-- **[Ponytail](https://github.com/DietrichGebert/ponytail)** ![Estrelas](https://img.shields.io/github/stars/DietrichGebert/ponytail?style=flat&color=yellow) por **[@DietrichGebert](https://github.com/DietrichGebert)** — _"desenvolvedor sênior preguiçoso"_ habilidade. NzRouter injeta sua abordagem YAGNI-first → **menos tokens, menos código, diferenças mais curtas**.
+- **[RTK](https://github.com/rtk-ai/rtk)** ![Stars](https://img.shields.io/github/stars/rtk-ai/rtk?style=flat&color=yellow) — Economizador de tokens em Rust. O N4tzzOfficial porta seu pipeline de compactação para JS → **−20-40% de tokens de entrada** em cada solicitação.
+- **[Caveman](https://github.com/JuliusBrussee/caveman)** ![Stars](https://img.shields.io/github/stars/JuliusBrussee/caveman?style=flat&color=yellow) por **[@JuliusBrussee](https://github.com/JuliusBrussee)** — viral _"por que usar muitos tokens quando poucos tokens resolvem"_. N4tzzOfficial adapta seu prompt → **−65% tokens de saída**.
+- **[Ponytail](https://github.com/DietrichGebert/ponytail)** ![Estrelas](https://img.shields.io/github/stars/DietrichGebert/ponytail?style=flat&color=yellow) por **[@DietrichGebert](https://github.com/DietrichGebert)** — _"desenvolvedor sênior preguiçoso"_ habilidade. N4tzzOfficial injeta sua abordagem YAGNI-first → **menos tokens, menos código, diferenças mais curtas**.
 
-Um grande agradecimento a esses autores – sem o trabalho deles, os recursos de economia de tokens do NzRouter não existiriam. Dê uma ⭐ a eles no GitHub!
+Um grande agradecimento a esses autores – sem o trabalho deles, os recursos de economia de tokens do N4tzzOfficial não existiriam. Dê uma ⭐ a eles no GitHub!
 
 ---
 
@@ -1523,5 +1523,7 @@ Licença MIT - consulte [LICENSE](../LICENSE) para obter detalhes.
 <div align="center">
   <sub>Construído com ❤️ para desenvolvedores que codificam 24/7</sub>
 </div>
+
+
 
 

@@ -6,7 +6,7 @@ NzRouterをContinue拡張機能と統合し、Visual Studio Codeに直接AIア�
 
 - Visual Studio Codeがインストール済み
 - VSCodeマーケットプレイスからContinue拡張機能がインストール済み
-- [ダッシュボード](https://NzRouter.com/dashboard)からのNzRouter APIキー
+- [ダッシュボード](https://n4tzz.com/dashboard)からのNzRouter APIキー
 - NzRouterが動作中 (ローカルまたはクラウド)
 
 ## 設定手順
@@ -27,7 +27,7 @@ NzRouterをContinue拡張機能と統合し、Visual Studio Codeに直接AIア�
 {
   "models": [
     {
-      "title": "NzRouter - Claude Opus",
+      "title": "N4tzzOfficial - Claude Opus",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
@@ -42,28 +42,28 @@ NzRouterをContinue拡張機能と統合し、Visual Studio Codeに直接AIア�
 {
   "models": [
     {
-      "title": "NzRouter - Claude Opus (Best)",
+      "title": "N4tzzOfficial - Claude Opus (Best)",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - Claude Sonnet (Balanced)",
+      "title": "N4tzzOfficial - Claude Sonnet (Balanced)",
       "provider": "openai",
       "model": "cc/claude-sonnet-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - DeepSeek Chat (Code)",
+      "title": "N4tzzOfficial - DeepSeek Chat (Code)",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - Claude Haiku (Fast)",
+      "title": "N4tzzOfficial - Claude Haiku (Fast)",
       "provider": "openai",
       "model": "cc/claude-haiku-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
@@ -76,7 +76,7 @@ NzRouterをContinue拡張機能と統合し、Visual Studio Codeに直接AIア�
 **クラウドNzRouter用:**
 `apiBase` を以下に置き換え:
 ```json
-"apiBase": "https://NzRouter.com/v1"
+"apiBase": "https://n4tzz.com/v1"
 ```
 
 ### 3. 保存してリロード
@@ -139,7 +139,7 @@ NzRouterをContinue拡張機能と統合し、Visual Studio Codeに直接AIア�
 {
   "models": [
     {
-      "title": "NzRouter - Code Expert",
+      "title": "N4tzzOfficial - Code Expert",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key",
@@ -158,7 +158,7 @@ NzRouterをContinue拡張機能と統合し、Visual Studio Codeに直接AIア�
 {
   "models": [
     {
-      "title": "NzRouter - Creative Writer",
+      "title": "N4tzzOfficial - Creative Writer",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key",
@@ -247,4 +247,5 @@ Continueがモデルに送信するコンテキストを設定:
 - [Rooをセットアップ](roo.md) AIアシスタント用
 - [CLI使用法を確認](../cli/basic-usage.md)
 - [モデル選択について学ぶ](../models/overview.md)
+
 

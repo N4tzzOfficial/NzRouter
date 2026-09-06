@@ -11,6 +11,10 @@
  * status checkers, etc.) list themselves in `UNAUTHED_ALLOWLIST`. Keeping
  * the allowlist explicit beats a long deny-list — every new route gets the
  * safe default of "needs a key".
+ *
+ * The `requireApiKey` setting (default: true) controls whether API key
+ * enforcement is active. When disabled, all `/v1/*` endpoints are accessible
+ * without authentication — useful for local development or trusted networks.
  */
 import { errorResponse } from "open-sse/utils/error.js";
 import { HTTP_STATUS } from "open-sse/config/runtimeConfig.js";
@@ -62,6 +66,32 @@ function isV1Path(pathname) {
 }
 
 /**
+ * Check if API key enforcement is enabled via settings.
+ * Uses dynamic import to avoid circular dependencies.
+ */
+let requireApiKeyCache = null;
+let requireApiKeyCacheTime = 0;
+const CACHE_TTL_MS = 30000; // 30 seconds
+
+async function isRequireApiKeyEnabled() {
+  const now = Date.now();
+  if (requireApiKeyCache !== null && now - requireApiKeyCacheTime < CACHE_TTL_MS) {
+    return requireApiKeyCache;
+  }
+  try {
+    // Dynamic import to avoid circular dependency with settings repo
+    const { getSettings } = await import("@/lib/db/repos/settingsRepo.js");
+    const settings = await getSettings();
+    requireApiKeyCache = settings.requireApiKey !== false; // Default true
+    requireApiKeyCacheTime = now;
+    return requireApiKeyCache;
+  } catch (e) {
+    // On error, default to true (secure by default)
+    return true;
+  }
+}
+
+/**
  * Wrap a Next.js route handler with mandatory API-key enforcement.
  *
  * Usage:
@@ -75,6 +105,13 @@ export function withApiKey(handler) {
       return handler(request, ctx, null);
     }
     if (UNAUTHED_ALLOWLIST.has(url.pathname)) {
+      return handler(request, ctx, extractApiKey(request));
+    }
+
+    // Check if API key enforcement is enabled via settings
+    const enforceApiKey = await isRequireApiKeyEnabled();
+    if (!enforceApiKey) {
+      // API key enforcement disabled — allow through without key
       return handler(request, ctx, extractApiKey(request));
     }
 
@@ -98,6 +135,12 @@ export async function guardApiKey(request) {
   const url = new URL(request.url);
   if (!isV1Path(url.pathname)) return null;
   if (UNAUTHED_ALLOWLIST.has(url.pathname)) return null;
+
+  // Check if API key enforcement is enabled via settings
+  const enforceApiKey = await isRequireApiKeyEnabled();
+  if (!enforceApiKey) {
+    return null;
+  }
 
   const apiKey = extractApiKey(request);
   if (!apiKey) {

@@ -1,7 +1,7 @@
 <div align="center">
-  <img src="../images/NzRouter.png?1" alt="Панель управления NzRouter" width="800"/>
+  <img src="../images/NzRouter.png?1" alt="Панель управления N4tzzOfficial" width="800"/>
   
-  # NzRouter - Free AI Router
+  # N4tzzOfficial - Free AI Router
   
   **Никогда не прекращайте кодить. Автоматическая маршрутизация к БЕСПЛАТНЫМ и дешёвым AI-моделям с умным механизмом резервирования.**
   
@@ -11,16 +11,16 @@
     <img src="../public/providers/openclaw.png" alt="OpenClaw" width="80"/>
   </p>
   
-  [![npm](https://img.shields.io/npm/v/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![Downloads](https://img.shields.io/npm/dm/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![License](https://img.shields.io/npm/l/NzRouter.svg)](https://github.com/decolua/NzRouter/blob/main/LICENSE)
+  [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
   
-  [🚀 Быстрый старт](#-quick-start) • [💡 Возможности](#-key-features) • [📖 Установка](#-setup-guide) • [🌐 Сайт](https://NzRouter.com)
+  [🚀 Быстрый старт](#-quick-start) • [💡 Возможности](#-key-features) • [📖 Установка](#-setup-guide) • [🌐 Сайт](https://n4tzz.com)
 </div>
 
 ---
 
-## 🤔 Почему NzRouter?
+## 🤔 Почему N4tzzOfficial?
 
 **Перестаньте тратить деньги и упираться в лимиты:**
 
@@ -29,7 +29,7 @@
 - ❌ Дорогие API ($20-50/мес за каждого провайдера)
 - ❌ Приходится вручную переключаться между провайдерами
 
-**NzRouter решает это:**
+**N4tzzOfficial решает это:**
 
 - ✅ **Максимум из подписки** — Отслеживает квоту, использует каждый бит до сброса
 - ✅ **Автоматическое резервирование** — Подписка → Дёшево → Бесплатно, нулевой простой
@@ -48,7 +48,7 @@
        │ http://localhost:20128/v1
        ↓
 ┌────────────────────────────────────────┐
-│           NzRouter (Smart Router)        │
+│           N4tzzOfficial (Smart Router)        │
 │  • Format translation (OpenAI ↔ Claude) │
 │  • Quota tracking                       │
 │  • Auto token refresh                   │
@@ -70,8 +70,8 @@ Result: Never stop coding, minimal cost
 **1. Глобальная установка:**
 
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 ```
 
 🎉 Панель управления откроется на `http://localhost:20128`
@@ -118,12 +118,12 @@ URL по умолчанию:
 
 <div align="center">
   
-### 📺 Полное руководство по настройке - NzRouter + Claude Code БЕСПЛАТНО
+### 📺 Полное руководство по настройке - N4tzzOfficial + Claude Code БЕСПЛАТНО
   
-[![Настройка NzRouter + Claude Code](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
+[![Настройка N4tzzOfficial + Claude Code](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
 
 **🎬 Полное пошаговое руководство:**
-- ✅ Установка и настройка NzRouter
+- ✅ Установка и настройка N4tzzOfficial
 - ✅ Настройка Claude Sonnet 4.5 БЕСПЛАТНО
 - ✅ Интеграция с Claude Code
 - ✅ Тестирование кода вживую
@@ -138,7 +138,7 @@ URL по умолчанию:
 
 ## 🛠️ Поддерживаемые CLI-инструменты
 
-NzRouter бесшовно работает со всеми основными AI-инструментами для кодинга:
+N4tzzOfficial бесшовно работает со всеми основными AI-инструментами для кодинга:
 
 <div align="center">
   <table>
@@ -389,7 +389,7 @@ Combo: "my-coding-stack"
 
 Бесшовная трансляция между форматами:
 - **OpenAI** ↔ **Claude** ↔ **Gemini** ↔ **OpenAI Responses**
-- Ваш CLI-инструмент отправляет формат OpenAI → NzRouter транслирует → Провайдер получает родной формат
+- Ваш CLI-инструмент отправляет формат OpenAI → N4tzzOfficial транслирует → Провайдер получает родной формат
 - Работает с любым инструментом, поддерживающим пользовательский эндпоинт OpenAI
 
 ### 👥 Поддержка нескольких аккаунтов
@@ -443,13 +443,13 @@ Combo: "my-coding-stack"
 > **💡 ВАЖНО - Понимание «Затрат» на панели управления:**
 > 
 > «Затраты», показанные в Аналитике использования, предназначены **только для отслеживания и сравнения**. 
-> Сам NzRouter **никогда ничего не взимает** с вас. Вы платите напрямую провайдерам (если используете платные сервисы).
+> Сам N4tzzOfficial **никогда ничего не взимает** с вас. Вы платите напрямую провайдерам (если используете платные сервисы).
 > 
 > **Пример:** Если на панели показано «общие затраты $290» при использовании моделей iFlow, это представляет 
 > сумму, которую вы заплатили бы при прямом использовании платного API. Ваши фактические затраты = **$0** (iFlow бесплатен без ограничений).
 > 
 > Считайте это «трекером экономии», показывающим, сколько вы экономите, используя бесплатные модели или 
-> маршрутизацию через NzRouter!
+> маршрутизацию через N4tzzOfficial!
 
 ### 🌐 Развёртывание где угодно
 
@@ -481,15 +481,15 @@ Combo: "my-coding-stack"
 
 ---
 
-### 📊 Понимание затрат и оплаты в NzRouter
+### 📊 Понимание затрат и оплаты в N4tzzOfficial
 
-**Реальность оплаты NzRouter:**
+**Реальность оплаты N4tzzOfficial:**
 
-✅ **Софт NzRouter = БЕСПЛАТНО навсегда** (открытый код, никогда не взимает плату)  
+✅ **Софт N4tzzOfficial = БЕСПЛАТНО навсегда** (открытый код, никогда не взимает плату)  
 ✅ **«Затраты» на панели = Только для отображения/отслеживания** (не реальный счёт)  
 ✅ **Вы платите напрямую провайдерам** (подписка или плата за API)  
 ✅ **БЕСПЛАТНЫЕ провайдеры остаются БЕСПЛАТНЫМИ** (iFlow, Kiro, Qwen = $0 без ограничений)  
-❌ **NzRouter никогда не выставляет счёт** и не списывает с вашей карты
+❌ **N4tzzOfficial никогда не выставляет счёт** и не списывает с вашей карты
 
 **Как работает отображение затрат:**
 
@@ -510,9 +510,9 @@ Combo: "my-coding-stack"
 
 **Правила оплаты:**
 - **Провайдеры подписки** (Claude Code, Codex): Платите им напрямую через их сайт
-- **Дешёвые провайдеры** (GLM, MiniMax): Платите им напрямую, NzRouter только маршрутизирует
+- **Дешёвые провайдеры** (GLM, MiniMax): Платите им напрямую, N4tzzOfficial только маршрутизирует
 - **БЕСПЛАТНЫЕ провайдеры** (iFlow, Kiro, Qwen): Действительно бесплатны навсегда, без скрытых платежей
-- **NzRouter**: Никогда ничего не взимает, никогда
+- **N4tzzOfficial**: Никогда ничего не взимает, никогда
 
 ---
 
@@ -587,7 +587,7 @@ Combo: "openclaw-free"
 <details>
 <summary><b>📊 Почему моя панель показывает высокие затраты?</b></summary>
 
-Панель отслеживает ваше использование токенов и показывает **оценочные затраты**, как если бы вы напрямую использовали платный API. Это **не реальная оплата** — это справка, показывающая, сколько вы экономите, используя бесплатные модели или существующие подписки через NzRouter.
+Панель отслеживает ваше использование токенов и показывает **оценочные затраты**, как если бы вы напрямую использовали платный API. Это **не реальная оплата** — это справка, показывающая, сколько вы экономите, используя бесплатные модели или существующие подписки через N4tzzOfficial.
 
 **Пример:**
 - **Панель показывает:** «Общие затраты $290»
@@ -600,16 +600,16 @@ Combo: "openclaw-free"
 </details>
 
 <details>
-<summary><b>💳 Взимает ли с меня плату NzRouter?</b></summary>
+<summary><b>💳 Взимает ли с меня плату N4tzzOfficial?</b></summary>
 
-**Нет.** NzRouter — это бесплатное ПО с открытым кодом, работающее на вашем собственном компьютере. Оно никогда ничего с вас не взимает.
+**Нет.** N4tzzOfficial — это бесплатное ПО с открытым кодом, работающее на вашем собственном компьютере. Оно никогда ничего с вас не взимает.
 
 **Вы платите только:**
 - ✅ **Провайдерам подписки** (Claude Code $20/мес, Codex $20-200/мес) → Платите им напрямую на их сайте
-- ✅ **Дешёвым провайдерам** (GLM, MiniMax) → Платите им напрямую, NzRouter только маршрутизирует ваши запросы
-- ❌ **Самому NzRouter** → **Никогда ничего не взимает, никогда**
+- ✅ **Дешёвым провайдерам** (GLM, MiniMax) → Платите им напрямую, N4tzzOfficial только маршрутизирует ваши запросы
+- ❌ **Самому N4tzzOfficial** → **Никогда ничего не взимает, никогда**
 
-NzRouter — это локальный прокси/роутер. У него нет вашей кредитной карты, он не может выставлять счета и не имеет платёжной системы. Это полностью бесплатное ПО.
+N4tzzOfficial — это локальный прокси/роутер. У него нет вашей кредитной карты, он не может выставлять счета и не имеет платёжной системы. Это полностью бесплатное ПО.
 
 </details>
 
@@ -623,9 +623,9 @@ NzRouter — это локальный прокси/роутер. У него н
 - **Kiro**: Бесплатные безлимитные модели Claude через AWS Builder ID  
 - **Qwen**: Бесплатный безлимитный доступ к моделям Qwen через аутентификацию устройства
 
-NzRouter только маршрутизирует ваши запросы к ним — никаких «ловушек» или будущих платежей. Это действительно бесплатные сервисы, а NzRouter облегчает их использование с поддержкой резервирования.
+N4tzzOfficial только маршрутизирует ваши запросы к ним — никаких «ловушек» или будущих платежей. Это действительно бесплатные сервисы, а N4tzzOfficial облегчает их использование с поддержкой резервирования.
 
-**Примечание:** Некоторые провайдеры подписки (Antigravity, GitHub Copilot) могут иметь бесплатные пробные периоды, которые позже становятся платными, но об этом чётко уведомляют сами провайдеры, а не NzRouter.
+**Примечание:** Некоторые провайдеры подписки (Antigravity, GitHub Copilot) могут иметь бесплатные пробные периоды, которые позже становятся платными, но об этом чётко уведомляют сами провайдеры, а не N4tzzOfficial.
 
 </details>
 
@@ -650,7 +650,7 @@ NzRouter только маршрутизирует ваши запросы к н
 
 3. **Используйте провайдеров подписки в последнюю очередь:**
    - Только если они у вас уже есть
-   - NzRouter помогает максимизировать их ценность через отслеживание квоты
+   - N4tzzOfficial помогает максимизировать их ценность через отслеживание квоты
 
 **Результат:** Большинство пользователей могут работать за $0/мес, используя только бесплатные уровни!
 
@@ -659,20 +659,20 @@ NzRouter только маршрутизирует ваши запросы к н
 <details>
 <summary><b>📈 Что если моё использование внезапно вырастет?</b></summary>
 
-Умный механизм резервирования NzRouter предотвращает неожиданные расходы:
+Умный механизм резервирования N4tzzOfficial предотвращает неожиданные расходы:
 
 **Сценарий:** Вы в спринте кодинга и превышаете квоты
 
-**Без NzRouter:**
+**Без N4tzzOfficial:**
 - ❌ Упёрлись в rate limit → Работа остановилась → Разочарование
 - ❌ Или: Случайно накопили огромный счёт за API
 
-**С NzRouter:**
+**С N4tzzOfficial:**
 - ✅ Подписка упёрлась в лимит → Авторезервирование на дешёвый уровень
 - ✅ Дешёвый уровень становится дорогим → Авторезервирование на бесплатный уровень
 - ✅ Никогда не прекращаете кодить → Предсказуемая стоимость
 
-**Вы контролируете:** Установите лимиты расходов на каждого провайдера в панели, и NzRouter будет их соблюдать.
+**Вы контролируете:** Установите лимиты расходов на каждого провайдера в панели, и N4tzzOfficial будет их соблюдать.
 
 </details>
 
@@ -696,7 +696,7 @@ NzRouter только маршрутизирует ваши запросы к н
   cc/claude-haiku-4-5-20251001
 ```
 
-**Профи-совет:** Используйте Opus для сложных задач, Sonnet для скорости. NzRouter отслеживает квоту для каждой модели!
+**Профи-совет:** Используйте Opus для сложных задач, Sonnet для скорости. N4tzzOfficial отслеживает квоту для каждой модели!
 
 ### OpenAI Codex (Plus/Pro)
 
@@ -865,7 +865,7 @@ NzRouter только маршрутизирует ваши запросы к н
 ```
 Settings → Models → Advanced:
   OpenAI API Base URL: http://localhost:20128/v1
-  OpenAI API Key: [из панели управления NzRouter]
+  OpenAI API Key: [из панели управления N4tzzOfficial]
   Model: cc/claude-opus-4-6
 ```
 
@@ -906,13 +906,13 @@ codex "ваш промпт"
   "agents": {
     "defaults": {
       "model": {
-        "primary": "NzRouter/if/glm-4.7"
+        "primary": "N4tzzOfficial/if/glm-4.7"
       }
     }
   },
   "models": {
     "providers": {
-      "NzRouter": {
+      "N4tzzOfficial": {
         "baseUrl": "http://127.0.0.1:20128/v1",
         "apiKey": "sk_NzRouter",
         "api": "openai-completions",
@@ -928,7 +928,7 @@ codex "ваш промпт"
 }
 ```
 
-> **Примечание:** OpenClaw работает только с локальным NzRouter. Используйте `127.0.0.1` вместо `localhost`, чтобы избежать проблем с разрешением имён.
+> **Примечание:** OpenClaw работает только с локальным N4tzzOfficial. Используйте `127.0.0.1` вместо `localhost`, чтобы избежать проблем с разрешением имён.
 
 ### Cline / Continue / RooCode
 
@@ -948,20 +948,20 @@ Model: cc/claude-opus-4-6
 
 ```bash
 # Clone and install
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter
+git clone https://github.com/N4tzzOfficial/NzRouter.git
+cd N4tzzOfficial
 npm install
 npm run build
 
 # Configure
 export JWT="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
-export DATA_DIR="/var/lib/NzRouter"
+export DATA_DIR="/var/lib/N4tzzOfficial"
 export PORT="20128"
 export HOSTNAME="0.0.0.0"
 export NODE_ENV="production"
 export NEXT_PUBLIC_BASE_URL="http://localhost:20128"
-export NEXT_PUBLIC_CLOUD_URL="https://NzRouter.com"
+export NEXT_PUBLIC_CLOUD_URL="https://n4tzz.com"
 export API_KEY_SECRET="endpoint-proxy-api-key-secret"
 export MACHINE_ID_SALT="endpoint-proxy-salt"
 
@@ -970,7 +970,7 @@ npm run start
 
 # Or use PM2
 npm install -g pm2
-pm2 start --name NzRouter -- start
+pm2 start --name N4tzzOfficial -- start
 pm2 save
 pm2 startup
 ```
@@ -979,28 +979,28 @@ pm2 startup
 
 ```bash
 # Build image (from repository root)
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 
 # Run container (command used in current setup)
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 20128:20128 \
-  --env-file /root/dev/NzRouter/.env \
+  --env-file /root/dev/N4tzzOfficial/.env \
   -v NzRouter-data:/app/data \
-  -v NzRouter-usage:/root/.NzRouter \
-  NzRouter
+  -v NzRouter-usage:/root/.N4tzzOfficial \
+  N4tzzOfficial
 ```
 
 Портативная команда (если вы уже в корне репозитория):
 
 ```bash
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 20128:20128 \
   --env-file ./.env \
   -v NzRouter-data:/app/data \
-  -v NzRouter-usage:/root/.NzRouter \
-  NzRouter
+  -v NzRouter-usage:/root/.N4tzzOfficial \
+  N4tzzOfficial
 ```
 
 Значения по умолчанию контейнера:
@@ -1010,25 +1010,25 @@ docker run -d \
 Полезные команды:
 
 ```bash
-docker logs -f NzRouter
-docker restart NzRouter
-docker stop NzRouter && docker rm NzRouter
+docker logs -f N4tzzOfficial
+docker restart N4tzzOfficial
+docker stop N4tzzOfficial && docker rm N4tzzOfficial
 ```
 
 ### Переменные окружения
 
 | Переменная | По умолчанию | Описание |
 |----------|---------|-------------|
-| `JWT_SECRET` | Автогенерация (`~/.NzRouter/jwt-secret`) | Секрет подписи JWT для cookie аутентификации панели (задайте для общего доступа между инстансами) |
+| `JWT_SECRET` | Автогенерация (`~/.N4tzzOfficial/jwt-secret`) | Секрет подписи JWT для cookie аутентификации панели (задайте для общего доступа между инстансами) |
 | `INITIAL_PASSWORD` | `123456` | Пароль первого входа при отсутствии сохранённого хеша |
-| `DATA_DIR` | `~/.NzRouter` | Расположение основной БД приложения (`db.json`) |
+| `DATA_DIR` | `~/.N4tzzOfficial` | Расположение основной БД приложения (`db.json`) |
 | `PORT` | framework default | Порт сервиса (`20128` в примерах) |
 | `HOSTNAME` | framework default | Bind host (Docker по умолчанию `0.0.0.0`) |
 | `NODE_ENV` | runtime default | Установите `production` для развёртывания |
 | `BASE_URL` | `http://localhost:20128` | Внутренний серверный базовый URL для задач облачной синхронизации |
-| `CLOUD_URL` | `https://NzRouter.com` | Серверный базовый URL эндпоинта облачной синхронизации |
+| `CLOUD_URL` | `https://n4tzz.com` | Серверный базовый URL эндпоинта облачной синхронизации |
 | `NEXT_PUBLIC_BASE_URL` | `http://localhost:3000` | Обратно совместимый/публичный базовый URL (приоритет `BASE_URL` для серверного рантайма) |
-| `NEXT_PUBLIC_CLOUD_URL` | `https://NzRouter.com` | Обратно совместимый/публичный облачный URL (приоритет `CLOUD_URL` для серверного рантайма) |
+| `NEXT_PUBLIC_CLOUD_URL` | `https://n4tzz.com` | Обратно совместимый/публичный облачный URL (приоритет `CLOUD_URL` для серверного рантайма) |
 | `API_KEY_SECRET` | `endpoint-proxy-api-key-secret` | HMAC-секрет для генерируемых API-ключей |
 | `MACHINE_ID_SALT` | `endpoint-proxy-salt` | Соль для стабильного хеширования ID машины |
 | `ENABLE_REQUEST_LOGS` | `false` | Включить лог запросов/ответов в `logs/` |
@@ -1045,9 +1045,9 @@ docker stop NzRouter && docker rm NzRouter
 ### Runtime-файлы и хранилище
 
 - Основное состояние приложения: `${DATA_DIR}/db.json` (провайдеры, комбо, alias, ключи, настройки), управляется `src/lib/localDb.js`.
-- История использования и логи: `~/.NzRouter/usage.json` и `~/.NzRouter/log.txt`, управляется `src/lib/usageDb.js`.
+- История использования и логи: `~/.N4tzzOfficial/usage.json` и `~/.N4tzzOfficial/log.txt`, управляется `src/lib/usageDb.js`.
 - Опциональные логи запросов/транслятора: `<repo>/logs/...` при `ENABLE_REQUEST_LOGS=true`.
-- Хранилище использования следует логике пути `~/.NzRouter` и независимо от `DATA_DIR`.
+- Хранилище использования следует логике пути `~/.N4tzzOfficial` и независимо от `DATA_DIR`.
 
 </details>
 
@@ -1109,7 +1109,7 @@ docker stop NzRouter && docker rm NzRouter
 - Добавьте комбо: `cc/claude-opus-4-6 → glm/glm-4.7 → if/kimi-k2-thinking`
 
 **OAuth-токен истёк**
-- Автообновление NzRouter
+- Автообновление N4tzzOfficial
 - Если проблема сохраняется: Панель управления → Провайдеры → Переподключить
 
 **Высокие затраты**
@@ -1122,14 +1122,14 @@ docker stop NzRouter && docker rm NzRouter
 
 **Ошибки облачной синхронизации**
 - Убедитесь, что `BASE_URL` указывает на ваш работающий инстанс (например, `http://localhost:20128`)
-- Убедитесь, что `CLOUD_URL` указывает на ожидаемый облачный эндпоинт (например, `https://NzRouter.com`)
+- Убедитесь, что `CLOUD_URL` указывает на ожидаемый облачный эндпоинт (например, `https://n4tzz.com`)
 - По возможности держите значения `NEXT_PUBLIC_*` согласованными с серверными значениями.
 
 **Облачный эндпоинт `stream=false` возвращает 500 (`Unexpected token 'd'...`)**
-- Симптом обычно появляется на публичном облачном эндпоинте (`https://NzRouter.com/v1`) для непотоковых (non-streaming) вызовов.
+- Симптом обычно появляется на публичном облачном эндпоинте (`https://n4tzz.com/v1`) для непотоковых (non-streaming) вызовов.
 - Корневая причина: upstream возвращает SSE-payload (`data: ...`), тогда как клиент ожидает JSON.
 - Обходное решение: используйте `stream=true` для прямых вызовов в облако.
-- Локальный рантайм NzRouter включает резервирование SSE→JSON для непотоковых вызовов, когда upstream возвращает `text/event-stream`.
+- Локальный рантайм N4tzzOfficial включает резервирование SSE→JSON для непотоковых вызовов, когда upstream возвращает `text/event-stream`.
 
 **Облако сообщает о подключении, но запрос всё равно падает с `Invalid API key`**
 - Создайте новый ключ в локальной панели (`/api/keys`) и запустите облачную синхронизацию (`Enable Cloud`, затем `Sync Now`).
@@ -1200,7 +1200,7 @@ Authorization: Bearer your-api-key
 - `tester/security/test-docker-hardening.sh`
   - Собирает Docker-образ и проверяет hardening-проверки (`/api/cloud/auth` auth guard, `REQUIRE_API_KEY`, безопасное поведение cookie аутентификации).
 - `tester/security/test-cloud-openai-compatible.sh`
-  - Отправляет OpenAI-совместимый запрос напрямую на облачный эндпоинт (`https://NzRouter.com/v1/chat/completions`) с указанной моделью/ключом.
+  - Отправляет OpenAI-совместимый запрос напрямую на облачный эндпоинт (`https://n4tzz.com/v1/chat/completions`) с указанной моделью/ключом.
 - `tester/security/test-cloud-sync-and-call.sh`
   - End-to-end процесс: создание локального ключа → включение/синхронизация облака → вызов облачного эндпоинта с повтором.
   - Включает резервную проверку с `stream=true`, чтобы отличить ошибки аутентификации от проблем разбора потока.
@@ -1220,7 +1220,7 @@ OPENAI_API_KEY="your-cloud-key" bash tester/security/test-cloud-openai-compatibl
 
 - Локально (`http://127.0.0.1:20128/v1/chat/completions`): работает с `stream=false` и `stream=true`.
 - Docker-рантайм (тот же API-путь, экспонируемый контейнером): hardening-проверки проходят, cloud auth guard работает, строгий режим API-ключа работает при включении.
-- Публичный облачный эндпоинт (`https://NzRouter.com/v1/chat/completions`):
+- Публичный облачный эндпоинт (`https://n4tzz.com/v1/chat/completions`):
   - `stream=true`: ожидается успех (возвращает SSE-чанки).
   - `stream=false`: может падать с `500` + ошибкой разбора (`Unexpected token 'd'`), когда upstream возвращает SSE-контент для непотокового клиентского пути.
 
@@ -1258,23 +1258,23 @@ OPENAI_API_KEY="your-cloud-key" bash tester/security/test-cloud-openai-compatibl
 
 ## 📧 Поддержка
 
-- **Сайт**: [NzRouter.com](https://NzRouter.com)
-- **GitHub**: [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues**: [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **Сайт**: [n4tzz.com](https://n4tzz.com)
+- **GitHub**: [github.com/N4tzzOfficial/NzRouter](https://github.com/N4tzzOfficial/NzRouter)
+- **Issues**: [github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
 ---
 
 ## 👥 Контрибьюторы
 
-Спасибо всем, кто помогает делать NzRouter лучше!
+Спасибо всем, кто помогает делать N4tzzOfficial лучше!
 
-[![Contributors](https://contrib.rocks/image?repo=decolua/NzRouter&max=100&columns=20&anon=1)](https://github.com/decolua/NzRouter/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=N4tzzOfficial/N4tzzOfficial&max=100&columns=20&anon=1)](https://github.com/N4tzzOfficial/NzRouter/graphs/contributors)
 
 ---
 
 ## 📊 Star Chart
 
-[![Star Chart](https://starchart.cc/decolua/NzRouter.svg?variant=adaptive)](https://starchart.cc/decolua/NzRouter)
+[![Star Chart](https://starchart.cc/N4tzzOfficial/N4tzzOfficial.svg?variant=adaptive)](https://starchart.cc/N4tzzOfficial/N4tzzOfficial)
 
 ### Как внести вклад
 
@@ -1284,13 +1284,13 @@ OPENAI_API_KEY="your-cloud-key" bash tester/security/test-cloud-openai-compatibl
 4. Запушьте в ветку (`git push origin feature/amazing-feature`)
 5. Откройте Pull Request
 
-См. [Pull Requests](https://github.com/decolua/NzRouter/pulls) для подробных инструкций.
+См. [Pull Requests](https://github.com/N4tzzOfficial/NzRouter/pulls) для подробных инструкций.
 
 ---
 
 ## 🔀 Форки
 
-**[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** — Полнофункциональный TypeScript-форк NzRouter. Добавляет 36+ провайдеров, авторезервирование на 4 уровнях, мультимодальный API (изображения, embedding, аудио, TTS), circuit breaker, семантическое кеширование, оценку LLM и доработанную панель. 368+ юнит-тестов. Доступен через npm.
+**[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** — Полнофункциональный TypeScript-форк N4tzzOfficial. Добавляет 36+ провайдеров, авторезервирование на 4 уровнях, мультимодальный API (изображения, embedding, аудио, TTS), circuit breaker, семантическое кеширование, оценку LLM и доработанную панель. 368+ юнит-тестов. Доступен через npm.
 
 ---
 
@@ -1309,4 +1309,6 @@ OPENAI_API_KEY="your-cloud-key" bash tester/security/test-cloud-openai-compatibl
 <div align="center">
   <sub>Создано с ❤️ для разработчиков, которые кодят 24/7</sub>
 </div>
+
+
 

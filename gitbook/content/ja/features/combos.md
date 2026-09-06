@@ -354,7 +354,7 @@ Settings → Models → Advanced:
 ```json
 {
   "anthropic_api_base": "http://localhost:20128/v1",
-  "anthropic_api_key": "your-NzRouter-api-key",
+  "anthropic_api_key": "your-N4tzzOfficial-api-key",
   "model": "budget-combo"
 }
 ```
@@ -363,7 +363,7 @@ Settings → Models → Advanced:
 
 ```bash
 export OPENAI_BASE_URL="http://localhost:20128"
-export OPENAI_API_KEY="your-NzRouter-api-key"
+export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 
 codex --model quality-first "your prompt"
 ```
@@ -535,4 +535,5 @@ Dashboard → Combos → Clone "premium-coding"
 
 - [スマートルーティング](./smart-routing.md) - 自動フォールバックの仕組み
 - [クォータトラッキング](./quota-tracking.md) - 使用量とコストを監視
+
 

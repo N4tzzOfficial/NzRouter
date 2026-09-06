@@ -1,10 +1,10 @@
 # Other Tools Integration
 
-NzRouter is compatible with any tool that supports the OpenAI API format. This guide covers generic integration patterns for various tools and custom applications.
+N4tzzOfficial is compatible with any tool that supports the OpenAI API format. This guide covers generic integration patterns for various tools and custom applications.
 
 ## Overview
 
-NzRouter provides an OpenAI-compatible API endpoint that works with:
+N4tzzOfficial provides an OpenAI-compatible API endpoint that works with:
 - Custom scripts and applications
 - API clients and testing tools
 - CLI tools and utilities
@@ -13,20 +13,20 @@ NzRouter provides an OpenAI-compatible API endpoint that works with:
 
 ## Generic Setup Pattern
 
-Any OpenAI-compatible tool can connect to NzRouter using these settings:
+Any OpenAI-compatible tool can connect to N4tzzOfficial using these settings:
 
-**Local NzRouter:**
+**Local N4tzzOfficial:**
 ```
 Base URL: http://localhost:20128/v1
 API Key: your-api-key-from-dashboard
-Model: any NzRouter model (cc/*, cx/*, glm/*, etc.)
+Model: any N4tzzOfficial model (cc/*, cx/*, glm/*, etc.)
 ```
 
-**Cloud NzRouter:**
+**Cloud N4tzzOfficial:**
 ```
-Base URL: https://NzRouter.com/v1
+Base URL: https://n4tzz.com/v1
 API Key: your-api-key-from-dashboard
-Model: any NzRouter model (cc/*, cx/*, glm/*, etc.)
+Model: any N4tzzOfficial model (cc/*, cx/*, glm/*, etc.)
 ```
 
 ## Available Models
@@ -318,9 +318,9 @@ def chat_with_retry(prompt, max_retries=3):
 
 ### Connection Issues
 
-**Problem:** Cannot connect to NzRouter
+**Problem:** Cannot connect to N4tzzOfficial
 ```bash
-# Check if NzRouter is running
+# Check if N4tzzOfficial is running
 curl http://localhost:20128/health
 
 # Expected response:
@@ -328,7 +328,7 @@ curl http://localhost:20128/health
 ```
 
 **Solution:**
-- Verify NzRouter is running
+- Verify N4tzzOfficial is running
 - Check port 20128 is not blocked
 - Ensure correct base URL (include `/v1`)
 
@@ -366,7 +366,7 @@ Error: Request timed out after 30s
 **Solution:**
 - Increase timeout in client configuration
 - Use faster models for time-sensitive tasks
-- Check network connection to NzRouter
+- Check network connection to N4tzzOfficial
 
 ### Rate Limiting
 
@@ -414,4 +414,5 @@ Error: Rate limit exceeded
 - [Explore CLI usage](../cli/basic-usage.md)
 - [Learn about model selection](../models/overview.md)
 - [API Reference](../api/reference.md)
+
 

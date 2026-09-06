@@ -1,12 +1,12 @@
 # Tích hợp OpenAI Codex CLI
 
-Tích hợp NzRouter với OpenAI Codex CLI để định tuyến request API OpenAI qua hệ thống routing thông minh của NzRouter.
+Tích hợp N4tzzOfficial với OpenAI Codex CLI để định tuyến request API OpenAI qua hệ thống routing thông minh của N4tzzOfficial.
 
 ## Yêu cầu
 
 - OpenAI Codex CLI đã cài đặt
-- NzRouter đang chạy cục bộ hoặc cloud endpoint đã cấu hình
-- API key từ NzRouter dashboard
+- N4tzzOfficial đang chạy cục bộ hoặc cloud endpoint đã cấu hình
+- API key từ N4tzzOfficial dashboard
 
 ## Setup
 
@@ -15,11 +15,11 @@ Tích hợp NzRouter với OpenAI Codex CLI để định tuyến request API Op
 Đặt các biến môi trường sau trong file cấu hình shell (`~/.bashrc`, `~/.zshrc`, hoặc `~/.bash_profile`):
 
 ```bash
-# Base URL for NzRouter
+# Base URL for N4tzzOfficial
 export OPENAI_BASE_URL="http://localhost:20128/v1"
 
-# API Key from NzRouter dashboard
-export OPENAI_API_KEY="your-NzRouter-api-key"
+# API Key from N4tzzOfficial dashboard
+export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 ```
 
 ### 2. Reload Shell Configuration
@@ -39,7 +39,7 @@ echo $OPENAI_API_KEY
 
 ## Model có sẵn
 
-NzRouter cung cấp các model Codex sau:
+N4tzzOfficial cung cấp các model Codex sau:
 
 | Model ID | Mô tả |
 |----------|-------------|
@@ -77,7 +77,7 @@ Bạn cũng có thể cấu hình Codex CLI qua file cấu hình. Tạo hoặc s
 ```json
 {
   "baseUrl": "http://localhost:20128/v1",
-  "apiKey": "your-NzRouter-api-key",
+  "apiKey": "your-N4tzzOfficial-api-key",
   "defaultModel": "cx/gpt-5.2-codex"
 }
 ```
@@ -88,7 +88,7 @@ Bạn cũng có thể cấu hình Codex CLI qua file cấu hình. Tạo hoặc s
 
 Nếu gặp lỗi xác thực:
 
-1. Xác minh API key đúng trong NzRouter dashboard
+1. Xác minh API key đúng trong N4tzzOfficial dashboard
 2. Kiểm tra biến môi trường `OPENAI_API_KEY` đã set
 3. Đảm bảo API key chưa hết hạn
 
@@ -96,7 +96,7 @@ Nếu gặp lỗi xác thực:
 
 Nếu gặp lỗi kết nối:
 
-1. Xác minh NzRouter đang chạy: `curl http://localhost:20128/health`
+1. Xác minh N4tzzOfficial đang chạy: `curl http://localhost:20128/health`
 2. Kiểm tra biến môi trường đã set đúng
 3. Đảm bảo không firewall nào chặn port 20128
 
@@ -104,19 +104,19 @@ Nếu gặp lỗi kết nối:
 
 Nếu gặp lỗi "model not available":
 
-1. Xác minh tên model khớp với cấu hình NzRouter
-2. Kiểm tra kết nối provider OpenAI đang hoạt động trong NzRouter dashboard
+1. Xác minh tên model khớp với cấu hình N4tzzOfficial
+2. Kiểm tra kết nối provider OpenAI đang hoạt động trong N4tzzOfficial dashboard
 3. Đảm bảo model có sẵn trong các provider đã kết nối
 
 ## Cloud Endpoint
 
-Để dùng NzRouter cloud endpoint thay vì localhost:
+Để dùng N4tzzOfficial cloud endpoint thay vì localhost:
 
 ```bash
-export OPENAI_BASE_URL="https://NzRouter.com"
+export OPENAI_BASE_URL="https://n4tzz.com"
 ```
 
-Đảm bảo bạn đã cấu hình API key trong NzRouter cloud dashboard.
+Đảm bảo bạn đã cấu hình API key trong N4tzzOfficial cloud dashboard.
 
 ## Cấu hình Nâng cao
 
@@ -134,4 +134,5 @@ Bật debug mode để xem logs request/response chi tiết:
 export CODEX_DEBUG=true
 codex --model cx/gpt-5.2-codex "Your prompt"
 ```
+
 

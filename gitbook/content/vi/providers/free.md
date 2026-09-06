@@ -31,7 +31,7 @@ Provider free tier là **fallback** khi hết quota subscription và cheap:
 **Bước 1: Kết nối qua Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect iFlow
 ```
 
@@ -91,7 +91,7 @@ Model: if/kimi-k2-thinking
 **Bước 1: Kết nối qua Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect Qwen
 ```
 
@@ -144,7 +144,7 @@ Model: qw/qwen3-coder-plus
 **Bước 1: Kết nối qua Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect Kiro
 ```
 
@@ -200,7 +200,7 @@ Model: kr/claude-sonnet-4.5
 ```
 Settings → Models → Advanced:
   OpenAI API Base URL: http://localhost:20128/v1
-  OpenAI API Key: [from NzRouter dashboard]
+  OpenAI API Key: [from N4tzzOfficial dashboard]
   Model: if/kimi-k2-thinking
 ```
 
@@ -376,13 +376,13 @@ Perfect for:
 100M × $20/1M = $2,000/month
 ```
 
-**Phương án 2: Chỉ NzRouter Free Tier**
+**Phương án 2: Chỉ N4tzzOfficial Free Tier**
 ```
 100M via free tier = $0/month
 Savings: $2,000/month (100%)
 ```
 
-**Phương án 3: Chiến lược Hoàn chỉnh NzRouter**
+**Phương án 3: Chiến lược Hoàn chỉnh N4tzzOfficial**
 ```
 60M via Gemini CLI (FREE): $0
 30M via Claude Code (subscription): $0 extra
@@ -440,4 +440,5 @@ Savings: $1,995/month (99.76%)
 - **Thêm cheap backup:** [Cheap Providers](./cheap.md)
 - **Tạo combos:** Dashboard → Combos → Create New
 - **Bắt đầu code:** Dùng combo `complete-fallback` để có độ tin cậy tối đa
+
 

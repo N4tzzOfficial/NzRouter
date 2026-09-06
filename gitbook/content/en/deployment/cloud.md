@@ -1,6 +1,6 @@
 # ☁️ Cloud Deployment
 
-Deploy NzRouter on VPS or Docker for remote access and production use.
+Deploy N4tzzOfficial on VPS or Docker for remote access and production use.
 
 ---
 
@@ -16,8 +16,8 @@ Deploy NzRouter on VPS or Docker for remote access and production use.
 ### Step 1: Clone Repository
 
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 ```
 
 ### Step 2: Install Dependencies
@@ -39,7 +39,7 @@ Create a `.env` file or export variables:
 ```bash
 export JWT_SECRET="your-secure-secret-change-this-to-random-string"
 export INITIAL_PASSWORD="your-secure-password"
-export DATA_DIR="/var/lib/NzRouter"
+export DATA_DIR="/var/lib/N4tzzOfficial"
 export NODE_ENV="production"
 ```
 
@@ -49,15 +49,15 @@ export NODE_ENV="production"
 |----------|---------|-------------|
 | `JWT_SECRET` | Auto-generated | **MUST change in production!** Used for JWT token signing |
 | `INITIAL_PASSWORD` | `123456` | Dashboard login password |
-| `DATA_DIR` | `~/.NzRouter` | Database and data storage path |
+| `DATA_DIR` | `~/.N4tzzOfficial` | Database and data storage path |
 | `NODE_ENV` | `development` | Set to `production` for deployment |
 | `ENABLE_REQUEST_LOGS` | `false` | Enable debug request/response logs |
 
 ### Step 5: Create Data Directory
 
 ```bash
-sudo mkdir -p /var/lib/NzRouter
-sudo chown $USER:$USER /var/lib/NzRouter
+sudo mkdir -p /var/lib/N4tzzOfficial
+sudo chown $USER:$USER /var/lib/N4tzzOfficial
 ```
 
 ### Step 6: Start Application
@@ -74,8 +74,8 @@ PM2 keeps your application running and restarts it on crashes:
 # Install PM2 globally
 npm install -g pm2
 
-# Start NzRouter with PM2
-pm2 start npm --name NzRouter -- start
+# Start N4tzzOfficial with PM2
+pm2 start npm --name N4tzzOfficial -- start
 
 # Save PM2 configuration
 pm2 save
@@ -89,13 +89,13 @@ pm2 startup
 
 ```bash
 # View logs
-pm2 logs NzRouter
+pm2 logs N4tzzOfficial
 
 # Restart application
-pm2 restart NzRouter
+pm2 restart N4tzzOfficial
 
 # Stop application
-pm2 stop NzRouter
+pm2 stop N4tzzOfficial
 
 # View status
 pm2 status
@@ -147,17 +147,17 @@ CMD ["npm", "run", "start"]
 
 ```bash
 # Build image
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 
 # Run container
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 3000:3000 \
   -p 20128:20128 \
   -e JWT_SECRET="your-secure-secret-change-this" \
   -e INITIAL_PASSWORD="your-secure-password" \
-  -v NzRouter-data:/app/data \
-  NzRouter
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial
 ```
 
 ### Option 2: Docker Compose
@@ -168,9 +168,9 @@ Create `docker-compose.yml`:
 version: '3.8'
 
 services:
-  NzRouter:
+  N4tzzOfficial:
     build: .
-    container_name: NzRouter
+    container_name: N4tzzOfficial
     ports:
       - "3000:3000"
       - "20128:20128"
@@ -180,11 +180,11 @@ services:
       - INITIAL_PASSWORD=your-secure-password
       - DATA_DIR=/app/data
     volumes:
-      - NzRouter-data:/app/data
+      - N4tzzOfficial-data:/app/data
     restart: unless-stopped
 
 volumes:
-  NzRouter-data:
+  N4tzzOfficial-data:
 ```
 
 **Run with Docker Compose:**
@@ -223,7 +223,7 @@ sudo apt install nginx
 
 ### Step 2: Configure Nginx
 
-Create `/etc/nginx/sites-available/NzRouter`:
+Create `/etc/nginx/sites-available/N4tzzOfficial`:
 
 ```nginx
 server {
@@ -247,7 +247,7 @@ server {
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
-    # Proxy to NzRouter
+    # Proxy to N4tzzOfficial
     location / {
         proxy_pass http://localhost:3000;
         proxy_http_version 1.1;
@@ -284,7 +284,7 @@ server {
 
 ```bash
 # Create symbolic link
-sudo ln -s /etc/nginx/sites-available/NzRouter /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/N4tzzOfficial /etc/nginx/sites-enabled/
 
 # Test configuration
 sudo nginx -t
@@ -333,7 +333,7 @@ sudo ufw allow 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 
-# If NOT using reverse proxy, allow NzRouter ports
+# If NOT using reverse proxy, allow N4tzzOfficial ports
 sudo ufw allow 3000/tcp
 sudo ufw allow 20128/tcp
 
@@ -363,22 +363,22 @@ ssh -L 3000:localhost:3000 user@your-server.com
 # Update system packages
 sudo apt update && sudo apt upgrade -y
 
-# Update NzRouter
-cd /path/to/NzRouter/app
+# Update N4tzzOfficial
+cd /path/to/N4tzzOfficial/app
 git pull
 npm install
 npm run build
-pm2 restart NzRouter
+pm2 restart N4tzzOfficial
 ```
 
 ### 5. Backup Strategy
 
 ```bash
 # Backup data directory
-tar -czf NzRouter-backup-$(date +%Y%m%d).tar.gz /var/lib/NzRouter
+tar -czf N4tzzOfficial-backup-$(date +%Y%m%d).tar.gz /var/lib/N4tzzOfficial
 
 # Automated daily backup (add to crontab)
-0 2 * * * tar -czf /backups/NzRouter-$(date +\%Y\%m\%d).tar.gz /var/lib/NzRouter
+0 2 * * * tar -czf /backups/N4tzzOfficial-$(date +\%Y\%m\%d).tar.gz /var/lib/N4tzzOfficial
 ```
 
 ---
@@ -392,7 +392,7 @@ tar -czf NzRouter-backup-$(date +%Y%m%d).tar.gz /var/lib/NzRouter
 pm2 status
 
 # View logs
-pm2 logs NzRouter --lines 100
+pm2 logs N4tzzOfficial --lines 100
 
 # Monitor resources
 pm2 monit
@@ -429,20 +429,20 @@ netstat -tulpn | grep -E '3000|20128'
 
 ```bash
 # Check logs
-pm2 logs NzRouter
+pm2 logs N4tzzOfficial
 
 # Check if ports are in use
 sudo lsof -i :3000
 sudo lsof -i :20128
 
 # Check environment variables
-pm2 env NzRouter
+pm2 env N4tzzOfficial
 ```
 
 ### Nginx 502 Bad Gateway
 
 ```bash
-# Check if NzRouter is running
+# Check if N4tzzOfficial is running
 pm2 status
 
 # Check Nginx error logs
@@ -460,8 +460,8 @@ Ensure `proxy_buffering off` is set in Nginx configuration for SSE support.
 
 ```bash
 # Fix data directory permissions
-sudo chown -R $USER:$USER /var/lib/NzRouter
-chmod 755 /var/lib/NzRouter
+sudo chown -R $USER:$USER /var/lib/N4tzzOfficial
+chmod 755 /var/lib/N4tzzOfficial
 ```
 
 ---
@@ -471,4 +471,5 @@ chmod 755 /var/lib/NzRouter
 - [Connect Providers](/providers/subscription.md)
 - [Setup Combos](/features/combos.md)
 - [Integrate with Tools](/integration/cursor.md)
+
 

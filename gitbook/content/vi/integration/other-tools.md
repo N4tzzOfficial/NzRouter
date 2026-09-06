@@ -1,10 +1,10 @@
 # Tích hợp các Công cụ khác
 
-NzRouter tương thích với mọi công cụ hỗ trợ format API OpenAI. Hướng dẫn này bao gồm pattern tích hợp tổng quát cho nhiều công cụ và ứng dụng tùy chỉnh.
+N4tzzOfficial tương thích với mọi công cụ hỗ trợ format API OpenAI. Hướng dẫn này bao gồm pattern tích hợp tổng quát cho nhiều công cụ và ứng dụng tùy chỉnh.
 
 ## Tổng quan
 
-NzRouter cung cấp API endpoint tương thích OpenAI hoạt động với:
+N4tzzOfficial cung cấp API endpoint tương thích OpenAI hoạt động với:
 - Script và ứng dụng tùy chỉnh
 - API client và công cụ test
 - Công cụ CLI và utility
@@ -13,20 +13,20 @@ NzRouter cung cấp API endpoint tương thích OpenAI hoạt động với:
 
 ## Pattern Setup Tổng quát
 
-Mọi công cụ tương thích OpenAI có thể kết nối đến NzRouter bằng các cài đặt sau:
+Mọi công cụ tương thích OpenAI có thể kết nối đến N4tzzOfficial bằng các cài đặt sau:
 
-**NzRouter cục bộ:**
+**N4tzzOfficial cục bộ:**
 ```
 Base URL: http://localhost:20128/v1
 API Key: your-api-key-from-dashboard
-Model: any NzRouter model (cc/*, cx/*, glm/*, etc.)
+Model: any N4tzzOfficial model (cc/*, cx/*, glm/*, etc.)
 ```
 
-**NzRouter cloud:**
+**N4tzzOfficial cloud:**
 ```
-Base URL: https://NzRouter.com/v1
+Base URL: https://n4tzz.com/v1
 API Key: your-api-key-from-dashboard
-Model: any NzRouter model (cc/*, cx/*, glm/*, etc.)
+Model: any N4tzzOfficial model (cc/*, cx/*, glm/*, etc.)
 ```
 
 ## Model có sẵn
@@ -318,9 +318,9 @@ def chat_with_retry(prompt, max_retries=3):
 
 ### Vấn đề Connection
 
-**Vấn đề:** Không kết nối được đến NzRouter
+**Vấn đề:** Không kết nối được đến N4tzzOfficial
 ```bash
-# Check if NzRouter is running
+# Check if N4tzzOfficial is running
 curl http://localhost:20128/health
 
 # Expected response:
@@ -328,7 +328,7 @@ curl http://localhost:20128/health
 ```
 
 **Giải pháp:**
-- Xác minh NzRouter đang chạy
+- Xác minh N4tzzOfficial đang chạy
 - Kiểm tra port 20128 không bị chặn
 - Đảm bảo base URL đúng (bao gồm `/v1`)
 
@@ -366,7 +366,7 @@ Error: Request timed out after 30s
 **Giải pháp:**
 - Tăng timeout trong cấu hình client
 - Dùng model nhanh hơn cho task nhạy cảm về thời gian
-- Kiểm tra kết nối network đến NzRouter
+- Kiểm tra kết nối network đến N4tzzOfficial
 
 ### Rate Limiting
 
@@ -414,4 +414,5 @@ Error: Rate limit exceeded
 - [Khám phá CLI usage](../cli/basic-usage.md)
 - [Tìm hiểu về chọn model](../models/overview.md)
 - [API Reference](../api/reference.md)
+
 

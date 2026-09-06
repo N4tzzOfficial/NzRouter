@@ -34,7 +34,7 @@ http://localhost:20128/v1
 
 **クラウドNzRouter用:**
 ```
-https://NzRouter.com
+https://n4tzz.com
 ```
 
 **手順:**
@@ -45,7 +45,7 @@ https://NzRouter.com
 
 1. **API Key** フィールドにNzRouter APIキーを入力
 2. APIキーはNzRouterダッシュボードの **Settings → API Keys** で確認できます
-3. キーは `sk-NzRouter-` で始まります
+3. キーは `sk-N4tzzOfficial-` で始まります
 
 ### 5. モデルを選択
 
@@ -71,7 +71,7 @@ Cline設定は次のようになります:
 ```
 API Provider: Ollama
 Base URL: http://localhost:20128/v1
-API Key: sk-NzRouter-xxxxxxxxxxxxx
+API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Model: gpt-4
 ```
 
@@ -126,7 +126,7 @@ NzRouterダッシュボードで設定されたモデルを使用できます。
 ### 「Invalid API Key」エラー
 
 1. NzRouterダッシュボードでAPIキーを確認
-2. `sk-NzRouter-` プレフィックスを含むキー全体をコピーしたか確認
+2. `sk-N4tzzOfficial-` プレフィックスを含むキー全体をコピーしたか確認
 3. APIキーが期限切れでないか確認
 4. 新しいAPIキーを再生成してみる
 
@@ -150,7 +150,7 @@ NzRouterダッシュボードで設定されたモデルを使用できます。
 
 localhostの代わりにNzRouterクラウドエンドポイントを使用:
 
-1. Cline設定で、Base URLを設定: `https://NzRouter.com`
+1. Cline設定で、Base URLを設定: `https://n4tzz.com`
 2. NzRouterクラウドダッシュボードでAPIキーが設定されていることを確認
 3. クラウドエンドポイントがアクティブでアクセス可能か確認
 
@@ -199,4 +199,5 @@ NzRouterダッシュボード経由でCline使用量をモニター:
 - トークン使用量
 - モデルごとのコスト
 - プロバイダー分布
+
 

@@ -1,15 +1,15 @@
 # Smart Routing & Auto Fallback
 
-NzRouter automatically routes your requests through the best available provider using a 3-tier fallback system. Never stop coding due to quota limits or rate limiting.
+N4tzzOfficial automatically routes your requests through the best available provider using a 3-tier fallback system. Never stop coding due to quota limits or rate limiting.
 
 ---
 
 ## How It Works
 
-NzRouter uses intelligent routing to maximize your existing subscriptions, minimize costs, and ensure 24/7 availability:
+N4tzzOfficial uses intelligent routing to maximize your existing subscriptions, minimize costs, and ensure 24/7 availability:
 
 ```
-Request → NzRouter → Check Tier 1 (Subscription)
+Request → N4tzzOfficial → Check Tier 1 (Subscription)
                      ↓ quota exhausted
                      Check Tier 2 (Cheap)
                      ↓ budget limit
@@ -47,7 +47,7 @@ Request → NzRouter → Check Tier 1 (Subscription)
 
 ## Automatic Switching
 
-NzRouter monitors quota in real-time and switches providers automatically:
+N4tzzOfficial monitors quota in real-time and switches providers automatically:
 
 ### Scenario 1: Subscription Quota Exhausted
 
@@ -89,7 +89,7 @@ User request → cc/claude-opus-4-5
 
 ## Model Selection Logic
 
-NzRouter selects the best model based on:
+N4tzzOfficial selects the best model based on:
 
 1. **Quota availability** - Check if provider has remaining quota
 2. **Cost tier** - Prefer subscription → cheap → free
@@ -138,7 +138,7 @@ Dashboard → Settings → Budget Control
 → Monthly limit: $50
 ```
 
-When budget reached, NzRouter automatically switches to free tier.
+When budget reached, N4tzzOfficial automatically switches to free tier.
 
 **3. Configure Fallback Order**
 
@@ -405,4 +405,5 @@ Dashboard → Analytics:
 
 - [Combos](./combos.md) - Create custom fallback chains
 - [Quota Tracking](./quota-tracking.md) - Monitor usage and costs
+
 

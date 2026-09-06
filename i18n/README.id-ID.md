@@ -1,24 +1,24 @@
 <div align="center">
-  <img src="../images/NzRouter.png?1" alt="NzRouter Dashboard" width="800"/>
+  <img src="../images/NzRouter.png?1" alt="N4tzzOfficial Dashboard" width="800"/>
 
-  # NzRouter - Router AI Gratis
+  # N4tzzOfficial - Router AI Gratis
 
   **Jangan berhenti ngoding. Otomatis dialihkan ke model AI gratis & murah dengan smart fallback.**
 
   **Hubungkan semua tool AI coding (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) ke 40+ provider AI dan 100+ model.**
 
-  [![npm](https://img.shields.io/npm/v/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![Downloads](https://img.shields.io/npm/dm/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![License](https://img.shields.io/npm/l/NzRouter.svg)](https://github.com/decolua/NzRouter/blob/main/LICENSE)
+  [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
 
-  [🚀 Mulai Cepat](#-mulai-cepat) • [💡 Fitur](#-fitur-utama) • [📖 Setup](#-panduan-setup) • [🌐 Website](https://NzRouter.com)
+  [🚀 Mulai Cepat](#-mulai-cepat) • [💡 Fitur](#-fitur-utama) • [📖 Setup](#-panduan-setup) • [🌐 Website](https://n4tzz.com)
 
   [🇻🇳 Tiếng Việt](./README.vi.md) • [🇨🇳 中文](./README.zh-CN.md) • [🇯🇵 日本語](./README.ja-JP.md) • [🇮🇩 Bahasa Indonesia](./README.id-ID.md)
 </div>
 
 ---
 
-## 🤔 Kenapa NzRouter?
+## 🤔 Kenapa N4tzzOfficial?
 
 **Berhenti buang-buang uang dan terhambat limit:**
 
@@ -27,7 +27,7 @@
 - ❌ API mahal ($20–50/bulan per provider)
 - ❌ Harus gonta-ganti provider secara manual
 
-**NzRouter menyelesaikan itu semua:**
+**N4tzzOfficial menyelesaikan itu semua:**
 
 - ✅ **Maksimalkan langganan** - lacak kuota dan habiskan sebelum reset
 - ✅ **Fallback otomatis** - langganan → murah → gratis, tanpa downtime
@@ -46,7 +46,7 @@
        │ http://localhost:20128/v1
        ↓
 ┌─────────────────────────────────────────┐
-│         NzRouter (Smart Router)          │
+│         N4tzzOfficial (Smart Router)          │
 │  • Konversi format (OpenAI ↔ Claude)    │
 │  • Pelacakan kuota                      │
 │  • Refresh token otomatis               │
@@ -68,8 +68,8 @@ Hasil: ngoding tanpa berhenti, biaya minimum
 **1. Install secara global:**
 
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 ```
 
 🎉 Dashboard terbuka di `http://localhost:20128`
@@ -116,12 +116,12 @@ URL default:
 
 <div align="center">
 
-### 📺 Panduan Setup Lengkap - NzRouter + Claude Code Gratis
+### 📺 Panduan Setup Lengkap - N4tzzOfficial + Claude Code Gratis
 
-[![NzRouter + Claude Code Setup](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
+[![N4tzzOfficial + Claude Code Setup](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
 
 **🎬 Tonton tutorial langkah demi langkah:**
-- ✅ Install dan setup NzRouter
+- ✅ Install dan setup N4tzzOfficial
 - ✅ Konfigurasi Claude Sonnet 4.5 gratis
 - ✅ Integrasi dengan Claude Code
 - ✅ Demo live coding
@@ -136,7 +136,7 @@ URL default:
 
 ## 🛠️ Tool CLI yang Didukung
 
-NzRouter bekerja mulus dengan semua tool AI coding utama:
+N4tzzOfficial bekerja mulus dengan semua tool AI coding utama:
 
 <div align="center">
   <table>
@@ -387,7 +387,7 @@ Combo: "my-coding-stack"
 
 Konversi mulus antar format:
 - **OpenAI** ↔ **Claude** ↔ **Gemini** ↔ **OpenAI Responses**
-- Tool CLI mengirim dalam format OpenAI → NzRouter mengonversi → provider menerima dalam format nativenya
+- Tool CLI mengirim dalam format OpenAI → N4tzzOfficial mengonversi → provider menerima dalam format nativenya
 - Bekerja dengan semua tool yang mendukung custom OpenAI endpoint
 
 ### 👥 Dukungan Multi-akun
@@ -441,12 +441,12 @@ Konversi mulus antar format:
 > **💡 PENTING - tentang biaya di dashboard:**
 >
 > "Biaya" yang ditampilkan pada analitik penggunaan **hanya untuk pelacakan dan perbandingan**.
-> NzRouter sendiri **tidak menagih apa pun**. Kamu hanya membayar langsung ke provider jika memakai layanan berbayar.
+> N4tzzOfficial sendiri **tidak menagih apa pun**. Kamu hanya membayar langsung ke provider jika memakai layanan berbayar.
 >
 > **Contoh:** jika dashboard menampilkan "Total biaya $290" untuk pemakaian model iFlow,
 > itu adalah jumlah yang seharusnya kamu bayar bila memakai API berbayar secara langsung. Biaya sebenarnya = **$0** (iFlow gratis tanpa batas).
 >
-> Anggap saja ini "pelacak penghematan" yang menunjukkan berapa banyak yang kamu hemat lewat model gratis dan routing NzRouter!
+> Anggap saja ini "pelacak penghematan" yang menunjukkan berapa banyak yang kamu hemat lewat model gratis dan routing N4tzzOfficial!
 
 ### 🌐 Deploy di Mana Saja
 
@@ -478,15 +478,15 @@ Konversi mulus antar format:
 
 ---
 
-### 📊 Tentang Biaya dan Penagihan NzRouter
+### 📊 Tentang Biaya dan Penagihan N4tzzOfficial
 
-**Fakta soal penagihan NzRouter:**
+**Fakta soal penagihan N4tzzOfficial:**
 
-✅ **Software NzRouter = gratis selamanya** (open source, tanpa tagihan)
+✅ **Software N4tzzOfficial = gratis selamanya** (open source, tanpa tagihan)
 ✅ **"Biaya" di dashboard = tampilan/pelacakan saja** (bukan tagihan sungguhan)
 ✅ **Pembayaran langsung ke provider** (langganan atau biaya API)
 ✅ **Provider gratis tetap gratis** (iFlow, Kiro, Qwen = $0 unlimited)
-❌ **NzRouter tidak mengirim invoice** atau menagih kartumu
+❌ **N4tzzOfficial tidak mengirim invoice** atau menagih kartumu
 
 **Cara kerja tampilan biaya:**
 
@@ -507,9 +507,9 @@ Kenyataannya:
 
 **Aturan pembayaran:**
 - **Provider langganan** (Claude Code, Codex): bayar langsung di website masing-masing
-- **Provider murah** (GLM, MiniMax): bayar langsung, NzRouter hanya melakukan routing
+- **Provider murah** (GLM, MiniMax): bayar langsung, N4tzzOfficial hanya melakukan routing
 - **Provider gratis** (iFlow, Kiro, Qwen): benar-benar gratis selamanya, tanpa biaya tersembunyi
-- **NzRouter**: tidak menagih apa pun
+- **N4tzzOfficial**: tidak menagih apa pun
 
 ---
 
@@ -584,7 +584,7 @@ Cara akses: WhatsApp, Telegram, Slack, Discord, iMessage, Signal...
 <details>
 <summary><b>📊 Kenapa dashboard menampilkan biaya yang besar?</b></summary>
 
-Dashboard melacak pemakaian token dan menampilkan **estimasi biaya** seandainya kamu memakai API berbayar secara langsung. Ini **bukan tagihan nyata**, melainkan acuan untuk melihat berapa banyak yang kamu hemat dengan memakai model gratis atau langganan yang sudah ada lewat NzRouter.
+Dashboard melacak pemakaian token dan menampilkan **estimasi biaya** seandainya kamu memakai API berbayar secara langsung. Ini **bukan tagihan nyata**, melainkan acuan untuk melihat berapa banyak yang kamu hemat dengan memakai model gratis atau langganan yang sudah ada lewat N4tzzOfficial.
 
 **Contoh:**
 - **Tampilan dashboard:** "Total biaya $290"
@@ -597,16 +597,16 @@ Tampilan biaya adalah "pelacak penghematan" untuk memahami pola pemakaian dan pe
 </details>
 
 <details>
-<summary><b>💳 Apakah NzRouter menagih saya?</b></summary>
+<summary><b>💳 Apakah N4tzzOfficial menagih saya?</b></summary>
 
-**Tidak.** NzRouter adalah software open source gratis yang berjalan di komputermu sendiri. Tidak ada penagihan sama sekali.
+**Tidak.** N4tzzOfficial adalah software open source gratis yang berjalan di komputermu sendiri. Tidak ada penagihan sama sekali.
 
 **Kamu membayar ke:**
 - ✅ **Provider langganan** (Claude Code $20/bulan, Codex $20-200/bulan) → bayar langsung di website masing-masing
-- ✅ **Provider murah** (GLM, MiniMax) → bayar langsung, NzRouter hanya me-routing request
-- ❌ **NzRouter sendiri** → **tidak menagih apa pun**
+- ✅ **Provider murah** (GLM, MiniMax) → bayar langsung, N4tzzOfficial hanya me-routing request
+- ❌ **N4tzzOfficial sendiri** → **tidak menagih apa pun**
 
-NzRouter adalah proxy/router lokal. Ia tidak menyimpan informasi kartu kredit, tidak bisa mengirim invoice, dan tidak punya sistem penagihan. Sepenuhnya software gratis.
+N4tzzOfficial adalah proxy/router lokal. Ia tidak menyimpan informasi kartu kredit, tidak bisa mengirim invoice, dan tidak punya sistem penagihan. Sepenuhnya software gratis.
 
 </details>
 
@@ -620,9 +620,9 @@ Ini adalah layanan gratis yang disediakan masing-masing perusahaan:
 - **Kiro**: model Claude gratis unlimited via AWS Builder ID
 - **Qwen**: akses gratis unlimited ke model Qwen via device authentication
 
-NzRouter hanya me-routing request — tidak ada "jebakan" atau tagihan di kemudian hari. Layanannya memang gratis, dan NzRouter membuatnya lebih mudah dipakai dengan dukungan fallback.
+N4tzzOfficial hanya me-routing request — tidak ada "jebakan" atau tagihan di kemudian hari. Layanannya memang gratis, dan N4tzzOfficial membuatnya lebih mudah dipakai dengan dukungan fallback.
 
-**Catatan:** beberapa provider langganan (Antigravity, GitHub Copilot) punya masa preview gratis dan bisa jadi berbayar nanti, tetapi hal itu diumumkan secara jelas oleh provider tersebut, bukan oleh NzRouter.
+**Catatan:** beberapa provider langganan (Antigravity, GitHub Copilot) punya masa preview gratis dan bisa jadi berbayar nanti, tetapi hal itu diumumkan secara jelas oleh provider tersebut, bukan oleh N4tzzOfficial.
 
 </details>
 
@@ -647,7 +647,7 @@ NzRouter hanya me-routing request — tidak ada "jebakan" atau tagihan di kemudi
 
 3. **Gunakan provider langganan paling akhir:**
    - Hanya jika kamu memang sudah punya
-   - NzRouter memaksimalkan nilainya lewat pelacakan kuota
+   - N4tzzOfficial memaksimalkan nilainya lewat pelacakan kuota
 
 **Hasil:** sebagian besar pengguna bisa jalan dengan $0/bulan hanya dengan tier gratis!
 
@@ -656,20 +656,20 @@ NzRouter hanya me-routing request — tidak ada "jebakan" atau tagihan di kemudi
 <details>
 <summary><b>📈 Bagaimana kalau pemakaian tiba-tiba melonjak?</b></summary>
 
-Smart fallback NzRouter mencegah tagihan tak terduga:
+Smart fallback N4tzzOfficial mencegah tagihan tak terduga:
 
 **Skenario:** kuota habis di tengah sprint coding
 
-**Tanpa NzRouter:**
+**Tanpa N4tzzOfficial:**
 - ❌ Kena rate limit → kerja berhenti → frustrasi
 - ❌ Atau: tagihan API mahal tanpa disengaja
 
-**Dengan NzRouter:**
+**Dengan N4tzzOfficial:**
 - ✅ Langganan mencapai batas → otomatis fallback ke tier murah
 - ✅ Tier murah jadi mahal → otomatis fallback ke tier gratis
 - ✅ Ngoding tidak berhenti → biaya tetap terprediksi
 
-**Kamu yang pegang kendali:** atur batas pengeluaran per provider di dashboard, dan NzRouter akan mematuhinya.
+**Kamu yang pegang kendali:** atur batas pengeluaran per provider di dashboard, dan N4tzzOfficial akan mematuhinya.
 
 </details>
 
@@ -693,7 +693,7 @@ Model:
   cc/claude-haiku-4-5-20251001
 ```
 
-**Tips pro:** pakai Opus untuk tugas kompleks, Sonnet kalau mengutamakan kecepatan. NzRouter melacak kuota per model!
+**Tips pro:** pakai Opus untuk tugas kompleks, Sonnet kalau mengutamakan kecepatan. N4tzzOfficial melacak kuota per model!
 
 ### OpenAI Codex (Plus/Pro)
 
@@ -871,12 +871,12 @@ Biaya bulanan: $0
 
 ```bash
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 20128:20128 \
   -v NzRouter-data:/app/data \
   -e PORT=20128 \
   -e BASE_URL=http://localhost:20128 \
-  ghcr.io/decolua/NzRouter:latest
+  ghcr.io/N4tzzOfficial/N4tzzOfficial:latest
 ```
 
 Dashboard: `http://localhost:20128/dashboard`
@@ -887,8 +887,8 @@ Dashboard: `http://localhost:20128/dashboard`
 <summary><b>VPS / Cloud</b></summary>
 
 ```bash
-npm install -g NzRouter
-PORT=20128 HOSTNAME=0.0.0.0 BASE_URL=https://your-domain.com NzRouter
+npm install -g N4tzzOfficial
+PORT=20128 HOSTNAME=0.0.0.0 BASE_URL=https://your-domain.com N4tzzOfficial
 ```
 
 Disarankan menaruhnya di belakang reverse proxy (Nginx/Caddy) dengan HTTPS, dan membatasi akses hanya untuk dirimu sendiri.
@@ -938,15 +938,17 @@ Kontribusi sangat diterima!
 
 ## 📄 Lisensi
 
-MIT License — lihat [LICENSE](https://github.com/decolua/NzRouter/blob/main/LICENSE) untuk detailnya.
+MIT License — lihat [LICENSE](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE) untuk detailnya.
 
 ---
 
 <div align="center">
 
-**Kalau NzRouter membantumu, kasih ⭐ di [GitHub](https://github.com/decolua/NzRouter)!**
+**Kalau N4tzzOfficial membantumu, kasih ⭐ di [GitHub](https://github.com/N4tzzOfficial/NzRouter)!**
 
-[🌐 Website](https://NzRouter.com) • [📦 npm](https://www.npmjs.com/package/NzRouter) • [🐛 Laporkan Bug](https://github.com/decolua/NzRouter/issues)
+[🌐 Website](https://n4tzz.com) • [📦 npm](https://www.npmjs.com/package/N4tzzOfficial) • [🐛 Laporkan Bug](https://github.com/N4tzzOfficial/NzRouter/issues)
 
 </div>
+
+
 

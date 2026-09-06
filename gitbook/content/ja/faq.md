@@ -164,7 +164,7 @@ Dashboard → Providers → Quota Tracking
 
 ```
 Cursor Settings → Models → Advanced:
-  OpenAI API Base URL: https://NzRouter.com/v1
+  OpenAI API Base URL: https://n4tzz.com/v1
   OpenAI API Key: [ダッシュボードから取得]
   Model: cc/claude-opus-4-5-20251101
 ```
@@ -172,8 +172,8 @@ Cursor Settings → Models → Advanced:
 **代替案:** パブリックドメインでVPSにセルフホスト:
 ```bash
 # VPSへデプロイ
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install && npm run build
 npm start
 
@@ -198,16 +198,16 @@ npm start
 
 ### Localhost(デフォルト)
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 → Dashboard: http://localhost:3000
 → API: http://localhost:20128/v1
 ```
 
 ### VPS/クラウド
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install && npm run build
 
 export JWT_SECRET="your-secure-secret"
@@ -219,23 +219,23 @@ npm start
 
 ### Docker
 ```bash
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 docker run -d \
   -p 3000:3000 \
   -e JWT_SECRET="your-secret" \
-  -v NzRouter-data:/app/data \
-  NzRouter
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial
 ```
 
 ### Cloudflare Workers
 ```bash
-cd NzRouter/app
+cd N4tzzOfficial/app
 npm run deploy:cloudflare
 ```
 
 **環境変数:**
 - `JWT_SECRET` - **本番環境で必ず変更!**
-- `DATA_DIR` - データベース保存パス(デフォルト: `~/.NzRouter`)
+- `DATA_DIR` - データベース保存パス(デフォルト: `~/.N4tzzOfficial`)
 - `INITIAL_PASSWORD` - ダッシュボードログイン(デフォルト: `123456`)
 - `NODE_ENV` - デプロイ時は`production`に設定
 
@@ -248,7 +248,7 @@ npm run deploy:cloudflare
 **はい、NzRouterはセキュリティとプライバシーを優先します:**
 
 **ローカルストレージ:**
-- すべてのデータは`~/.NzRouter`(またはカスタム`DATA_DIR`)にローカル保存
+- すべてのデータは`~/.N4tzzOfficial`(またはカスタム`DATA_DIR`)にローカル保存
 - NzRouterサーバーへのデータ送信なし
 - OAuthトークンはJWTで暗号化
 
@@ -287,12 +287,12 @@ npm run deploy:cloudflare
 
 ### グローバルNPMインストール
 ```bash
-npm update -g NzRouter
+npm update -g N4tzzOfficial
 ```
 
 ### ローカルインストール
 ```bash
-cd NzRouter/app
+cd N4tzzOfficial/app
 git pull origin main
 npm install
 npm run build
@@ -301,23 +301,23 @@ npm start
 
 ### Docker
 ```bash
-docker pull NzRouter:latest
-docker stop NzRouter
-docker rm NzRouter
+docker pull N4tzzOfficial:latest
+docker stop N4tzzOfficial
+docker rm N4tzzOfficial
 docker run -d \
   -p 3000:3000 \
-  -v NzRouter-data:/app/data \
-  NzRouter:latest
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial:latest
 ```
 
 **バージョンを確認:**
 ```bash
-NzRouter --version
+N4tzzOfficial --version
 ```
 
 **破壊的変更:**
-- [CHANGELOG.md](https://github.com/decolua/NzRouter/blob/main/CHANGELOG.md)を確認
-- メジャー更新前に`~/.NzRouter`をバックアップ
+- [CHANGELOG.md](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/CHANGELOG.md)を確認
+- メジャー更新前に`~/.N4tzzOfficial`をバックアップ
 - メジャーバージョンの移行ガイドを確認
 
 ---
@@ -329,18 +329,18 @@ NzRouter --version
 ### 貢献方法:
 
 1. **バグを報告:**
-   - [GitHub Issues](https://github.com/decolua/NzRouter/issues)
+   - [GitHub Issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
    - エラーログ、再現手順を含める
 
 2. **機能をリクエスト:**
-   - [GitHub Discussions](https://github.com/decolua/NzRouter/discussions)
+   - [GitHub Discussions](https://github.com/N4tzzOfficial/N4tzzOfficial/discussions)
    - ユースケースと利点を説明
 
 3. **コードを提出:**
    ```bash
    # リポジトリをフォーク
-   git clone https://github.com/YOUR_USERNAME/NzRouter.git
-   cd NzRouter
+   git clone https://github.com/YOUR_USERNAME/N4tzzOfficial.git
+   cd N4tzzOfficial
    
    # ブランチを作成
    git checkout -b feature/your-feature
@@ -375,14 +375,15 @@ NzRouter --version
 - ドキュメントを更新
 - コミットは小さく、わかりやすく
 
-詳細は[CONTRIBUTING.md](https://github.com/decolua/NzRouter/blob/main/CONTRIBUTING.md)を参照。
+詳細は[CONTRIBUTING.md](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/CONTRIBUTING.md)を参照。
 
 ---
 
 ## さらにヘルプが必要?
 
-- **ドキュメント:** [NzRouter.com/docs](https://NzRouter.com/docs)
-- **GitHub:** [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues:** [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **ドキュメント:** [n4tzz.com/docs](https://n4tzz.com/docs)
+- **GitHub:** [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
+- **Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
 - **トラブルシューティング:** [troubleshooting.md](troubleshooting.md)
+
 

@@ -9,7 +9,7 @@
 npm経由でNzRouterをグローバルインストール:
 
 ```bash
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
 **要件:**
@@ -23,7 +23,7 @@ npm install -g NzRouter
 一つのコマンドでNzRouterを起動:
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 ダッシュボードが自動的にブラウザで `http://localhost:3000` に開きます。
@@ -31,7 +31,7 @@ NzRouter
 **デフォルト設定:**
 - **ダッシュボード**: `http://localhost:3000`
 - **APIエンドポイント**: `http://localhost:20128/v1`
-- **データディレクトリ**: `~/.NzRouter`
+- **データディレクトリ**: `~/.N4tzzOfficial`
 
 ---
 
@@ -42,7 +42,7 @@ NzRouter
 環境変数を使ってカスタムデータディレクトリを設定:
 
 ```bash
-DATA_DIR=/path/to/data NzRouter
+DATA_DIR=/path/to/data N4tzzOfficial
 ```
 
 ### カスタムポート
@@ -69,7 +69,7 @@ NzRouterが実行されているターミナルで `Ctrl+C` を押します。
 起動コマンドを再度実行するだけです:
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 すべての設定、APIキー、コンボはデータディレクトリに保持されます。
@@ -81,13 +81,13 @@ NzRouter
 最新バージョンに更新:
 
 ```bash
-npm update -g NzRouter
+npm update -g N4tzzOfficial
 ```
 
 現在のバージョンを確認:
 
 ```bash
-npm list -g NzRouter
+npm list -g N4tzzOfficial
 ```
 
 ---
@@ -113,7 +113,7 @@ kill -9 <PID>
 
 ```bash
 # sudoを使用 (非推奨)
-sudo npm install -g NzRouter
+sudo npm install -g N4tzzOfficial
 
 # またはnpm権限を修正 (推奨)
 mkdir ~/.npm-global
@@ -128,10 +128,10 @@ source ~/.bashrc
 
 ```bash
 # 権限を確認
-ls -la ~/.NzRouter
+ls -la ~/.N4tzzOfficial
 
 # 権限を修正
-chmod 755 ~/.NzRouter
+chmod 755 ~/.N4tzzOfficial
 ```
 
 ---
@@ -139,7 +139,7 @@ chmod 755 ~/.NzRouter
 ## 📁 データディレクトリ構造
 
 ```
-~/.NzRouter/
+~/.N4tzzOfficial/
 ├── db.json           # メインデータベース (プロバイダー、コンボ、設定)
 ├── logs/             # アプリケーションログ
 └── cache/            # 一時キャッシュファイル
@@ -149,10 +149,10 @@ chmod 755 ~/.NzRouter
 
 ```bash
 # バックアップ
-cp -r ~/.NzRouter ~/.NzRouter.backup
+cp -r ~/.N4tzzOfficial ~/.N4tzzOfficial.backup
 
 # 復元
-cp -r ~/.NzRouter.backup ~/.NzRouter
+cp -r ~/.N4tzzOfficial.backup ~/.N4tzzOfficial
 ```
 
 ---
@@ -162,4 +162,5 @@ cp -r ~/.NzRouter.backup ~/.NzRouter
 - [プロバイダーを接続](/providers/subscription.md)
 - [コンボを作成](/features/combos.md)
 - [CLIツールとの統合](/integration/cursor.md)
+
 

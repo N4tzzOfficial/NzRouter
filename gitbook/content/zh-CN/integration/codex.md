@@ -1,12 +1,12 @@
 # OpenAI Codex CLI 集成
 
-将 NzRouter 与 OpenAI Codex CLI 集成,通过 NzRouter 的智能路由系统转发你的 OpenAI API 请求。
+将 N4tzzOfficial 与 OpenAI Codex CLI 集成,通过 N4tzzOfficial 的智能路由系统转发你的 OpenAI API 请求。
 
 ## 前置要求
 
 - 已安装 OpenAI Codex CLI
-- NzRouter 本地运行或已配置云端 endpoint
-- 来自 NzRouter 仪表盘的 API key
+- N4tzzOfficial 本地运行或已配置云端 endpoint
+- 来自 N4tzzOfficial 仪表盘的 API key
 
 ## 设置
 
@@ -15,11 +15,11 @@
 在 shell 配置文件(`~/.bashrc`、`~/.zshrc` 或 `~/.bash_profile`)中设置以下环境变量:
 
 ```bash
-# NzRouter 的 Base URL
+# N4tzzOfficial 的 Base URL
 export OPENAI_BASE_URL="http://localhost:20128/v1"
 
-# 来自 NzRouter 仪表盘的 API Key
-export OPENAI_API_KEY="your-NzRouter-api-key"
+# 来自 N4tzzOfficial 仪表盘的 API Key
+export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 ```
 
 ### 2. 重新加载 Shell 配置
@@ -39,7 +39,7 @@ echo $OPENAI_API_KEY
 
 ## 可用模型
 
-NzRouter 提供以下 Codex 模型:
+N4tzzOfficial 提供以下 Codex 模型:
 
 | 模型 ID | 描述 |
 |----------|-------------|
@@ -77,7 +77,7 @@ codex --model cx/gpt-5.1-codex-max "Explain what this code does: $(cat myfile.js
 ```json
 {
   "baseUrl": "http://localhost:20128/v1",
-  "apiKey": "your-NzRouter-api-key",
+  "apiKey": "your-N4tzzOfficial-api-key",
   "defaultModel": "cx/gpt-5.2-codex"
 }
 ```
@@ -88,7 +88,7 @@ codex --model cx/gpt-5.1-codex-max "Explain what this code does: $(cat myfile.js
 
 遇到认证错误时:
 
-1. 在 NzRouter 仪表盘中确认 API key 正确
+1. 在 N4tzzOfficial 仪表盘中确认 API key 正确
 2. 检查 `OPENAI_API_KEY` 环境变量已设置
 3. 确认 API key 未过期
 
@@ -96,7 +96,7 @@ codex --model cx/gpt-5.1-codex-max "Explain what this code does: $(cat myfile.js
 
 遇到连接错误时:
 
-1. 确认 NzRouter 正在运行:`curl http://localhost:20128/health`
+1. 确认 N4tzzOfficial 正在运行:`curl http://localhost:20128/health`
 2. 检查环境变量设置是否正确
 3. 确保防火墙没有阻止 20128 端口
 
@@ -104,19 +104,19 @@ codex --model cx/gpt-5.1-codex-max "Explain what this code does: $(cat myfile.js
 
 出现 "model not available" 错误时:
 
-1. 确认模型名与 NzRouter 配置一致
-2. 检查 NzRouter 仪表盘中 OpenAI 提供商连接是否激活
+1. 确认模型名与 N4tzzOfficial 配置一致
+2. 检查 N4tzzOfficial 仪表盘中 OpenAI 提供商连接是否激活
 3. 确认连接的提供商中包含该模型
 
 ## 云端 Endpoint
 
-使用 NzRouter 云端 endpoint 而非 localhost:
+使用 N4tzzOfficial 云端 endpoint 而非 localhost:
 
 ```bash
-export OPENAI_BASE_URL="https://NzRouter.com"
+export OPENAI_BASE_URL="https://n4tzz.com"
 ```
 
-确保已在 NzRouter 云端仪表盘中配置 API key。
+确保已在 N4tzzOfficial 云端仪表盘中配置 API key。
 
 ## 高级配置
 
@@ -134,4 +134,5 @@ export OPENAI_TIMEOUT=60  # 秒
 export CODEX_DEBUG=true
 codex --model cx/gpt-5.2-codex "Your prompt"
 ```
+
 

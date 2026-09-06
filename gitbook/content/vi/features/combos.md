@@ -6,7 +6,7 @@ Tạo các tổ hợp model tùy chỉnh với fallback tự động. Combo cho 
 
 ## Combos là gì?
 
-Combos là **chuỗi fallback tùy chỉnh** bạn tạo trong dashboard. Thay vì dùng một model duy nhất, bạn định nghĩa một chuỗi các model mà NzRouter sẽ thử theo thứ tự.
+Combos là **chuỗi fallback tùy chỉnh** bạn tạo trong dashboard. Thay vì dùng một model duy nhất, bạn định nghĩa một chuỗi các model mà N4tzzOfficial sẽ thử theo thứ tự.
 
 **Ví dụ:**
 ```
@@ -22,7 +22,7 @@ Models:
 Model: premium-coding
 ```
 
-NzRouter tự động thử từng model theo thứ tự cho đến khi thành công.
+N4tzzOfficial tự động thử từng model theo thứ tự cho đến khi thành công.
 
 ---
 
@@ -354,7 +354,7 @@ Sửa `~/.claude/config.json`:
 ```json
 {
   "anthropic_api_base": "http://localhost:20128/v1",
-  "anthropic_api_key": "your-NzRouter-api-key",
+  "anthropic_api_key": "your-N4tzzOfficial-api-key",
   "model": "budget-combo"
 }
 ```
@@ -363,7 +363,7 @@ Sửa `~/.claude/config.json`:
 
 ```bash
 export OPENAI_BASE_URL="http://localhost:20128"
-export OPENAI_API_KEY="your-NzRouter-api-key"
+export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 
 codex --model quality-first "your prompt"
 ```
@@ -480,7 +480,7 @@ Dashboard → Combos → Edit → Budget:
   Monthly limit: $50
 ```
 
-Khi đạt giới hạn, NzRouter bỏ qua model trả phí và chỉ dùng free tier.
+Khi đạt giới hạn, N4tzzOfficial bỏ qua model trả phí và chỉ dùng free tier.
 
 ### Bật/Tắt Model trong Combo
 
@@ -535,4 +535,5 @@ Dashboard → Combos → Clone "premium-coding"
 
 - [Smart Routing](./smart-routing.md) - Cách auto fallback hoạt động
 - [Quota Tracking](./quota-tracking.md) - Theo dõi sử dụng và chi phí
+
 

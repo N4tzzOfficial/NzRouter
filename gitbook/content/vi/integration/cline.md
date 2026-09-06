@@ -1,13 +1,13 @@
 # Tích hợp Cline
 
-Tích hợp NzRouter với extension Cline VSCode để định tuyến request AI qua hệ thống routing thông minh của NzRouter.
+Tích hợp N4tzzOfficial với extension Cline VSCode để định tuyến request AI qua hệ thống routing thông minh của N4tzzOfficial.
 
 ## Yêu cầu
 
 - Visual Studio Code đã cài đặt
 - Extension Cline đã cài đặt từ VSCode marketplace
-- NzRouter đang chạy cục bộ hoặc cloud endpoint đã cấu hình
-- API key từ NzRouter dashboard
+- N4tzzOfficial đang chạy cục bộ hoặc cloud endpoint đã cấu hình
+- API key từ N4tzzOfficial dashboard
 
 ## Setup
 
@@ -25,33 +25,33 @@ Tích hợp NzRouter với extension Cline VSCode để định tuyến request 
 
 ### 3. Cấu hình Base URL
 
-Đặt base URL tới endpoint NzRouter:
+Đặt base URL tới endpoint N4tzzOfficial:
 
-**Cho NzRouter cục bộ:**
+**Cho N4tzzOfficial cục bộ:**
 ```
 http://localhost:20128/v1
 ```
 
-**Cho NzRouter cloud:**
+**Cho N4tzzOfficial cloud:**
 ```
-https://NzRouter.com
+https://n4tzz.com
 ```
 
 **Các bước:**
-1. Trong field **Base URL**, nhập endpoint NzRouter
+1. Trong field **Base URL**, nhập endpoint N4tzzOfficial
 2. Đảm bảo bao gồm `/v1` ở cuối
 
 ### 4. Thêm API Key
 
-1. Trong field **API Key**, nhập API key NzRouter của bạn
-2. Bạn có thể tìm API key trong NzRouter dashboard tại **Settings → API Keys**
-3. Key bắt đầu bằng `sk-NzRouter-`
+1. Trong field **API Key**, nhập API key N4tzzOfficial của bạn
+2. Bạn có thể tìm API key trong N4tzzOfficial dashboard tại **Settings → API Keys**
+3. Key bắt đầu bằng `sk-N4tzzOfficial-`
 
 ### 5. Chọn Model
 
 1. Trong dropdown **Model**, bạn có thể:
    - Chọn từ model có sẵn (nếu Cline auto-detect)
-   - Nhập tên model thủ công từ cấu hình NzRouter
+   - Nhập tên model thủ công từ cấu hình N4tzzOfficial
 
 2. Tên model phổ biến:
    - `gpt-4`
@@ -71,13 +71,13 @@ Cline settings của bạn nên trông như sau:
 ```
 API Provider: Ollama
 Base URL: http://localhost:20128/v1
-API Key: sk-NzRouter-xxxxxxxxxxxxx
+API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Model: gpt-4
 ```
 
 ## Model có sẵn
 
-Bạn có thể dùng bất kỳ model nào đã cấu hình trong NzRouter dashboard. Ví dụ phổ biến:
+Bạn có thể dùng bất kỳ model nào đã cấu hình trong N4tzzOfficial dashboard. Ví dụ phổ biến:
 
 | Tên Model | Provider | Mô tả |
 |------------|----------|-------------|
@@ -94,64 +94,64 @@ Bạn có thể dùng bất kỳ model nào đã cấu hình trong NzRouter dash
 1. Mở panel Cline trong VSCode
 2. Gõ tin nhắn vào input chat
 3. Nhấn Enter để gửi
-4. Cline sẽ dùng NzRouter để xử lý request
+4. Cline sẽ dùng N4tzzOfficial để xử lý request
 
 ### Tạo Code
 
 1. Yêu cầu Cline tạo code: "Create a React component for a login form"
-2. Cline sẽ tạo code qua NzRouter
+2. Cline sẽ tạo code qua N4tzzOfficial
 3. Xem và chấp nhận code được tạo
 
 ### Giải thích Code
 
 1. Chọn code trong editor
 2. Hỏi Cline: "Explain this code"
-3. Nhận giải thích AI qua NzRouter
+3. Nhận giải thích AI qua N4tzzOfficial
 
 ### Thao tác File
 
 1. Yêu cầu Cline tạo, sửa hoặc xóa files
-2. Cline sẽ dùng NzRouter để hiểu context và thực hiện thay đổi
+2. Cline sẽ dùng N4tzzOfficial để hiểu context và thực hiện thay đổi
 3. Xem thay đổi trước khi chấp nhận
 
 ## Troubleshooting
 
 ### Lỗi "Connection Failed"
 
-1. Xác minh NzRouter đang chạy: `curl http://localhost:20128/health`
+1. Xác minh N4tzzOfficial đang chạy: `curl http://localhost:20128/health`
 2. Kiểm tra base URL đúng và bao gồm `/v1`
 3. Đảm bảo không firewall nào chặn port 20128
 4. Thử khởi động lại VSCode
 
 ### Lỗi "Invalid API Key"
 
-1. Xác minh API key trong NzRouter dashboard
-2. Đảm bảo bạn sao chép đầy đủ key bao gồm prefix `sk-NzRouter-`
+1. Xác minh API key trong N4tzzOfficial dashboard
+2. Đảm bảo bạn sao chép đầy đủ key bao gồm prefix `sk-N4tzzOfficial-`
 3. Kiểm tra API key chưa hết hạn
 4. Thử tạo API key mới
 
 ### Lỗi "Model Not Found"
 
-1. Xác minh tên model khớp chính xác với cấu hình NzRouter
-2. Kiểm tra kết nối provider đang hoạt động trong NzRouter dashboard
+1. Xác minh tên model khớp chính xác với cấu hình N4tzzOfficial
+2. Kiểm tra kết nối provider đang hoạt động trong N4tzzOfficial dashboard
 3. Đảm bảo model có sẵn trong các provider đã kết nối
 4. Thử dùng tên model đầy đủ (ví dụ: `openai/gpt-4` thay vì `gpt-4`)
 
 ### Cline không phản hồi
 
 1. Kiểm tra panel output Cline để xem thông báo lỗi
-2. Xác minh NzRouter instance đang chạy và healthy
+2. Xác minh N4tzzOfficial instance đang chạy và healthy
 3. Thử reload cửa sổ VSCode (Cmd/Ctrl + Shift + P → "Reload Window")
-4. Kiểm tra logs NzRouter để xem lỗi
+4. Kiểm tra logs N4tzzOfficial để xem lỗi
 
 ## Cấu hình Nâng cao
 
 ### Dùng Cloud Endpoint
 
-Để dùng NzRouter cloud endpoint thay vì localhost:
+Để dùng N4tzzOfficial cloud endpoint thay vì localhost:
 
-1. Trong Cline settings, đặt Base URL: `https://NzRouter.com`
-2. Đảm bảo bạn đã cấu hình API key trong NzRouter cloud dashboard
+1. Trong Cline settings, đặt Base URL: `https://n4tzz.com`
+2. Đảm bảo bạn đã cấu hình API key trong N4tzzOfficial cloud dashboard
 3. Đảm bảo cloud endpoint đang hoạt động và truy cập được
 
 ### Nhiều Model
@@ -173,16 +173,16 @@ Nếu gặp vấn đề timeout với request lớn:
 ## Best Practices
 
 1. **Dùng Model phù hợp**: Chọn model nhanh (như Haiku hoặc Flash) cho task đơn giản, model mạnh hơn (như Opus hoặc GPT-4) cho task phức tạp
-2. **Theo dõi Usage**: Kiểm tra NzRouter dashboard để xem thống kê và chi phí
+2. **Theo dõi Usage**: Kiểm tra N4tzzOfficial dashboard để xem thống kê và chi phí
 3. **Quản lý Context**: Giữ cuộc trò chuyện tập trung để giảm token usage
 4. **Chuyển Model**: Chuyển model dựa trên độ phức tạp task để tối ưu chi phí và hiệu năng
 5. **Bảo mật API Key**: Không bao giờ commit API key vào version control
 
-## Tích hợp với Tính năng NzRouter
+## Tích hợp với Tính năng N4tzzOfficial
 
 ### Định tuyến Model
 
-NzRouter tự động định tuyến request đến provider tốt nhất hiện có dựa trên:
+N4tzzOfficial tự động định tuyến request đến provider tốt nhất hiện có dựa trên:
 - Tính khả dụng của model
 - Trạng thái sức khỏe provider
 - Tối ưu chi phí
@@ -190,13 +190,14 @@ NzRouter tự động định tuyến request đến provider tốt nhất hiệ
 
 ### Hỗ trợ Fallback
 
-Nếu một provider thất bại, NzRouter tự động fallback sang provider khác đã cấu hình trong dashboard.
+Nếu một provider thất bại, N4tzzOfficial tự động fallback sang provider khác đã cấu hình trong dashboard.
 
 ### Theo dõi Usage
 
-Giám sát usage Cline qua NzRouter dashboard:
+Giám sát usage Cline qua N4tzzOfficial dashboard:
 - Tổng request
 - Token usage
 - Chi phí mỗi model
 - Phân bổ provider
+
 

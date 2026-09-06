@@ -1,12 +1,12 @@
 # Integración con Claude Code
 
-Integra NzRouter con Claude Code CLI para enrutar tus solicitudes de la API de Anthropic a través del sistema de enrutamiento inteligente de NzRouter.
+Integra N4tzzOfficial con Claude Code CLI para enrutar tus solicitudes de la API de Anthropic a través del sistema de enrutamiento inteligente de N4tzzOfficial.
 
 ## Requisitos previos
 
 - Claude Code CLI instalado
-- NzRouter ejecutándose localmente o endpoint en la nube configurado
-- API key del dashboard de NzRouter
+- N4tzzOfficial ejecutándose localmente o endpoint en la nube configurado
+- API key del dashboard de N4tzzOfficial
 
 ## Configuración
 
@@ -15,7 +15,7 @@ Integra NzRouter con Claude Code CLI para enrutar tus solicitudes de la API de A
 Establece las siguientes variables de entorno en tu archivo de configuración del shell (`~/.bashrc`, `~/.zshrc`, o `~/.bash_profile`):
 
 ```bash
-# Base URL for NzRouter
+# Base URL for N4tzzOfficial
 export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
 
 # Optional: Set default models for aliases
@@ -40,7 +40,7 @@ echo $ANTHROPIC_BASE_URL
 
 ## Aliases de modelos
 
-Claude Code soporta los siguientes aliases de modelos que mapean a modelos de NzRouter:
+Claude Code soporta los siguientes aliases de modelos que mapean a modelos de N4tzzOfficial:
 
 | Alias | Modelo | Variable de entorno |
 |-------|-------|---------------------|
@@ -86,7 +86,7 @@ Claude Code almacena su configuración en `~/.claude/settings.json`. Puedes edit
 
 Si encuentras errores de conexión:
 
-1. Verifica que NzRouter esté corriendo: `curl http://localhost:20128/health`
+1. Verifica que N4tzzOfficial esté corriendo: `curl http://localhost:20128/health`
 2. Verifica que las variables de entorno estén configuradas correctamente
 3. Asegúrate de que ningún firewall esté bloqueando el puerto 20128
 
@@ -94,17 +94,18 @@ Si encuentras errores de conexión:
 
 Si obtienes errores de "modelo no encontrado":
 
-1. Verifica que el nombre del modelo coincida con tu configuración de NzRouter
-2. Verifica que la conexión del proveedor esté activa en el dashboard de NzRouter
+1. Verifica que el nombre del modelo coincida con tu configuración de N4tzzOfficial
+2. Verifica que la conexión del proveedor esté activa en el dashboard de N4tzzOfficial
 3. Asegúrate de que el modelo esté disponible en tus proveedores conectados
 
 ## Endpoint en la nube
 
-Para usar el endpoint en la nube de NzRouter en lugar de localhost:
+Para usar el endpoint en la nube de N4tzzOfficial en lugar de localhost:
 
 ```bash
-export ANTHROPIC_BASE_URL="https://NzRouter.com"
+export ANTHROPIC_BASE_URL="https://n4tzz.com"
 ```
 
-Asegúrate de haber configurado tu API key en el dashboard en la nube de NzRouter.
+Asegúrate de haber configurado tu API key en el dashboard en la nube de N4tzzOfficial.
+
 

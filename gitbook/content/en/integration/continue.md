@@ -1,13 +1,13 @@
 # Continue VSCode Extension Integration
 
-Integrate NzRouter with Continue extension to bring AI assistance directly into Visual Studio Code.
+Integrate N4tzzOfficial with Continue extension to bring AI assistance directly into Visual Studio Code.
 
 ## Prerequisites
 
 - Visual Studio Code installed
 - Continue extension installed from VSCode marketplace
-- NzRouter API key from [dashboard](https://NzRouter.com/dashboard)
-- NzRouter running (local or cloud)
+- N4tzzOfficial API key from [dashboard](https://n4tzz.com/dashboard)
+- N4tzzOfficial running (local or cloud)
 
 ## Configuration Steps
 
@@ -18,7 +18,7 @@ Integrate NzRouter with Continue extension to bring AI assistance directly into 
 3. Type "Continue: Open Config" and select it
 4. This opens `~/.continue/config.json`
 
-### 2. Add NzRouter Model Configuration
+### 2. Add N4tzzOfficial Model Configuration
 
 Add the following configuration to your `config.json`:
 
@@ -27,7 +27,7 @@ Add the following configuration to your `config.json`:
 {
   "models": [
     {
-      "title": "NzRouter - Claude Opus",
+      "title": "N4tzzOfficial - Claude Opus",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
@@ -42,28 +42,28 @@ Add the following configuration to your `config.json`:
 {
   "models": [
     {
-      "title": "NzRouter - Claude Opus (Best)",
+      "title": "N4tzzOfficial - Claude Opus (Best)",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - Claude Sonnet (Balanced)",
+      "title": "N4tzzOfficial - Claude Sonnet (Balanced)",
       "provider": "openai",
       "model": "cc/claude-sonnet-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - DeepSeek Chat (Code)",
+      "title": "N4tzzOfficial - DeepSeek Chat (Code)",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - Claude Haiku (Fast)",
+      "title": "N4tzzOfficial - Claude Haiku (Fast)",
       "provider": "openai",
       "model": "cc/claude-haiku-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
@@ -73,10 +73,10 @@ Add the following configuration to your `config.json`:
 }
 ```
 
-**For Cloud NzRouter:**
+**For Cloud N4tzzOfficial:**
 Replace `apiBase` with:
 ```json
-"apiBase": "https://NzRouter.com/v1"
+"apiBase": "https://n4tzz.com/v1"
 ```
 
 ### 3. Save and Reload
@@ -89,7 +89,7 @@ Replace `apiBase` with:
 
 1. Open Continue sidebar (click Continue icon in left panel)
 2. Click model selector dropdown at the top
-3. Choose your preferred NzRouter model
+3. Choose your preferred N4tzzOfficial model
 
 ## Available Models
 
@@ -139,7 +139,7 @@ Add custom system prompts for specific behaviors:
 {
   "models": [
     {
-      "title": "NzRouter - Code Expert",
+      "title": "N4tzzOfficial - Code Expert",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key",
@@ -158,7 +158,7 @@ Adjust model behavior with parameters:
 {
   "models": [
     {
-      "title": "NzRouter - Creative Writer",
+      "title": "N4tzzOfficial - Creative Writer",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key",
@@ -204,13 +204,13 @@ Configure what context Continue sends to the model:
 ## Troubleshooting
 
 ### Model Not Responding
-- Check NzRouter is running: `curl http://localhost:20128/health`
+- Check N4tzzOfficial is running: `curl http://localhost:20128/health`
 - Verify API key in config.json
 - Check VSCode Developer Console for errors: `Help` → `Toggle Developer Tools`
 
 ### Wrong Model Selected
 - Click model dropdown in Continue sidebar
-- Select correct NzRouter model
+- Select correct N4tzzOfficial model
 - Model name must match exactly (case-sensitive)
 
 ### Configuration Not Loading
@@ -221,7 +221,7 @@ Configure what context Continue sends to the model:
 ### Slow Performance
 - Switch to faster models (haiku, flash)
 - Reduce context size in contextProviders
-- Check network latency to NzRouter
+- Check network latency to N4tzzOfficial
 
 ## Best Practices
 
@@ -247,4 +247,5 @@ Configure what context Continue sends to the model:
 - [Set up Roo](roo.md) for AI assistant
 - [Explore CLI usage](../cli/basic-usage.md)
 - [Learn about model selection](../models/overview.md)
+
 

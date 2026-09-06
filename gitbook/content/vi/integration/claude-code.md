@@ -1,12 +1,12 @@
 # Tích hợp Claude Code
 
-Tích hợp NzRouter với Claude Code CLI để định tuyến request API Anthropic qua hệ thống routing thông minh của NzRouter.
+Tích hợp N4tzzOfficial với Claude Code CLI để định tuyến request API Anthropic qua hệ thống routing thông minh của N4tzzOfficial.
 
 ## Yêu cầu
 
 - Claude Code CLI đã cài đặt
-- NzRouter đang chạy cục bộ hoặc cloud endpoint đã cấu hình
-- API key từ NzRouter dashboard
+- N4tzzOfficial đang chạy cục bộ hoặc cloud endpoint đã cấu hình
+- API key từ N4tzzOfficial dashboard
 
 ## Setup
 
@@ -15,7 +15,7 @@ Tích hợp NzRouter với Claude Code CLI để định tuyến request API Ant
 Đặt các biến môi trường sau trong file cấu hình shell (`~/.bashrc`, `~/.zshrc`, hoặc `~/.bash_profile`):
 
 ```bash
-# Base URL for NzRouter
+# Base URL for N4tzzOfficial
 export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
 
 # Optional: Set default models for aliases
@@ -40,7 +40,7 @@ echo $ANTHROPIC_BASE_URL
 
 ## Model Aliases
 
-Claude Code hỗ trợ các alias model sau ánh xạ sang model NzRouter:
+Claude Code hỗ trợ các alias model sau ánh xạ sang model N4tzzOfficial:
 
 | Alias | Model | Biến môi trường |
 |-------|-------|---------------------|
@@ -86,7 +86,7 @@ Claude Code lưu cấu hình trong `~/.claude/settings.json`. Bạn có thể s�
 
 Nếu gặp lỗi kết nối:
 
-1. Xác minh NzRouter đang chạy: `curl http://localhost:20128/health`
+1. Xác minh N4tzzOfficial đang chạy: `curl http://localhost:20128/health`
 2. Kiểm tra biến môi trường đã set đúng
 3. Đảm bảo không firewall nào chặn port 20128
 
@@ -94,17 +94,18 @@ Nếu gặp lỗi kết nối:
 
 Nếu gặp lỗi "model not found":
 
-1. Xác minh tên model khớp với cấu hình NzRouter
-2. Kiểm tra kết nối provider đang hoạt động trong NzRouter dashboard
+1. Xác minh tên model khớp với cấu hình N4tzzOfficial
+2. Kiểm tra kết nối provider đang hoạt động trong N4tzzOfficial dashboard
 3. Đảm bảo model có sẵn trong các provider đã kết nối
 
 ## Cloud Endpoint
 
-Để dùng NzRouter cloud endpoint thay vì localhost:
+Để dùng N4tzzOfficial cloud endpoint thay vì localhost:
 
 ```bash
-export ANTHROPIC_BASE_URL="https://NzRouter.com"
+export ANTHROPIC_BASE_URL="https://n4tzz.com"
 ```
 
-Đảm bảo bạn đã cấu hình API key trong NzRouter cloud dashboard.
+Đảm bảo bạn đã cấu hình API key trong N4tzzOfficial cloud dashboard.
+
 

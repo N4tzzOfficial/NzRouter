@@ -1,12 +1,12 @@
 # Frequently Asked Questions
 
-Common questions about NzRouter.
+Common questions about N4tzzOfficial.
 
 ---
 
-## What is NzRouter?
+## What is N4tzzOfficial?
 
-**NzRouter is an AI model router that maximizes your subscription value and minimizes costs.**
+**N4tzzOfficial is an AI model router that maximizes your subscription value and minimizes costs.**
 
 It intelligently routes requests across multiple AI providers using a 3-tier fallback system:
 1. **Subscription tier** - Maximize Claude Code, Codex, Gemini quotas you already pay for
@@ -23,7 +23,7 @@ It intelligently routes requests across multiple AI providers using a 3-tier fal
 
 ## How does pricing work?
 
-**NzRouter uses a 3-tier pricing strategy:**
+**N4tzzOfficial uses a 3-tier pricing strategy:**
 
 ### Tier 1: Subscription (Maximize First)
 - **Claude Code** (Pro/Max): $20-100/month - 5-hour + weekly quota
@@ -50,9 +50,9 @@ It intelligently routes requests across multiple AI providers using a 3-tier fal
 
 ---
 
-## Is NzRouter free?
+## Is N4tzzOfficial free?
 
-**Yes, NzRouter itself is 100% free and open source.**
+**Yes, N4tzzOfficial itself is 100% free and open source.**
 
 **Free tier providers available:**
 - **Gemini CLI** - 180K completions/month (FREE Google account)
@@ -96,7 +96,7 @@ See [providers documentation](providers/subscription.md) for details.
 
 ## Can I use multiple providers?
 
-**Yes! This is NzRouter's core feature.**
+**Yes! This is N4tzzOfficial's core feature.**
 
 **Combos allow you to chain multiple providers with automatic fallback:**
 
@@ -129,7 +129,7 @@ See [combos documentation](features/combos.md) for examples.
 
 ## How does quota tracking work?
 
-**NzRouter tracks quota in real-time for all providers:**
+**N4tzzOfficial tracks quota in real-time for all providers:**
 
 **Features:**
 - **Token consumption** - Input/output tokens per request
@@ -154,17 +154,17 @@ See [quota tracking documentation](features/quota-tracking.md) for details.
 
 ---
 
-## Does NzRouter work with Cursor?
+## Does N4tzzOfficial work with Cursor?
 
 **Yes, but Cursor requires a cloud endpoint.**
 
 **Problem:** Cursor IDE doesn't support localhost endpoints.
 
-**Solution:** Use NzRouter cloud deployment:
+**Solution:** Use N4tzzOfficial cloud deployment:
 
 ```
 Cursor Settings → Models → Advanced:
-  OpenAI API Base URL: https://NzRouter.com/v1
+  OpenAI API Base URL: https://n4tzz.com/v1
   OpenAI API Key: [from dashboard]
   Model: cc/claude-opus-4-5-20251101
 ```
@@ -172,8 +172,8 @@ Cursor Settings → Models → Advanced:
 **Alternative:** Self-host on VPS with public domain:
 ```bash
 # Deploy to VPS
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install && npm run build
 npm start
 
@@ -192,22 +192,22 @@ See [Cursor integration guide](integration/cursor.md) for details.
 
 ---
 
-## Can I self-host NzRouter?
+## Can I self-host N4tzzOfficial?
 
-**Yes! NzRouter supports multiple deployment options:**
+**Yes! N4tzzOfficial supports multiple deployment options:**
 
 ### Localhost (Default)
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 → Dashboard: http://localhost:3000
 → API: http://localhost:20128/v1
 ```
 
 ### VPS/Cloud
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install && npm run build
 
 export JWT_SECRET="your-secure-secret"
@@ -219,23 +219,23 @@ npm start
 
 ### Docker
 ```bash
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 docker run -d \
   -p 3000:3000 \
   -e JWT_SECRET="your-secret" \
-  -v NzRouter-data:/app/data \
-  NzRouter
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial
 ```
 
 ### Cloudflare Workers
 ```bash
-cd NzRouter/app
+cd N4tzzOfficial/app
 npm run deploy:cloudflare
 ```
 
 **Environment variables:**
 - `JWT_SECRET` - **MUST change in production!**
-- `DATA_DIR` - Database storage path (default: `~/.NzRouter`)
+- `DATA_DIR` - Database storage path (default: `~/.N4tzzOfficial`)
 - `INITIAL_PASSWORD` - Dashboard login (default: `123456`)
 - `NODE_ENV` - Set to `production` for deploy
 
@@ -245,11 +245,11 @@ See [deployment guide](getting-started/installation.md#deployment) for details.
 
 ## Is my data secure?
 
-**Yes, NzRouter prioritizes security and privacy:**
+**Yes, N4tzzOfficial prioritizes security and privacy:**
 
 **Local storage:**
-- All data stored locally in `~/.NzRouter` (or custom `DATA_DIR`)
-- No data sent to NzRouter servers
+- All data stored locally in `~/.N4tzzOfficial` (or custom `DATA_DIR`)
+- No data sent to N4tzzOfficial servers
 - OAuth tokens encrypted with JWT
 
 **No telemetry:**
@@ -268,31 +268,31 @@ See [deployment guide](getting-started/installation.md#deployment) for details.
 - Enable HTTPS for cloud deployments
 - Rotate API keys regularly
 
-**What NzRouter stores:**
+**What N4tzzOfficial stores:**
 - Provider OAuth tokens (encrypted)
 - API keys (encrypted)
 - Usage statistics (local only)
 - Combo configurations
 
-**What NzRouter does NOT store:**
+**What N4tzzOfficial does NOT store:**
 - Your prompts or responses
 - Code you generate
 - Personal information
 
 ---
 
-## How do I update NzRouter?
+## How do I update N4tzzOfficial?
 
 **Update methods depend on installation type:**
 
 ### Global NPM Install
 ```bash
-npm update -g NzRouter
+npm update -g N4tzzOfficial
 ```
 
 ### Local Install
 ```bash
-cd NzRouter/app
+cd N4tzzOfficial/app
 git pull origin main
 npm install
 npm run build
@@ -301,23 +301,23 @@ npm start
 
 ### Docker
 ```bash
-docker pull NzRouter:latest
-docker stop NzRouter
-docker rm NzRouter
+docker pull N4tzzOfficial:latest
+docker stop N4tzzOfficial
+docker rm N4tzzOfficial
 docker run -d \
   -p 3000:3000 \
-  -v NzRouter-data:/app/data \
-  NzRouter:latest
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial:latest
 ```
 
 **Check version:**
 ```bash
-NzRouter --version
+N4tzzOfficial --version
 ```
 
 **Breaking changes:**
-- Check [CHANGELOG.md](https://github.com/decolua/NzRouter/blob/main/CHANGELOG.md)
-- Backup `~/.NzRouter` before major updates
+- Check [CHANGELOG.md](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/CHANGELOG.md)
+- Backup `~/.N4tzzOfficial` before major updates
 - Review migration guides for major versions
 
 ---
@@ -329,18 +329,18 @@ NzRouter --version
 ### Ways to contribute:
 
 1. **Report bugs:**
-   - [GitHub Issues](https://github.com/decolua/NzRouter/issues)
+   - [GitHub Issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
    - Include error logs, steps to reproduce
 
 2. **Request features:**
-   - [GitHub Discussions](https://github.com/decolua/NzRouter/discussions)
+   - [GitHub Discussions](https://github.com/N4tzzOfficial/N4tzzOfficial/discussions)
    - Describe use case and benefits
 
 3. **Submit code:**
    ```bash
    # Fork repo
-   git clone https://github.com/YOUR_USERNAME/NzRouter.git
-   cd NzRouter
+   git clone https://github.com/YOUR_USERNAME/N4tzzOfficial.git
+   cd N4tzzOfficial
    
    # Create branch
    git checkout -b feature/your-feature
@@ -375,14 +375,15 @@ NzRouter --version
 - Update documentation
 - Keep commits atomic and descriptive
 
-See [CONTRIBUTING.md](https://github.com/decolua/NzRouter/blob/main/CONTRIBUTING.md) for details.
+See [CONTRIBUTING.md](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/CONTRIBUTING.md) for details.
 
 ---
 
 ## Need More Help?
 
-- **Documentation:** [NzRouter.com/docs](https://NzRouter.com/docs)
-- **GitHub:** [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues:** [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **Documentation:** [n4tzz.com/docs](https://n4tzz.com/docs)
+- **GitHub:** [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
+- **Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
 - **Troubleshooting:** [troubleshooting.md](troubleshooting.md)
+
 

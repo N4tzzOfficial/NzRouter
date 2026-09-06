@@ -1,6 +1,6 @@
 # Solución de problemas
 
-Problemas comunes y soluciones al usar NzRouter.
+Problemas comunes y soluciones al usar N4tzzOfficial.
 
 ---
 
@@ -78,7 +78,7 @@ Problemas comunes y soluciones al usar NzRouter.
 **Soluciones:**
 
 1. **Refresh automático (por defecto):**
-   NzRouter refresca automáticamente los tokens. Espera 30 segundos y reintenta.
+   N4tzzOfficial refresca automáticamente los tokens. Espera 30 segundos y reintenta.
 
 2. **Reconexión manual:**
    ```
@@ -135,15 +135,15 @@ Problemas comunes y soluciones al usar NzRouter.
 **Problema:** "ECONNREFUSED" o "Cannot connect to localhost:20128".
 
 **Causas:**
-- NzRouter no está ejecutándose
+- N4tzzOfficial no está ejecutándose
 - Puerto 20128 bloqueado
 - Firewall bloqueando la conexión
 
 **Soluciones:**
 
-1. **Inicia NzRouter:**
+1. **Inicia N4tzzOfficial:**
    ```bash
-   NzRouter
+   N4tzzOfficial
    ```
    El dashboard debe abrir en http://localhost:3000
 
@@ -164,7 +164,7 @@ Problemas comunes y soluciones al usar NzRouter.
 4. **Usa el endpoint en la nube:**
    Si localhost no funciona (ej. Cursor IDE):
    ```
-   Endpoint: https://NzRouter.com/v1
+   Endpoint: https://n4tzz.com/v1
    ```
 
 ---
@@ -175,15 +175,15 @@ Problemas comunes y soluciones al usar NzRouter.
 
 **Causas:**
 - Puerto 3000 ya en uso
-- NzRouter crasheó
+- N4tzzOfficial crasheó
 - Problemas de caché del navegador
 
 **Soluciones:**
 
-1. **Verifica si NzRouter está ejecutándose:**
+1. **Verifica si N4tzzOfficial está ejecutándose:**
    ```bash
    # Verifica el proceso
-   ps aux | grep NzRouter
+   ps aux | grep N4tzzOfficial
    
    # Verifica el puerto 3000
    lsof -i :3000
@@ -199,13 +199,13 @@ Problemas comunes y soluciones al usar NzRouter.
    taskkill /PID <PID> /F
    ```
 
-3. **Reinicia NzRouter:**
+3. **Reinicia N4tzzOfficial:**
    ```bash
    # Detener
-   pkill -f NzRouter
+   pkill -f N4tzzOfficial
    
    # Iniciar
-   NzRouter
+   N4tzzOfficial
    ```
 
 4. **Limpia la caché del navegador:**
@@ -346,7 +346,8 @@ Problemas comunes y soluciones al usar NzRouter.
 
 ## ¿Necesitas más ayuda?
 
-- **GitHub Issues:** [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
-- **Documentación:** [NzRouter.com/docs](https://NzRouter.com/docs)
+- **GitHub Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
+- **Documentación:** [n4tzz.com/docs](https://n4tzz.com/docs)
 - **FAQ:** [faq.md](faq.md)
+
 

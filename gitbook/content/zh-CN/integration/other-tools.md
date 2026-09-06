@@ -1,10 +1,10 @@
 # 其他工具集成
 
-NzRouter 兼容任何支持 OpenAI API 格式的工具。本指南介绍各种工具和自定义应用的通用集成模式。
+N4tzzOfficial 兼容任何支持 OpenAI API 格式的工具。本指南介绍各种工具和自定义应用的通用集成模式。
 
 ## 概览
 
-NzRouter 提供 OpenAI 兼容的 API endpoint,可与以下场景配合使用:
+N4tzzOfficial 提供 OpenAI 兼容的 API endpoint,可与以下场景配合使用:
 - 自定义脚本与应用
 - API 客户端与测试工具
 - CLI 工具与实用程序
@@ -13,20 +13,20 @@ NzRouter 提供 OpenAI 兼容的 API endpoint,可与以下场景配合使用:
 
 ## 通用设置模式
 
-任何 OpenAI 兼容的工具都可以通过以下设置连接到 NzRouter:
+任何 OpenAI 兼容的工具都可以通过以下设置连接到 N4tzzOfficial:
 
-**本地 NzRouter:**
+**本地 N4tzzOfficial:**
 ```
 Base URL: http://localhost:20128/v1
 API Key: your-api-key-from-dashboard
-Model: 任意 NzRouter 模型(cc/*, cx/*, glm/*, 等)
+Model: 任意 N4tzzOfficial 模型(cc/*, cx/*, glm/*, 等)
 ```
 
-**云端 NzRouter:**
+**云端 N4tzzOfficial:**
 ```
-Base URL: https://NzRouter.com/v1
+Base URL: https://n4tzz.com/v1
 API Key: your-api-key-from-dashboard
-Model: 任意 NzRouter 模型(cc/*, cx/*, glm/*, 等)
+Model: 任意 N4tzzOfficial 模型(cc/*, cx/*, glm/*, 等)
 ```
 
 ## 可用模型
@@ -318,9 +318,9 @@ def chat_with_retry(prompt, max_retries=3):
 
 ### 连接问题
 
-**问题:** 无法连接到 NzRouter
+**问题:** 无法连接到 N4tzzOfficial
 ```bash
-# 检查 NzRouter 是否运行
+# 检查 N4tzzOfficial 是否运行
 curl http://localhost:20128/health
 
 # 预期响应:
@@ -328,7 +328,7 @@ curl http://localhost:20128/health
 ```
 
 **方案:**
-- 确认 NzRouter 正在运行
+- 确认 N4tzzOfficial 正在运行
 - 检查 20128 端口未被阻止
 - 确保 base URL 正确(包含 `/v1`)
 
@@ -366,7 +366,7 @@ Error: Request timed out after 30s
 **方案:**
 - 在客户端配置中增大超时
 - 时间敏感任务使用更快的模型
-- 检查到 NzRouter 的网络连接
+- 检查到 N4tzzOfficial 的网络连接
 
 ### 速率限制
 
@@ -414,4 +414,5 @@ Error: Rate limit exceeded
 - [探索 CLI 用法](../cli/basic-usage.md)
 - [了解模型选择](../models/overview.md)
 - [API 参考](../api/reference.md)
+
 

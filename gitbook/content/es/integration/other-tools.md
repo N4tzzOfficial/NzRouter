@@ -1,10 +1,10 @@
 # Integración con otras herramientas
 
-NzRouter es compatible con cualquier herramienta que soporte el formato de API de OpenAI. Esta guía cubre patrones de integración genéricos para varias herramientas y aplicaciones personalizadas.
+N4tzzOfficial es compatible con cualquier herramienta que soporte el formato de API de OpenAI. Esta guía cubre patrones de integración genéricos para varias herramientas y aplicaciones personalizadas.
 
 ## Resumen
 
-NzRouter proporciona un endpoint de API compatible con OpenAI que funciona con:
+N4tzzOfficial proporciona un endpoint de API compatible con OpenAI que funciona con:
 - Scripts y aplicaciones personalizadas
 - Clientes de API y herramientas de testing
 - Herramientas CLI y utilidades
@@ -13,20 +13,20 @@ NzRouter proporciona un endpoint de API compatible con OpenAI que funciona con:
 
 ## Patrón de configuración genérico
 
-Cualquier herramienta compatible con OpenAI puede conectarse a NzRouter usando estas configuraciones:
+Cualquier herramienta compatible con OpenAI puede conectarse a N4tzzOfficial usando estas configuraciones:
 
-**NzRouter local:**
+**N4tzzOfficial local:**
 ```
 Base URL: http://localhost:20128/v1
 API Key: your-api-key-from-dashboard
-Model: cualquier modelo de NzRouter (cc/*, cx/*, glm/*, etc.)
+Model: cualquier modelo de N4tzzOfficial (cc/*, cx/*, glm/*, etc.)
 ```
 
-**NzRouter en la nube:**
+**N4tzzOfficial en la nube:**
 ```
-Base URL: https://NzRouter.com/v1
+Base URL: https://n4tzz.com/v1
 API Key: your-api-key-from-dashboard
-Model: cualquier modelo de NzRouter (cc/*, cx/*, glm/*, etc.)
+Model: cualquier modelo de N4tzzOfficial (cc/*, cx/*, glm/*, etc.)
 ```
 
 ## Modelos disponibles
@@ -318,9 +318,9 @@ def chat_with_retry(prompt, max_retries=3):
 
 ### Problemas de conexión
 
-**Problema:** No se puede conectar a NzRouter
+**Problema:** No se puede conectar a N4tzzOfficial
 ```bash
-# Verifica si NzRouter está corriendo
+# Verifica si N4tzzOfficial está corriendo
 curl http://localhost:20128/health
 
 # Respuesta esperada:
@@ -328,7 +328,7 @@ curl http://localhost:20128/health
 ```
 
 **Solución:**
-- Verifica que NzRouter esté corriendo
+- Verifica que N4tzzOfficial esté corriendo
 - Verifica que el puerto 20128 no esté bloqueado
 - Asegúrate de tener la URL base correcta (incluir `/v1`)
 
@@ -366,7 +366,7 @@ Error: Request timed out after 30s
 **Solución:**
 - Aumenta el timeout en la configuración del cliente
 - Usa modelos más rápidos para tareas sensibles al tiempo
-- Verifica la conexión de red a NzRouter
+- Verifica la conexión de red a N4tzzOfficial
 
 ### Rate limiting
 
@@ -414,4 +414,5 @@ Error: Rate limit exceeded
 - [Explorar uso de CLI](../cli/basic-usage.md)
 - [Aprende sobre la selección de modelos](../models/overview.md)
 - [Referencia de API](../api/reference.md)
+
 

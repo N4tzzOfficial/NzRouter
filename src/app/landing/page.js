@@ -63,7 +63,7 @@ export default function LandingPage() {
                 Start Free
               </button>
               <button
-                onClick={() => window.open("https://github.com/decolua/nzrouter#readme", "_blank")}
+                onClick={() => window.open("https://github.com/N4tzzOfficial/NzRouter#readme", "_blank")}
                 className="w-full sm:w-auto h-14 px-10 rounded-lg border border-border hover:bg-surface-2 text-white text-lg font-bold transition-all"
               >
                 Read Documentation

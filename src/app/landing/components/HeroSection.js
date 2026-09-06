@@ -32,7 +32,7 @@ export default function HeroSection() {
             Get Started
           </button>
           <a
-            href="https://github.com/decolua/nzrouter"
+            href="https://github.com/N4tzzOfficial/NzRouter"
             target="_blank"
             rel="noopener noreferrer"
             className="h-12 px-8 rounded-lg border border-border bg-surface/50 hover:bg-surface text-white text-base font-bold transition-all flex items-center gap-2"

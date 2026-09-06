@@ -1,6 +1,6 @@
 # ☁️ 云端部署
 
-将 NzRouter 部署到 VPS 或 Docker,实现远程访问和生产使用。
+将 N4tzzOfficial 部署到 VPS 或 Docker,实现远程访问和生产使用。
 
 ---
 
@@ -16,8 +16,8 @@
 ### 步骤 1:克隆仓库
 
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 ```
 
 ### 步骤 2:安装依赖
@@ -39,7 +39,7 @@ npm run build
 ```bash
 export JWT_SECRET="your-secure-secret-change-this-to-random-string"
 export INITIAL_PASSWORD="your-secure-password"
-export DATA_DIR="/var/lib/NzRouter"
+export DATA_DIR="/var/lib/N4tzzOfficial"
 export NODE_ENV="production"
 ```
 
@@ -49,15 +49,15 @@ export NODE_ENV="production"
 |----------|---------|-------------|
 | `JWT_SECRET` | 自动生成 | **生产环境必须修改!** 用于 JWT token 签名 |
 | `INITIAL_PASSWORD` | `123456` | 仪表盘登录密码 |
-| `DATA_DIR` | `~/.NzRouter` | 数据库与数据存储路径 |
+| `DATA_DIR` | `~/.N4tzzOfficial` | 数据库与数据存储路径 |
 | `NODE_ENV` | `development` | 部署时设为 `production` |
 | `ENABLE_REQUEST_LOGS` | `false` | 启用 debug 请求/响应日志 |
 
 ### 步骤 5:创建数据目录
 
 ```bash
-sudo mkdir -p /var/lib/NzRouter
-sudo chown $USER:$USER /var/lib/NzRouter
+sudo mkdir -p /var/lib/N4tzzOfficial
+sudo chown $USER:$USER /var/lib/N4tzzOfficial
 ```
 
 ### 步骤 6:启动应用
@@ -74,8 +74,8 @@ PM2 让应用持续运行,崩溃时自动重启:
 # 全局安装 PM2
 npm install -g pm2
 
-# 用 PM2 启动 NzRouter
-pm2 start npm --name NzRouter -- start
+# 用 PM2 启动 N4tzzOfficial
+pm2 start npm --name N4tzzOfficial -- start
 
 # 保存 PM2 配置
 pm2 save
@@ -89,13 +89,13 @@ pm2 startup
 
 ```bash
 # 查看日志
-pm2 logs NzRouter
+pm2 logs N4tzzOfficial
 
 # 重启应用
-pm2 restart NzRouter
+pm2 restart N4tzzOfficial
 
 # 停止应用
-pm2 stop NzRouter
+pm2 stop N4tzzOfficial
 
 # 查看状态
 pm2 status
@@ -147,17 +147,17 @@ CMD ["npm", "run", "start"]
 
 ```bash
 # 构建镜像
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 
 # 运行容器
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 3000:3000 \
   -p 20128:20128 \
   -e JWT_SECRET="your-secure-secret-change-this" \
   -e INITIAL_PASSWORD="your-secure-password" \
-  -v NzRouter-data:/app/data \
-  NzRouter
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial
 ```
 
 ### 方式 2:Docker Compose
@@ -168,9 +168,9 @@ docker run -d \
 version: '3.8'
 
 services:
-  NzRouter:
+  N4tzzOfficial:
     build: .
-    container_name: NzRouter
+    container_name: N4tzzOfficial
     ports:
       - "3000:3000"
       - "20128:20128"
@@ -180,11 +180,11 @@ services:
       - INITIAL_PASSWORD=your-secure-password
       - DATA_DIR=/app/data
     volumes:
-      - NzRouter-data:/app/data
+      - N4tzzOfficial-data:/app/data
     restart: unless-stopped
 
 volumes:
-  NzRouter-data:
+  N4tzzOfficial-data:
 ```
 
 **使用 Docker Compose 运行:**
@@ -223,7 +223,7 @@ sudo apt install nginx
 
 ### 步骤 2:配置 Nginx
 
-创建 `/etc/nginx/sites-available/NzRouter`:
+创建 `/etc/nginx/sites-available/N4tzzOfficial`:
 
 ```nginx
 server {
@@ -247,7 +247,7 @@ server {
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
-    # Proxy to NzRouter
+    # Proxy to N4tzzOfficial
     location / {
         proxy_pass http://localhost:3000;
         proxy_http_version 1.1;
@@ -284,7 +284,7 @@ server {
 
 ```bash
 # 创建软链接
-sudo ln -s /etc/nginx/sites-available/NzRouter /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/N4tzzOfficial /etc/nginx/sites-enabled/
 
 # 测试配置
 sudo nginx -t
@@ -333,7 +333,7 @@ sudo ufw allow 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 
-# 若不使用反向代理,放开 NzRouter 端口
+# 若不使用反向代理,放开 N4tzzOfficial 端口
 sudo ufw allow 3000/tcp
 sudo ufw allow 20128/tcp
 
@@ -363,22 +363,22 @@ ssh -L 3000:localhost:3000 user@your-server.com
 # 更新系统包
 sudo apt update && sudo apt upgrade -y
 
-# 更新 NzRouter
-cd /path/to/NzRouter/app
+# 更新 N4tzzOfficial
+cd /path/to/N4tzzOfficial/app
 git pull
 npm install
 npm run build
-pm2 restart NzRouter
+pm2 restart N4tzzOfficial
 ```
 
 ### 5. 备份策略
 
 ```bash
 # 备份数据目录
-tar -czf NzRouter-backup-$(date +%Y%m%d).tar.gz /var/lib/NzRouter
+tar -czf N4tzzOfficial-backup-$(date +%Y%m%d).tar.gz /var/lib/N4tzzOfficial
 
 # 每日自动备份(加入 crontab)
-0 2 * * * tar -czf /backups/NzRouter-$(date +\%Y\%m\%d).tar.gz /var/lib/NzRouter
+0 2 * * * tar -czf /backups/N4tzzOfficial-$(date +\%Y\%m\%d).tar.gz /var/lib/N4tzzOfficial
 ```
 
 ---
@@ -392,7 +392,7 @@ tar -czf NzRouter-backup-$(date +%Y%m%d).tar.gz /var/lib/NzRouter
 pm2 status
 
 # 查看日志
-pm2 logs NzRouter --lines 100
+pm2 logs N4tzzOfficial --lines 100
 
 # 监控资源
 pm2 monit
@@ -429,20 +429,20 @@ netstat -tulpn | grep -E '3000|20128'
 
 ```bash
 # 查看日志
-pm2 logs NzRouter
+pm2 logs N4tzzOfficial
 
 # 检查端口是否被占用
 sudo lsof -i :3000
 sudo lsof -i :20128
 
 # 检查环境变量
-pm2 env NzRouter
+pm2 env N4tzzOfficial
 ```
 
 ### Nginx 502 Bad Gateway
 
 ```bash
-# 检查 NzRouter 是否运行
+# 检查 N4tzzOfficial 是否运行
 pm2 status
 
 # 查看 Nginx 错误日志
@@ -460,8 +460,8 @@ sudo nginx -t
 
 ```bash
 # 修复数据目录权限
-sudo chown -R $USER:$USER /var/lib/NzRouter
-chmod 755 /var/lib/NzRouter
+sudo chown -R $USER:$USER /var/lib/N4tzzOfficial
+chmod 755 /var/lib/N4tzzOfficial
 ```
 
 ---
@@ -471,4 +471,5 @@ chmod 755 /var/lib/NzRouter
 - [连接提供商](/providers/subscription.md)
 - [配置组合](/features/combos.md)
 - [集成工具](/integration/cursor.md)
+
 

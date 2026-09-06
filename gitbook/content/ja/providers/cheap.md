@@ -48,7 +48,7 @@ Dashboard → API Keys → Create New
 **ステップ3: NzRouterに追加**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Add API Key
 
 Provider: glm
@@ -120,7 +120,7 @@ Dashboard → API Management → Create Key
 **ステップ3: NzRouterに追加**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Add API Key
 
 Provider: minimax
@@ -193,7 +193,7 @@ Dashboard → API Keys → Create New
 **ステップ3: NzRouterに追加**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Add API Key
 
 Provider: kimi
@@ -460,4 +460,5 @@ Dashboard → Settings → Budget Alerts
 - **無料フォールバックを追加:** [無料プロバイダー](./free.md)
 - **サブスクリプションをセットアップ:** [サブスクリプションプロバイダー](./subscription.md)
 - **コンボを作成:** Dashboard → Combos → Create New
+
 

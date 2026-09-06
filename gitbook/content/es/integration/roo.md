@@ -1,12 +1,12 @@
 # Integración con Roo AI Assistant
 
-Integra NzRouter con Roo AI Assistant para acceder a múltiples modelos de IA a través de una interfaz unificada.
+Integra N4tzzOfficial con Roo AI Assistant para acceder a múltiples modelos de IA a través de una interfaz unificada.
 
 ## Requisitos previos
 
 - Roo AI Assistant instalado
-- API key de NzRouter desde el [dashboard](https://NzRouter.com/dashboard)
-- NzRouter ejecutándose (local o en la nube)
+- API key de N4tzzOfficial desde el [dashboard](https://n4tzz.com/dashboard)
+- N4tzzOfficial ejecutándose (local o en la nube)
 
 ## Pasos de configuración
 
@@ -20,21 +20,21 @@ Inicia Roo AI Assistant y abre el panel de configuración.
 2. Selecciona **Ollama** como tipo de proveedor
 3. Configura los siguientes ajustes:
 
-**Para NzRouter local:**
+**Para N4tzzOfficial local:**
 ```
 Base URL: http://localhost:20128/v1
 API Key: your-api-key-from-dashboard
 ```
 
-**Para NzRouter en la nube:**
+**Para N4tzzOfficial en la nube:**
 ```
-Base URL: https://NzRouter.com/v1
+Base URL: https://n4tzz.com/v1
 API Key: your-api-key-from-dashboard
 ```
 
 ### 3. Seleccionar modelo
 
-Elige entre los modelos disponibles de NzRouter:
+Elige entre los modelos disponibles de N4tzzOfficial:
 
 **Modelos Claude:**
 - `cc/claude-opus-4-5-20251101` - El más capaz
@@ -54,7 +54,7 @@ Elige entre los modelos disponibles de NzRouter:
 Envía un mensaje de prueba para verificar la integración:
 
 ```
-Hello! Can you confirm you're connected through NzRouter?
+Hello! Can you confirm you're connected through N4tzzOfficial?
 ```
 
 ## Ejemplos de uso
@@ -87,19 +87,19 @@ Modelo: cx/deepseek-reasoner
 ## Solución de problemas
 
 ### Connection Failed
-- Verifica que NzRouter esté corriendo: `curl http://localhost:20128/health`
+- Verifica que N4tzzOfficial esté corriendo: `curl http://localhost:20128/health`
 - Verifica que la API key sea correcta
 - Asegúrate de que la Base URL incluya el sufijo `/v1`
 
 ### Modelo no disponible
 - Verifica que el nombre del modelo coincida exactamente (sensible a mayúsculas)
-- Verifica que el modelo esté habilitado en tu plan de NzRouter
+- Verifica que el modelo esté habilitado en tu plan de N4tzzOfficial
 - Intenta otro modelo de la lista
 
 ### Respuestas lentas
 - Cambia a modelos más rápidos (haiku, flash)
 - Verifica la conexión de red
-- Monitorea los logs de NzRouter por problemas
+- Monitorea los logs de N4tzzOfficial por problemas
 
 ## Configuración avanzada
 
@@ -125,4 +125,5 @@ Configura diferentes perfiles para distintos casos de uso:
 - [Configurar Cursor](cursor.md) para integración con IDE
 - [Configurar Continue](continue.md) para VSCode
 - [Explorar uso de CLI](../cli/basic-usage.md)
+
 

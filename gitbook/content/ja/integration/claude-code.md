@@ -103,8 +103,9 @@ Claude Codeは設定を `~/.claude/settings.json` に保存します。必要に
 localhostの代わりにNzRouterクラウドエンドポイントを使用するには:
 
 ```bash
-export ANTHROPIC_BASE_URL="https://NzRouter.com"
+export ANTHROPIC_BASE_URL="https://n4tzz.com"
 ```
 
 NzRouterクラウドダッシュボードでAPIキーが設定されていることを確認してください。
+
 

@@ -34,34 +34,34 @@ npm --version
 どこからでも使用できるようにNzRouterをグローバルインストール:
 
 ```bash
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
 **NzRouterを起動:**
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 **利点:**
 - ✅ どのディレクトリからでも実行
-- ✅ シンプルなコマンド: `NzRouter`
-- ✅ `npm update -g NzRouter` で自動更新
+- ✅ シンプルなコマンド: `N4tzzOfficial`
+- ✅ `npm update -g N4tzzOfficial` で自動更新
 
 ### 方法2: ローカルインストール
 
 特定のプロジェクトにインストール:
 
 ```bash
-mkdir my-NzRouter
-cd my-NzRouter
-npm install NzRouter
+mkdir my-N4tzzOfficial
+cd my-N4tzzOfficial
+npm install N4tzzOfficial
 ```
 
 **NzRouterを起動:**
 
 ```bash
-npx NzRouter
+npx N4tzzOfficial
 ```
 
 **利点:**
@@ -74,8 +74,8 @@ npx NzRouter
 GitHubからクローンしてビルド:
 
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install
 npm run build
 npm start
@@ -93,13 +93,13 @@ npm start
 ### サーバーを起動
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 **何が起こるか:**
 1. サーバーが `http://localhost:20128` で起動
 2. ダッシュボードが自動的にブラウザで開く
-3. `~/.NzRouter` にデータディレクトリが作成される
+3. `~/.N4tzzOfficial` にデータディレクトリが作成される
 4. APIキーが自動生成される
 
 ### ダッシュボードログイン
@@ -193,7 +193,7 @@ export JWT_SECRET="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
 
 # ストレージ
-export DATA_DIR="~/.NzRouter"
+export DATA_DIR="~/.N4tzzOfficial"
 
 # サーバー
 export PORT="20128"
@@ -205,11 +205,11 @@ export ENABLE_REQUEST_LOGS="false"
 
 ### データディレクトリ
 
-**デフォルトの場所:** `~/.NzRouter`
+**デフォルトの場所:** `~/.N4tzzOfficial`
 
 **内容:**
 ```
-~/.NzRouter/
+~/.N4tzzOfficial/
   ├── db.json           # データベース (プロバイダー、コンボ、使用量)
   ├── api-keys.json     # APIキー
   └── logs/             # リクエストログ (有効化されている場合)
@@ -219,7 +219,7 @@ export ENABLE_REQUEST_LOGS="false"
 
 ```bash
 export DATA_DIR="/custom/path"
-NzRouter
+N4tzzOfficial
 ```
 
 ### ポート設定
@@ -230,13 +230,13 @@ NzRouter
 
 ```bash
 export PORT="3000"
-NzRouter
+N4tzzOfficial
 ```
 
 **またはコマンドラインで:**
 
 ```bash
-NzRouter --port 3000
+N4tzzOfficial --port 3000
 ```
 
 ---
@@ -263,14 +263,14 @@ kill -9 <PID>
 **解決策2: 別のポートを使用**
 
 ```bash
-NzRouter --port 3000
+N4tzzOfficial --port 3000
 ```
 
 ### Permission Denied
 
 **エラー:**
 ```
-Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/NzRouter'
+Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/N4tzzOfficial'
 ```
 
 **解決策: sudoを使用 (非推奨) またはnpm権限を修正**
@@ -283,7 +283,7 @@ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
 # 再度インストール
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
 ### Node.jsバージョンが古すぎる
@@ -351,17 +351,17 @@ Dashboard → Provider → Disconnect → Reconnect
 
 ```bash
 # 停止
-pkill -f NzRouter
+pkill -f N4tzzOfficial
 
 # 起動
-NzRouter
+N4tzzOfficial
 ```
 
 **または自動再起動にPM2を使用:**
 
 ```bash
 npm install -g pm2
-pm2 start NzRouter --name NzRouter
+pm2 start N4tzzOfficial --name N4tzzOfficial
 pm2 save
 ```
 
@@ -372,8 +372,8 @@ pm2 save
 ### ローカル開発
 
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 ```
 
 **ユースケース:** 個人コーディング、テスト
@@ -382,7 +382,7 @@ NzRouter
 
 ```bash
 # インストール
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 
 # 設定
 export JWT_SECRET="your-secure-secret"
@@ -391,7 +391,7 @@ export NODE_ENV="production"
 
 # PM2で起動
 npm install -g pm2
-pm2 start NzRouter --name NzRouter
+pm2 start N4tzzOfficial --name N4tzzOfficial
 pm2 save
 pm2 startup
 ```
@@ -401,15 +401,15 @@ pm2 startup
 ### Docker
 
 ```bash
-docker pull NzRouter/NzRouter:latest
+docker pull N4tzzOfficial/N4tzzOfficial:latest
 
 docker run -d \
   -p 20128:20128 \
   -e JWT_SECRET="your-secure-secret" \
   -e INITIAL_PASSWORD="your-password" \
-  -v NzRouter-data:/root/.NzRouter \
-  --name NzRouter \
-  NzRouter/NzRouter:latest
+  -v N4tzzOfficial-data:/root/.N4tzzOfficial \
+  --name N4tzzOfficial \
+  N4tzzOfficial/N4tzzOfficial:latest
 ```
 
 **ユースケース:** コンテナデプロイ、Kubernetes
@@ -444,13 +444,13 @@ server {
 ### グローバルインストールを削除
 
 ```bash
-npm uninstall -g NzRouter
+npm uninstall -g N4tzzOfficial
 ```
 
 ### データディレクトリを削除
 
 ```bash
-rm -rf ~/.NzRouter
+rm -rf ~/.N4tzzOfficial
 ```
 
 ### 設定を削除
@@ -473,7 +473,8 @@ nano ~/.bashrc  # または ~/.zshrc
 
 ## ヘルプが必要?
 
-- **ウェブサイト**: [NzRouter.com](https://NzRouter.com)
-- **GitHub**: [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues**: [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **ウェブサイト**: [n4tzz.com](https://n4tzz.com)
+- **GitHub**: [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
+- **Issues**: [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
+
 

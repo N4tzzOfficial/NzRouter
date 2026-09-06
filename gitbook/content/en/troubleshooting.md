@@ -1,6 +1,6 @@
 # Troubleshooting
 
-Common issues and solutions when using NzRouter.
+Common issues and solutions when using N4tzzOfficial.
 
 ---
 
@@ -78,7 +78,7 @@ Common issues and solutions when using NzRouter.
 **Solutions:**
 
 1. **Auto-refresh (default):**
-   NzRouter automatically refreshes tokens. Wait 30 seconds and retry.
+   N4tzzOfficial automatically refreshes tokens. Wait 30 seconds and retry.
 
 2. **Manual reconnect:**
    ```
@@ -135,15 +135,15 @@ Common issues and solutions when using NzRouter.
 **Problem:** "ECONNREFUSED" or "Cannot connect to localhost:20128".
 
 **Causes:**
-- NzRouter not running
+- N4tzzOfficial not running
 - Port 20128 blocked
 - Firewall blocking connection
 
 **Solutions:**
 
-1. **Start NzRouter:**
+1. **Start N4tzzOfficial:**
    ```bash
-   NzRouter
+   N4tzzOfficial
    ```
    Dashboard should open at http://localhost:3000
 
@@ -164,7 +164,7 @@ Common issues and solutions when using NzRouter.
 4. **Use cloud endpoint:**
    If localhost doesn't work (e.g., Cursor IDE):
    ```
-   Endpoint: https://NzRouter.com/v1
+   Endpoint: https://n4tzz.com/v1
    ```
 
 ---
@@ -175,15 +175,15 @@ Common issues and solutions when using NzRouter.
 
 **Causes:**
 - Port 3000 already in use
-- NzRouter crashed
+- N4tzzOfficial crashed
 - Browser cache issues
 
 **Solutions:**
 
-1. **Check if NzRouter is running:**
+1. **Check if N4tzzOfficial is running:**
    ```bash
    # Check process
-   ps aux | grep NzRouter
+   ps aux | grep N4tzzOfficial
    
    # Check port 3000
    lsof -i :3000
@@ -199,13 +199,13 @@ Common issues and solutions when using NzRouter.
    taskkill /PID <PID> /F
    ```
 
-3. **Restart NzRouter:**
+3. **Restart N4tzzOfficial:**
    ```bash
    # Stop
-   pkill -f NzRouter
+   pkill -f N4tzzOfficial
    
    # Start
-   NzRouter
+   N4tzzOfficial
    ```
 
 4. **Clear browser cache:**
@@ -346,7 +346,8 @@ Common issues and solutions when using NzRouter.
 
 ## Need More Help?
 
-- **GitHub Issues:** [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
-- **Documentation:** [NzRouter.com/docs](https://NzRouter.com/docs)
+- **GitHub Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
+- **Documentation:** [n4tzz.com/docs](https://n4tzz.com/docs)
 - **FAQ:** [faq.md](faq.md)
+
 

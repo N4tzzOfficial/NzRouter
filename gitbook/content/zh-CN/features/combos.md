@@ -6,7 +6,7 @@
 
 ## 什么是组合?
 
-组合是你在仪表盘中创建的 **自定义回退链**。它不是单一模型,而是定义一组顺序模型,由 NzRouter 依次尝试。
+组合是你在仪表盘中创建的 **自定义回退链**。它不是单一模型,而是定义一组顺序模型,由 N4tzzOfficial 依次尝试。
 
 **示例:**
 ```
@@ -22,7 +22,7 @@
 Model: premium-coding
 ```
 
-NzRouter 会按顺序自动尝试每个模型,直到成功为止。
+N4tzzOfficial 会按顺序自动尝试每个模型,直到成功为止。
 
 ---
 
@@ -354,7 +354,7 @@ Settings → Models → Advanced:
 ```json
 {
   "anthropic_api_base": "http://localhost:20128/v1",
-  "anthropic_api_key": "your-NzRouter-api-key",
+  "anthropic_api_key": "your-N4tzzOfficial-api-key",
   "model": "budget-combo"
 }
 ```
@@ -363,7 +363,7 @@ Settings → Models → Advanced:
 
 ```bash
 export OPENAI_BASE_URL="http://localhost:20128"
-export OPENAI_API_KEY="your-NzRouter-api-key"
+export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 
 codex --model quality-first "your prompt"
 ```
@@ -480,7 +480,7 @@ quality-first: 生产代码
   每月上限: $50
 ```
 
-达到上限时,NzRouter 跳过付费模型,仅使用免费层。
+达到上限时,N4tzzOfficial 跳过付费模型,仅使用免费层。
 
 ### 启用/禁用组合中的模型
 
@@ -535,4 +535,5 @@ quality-first: 生产代码
 
 - [智能路由](./smart-routing.md) - 自动回退如何工作
 - [配额跟踪](./quota-tracking.md) - 监控使用与成本
+
 

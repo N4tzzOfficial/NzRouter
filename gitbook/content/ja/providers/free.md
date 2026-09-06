@@ -31,7 +31,7 @@
 **ステップ1: ダッシュボード経由で接続**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect iFlow
 ```
 
@@ -91,7 +91,7 @@ Model: if/kimi-k2-thinking
 **ステップ1: ダッシュボード経由で接続**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect Qwen
 ```
 
@@ -144,7 +144,7 @@ Model: qw/qwen3-coder-plus
 **ステップ1: ダッシュボード経由で接続**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect Kiro
 ```
 
@@ -440,4 +440,5 @@ iFlow経由で200万 (無料): $0
 - **低価格バックアップを追加:** [低価格プロバイダー](./cheap.md)
 - **コンボを作成:** Dashboard → Combos → Create New
 - **コーディング開始:** 最大の信頼性のため `complete-fallback` コンボを使用
+
 

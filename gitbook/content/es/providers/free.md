@@ -31,7 +31,7 @@ Los proveedores del nivel gratis son tu **fallback** cuando se agota la cuota de
 **Paso 1: Conectar vía Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect iFlow
 ```
 
@@ -91,7 +91,7 @@ Model: if/kimi-k2-thinking
 **Paso 1: Conectar vía Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect Qwen
 ```
 
@@ -144,7 +144,7 @@ Model: qw/qwen3-coder-plus
 **Paso 1: Conectar vía Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect Kiro
 ```
 
@@ -200,7 +200,7 @@ Model: kr/claude-sonnet-4.5
 ```
 Settings → Models → Advanced:
   OpenAI API Base URL: http://localhost:20128/v1
-  OpenAI API Key: [desde el dashboard de NzRouter]
+  OpenAI API Key: [desde el dashboard de N4tzzOfficial]
   Model: if/kimi-k2-thinking
 ```
 
@@ -376,13 +376,13 @@ Perfecto para:
 100M × $20/1M = $2,000/mes
 ```
 
-**Opción 2: Solo nivel gratis de NzRouter**
+**Opción 2: Solo nivel gratis de N4tzzOfficial**
 ```
 100M vía nivel gratis = $0/mes
 Ahorros: $2,000/mes (100%)
 ```
 
-**Opción 3: Estrategia completa de NzRouter**
+**Opción 3: Estrategia completa de N4tzzOfficial**
 ```
 60M vía Gemini CLI (GRATIS): $0
 30M vía Claude Code (suscripción): $0 extra
@@ -440,4 +440,5 @@ Ahorros: $1,995/mes (99.76%)
 - **Agregar respaldo barato:** [Proveedores baratos](./cheap.md)
 - **Crear combos:** Dashboard → Combos → Create New
 - **Empezar a codificar:** Usa el combo `complete-fallback` para máxima confiabilidad
+
 

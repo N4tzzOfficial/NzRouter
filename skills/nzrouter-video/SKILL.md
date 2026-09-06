@@ -5,7 +5,7 @@ description: Generate videos via NzRouter /v1/videos/generations using xAI Grok 
 
 # NzRouter — Video Generation (xAI Grok Imagine)
 
-Requires `NZROUTER_URL` (and `NZROUTER_KEY` if auth enabled). See https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter/SKILL.md for setup.
+Requires `NZROUTER_URL` (and `NZROUTER_KEY` if auth enabled). See https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter/SKILL.md for setup.
 
 Requires a connected **xAI account** in the NzRouter dashboard — either **Grok Build OAuth** (SuperGrok / X Premium+ subscription sign-in) or a direct **xAI API key** from console.x.ai. The two are separate auth types with separate billing; the dashboard shows which one each connection uses.
 

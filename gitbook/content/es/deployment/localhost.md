@@ -1,15 +1,15 @@
 # 🏠 Despliegue en localhost
 
-Ejecuta NzRouter en tu máquina local para desarrollo y uso personal.
+Ejecuta N4tzzOfficial en tu máquina local para desarrollo y uso personal.
 
 ---
 
 ## 📦 Instalación
 
-Instala NzRouter globalmente vía npm:
+Instala N4tzzOfficial globalmente vía npm:
 
 ```bash
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
 **Requisitos:**
@@ -20,10 +20,10 @@ npm install -g NzRouter
 
 ## 🚀 Iniciar el servidor
 
-Inicia NzRouter con un solo comando:
+Inicia N4tzzOfficial con un solo comando:
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 El dashboard se abrirá automáticamente en tu navegador en `http://localhost:3000`
@@ -31,7 +31,7 @@ El dashboard se abrirá automáticamente en tu navegador en `http://localhost:30
 **Configuración por defecto:**
 - **Dashboard**: `http://localhost:3000`
 - **API Endpoint**: `http://localhost:20128/v1`
-- **Directorio de datos**: `~/.NzRouter`
+- **Directorio de datos**: `~/.N4tzzOfficial`
 
 ---
 
@@ -42,7 +42,7 @@ El dashboard se abrirá automáticamente en tu navegador en `http://localhost:30
 Establece un directorio de datos personalizado usando una variable de entorno:
 
 ```bash
-DATA_DIR=/path/to/data NzRouter
+DATA_DIR=/path/to/data N4tzzOfficial
 ```
 
 ### Puerto personalizado
@@ -53,10 +53,10 @@ El puerto de API (20128) y el puerto del dashboard (3000) están configurados en
 
 ## 🛑 Detener el servidor
 
-Presiona `Ctrl+C` en la terminal donde NzRouter se está ejecutando.
+Presiona `Ctrl+C` en la terminal donde N4tzzOfficial se está ejecutando.
 
 ```bash
-# En la terminal ejecutando NzRouter
+# En la terminal ejecutando N4tzzOfficial
 ^C  # Presiona Ctrl+C
 ```
 
@@ -69,25 +69,25 @@ El servidor se apagará correctamente y guardará todos los datos.
 Simplemente ejecuta el comando de inicio nuevamente:
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 Todas tus configuraciones, API keys y combos se preservan en el directorio de datos.
 
 ---
 
-## 📊 Actualizar NzRouter
+## 📊 Actualizar N4tzzOfficial
 
 Actualiza a la última versión:
 
 ```bash
-npm update -g NzRouter
+npm update -g N4tzzOfficial
 ```
 
 Verifica tu versión actual:
 
 ```bash
-npm list -g NzRouter
+npm list -g N4tzzOfficial
 ```
 
 ---
@@ -113,7 +113,7 @@ Si encuentras errores de permisos durante la instalación:
 
 ```bash
 # Usar sudo (no recomendado)
-sudo npm install -g NzRouter
+sudo npm install -g N4tzzOfficial
 
 # O corregir los permisos de npm (recomendado)
 mkdir ~/.npm-global
@@ -128,10 +128,10 @@ Si el directorio de datos no es accesible:
 
 ```bash
 # Verificar permisos
-ls -la ~/.NzRouter
+ls -la ~/.N4tzzOfficial
 
 # Corregir permisos
-chmod 755 ~/.NzRouter
+chmod 755 ~/.N4tzzOfficial
 ```
 
 ---
@@ -139,7 +139,7 @@ chmod 755 ~/.NzRouter
 ## 📁 Estructura del directorio de datos
 
 ```
-~/.NzRouter/
+~/.N4tzzOfficial/
 ├── db.json           # Main database (providers, combos, settings)
 ├── logs/             # Application logs
 └── cache/            # Temporary cache files
@@ -149,10 +149,10 @@ chmod 755 ~/.NzRouter
 
 ```bash
 # Respaldo
-cp -r ~/.NzRouter ~/.NzRouter.backup
+cp -r ~/.N4tzzOfficial ~/.N4tzzOfficial.backup
 
 # Restaurar
-cp -r ~/.NzRouter.backup ~/.NzRouter
+cp -r ~/.N4tzzOfficial.backup ~/.N4tzzOfficial
 ```
 
 ---
@@ -162,4 +162,5 @@ cp -r ~/.NzRouter.backup ~/.NzRouter
 - [Conectar proveedores](/providers/subscription.md)
 - [Crear combos](/features/combos.md)
 - [Integrar con herramientas CLI](/integration/cursor.md)
+
 

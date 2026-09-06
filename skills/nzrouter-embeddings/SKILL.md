@@ -5,7 +5,7 @@ description: Generate vector embeddings via nzrouter /v1/embeddings using OpenAI
 
 # nzrouter — Embeddings
 
-Requires `NZROUTER_URL` (and `NZROUTER_KEY` if auth enabled). See https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter/SKILL.md for setup.
+Requires `NZROUTER_URL` (and `NZROUTER_KEY` if auth enabled). See https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter/SKILL.md for setup.
 
 ## Discover
 

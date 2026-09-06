@@ -1,6 +1,6 @@
 # Instalación
 
-Guía detallada de instalación de NzRouter con consejos de solución de problemas.
+Guía detallada de instalación de N4tzzOfficial con consejos de solución de problemas.
 
 ---
 
@@ -31,37 +31,37 @@ npm --version
 
 ### Método 1: Instalación global (Recomendado)
 
-Instala NzRouter globalmente para usar desde cualquier lugar:
+Instala N4tzzOfficial globalmente para usar desde cualquier lugar:
 
 ```bash
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
-**Iniciar NzRouter:**
+**Iniciar N4tzzOfficial:**
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 **Beneficios:**
 - ✅ Ejecuta desde cualquier directorio
-- ✅ Comando simple: `NzRouter`
-- ✅ Auto-actualizaciones con `npm update -g NzRouter`
+- ✅ Comando simple: `N4tzzOfficial`
+- ✅ Auto-actualizaciones con `npm update -g N4tzzOfficial`
 
 ### Método 2: Instalación local
 
 Instala en un proyecto específico:
 
 ```bash
-mkdir my-NzRouter
-cd my-NzRouter
-npm install NzRouter
+mkdir my-N4tzzOfficial
+cd my-N4tzzOfficial
+npm install N4tzzOfficial
 ```
 
-**Iniciar NzRouter:**
+**Iniciar N4tzzOfficial:**
 
 ```bash
-npx NzRouter
+npx N4tzzOfficial
 ```
 
 **Beneficios:**
@@ -74,8 +74,8 @@ npx NzRouter
 Clona y compila desde GitHub:
 
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install
 npm run build
 npm start
@@ -93,13 +93,13 @@ npm start
 ### Iniciar el servidor
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 **Qué sucede:**
 1. El servidor inicia en `http://localhost:20128`
 2. El dashboard se abre automáticamente en el navegador
-3. Se crea el directorio de datos en `~/.NzRouter`
+3. Se crea el directorio de datos en `~/.N4tzzOfficial`
 4. API key generada automáticamente
 
 ### Login del dashboard
@@ -193,7 +193,7 @@ export JWT_SECRET="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
 
 # Storage
-export DATA_DIR="~/.NzRouter"
+export DATA_DIR="~/.N4tzzOfficial"
 
 # Server
 export PORT="20128"
@@ -205,11 +205,11 @@ export ENABLE_REQUEST_LOGS="false"
 
 ### Directorio de datos
 
-**Ubicación por defecto:** `~/.NzRouter`
+**Ubicación por defecto:** `~/.N4tzzOfficial`
 
 **Contenido:**
 ```
-~/.NzRouter/
+~/.N4tzzOfficial/
   ├── db.json           # Database (providers, combos, usage)
   ├── api-keys.json     # API keys
   └── logs/             # Request logs (if enabled)
@@ -219,7 +219,7 @@ export ENABLE_REQUEST_LOGS="false"
 
 ```bash
 export DATA_DIR="/custom/path"
-NzRouter
+N4tzzOfficial
 ```
 
 ### Configuración de puerto
@@ -230,13 +230,13 @@ NzRouter
 
 ```bash
 export PORT="3000"
-NzRouter
+N4tzzOfficial
 ```
 
 **O usa la línea de comandos:**
 
 ```bash
-NzRouter --port 3000
+N4tzzOfficial --port 3000
 ```
 
 ---
@@ -263,14 +263,14 @@ kill -9 <PID>
 **Solución 2: Usa otro puerto**
 
 ```bash
-NzRouter --port 3000
+N4tzzOfficial --port 3000
 ```
 
 ### Permiso denegado
 
 **Error:**
 ```
-Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/NzRouter'
+Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/N4tzzOfficial'
 ```
 
 **Solución: Usa sudo (no recomendado) o corrige los permisos de npm**
@@ -283,7 +283,7 @@ echo 'export PATH=~/.npm-global/bin:$PATH' >> ~/.bashrc
 source ~/.bashrc
 
 # Luego instalar nuevamente
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
 ### Versión de Node.js muy antigua
@@ -345,23 +345,23 @@ Dashboard → Provider → Disconnect → Reconnect
 
 ### Uso alto de memoria
 
-**Problema:** NzRouter usa demasiada RAM
+**Problema:** N4tzzOfficial usa demasiada RAM
 
 **Solución: Reinicia el servidor**
 
 ```bash
 # Detener
-pkill -f NzRouter
+pkill -f N4tzzOfficial
 
 # Iniciar
-NzRouter
+N4tzzOfficial
 ```
 
 **O usa PM2 para auto-reinicio:**
 
 ```bash
 npm install -g pm2
-pm2 start NzRouter --name NzRouter
+pm2 start N4tzzOfficial --name N4tzzOfficial
 pm2 save
 ```
 
@@ -372,8 +372,8 @@ pm2 save
 ### Desarrollo local
 
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 ```
 
 **Caso de uso:** Codificación personal, pruebas
@@ -382,7 +382,7 @@ NzRouter
 
 ```bash
 # Instalar
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 
 # Configurar
 export JWT_SECRET="your-secure-secret"
@@ -391,7 +391,7 @@ export NODE_ENV="production"
 
 # Iniciar con PM2
 npm install -g pm2
-pm2 start NzRouter --name NzRouter
+pm2 start N4tzzOfficial --name N4tzzOfficial
 pm2 save
 pm2 startup
 ```
@@ -401,15 +401,15 @@ pm2 startup
 ### Docker
 
 ```bash
-docker pull NzRouter/NzRouter:latest
+docker pull N4tzzOfficial/N4tzzOfficial:latest
 
 docker run -d \
   -p 20128:20128 \
   -e JWT_SECRET="your-secure-secret" \
   -e INITIAL_PASSWORD="your-password" \
-  -v NzRouter-data:/root/.NzRouter \
-  --name NzRouter \
-  NzRouter/NzRouter:latest
+  -v N4tzzOfficial-data:/root/.N4tzzOfficial \
+  --name N4tzzOfficial \
+  N4tzzOfficial/N4tzzOfficial:latest
 ```
 
 **Caso de uso:** Despliegue containerizado, Kubernetes
@@ -444,13 +444,13 @@ server {
 ### Eliminar instalación global
 
 ```bash
-npm uninstall -g NzRouter
+npm uninstall -g N4tzzOfficial
 ```
 
 ### Eliminar el directorio de datos
 
 ```bash
-rm -rf ~/.NzRouter
+rm -rf ~/.N4tzzOfficial
 ```
 
 ### Eliminar la configuración
@@ -458,7 +458,7 @@ rm -rf ~/.NzRouter
 ```bash
 # Eliminar variables de entorno del archivo de configuración del shell
 nano ~/.bashrc  # o ~/.zshrc
-# Eliminar exports relacionados con NzRouter
+# Eliminar exports relacionados con N4tzzOfficial
 ```
 
 ---
@@ -473,7 +473,8 @@ nano ~/.bashrc  # o ~/.zshrc
 
 ## ¿Necesitas ayuda?
 
-- **Sitio web**: [NzRouter.com](https://NzRouter.com)
-- **GitHub**: [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues**: [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **Sitio web**: [n4tzz.com](https://n4tzz.com)
+- **GitHub**: [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
+- **Issues**: [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
+
 

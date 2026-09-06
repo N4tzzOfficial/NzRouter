@@ -24,7 +24,7 @@ Model: 任意のNzRouterモデル (cc/*, cx/*, glm/*など)
 
 **クラウドNzRouter:**
 ```
-Base URL: https://NzRouter.com/v1
+Base URL: https://n4tzz.com/v1
 API Key: your-api-key-from-dashboard
 Model: 任意のNzRouterモデル (cc/*, cx/*, glm/*など)
 ```
@@ -414,4 +414,5 @@ Error: Rate limit exceeded
 - [CLI使用法を確認](../cli/basic-usage.md)
 - [モデル選択について学ぶ](../models/overview.md)
 - [APIリファレンス](../api/reference.md)
+
 

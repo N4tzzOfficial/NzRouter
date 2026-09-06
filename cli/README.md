@@ -1,4 +1,4 @@
-# NzRouter - FREE AI Router & Token Saver
+# N4tzzOfficial - FREE AI Router & Token Saver
 
 **Never stop coding. Save 20-40% tokens with RTK + auto-fallback to FREE & cheap AI models.**
 
@@ -6,17 +6,17 @@
 
 [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/nzrouter)
 [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/nzrouter)
-[![Docker Pulls](https://img.shields.io/docker/pulls/decolua/nzrouter.svg?logo=docker&label=Docker%20pulls)](https://hub.docker.com/r/decolua/nzrouter)
-[![GHCR](https://img.shields.io/badge/GHCR-decolua%2Fnzrouter-blue?logo=github)](https://github.com/decolua/nzrouter/pkgs/container/nzrouter)
-[![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/decolua/nzrouter/blob/main/LICENSE)
+[![Docker Pulls](https://img.shields.io/docker/pulls/N4tzzOfficial/N4tzzOfficial.svg?logo=docker&label=Docker%20pulls)](https://hub.docker.com/r/N4tzzOfficial/N4tzzOfficial)
+[![GHCR](https://img.shields.io/badge/GHCR-decolua%2Fnzrouter-blue?logo=github)](https://github.com/N4tzzOfficial/N4tzzOfficial/pkgs/container/nzrouter)
+[![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/LICENSE)
 
 <a href="https://trendshift.io/repositories/22628" target="_blank"><img src="https://trendshift.io/api/badge/repositories/22628" alt="decolua%2Fnzrouter | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 
-[🌐 Website](https://nzrouter.com) • [📖 Full Docs](https://github.com/decolua/nzrouter)
+[🌐 Website](https://n4tzz.com) • [📖 Full Docs](https://github.com/N4tzzOfficial/N4tzzOfficial)
 
 ---
 
-## 🤔 Why NzRouter?
+## 🤔 Why N4tzzOfficial?
 
 **Stop wasting money, tokens and hitting limits:**
 
@@ -25,7 +25,7 @@
 - ❌ Tool outputs (git diff, grep, ls...) burn tokens fast
 - ❌ Expensive APIs ($20-50/month per provider)
 
-**NzRouter solves this:**
+**N4tzzOfficial solves this:**
 
 - ✅ **RTK Token Saver** - Auto-compress tool_result, save 20-40% tokens
 - ✅ **Maximize subscriptions** - Track quota, use every bit before reset
@@ -45,6 +45,9 @@ nzrouter
 
 # Or run directly with npx
 npx nzrouter
+
+# Or install from GitHub (always latest)
+npm install -g git+https://github.com/N4tzzOfficial/NzRouter
 ```
 
 **Option 2 — Docker (server/VPS):**
@@ -52,10 +55,10 @@ npx nzrouter
 ```bash
 docker run -d --name nzrouter -p 20128:20128 \
   -v "$HOME/.nzrouter:/app/data" -e DATA_DIR=/app/data \
-  decolua/nzrouter:latest
+  N4tzzOfficial/N4tzzOfficial:latest
 ```
 
-Published images: [Docker Hub](https://hub.docker.com/r/decolua/nzrouter) • [GHCR](https://github.com/decolua/nzrouter/pkgs/container/nzrouter) (multi-platform amd64/arm64).
+Published images: [Docker Hub](https://hub.docker.com/r/N4tzzOfficial/N4tzzOfficial) • [GHCR](https://github.com/N4tzzOfficial/N4tzzOfficial/pkgs/container/nzrouter) (multi-platform amd64/arm64).
 
 🎉 Dashboard opens at `http://localhost:20128`
 
@@ -110,9 +113,9 @@ Any tool supporting OpenAI/Claude-compatible API works.
 
 Full docs, advanced setup, video tutorials & development guide:
 
-- **GitHub**: https://github.com/decolua/nzrouter
-- **Full README**: https://github.com/decolua/nzrouter/blob/main/app/README.md
-- **Website**: https://nzrouter.com
+- **GitHub**: https://github.com/N4tzzOfficial/N4tzzOfficial
+- **Full README**: https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/app/README.md
+- **Website**: https://n4tzz.com
 
 ---
 

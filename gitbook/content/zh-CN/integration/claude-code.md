@@ -1,12 +1,12 @@
 # Claude Code 集成
 
-将 NzRouter 与 Claude Code CLI 集成,通过 NzRouter 的智能路由系统转发你的 Anthropic API 请求。
+将 N4tzzOfficial 与 Claude Code CLI 集成,通过 N4tzzOfficial 的智能路由系统转发你的 Anthropic API 请求。
 
 ## 前置要求
 
 - 已安装 Claude Code CLI
-- NzRouter 本地运行或已配置云端 endpoint
-- 来自 NzRouter 仪表盘的 API key
+- N4tzzOfficial 本地运行或已配置云端 endpoint
+- 来自 N4tzzOfficial 仪表盘的 API key
 
 ## 设置
 
@@ -15,7 +15,7 @@
 在 shell 配置文件(`~/.bashrc`、`~/.zshrc` 或 `~/.bash_profile`)中设置以下环境变量:
 
 ```bash
-# NzRouter 的 Base URL
+# N4tzzOfficial 的 Base URL
 export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
 
 # 可选: 为别名设置默认模型
@@ -40,7 +40,7 @@ echo $ANTHROPIC_BASE_URL
 
 ## 模型别名
 
-Claude Code 支持以下模型别名,映射到 NzRouter 模型:
+Claude Code 支持以下模型别名,映射到 N4tzzOfficial 模型:
 
 | 别名 | 模型 | 环境变量 |
 |-------|-------|---------------------|
@@ -86,7 +86,7 @@ Claude Code 将配置存储在 `~/.claude/settings.json`。如有需要可手动
 
 遇到连接错误时:
 
-1. 确认 NzRouter 正在运行:`curl http://localhost:20128/health`
+1. 确认 N4tzzOfficial 正在运行:`curl http://localhost:20128/health`
 2. 检查环境变量设置是否正确
 3. 确保防火墙没有阻止 20128 端口
 
@@ -94,17 +94,18 @@ Claude Code 将配置存储在 `~/.claude/settings.json`。如有需要可手动
 
 出现 "model not found" 错误时:
 
-1. 确认模型名与 NzRouter 配置一致
-2. 检查 NzRouter 仪表盘中提供商连接是否激活
+1. 确认模型名与 N4tzzOfficial 配置一致
+2. 检查 N4tzzOfficial 仪表盘中提供商连接是否激活
 3. 确认所连接的提供商中包含该模型
 
 ## 云端 Endpoint
 
-使用 NzRouter 云端 endpoint 而非 localhost:
+使用 N4tzzOfficial 云端 endpoint 而非 localhost:
 
 ```bash
-export ANTHROPIC_BASE_URL="https://NzRouter.com"
+export ANTHROPIC_BASE_URL="https://n4tzz.com"
 ```
 
-确保已在 NzRouter 云端仪表盘中配置 API key。
+确保已在 N4tzzOfficial 云端仪表盘中配置 API key。
+
 

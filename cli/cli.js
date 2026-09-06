@@ -122,6 +122,8 @@ let noBrowser = false;
 let skipUpdate = false;
 let showLog = false;
 let trayMode = false;
+let backgroundMode = false;
+let daemonMode = false;
 
 for (let i = 0; i < args.length; i++) {
   if (args[i] === "--port" || args[i] === "-p") {
@@ -139,6 +141,15 @@ for (let i = 0; i < args.length; i++) {
   } else if (args[i] === "--tray" || args[i] === "-t") {
     trayMode = true;
     process.env.TRAY_MODE = "1";
+  } else if (args[i] === "--background" || args[i] === "-b") {
+    backgroundMode = true;
+    trayMode = true;
+    process.env.TRAY_MODE = "1";
+  } else if (args[i] === "--daemon" || args[i] === "-d") {
+    daemonMode = true;
+    backgroundMode = true;
+    trayMode = true;
+    process.env.TRAY_MODE = "1";
   } else if (args[i] === "--help" || args[i] === "-h") {
     console.log(`
 Usage: ${APP_NAME} [options]
@@ -149,6 +160,8 @@ Options:
   -n, --no-browser    Don't open browser automatically
   -l, --log           Show server logs (default: hidden)
   -t, --tray          Run in system tray mode (background)
+  -b, --background    Run in background (tray + detached)
+  -d, --daemon        Run as daemon (background + auto-start)
   --skip-update       Skip auto-update check
   -h, --help          Show this help message
   -v, --version       Show version
@@ -157,6 +170,9 @@ Commands:
   xai video --prompt "..." --output video.mp4
                       Generate a Grok Imagine video via the running gateway
                       (see: ${APP_NAME} xai video --help)
+
+Install from GitHub (always latest):
+  npm install -g git+https://github.com/N4tzzOfficial/NzRouter
 `);
     process.exit(0);
   } else if (args[i] === "--version" || args[i] === "-v") {
@@ -169,6 +185,19 @@ Commands:
 if (skipUpdate && !trayMode && !process.stdin.isTTY) {
   trayMode = true;
   process.env.TRAY_MODE = "1";
+}
+
+// Start background auto-update checker (every 6 hours) if not in daemon/background mode
+// This runs in the server process, not the CLI
+if (!trayMode && !backgroundMode && !daemonMode && !skipUpdate) {
+  // Use the new background executor that does git pull + npm install + build + restart
+  try {
+    const { startBackgroundExecutor } = require("./src/lib/backgroundExecutor");
+    startBackgroundExecutor();
+  } catch (e) {
+    // Fallback to simple GitHub check
+    startBackgroundUpdateChecker();
+  }
 }
 
 // Always use Node.js runtime with absolute path
@@ -502,6 +531,96 @@ function checkForUpdate() {
     req.on("error", () => done(null));
     req.on("timeout", () => { req.destroy(); done(null); });
   });
+}
+
+// Check for updates from GitHub (every 6 hours)
+function checkGitHubUpdate() {
+  return new Promise((resolve) => {
+    const spinner = createSpinner("Checking for updates...").start();
+    let resolved = false;
+
+    const safetyTimeout = setTimeout(() => {
+      if (!resolved) {
+        resolved = true;
+        spinner.stop();
+        resolve(null);
+      }
+    }, 10000);
+
+    const done = (version) => {
+      if (resolved) return;
+      resolved = true;
+      clearTimeout(safetyTimeout);
+      spinner.stop();
+      resolve(version);
+    };
+
+    // Check GitHub releases for latest version
+    const req = https.get("https://api.github.com/repos/N4tzzOfficial/NzRouter/releases/latest", {
+      timeout: 5000,
+      headers: { 'User-Agent': 'NzRouter-CLI' }
+    }, (res) => {
+      let data = "";
+      res.on("data", chunk => data += chunk);
+      res.on("end", () => {
+        try {
+          const release = JSON.parse(data);
+          if (release.tag_name) {
+            const latestVersion = release.tag_name.replace('v', '');
+            if (compareVersions(latestVersion, pkg.version) > 0) {
+              done(latestVersion);
+            } else {
+              done(null);
+            }
+          } else {
+            done(null);
+          }
+        } catch (e) {
+          done(null);
+        }
+      });
+    });
+
+    req.on("error", () => done(null));
+    req.on("timeout", () => { req.destroy(); done(null); });
+  });
+}
+
+// Background auto-update checker (runs every 6 hours)
+let updateCheckInterval = null;
+
+function startBackgroundUpdateChecker() {
+  if (updateCheckInterval) return; // Already running
+
+  // Initial check after 30 seconds
+  setTimeout(() => {
+    checkGitHubUpdate().then(latestVersion => {
+      if (latestVersion) {
+        console.log(`\n⬆  New version available: v${latestVersion} (current: v${pkg.version})`);
+        console.log(`   Run: npm i -g git+https://github.com/N4tzzOfficial/NzRouter\n`);
+      }
+    }).catch(() => {});
+  }, 30000);
+
+  // Then check every 6 hours (21600000 ms)
+  updateCheckInterval = setInterval(() => {
+    checkGitHubUpdate().then(latestVersion => {
+      if (latestVersion) {
+        console.log(`\n⬆  New version available: v${latestVersion} (current: v${pkg.version})`);
+        console.log(`   Run: npm i -g git+https://github.com/N4tzzOfficial/NzRouter\n`);
+      }
+    }).catch(() => {});
+  }, 6 * 60 * 60 * 1000);
+
+  // Prevent interval from keeping process alive
+  updateCheckInterval.unref();
+}
+
+function stopBackgroundUpdateChecker() {
+  if (updateCheckInterval) {
+    clearInterval(updateCheckInterval);
+    updateCheckInterval = null;
+  }
 }
 
 // Open browser

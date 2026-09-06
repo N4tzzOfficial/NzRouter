@@ -1,12 +1,12 @@
 # OpenAI Codex CLI Integration
 
-Integrate NzRouter with OpenAI Codex CLI to route your OpenAI API requests through NzRouter's intelligent routing system.
+Integrate N4tzzOfficial with OpenAI Codex CLI to route your OpenAI API requests through N4tzzOfficial's intelligent routing system.
 
 ## Prerequisites
 
 - OpenAI Codex CLI installed
-- NzRouter running locally or cloud endpoint configured
-- API key from NzRouter dashboard
+- N4tzzOfficial running locally or cloud endpoint configured
+- API key from N4tzzOfficial dashboard
 
 ## Setup
 
@@ -15,11 +15,11 @@ Integrate NzRouter with OpenAI Codex CLI to route your OpenAI API requests throu
 Set the following environment variables in your shell configuration file (`~/.bashrc`, `~/.zshrc`, or `~/.bash_profile`):
 
 ```bash
-# Base URL for NzRouter
+# Base URL for N4tzzOfficial
 export OPENAI_BASE_URL="http://localhost:20128/v1"
 
-# API Key from NzRouter dashboard
-export OPENAI_API_KEY="your-NzRouter-api-key"
+# API Key from N4tzzOfficial dashboard
+export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 ```
 
 ### 2. Reload Shell Configuration
@@ -39,7 +39,7 @@ echo $OPENAI_API_KEY
 
 ## Available Models
 
-NzRouter provides the following Codex models:
+N4tzzOfficial provides the following Codex models:
 
 | Model ID | Description |
 |----------|-------------|
@@ -77,7 +77,7 @@ You can also configure Codex CLI using a configuration file. Create or edit `~/.
 ```json
 {
   "baseUrl": "http://localhost:20128/v1",
-  "apiKey": "your-NzRouter-api-key",
+  "apiKey": "your-N4tzzOfficial-api-key",
   "defaultModel": "cx/gpt-5.2-codex"
 }
 ```
@@ -88,7 +88,7 @@ You can also configure Codex CLI using a configuration file. Create or edit `~/.
 
 If you encounter authentication errors:
 
-1. Verify your API key is correct in NzRouter dashboard
+1. Verify your API key is correct in N4tzzOfficial dashboard
 2. Check that `OPENAI_API_KEY` environment variable is set
 3. Ensure the API key has not expired
 
@@ -96,7 +96,7 @@ If you encounter authentication errors:
 
 If you encounter connection errors:
 
-1. Verify NzRouter is running: `curl http://localhost:20128/health`
+1. Verify N4tzzOfficial is running: `curl http://localhost:20128/health`
 2. Check environment variables are set correctly
 3. Ensure no firewall is blocking port 20128
 
@@ -104,19 +104,19 @@ If you encounter connection errors:
 
 If you get "model not available" errors:
 
-1. Verify the model name matches your NzRouter configuration
-2. Check that the OpenAI provider connection is active in NzRouter dashboard
+1. Verify the model name matches your N4tzzOfficial configuration
+2. Check that the OpenAI provider connection is active in N4tzzOfficial dashboard
 3. Ensure the model is available in your connected providers
 
 ## Cloud Endpoint
 
-To use NzRouter cloud endpoint instead of localhost:
+To use N4tzzOfficial cloud endpoint instead of localhost:
 
 ```bash
-export OPENAI_BASE_URL="https://NzRouter.com"
+export OPENAI_BASE_URL="https://n4tzz.com"
 ```
 
-Make sure you have configured your API key in the NzRouter cloud dashboard.
+Make sure you have configured your API key in the N4tzzOfficial cloud dashboard.
 
 ## Advanced Configuration
 
@@ -134,4 +134,5 @@ Enable debug mode to see detailed request/response logs:
 export CODEX_DEBUG=true
 codex --model cx/gpt-5.2-codex "Your prompt"
 ```
+
 

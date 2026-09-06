@@ -6,7 +6,7 @@ Track real-time token consumption, monitor quota limits, estimate costs, and get
 
 ## Overview
 
-NzRouter provides comprehensive quota tracking for all providers:
+N4tzzOfficial provides comprehensive quota tracking for all providers:
 
 - **Real-time token consumption** - See tokens used per request
 - **Quota limits & remaining** - Track usage vs limits
@@ -669,7 +669,7 @@ Response:
 1. Refresh dashboard (F5)
 2. Check system time is correct
 3. Verify timezone settings
-4. Restart NzRouter if issue persists
+4. Restart N4tzzOfficial if issue persists
 
 **Issue: Alerts not received**
 
@@ -685,4 +685,5 @@ Response:
 
 - [Smart Routing](./smart-routing.md) - Auto fallback based on quota
 - [Combos](./combos.md) - Create custom fallback chains
+
 

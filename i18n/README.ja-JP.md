@@ -1,17 +1,17 @@
 <div align="center">
-  <img src="../images/NzRouter.png?1" alt="NzRouter Dashboard" width="800"/>
+  <img src="../images/NzRouter.png?1" alt="N4tzzOfficial Dashboard" width="800"/>
 
-  # NzRouter - 無料 AI ルーター
+  # N4tzzOfficial - 無料 AI ルーター
 
   **コーディングを止めない。スマートフォールバックで無料＆格安AIモデルに自動ルーティング。**
 
   **すべてのAIコーディングツール（Claude Code、Cursor、Antigravity、Copilot、Codex、Gemini、OpenCode、Cline、OpenClaw...）を40以上のAIプロバイダーと100以上のモデルに接続。**
 
-  [![npm](https://img.shields.io/npm/v/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![Downloads](https://img.shields.io/npm/dm/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![License](https://img.shields.io/npm/l/NzRouter.svg)](https://github.com/decolua/NzRouter/blob/main/LICENSE)
+  [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
 
-  [🚀 クイックスタート](#-クイックスタート) • [💡 機能](#-主な機能) • [📖 セットアップ](#-セットアップガイド) • [🌐 ウェブサイト](https://NzRouter.com)
+  [🚀 クイックスタート](#-クイックスタート) • [💡 機能](#-主な機能) • [📖 セットアップ](#-セットアップガイド) • [🌐 ウェブサイト](https://n4tzz.com)
 
   [🇻🇳 Tiếng Việt](./README.vi.md) • [🇨🇳 中文](./README.zh-CN.md) • [🇯🇵 日本語](./README.ja-JP.md)
 </div>
@@ -46,7 +46,7 @@
        │ http://localhost:20128/v1
        ↓
 ┌─────────────────────────────────────────┐
-│        NzRouter（スマートルーター）        │
+│        N4tzzOfficial（スマートルーター）        │
 │  • フォーマット変換（OpenAI ↔ Claude）   │
 │  • クオータ追跡                          │
 │  • 自動トークンリフレッシュ               │
@@ -68,8 +68,8 @@
 **1. グローバルインストール：**
 
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 ```
 
 🎉 ダッシュボードが `http://localhost:20128` で開きます
@@ -116,9 +116,9 @@ PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run 
 
 <div align="center">
 
-### 📺 完全セットアップガイド - NzRouter + Claude Code 無料
+### 📺 完全セットアップガイド - N4tzzOfficial + Claude Code 無料
 
-[![NzRouter + Claude Code Setup](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
+[![N4tzzOfficial + Claude Code Setup](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
 
 **🎬 ステップバイステップのチュートリアルを視聴：**
 - ✅ NzRouterのインストールとセットアップ
@@ -441,7 +441,7 @@ NzRouterはすべての主要AIコーディングツールとシームレスに�
 > **💡 重要 - ダッシュボードのコストについて：**
 >
 > 使用状況分析に表示される「コスト」は**追跡と比較目的のみ**です。
-> NzRouter自体は**一切課金しません**。有料サービスを使用する場合のみ、プロバイダーに直接支払います。
+> N4tzzOfficial自体は**一切課金しません**。有料サービスを使用する場合のみ、プロバイダーに直接支払います。
 >
 > **例:** ダッシュボードにiFlowモデルの使用で「合計コスト$290」と表示されている場合、
 > これは有料APIを直接使用した場合に支払うであろう金額を表しています。実際のコスト = **$0**（iFlowは無料無制限）。
@@ -509,7 +509,7 @@ NzRouterはすべての主要AIコーディングツールとシームレスに�
 - **サブスクリプションプロバイダー**（Claude Code、Codex）：各ウェブサイトで直接支払い
 - **格安プロバイダー**（GLM、MiniMax）：直接支払い、NzRouterはルーティングのみ
 - **無料プロバイダー**（iFlow、Kiro、Qwen）：本当に永久無料、隠れた料金なし
-- **NzRouter**：一切課金しない
+- **N4tzzOfficial**：一切課金しない
 
 ---
 
@@ -903,13 +903,13 @@ codex "your prompt"
   "agents": {
     "defaults": {
       "model": {
-        "primary": "NzRouter/if/glm-4.7"
+        "primary": "N4tzzOfficial/if/glm-4.7"
       }
     }
   },
   "models": {
     "providers": {
-      "NzRouter": {
+      "N4tzzOfficial": {
         "baseUrl": "http://127.0.0.1:20128/v1",
         "apiKey": "sk_NzRouter",
         "api": "openai-completions",
@@ -945,20 +945,20 @@ Model: cc/claude-opus-4-6
 
 ```bash
 # クローンとインストール
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter
+git clone https://github.com/N4tzzOfficial/NzRouter.git
+cd N4tzzOfficial
 npm install
 npm run build
 
 # 設定
 export JWT_SECRET="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
-export DATA_DIR="/var/lib/NzRouter"
+export DATA_DIR="/var/lib/N4tzzOfficial"
 export PORT="20128"
 export HOSTNAME="0.0.0.0"
 export NODE_ENV="production"
 export NEXT_PUBLIC_BASE_URL="http://localhost:20128"
-export NEXT_PUBLIC_CLOUD_URL="https://NzRouter.com"
+export NEXT_PUBLIC_CLOUD_URL="https://n4tzz.com"
 export API_KEY_SECRET="endpoint-proxy-api-key-secret"
 export MACHINE_ID_SALT="endpoint-proxy-salt"
 
@@ -967,7 +967,7 @@ npm run start
 
 # またはPM2を使用
 npm install -g pm2
-pm2 start npm --name NzRouter -- start
+pm2 start npm --name N4tzzOfficial -- start
 pm2 save
 pm2 startup
 ```
@@ -976,28 +976,28 @@ pm2 startup
 
 ```bash
 # イメージをビルド（リポジトリルートから）
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 
 # コンテナを実行（現在のセットアップで使用しているコマンド）
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 20128:20128 \
-  --env-file /root/dev/NzRouter/.env \
+  --env-file /root/dev/N4tzzOfficial/.env \
   -v NzRouter-data:/app/data \
-  -v NzRouter-usage:/root/.NzRouter \
-  NzRouter
+  -v NzRouter-usage:/root/.N4tzzOfficial \
+  N4tzzOfficial
 ```
 
 ポータブルコマンド（リポジトリルートにいる場合）：
 
 ```bash
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 20128:20128 \
   --env-file ./.env \
   -v NzRouter-data:/app/data \
-  -v NzRouter-usage:/root/.NzRouter \
-  NzRouter
+  -v NzRouter-usage:/root/.N4tzzOfficial \
+  N4tzzOfficial
 ```
 
 コンテナのデフォルト：
@@ -1007,25 +1007,25 @@ docker run -d \
 便利なコマンド：
 
 ```bash
-docker logs -f NzRouter
-docker restart NzRouter
-docker stop NzRouter && docker rm NzRouter
+docker logs -f N4tzzOfficial
+docker restart N4tzzOfficial
+docker stop N4tzzOfficial && docker rm N4tzzOfficial
 ```
 
 ### 環境変数
 
 | 変数 | デフォルト | 説明 |
 |------|-----------|------|
-| `JWT_SECRET` | 自動生成（`~/.NzRouter/jwt-secret`） | ダッシュボード認証クッキーのJWT署名シークレット（複数インスタンス間で共有する場合に設定） |
+| `JWT_SECRET` | 自動生成（`~/.N4tzzOfficial/jwt-secret`） | ダッシュボード認証クッキーのJWT署名シークレット（複数インスタンス間で共有する場合に設定） |
 | `INITIAL_PASSWORD` | `123456` | 保存されたハッシュがない場合の初回ログインパスワード |
-| `DATA_DIR` | `~/.NzRouter` | メインアプリのデータベース格納場所（`db.json`） |
+| `DATA_DIR` | `~/.N4tzzOfficial` | メインアプリのデータベース格納場所（`db.json`） |
 | `PORT` | フレームワークデフォルト | サービスポート（例では`20128`） |
 | `HOSTNAME` | フレームワークデフォルト | バインドホスト（Dockerデフォルトは`0.0.0.0`） |
 | `NODE_ENV` | ランタイムデフォルト | デプロイ時は`production`に設定 |
 | `BASE_URL` | `http://localhost:20128` | クラウド同期ジョブで使用されるサーバーサイド内部ベースURL |
-| `CLOUD_URL` | `https://NzRouter.com` | サーバーサイドのクラウド同期エンドポイントベースURL |
+| `CLOUD_URL` | `https://n4tzz.com` | サーバーサイドのクラウド同期エンドポイントベースURL |
 | `NEXT_PUBLIC_BASE_URL` | `http://localhost:3000` | 後方互換/公開ベースURL（サーバーランタイムには`BASE_URL`を推奨） |
-| `NEXT_PUBLIC_CLOUD_URL` | `https://NzRouter.com` | 後方互換/公開クラウドURL（サーバーランタイムには`CLOUD_URL`を推奨） |
+| `NEXT_PUBLIC_CLOUD_URL` | `https://n4tzz.com` | 後方互換/公開クラウドURL（サーバーランタイムには`CLOUD_URL`を推奨） |
 | `API_KEY_SECRET` | `endpoint-proxy-api-key-secret` | 生成されたAPIキーのHMACシークレット |
 | `MACHINE_ID_SALT` | `endpoint-proxy-salt` | 安定したマシンIDハッシュのソルト |
 | `ENABLE_REQUEST_LOGS` | `false` | `logs/` 配下のリクエスト/レスポンスログを有効化 |
@@ -1042,9 +1042,9 @@ docker stop NzRouter && docker rm NzRouter
 ### ランタイムファイルとストレージ
 
 - メインアプリ状態: `${DATA_DIR}/db.json`（プロバイダー、コンボ、エイリアス、キー、設定）、`src/lib/localDb.js` で管理。
-- 使用履歴とログ: `~/.NzRouter/usage.json` と `~/.NzRouter/log.txt`、`src/lib/usageDb.js` で管理。
+- 使用履歴とログ: `~/.N4tzzOfficial/usage.json` と `~/.N4tzzOfficial/log.txt`、`src/lib/usageDb.js` で管理。
 - オプションのリクエスト/トランスレーターログ: `ENABLE_REQUEST_LOGS=true` 時に `<repo>/logs/...`。
-- 使用状況ストレージは現在 `~/.NzRouter` パスロジックに従い、`DATA_DIR` とは独立しています。
+- 使用状況ストレージは現在 `~/.N4tzzOfficial` パスロジックに従い、`DATA_DIR` とは独立しています。
 
 </details>
 
@@ -1166,9 +1166,9 @@ Authorization: Bearer your-api-key
 
 ## 📧 サポート
 
-- **ウェブサイト**: [NzRouter.com](https://NzRouter.com)
-- **GitHub**: [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues**: [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **ウェブサイト**: [n4tzz.com](https://n4tzz.com)
+- **GitHub**: [github.com/N4tzzOfficial/NzRouter](https://github.com/N4tzzOfficial/NzRouter)
+- **Issues**: [github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
 ---
 
@@ -1176,13 +1176,13 @@ Authorization: Bearer your-api-key
 
 NzRouterの改善に貢献してくださったすべてのコントリビューターに感謝します！
 
-[![Contributors](https://contrib.rocks/image?repo=decolua/NzRouter&max=150&columns=15&anon=1&v=20260309)](https://github.com/decolua/NzRouter/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=N4tzzOfficial/N4tzzOfficial&max=150&columns=15&anon=1&v=20260309)](https://github.com/N4tzzOfficial/NzRouter/graphs/contributors)
 
 ---
 
 ## 📊 スターチャート
 
-[![Star Chart](https://starchart.cc/decolua/NzRouter.svg?variant=adaptive)](https://starchart.cc/decolua/NzRouter)
+[![Star Chart](https://starchart.cc/N4tzzOfficial/N4tzzOfficial.svg?variant=adaptive)](https://starchart.cc/N4tzzOfficial/N4tzzOfficial)
 
 
 
@@ -1207,4 +1207,6 @@ MITライセンス - 詳細は [LICENSE](../LICENSE) を参照してください
 <div align="center">
   <sub>24時間365日コーディングする開発者のために ❤️ で構築</sub>
 </div>
+
+
 

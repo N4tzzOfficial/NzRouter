@@ -1,6 +1,6 @@
 # 故障排除
 
-使用 NzRouter 时常见的问题与解决方案。
+使用 N4tzzOfficial 时常见的问题与解决方案。
 
 ---
 
@@ -78,7 +78,7 @@
 **解决方案:**
 
 1. **自动刷新(默认):**
-   NzRouter 会自动刷新 token。等待 30 秒后重试。
+   N4tzzOfficial 会自动刷新 token。等待 30 秒后重试。
 
 2. **手动重连:**
    ```
@@ -135,15 +135,15 @@
 **问题:** 出现 "ECONNREFUSED" 或 "Cannot connect to localhost:20128"。
 
 **原因:**
-- NzRouter 未运行
+- N4tzzOfficial 未运行
 - 端口 20128 被阻止
 - 防火墙拦截连接
 
 **解决方案:**
 
-1. **启动 NzRouter:**
+1. **启动 N4tzzOfficial:**
    ```bash
-   NzRouter
+   N4tzzOfficial
    ```
    仪表盘应该在 http://localhost:3000 打开。
 
@@ -164,7 +164,7 @@
 4. **使用云端 endpoint:**
    如果 localhost 不行(例如 Cursor IDE):
    ```
-   Endpoint: https://NzRouter.com/v1
+   Endpoint: https://n4tzz.com/v1
    ```
 
 ---
@@ -175,15 +175,15 @@
 
 **原因:**
 - 端口 3000 被占用
-- NzRouter 崩溃
+- N4tzzOfficial 崩溃
 - 浏览器缓存问题
 
 **解决方案:**
 
-1. **确认 NzRouter 是否运行:**
+1. **确认 N4tzzOfficial 是否运行:**
    ```bash
    # 检查进程
-   ps aux | grep NzRouter
+   ps aux | grep N4tzzOfficial
    
    # 检查端口 3000
    lsof -i :3000
@@ -199,13 +199,13 @@
    taskkill /PID <PID> /F
    ```
 
-3. **重启 NzRouter:**
+3. **重启 N4tzzOfficial:**
    ```bash
    # 停止
-   pkill -f NzRouter
+   pkill -f N4tzzOfficial
    
    # 启动
-   NzRouter
+   N4tzzOfficial
    ```
 
 4. **清除浏览器缓存:**
@@ -346,7 +346,8 @@
 
 ## 需要更多帮助?
 
-- **GitHub Issues:** [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
-- **文档:** [NzRouter.com/docs](https://NzRouter.com/docs)
+- **GitHub Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
+- **文档:** [n4tzz.com/docs](https://n4tzz.com/docs)
 - **常见问题:** [faq.md](faq.md)
+
 

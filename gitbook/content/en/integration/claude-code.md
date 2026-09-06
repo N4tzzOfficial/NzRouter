@@ -1,12 +1,12 @@
 # Claude Code Integration
 
-Integrate NzRouter with Claude Code CLI to route your Anthropic API requests through NzRouter's intelligent routing system.
+Integrate N4tzzOfficial with Claude Code CLI to route your Anthropic API requests through N4tzzOfficial's intelligent routing system.
 
 ## Prerequisites
 
 - Claude Code CLI installed
-- NzRouter running locally or cloud endpoint configured
-- API key from NzRouter dashboard
+- N4tzzOfficial running locally or cloud endpoint configured
+- API key from N4tzzOfficial dashboard
 
 ## Setup
 
@@ -15,7 +15,7 @@ Integrate NzRouter with Claude Code CLI to route your Anthropic API requests thr
 Set the following environment variables in your shell configuration file (`~/.bashrc`, `~/.zshrc`, or `~/.bash_profile`):
 
 ```bash
-# Base URL for NzRouter
+# Base URL for N4tzzOfficial
 export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
 
 # Optional: Set default models for aliases
@@ -40,7 +40,7 @@ echo $ANTHROPIC_BASE_URL
 
 ## Model Aliases
 
-Claude Code supports the following model aliases that map to NzRouter models:
+Claude Code supports the following model aliases that map to N4tzzOfficial models:
 
 | Alias | Model | Environment Variable |
 |-------|-------|---------------------|
@@ -86,7 +86,7 @@ Claude Code stores its configuration in `~/.claude/settings.json`. You can manua
 
 If you encounter connection errors:
 
-1. Verify NzRouter is running: `curl http://localhost:20128/health`
+1. Verify N4tzzOfficial is running: `curl http://localhost:20128/health`
 2. Check environment variables are set correctly
 3. Ensure no firewall is blocking port 20128
 
@@ -94,17 +94,18 @@ If you encounter connection errors:
 
 If you get "model not found" errors:
 
-1. Verify the model name matches your NzRouter configuration
-2. Check that the provider connection is active in NzRouter dashboard
+1. Verify the model name matches your N4tzzOfficial configuration
+2. Check that the provider connection is active in N4tzzOfficial dashboard
 3. Ensure the model is available in your connected providers
 
 ## Cloud Endpoint
 
-To use NzRouter cloud endpoint instead of localhost:
+To use N4tzzOfficial cloud endpoint instead of localhost:
 
 ```bash
-export ANTHROPIC_BASE_URL="https://NzRouter.com"
+export ANTHROPIC_BASE_URL="https://n4tzz.com"
 ```
 
-Make sure you have configured your API key in the NzRouter cloud dashboard.
+Make sure you have configured your API key in the N4tzzOfficial cloud dashboard.
+
 

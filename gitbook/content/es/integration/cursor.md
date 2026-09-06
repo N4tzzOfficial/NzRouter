@@ -1,17 +1,17 @@
 # Integración con Cursor
 
-Integra NzRouter con Cursor IDE para enrutar tus solicitudes de IA a través del sistema de enrutamiento inteligente de NzRouter.
+Integra N4tzzOfficial con Cursor IDE para enrutar tus solicitudes de IA a través del sistema de enrutamiento inteligente de N4tzzOfficial.
 
 ## Requisitos previos
 
 - Cursor IDE instalado
 - Cuenta Cursor Pro (requerida para endpoints de API personalizados)
-- Endpoint en la nube de NzRouter configurado
-- API key del dashboard de NzRouter
+- Endpoint en la nube de N4tzzOfficial configurado
+- API key del dashboard de N4tzzOfficial
 
 ## ⚠️ Notas importantes
 
-> **Endpoint en la nube requerido**: Cursor enruta solicitudes a través de su propio servidor y no soporta endpoints localhost. Debes usar el endpoint en la nube de NzRouter: `https://NzRouter.com`
+> **Endpoint en la nube requerido**: Cursor enruta solicitudes a través de su propio servidor y no soporta endpoints localhost. Debes usar el endpoint en la nube de N4tzzOfficial: `https://n4tzz.com`
 
 > **Cursor Pro requerido**: Esta característica requiere una cuenta Cursor Pro para usar endpoints de API personalizados.
 
@@ -30,35 +30,35 @@ Integra NzRouter con Cursor IDE para enrutar tus solicitudes de IA a través del
 
 ### 3. Configurar Base URL
 
-Establece la URL base al endpoint en la nube de NzRouter:
+Establece la URL base al endpoint en la nube de N4tzzOfficial:
 
 ```
-https://NzRouter.com
+https://n4tzz.com
 ```
 
 **Pasos:**
 1. En la configuración de Models, localiza el campo **Base URL**
-2. Ingresa: `https://NzRouter.com`
+2. Ingresa: `https://n4tzz.com`
 3. Clic en **Save**
 
 ### 4. Agregar API Key
 
-1. En el campo **API Key**, ingresa tu API key de NzRouter
-2. Puedes encontrar tu API key en el dashboard de NzRouter en **Settings → API Keys**
+1. En el campo **API Key**, ingresa tu API key de N4tzzOfficial
+2. Puedes encontrar tu API key en el dashboard de N4tzzOfficial en **Settings → API Keys**
 3. Clic en **Save**
 
 ### 5. Agregar modelo personalizado
 
 1. Clic en el botón **View All Models**
 2. Clic en **Add Custom Model**
-3. Ingresa el nombre del modelo desde tu configuración de NzRouter (ej. `gpt-4`, `claude-opus-4-5`, etc.)
+3. Ingresa el nombre del modelo desde tu configuración de N4tzzOfficial (ej. `gpt-4`, `claude-opus-4-5`, etc.)
 4. Clic en **Add**
 
 ### 6. Seleccionar modelo
 
 1. En la interfaz de chat de Cursor, clic en el dropdown selector de modelo
 2. Elige tu modelo personalizado de la lista
-3. ¡Empieza a usar NzRouter con Cursor!
+3. ¡Empieza a usar N4tzzOfficial con Cursor!
 
 ## Ejemplo de configuración
 
@@ -66,14 +66,14 @@ Tu configuración de Cursor debería verse así:
 
 ```
 OpenAI API: ✓ Enabled
-Base URL: https://NzRouter.com
-API Key: sk-NzRouter-xxxxxxxxxxxxx
+Base URL: https://n4tzz.com
+API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Custom Models: gpt-4, claude-opus-4-5, gemini-2.0-flash
 ```
 
 ## Modelos disponibles
 
-Puedes usar cualquier modelo configurado en tu dashboard de NzRouter. Ejemplos comunes:
+Puedes usar cualquier modelo configurado en tu dashboard de N4tzzOfficial. Ejemplos comunes:
 
 | Nombre del modelo | Proveedor | Descripción |
 |------------|----------|-------------|
@@ -89,62 +89,63 @@ Puedes usar cualquier modelo configurado en tu dashboard de NzRouter. Ejemplos c
 
 1. Abre el chat de Cursor (Cmd/Ctrl + L)
 2. Selecciona tu modelo del dropdown
-3. Comienza a chatear con IA a través de NzRouter
+3. Comienza a chatear con IA a través de N4tzzOfficial
 
 ### Generación de código inline
 
 1. Selecciona código en tu editor
 2. Presiona Cmd/Ctrl + K
 3. Ingresa tu prompt
-4. Cursor usará NzRouter para generar código
+4. Cursor usará N4tzzOfficial para generar código
 
 ### Explicación de código
 
 1. Selecciona código en tu editor
 2. Presiona Cmd/Ctrl + L
 3. Pregunta "Explain this code"
-4. Obtén explicaciones potenciadas por IA a través de NzRouter
+4. Obtén explicaciones potenciadas por IA a través de N4tzzOfficial
 
 ## Solución de problemas
 
 ### Error "Invalid API Key"
 
-1. Verifica tu API key en el dashboard de NzRouter
-2. Asegúrate de haber copiado la key completa incluyendo el prefijo `sk-NzRouter-`
+1. Verifica tu API key en el dashboard de N4tzzOfficial
+2. Asegúrate de haber copiado la key completa incluyendo el prefijo `sk-N4tzzOfficial-`
 3. Verifica que la API key no haya expirado
 4. Intenta regenerar una nueva API key
 
 ### Error "Model Not Found"
 
-1. Verifica que el nombre del modelo coincida exactamente con tu configuración de NzRouter
-2. Verifica que la conexión del proveedor esté activa en el dashboard de NzRouter
+1. Verifica que el nombre del modelo coincida exactamente con tu configuración de N4tzzOfficial
+2. Verifica que la conexión del proveedor esté activa en el dashboard de N4tzzOfficial
 3. Asegúrate de que el modelo esté disponible en tus proveedores conectados
 4. Intenta usar el nombre completo del modelo (ej. `openai/gpt-4` en lugar de `gpt-4`)
 
 ### Problemas de conexión
 
-1. Verifica que estés usando el endpoint en la nube: `https://NzRouter.com`
+1. Verifica que estés usando el endpoint en la nube: `https://n4tzz.com`
 2. Verifica tu conexión a internet
-3. Asegúrate de que el servicio en la nube de NzRouter esté operativo
+3. Asegúrate de que el servicio en la nube de N4tzzOfficial esté operativo
 4. Intenta deshabilitar VPN o proxy si está habilitado
 
 ### Localhost no funciona
 
-> **Recuerda**: Cursor no soporta endpoints localhost. Debes usar el endpoint en la nube `https://NzRouter.com`. Si necesitas usar una instancia local de NzRouter, considera usar un servicio de tunneling como ngrok para exponer tu endpoint local.
+> **Recuerda**: Cursor no soporta endpoints localhost. Debes usar el endpoint en la nube `https://n4tzz.com`. Si necesitas usar una instancia local de N4tzzOfficial, considera usar un servicio de tunneling como ngrok para exponer tu endpoint local.
 
 ## Configuración del endpoint en la nube
 
-Si estás ejecutando NzRouter localmente y quieres usarlo con Cursor:
+Si estás ejecutando N4tzzOfficial localmente y quieres usarlo con Cursor:
 
-1. Habilita el endpoint en la nube en la configuración de NzRouter
-2. Configura tu URL del endpoint en la nube en el dashboard de NzRouter
+1. Habilita el endpoint en la nube en la configuración de N4tzzOfficial
+2. Configura tu URL del endpoint en la nube en el dashboard de N4tzzOfficial
 3. Usa la URL en la nube en la configuración de Cursor
-4. Asegúrate de que tu instancia local de NzRouter sea accesible desde internet
+4. Asegúrate de que tu instancia local de N4tzzOfficial sea accesible desde internet
 
 ## Mejores prácticas
 
-1. **Usa aliases de modelos**: Crea aliases cortos para modelos usados con frecuencia en NzRouter
-2. **Monitorea el uso**: Revisa el dashboard de NzRouter para estadísticas de uso y costos
+1. **Usa aliases de modelos**: Crea aliases cortos para modelos usados con frecuencia en N4tzzOfficial
+2. **Monitorea el uso**: Revisa el dashboard de N4tzzOfficial para estadísticas de uso y costos
 3. **Rota las API Keys**: Rota tus API keys regularmente por seguridad
 4. **Prueba modelos**: Prueba diferentes modelos para encontrar el mejor para tu caso de uso
+
 

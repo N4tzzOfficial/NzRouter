@@ -2,15 +2,15 @@ import pkg from "../../../package.json" with { type: "json" };
 
 // App configuration
 export const APP_CONFIG = {
-  name: "NzRouter",
+  name: "N4tzzOfficial",
   description: "AI Infrastructure Management",
   version: pkg.version,
 };
 
 // GitHub configuration
 export const GITHUB_CONFIG = {
-  changelogUrl: "https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/CHANGELOG.md",
-  donateUrl: "https://nzrouter.com/api/donate",
+  changelogUrl: "https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/CHANGELOG.md",
+  donateUrl: "https://n4tzz.com/api/donate",
 };
 
 // Updater configuration

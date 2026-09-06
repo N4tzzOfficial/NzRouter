@@ -1,13 +1,13 @@
 # Tích hợp Continue VSCode Extension
 
-Tích hợp NzRouter với extension Continue để mang trợ lý AI trực tiếp vào Visual Studio Code.
+Tích hợp N4tzzOfficial với extension Continue để mang trợ lý AI trực tiếp vào Visual Studio Code.
 
 ## Yêu cầu
 
 - Visual Studio Code đã cài đặt
 - Extension Continue đã cài đặt từ VSCode marketplace
-- NzRouter API key từ [dashboard](https://NzRouter.com/dashboard)
-- NzRouter đang chạy (cục bộ hoặc cloud)
+- N4tzzOfficial API key từ [dashboard](https://n4tzz.com/dashboard)
+- N4tzzOfficial đang chạy (cục bộ hoặc cloud)
 
 ## Các bước Cấu hình
 
@@ -18,7 +18,7 @@ Tích hợp NzRouter với extension Continue để mang trợ lý AI trực ti�
 3. Gõ "Continue: Open Config" và chọn
 4. Mở `~/.continue/config.json`
 
-### 2. Thêm Cấu hình Model NzRouter
+### 2. Thêm Cấu hình Model N4tzzOfficial
 
 Thêm cấu hình sau vào `config.json`:
 
@@ -27,7 +27,7 @@ Thêm cấu hình sau vào `config.json`:
 {
   "models": [
     {
-      "title": "NzRouter - Claude Opus",
+      "title": "N4tzzOfficial - Claude Opus",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
@@ -42,28 +42,28 @@ Thêm cấu hình sau vào `config.json`:
 {
   "models": [
     {
-      "title": "NzRouter - Claude Opus (Best)",
+      "title": "N4tzzOfficial - Claude Opus (Best)",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - Claude Sonnet (Balanced)",
+      "title": "N4tzzOfficial - Claude Sonnet (Balanced)",
       "provider": "openai",
       "model": "cc/claude-sonnet-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - DeepSeek Chat (Code)",
+      "title": "N4tzzOfficial - DeepSeek Chat (Code)",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key-from-dashboard",
       "apiBase": "http://localhost:20128/v1"
     },
     {
-      "title": "NzRouter - Claude Haiku (Fast)",
+      "title": "N4tzzOfficial - Claude Haiku (Fast)",
       "provider": "openai",
       "model": "cc/claude-haiku-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
@@ -73,10 +73,10 @@ Thêm cấu hình sau vào `config.json`:
 }
 ```
 
-**Cho Cloud NzRouter:**
+**Cho Cloud N4tzzOfficial:**
 Thay `apiBase` bằng:
 ```json
-"apiBase": "https://NzRouter.com/v1"
+"apiBase": "https://n4tzz.com/v1"
 ```
 
 ### 3. Lưu và Reload
@@ -89,7 +89,7 @@ Thay `apiBase` bằng:
 
 1. Mở sidebar Continue (click icon Continue trong panel trái)
 2. Click dropdown chọn model ở trên cùng
-3. Chọn model NzRouter ưa thích
+3. Chọn model N4tzzOfficial ưa thích
 
 ## Model có sẵn
 
@@ -139,7 +139,7 @@ Thêm system prompt tùy chỉnh cho hành vi cụ thể:
 {
   "models": [
     {
-      "title": "NzRouter - Code Expert",
+      "title": "N4tzzOfficial - Code Expert",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key",
@@ -158,7 +158,7 @@ Thêm system prompt tùy chỉnh cho hành vi cụ thể:
 {
   "models": [
     {
-      "title": "NzRouter - Creative Writer",
+      "title": "N4tzzOfficial - Creative Writer",
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key",
@@ -204,13 +204,13 @@ Cấu hình context Continue gửi đến model:
 ## Troubleshooting
 
 ### Model không phản hồi
-- Kiểm tra NzRouter đang chạy: `curl http://localhost:20128/health`
+- Kiểm tra N4tzzOfficial đang chạy: `curl http://localhost:20128/health`
 - Xác minh API key trong config.json
 - Kiểm tra VSCode Developer Console để xem lỗi: `Help` → `Toggle Developer Tools`
 
 ### Chọn sai Model
 - Click dropdown model trong sidebar Continue
-- Chọn đúng model NzRouter
+- Chọn đúng model N4tzzOfficial
 - Tên model phải khớp chính xác (case-sensitive)
 
 ### Cấu hình không Load
@@ -221,7 +221,7 @@ Cấu hình context Continue gửi đến model:
 ### Hiệu năng Chậm
 - Chuyển sang model nhanh hơn (haiku, flash)
 - Giảm context size trong contextProviders
-- Kiểm tra độ trễ network đến NzRouter
+- Kiểm tra độ trễ network đến N4tzzOfficial
 
 ## Best Practices
 
@@ -247,4 +247,5 @@ Cấu hình context Continue gửi đến model:
 - [Setup Roo](roo.md) cho trợ lý AI
 - [Khám phá CLI usage](../cli/basic-usage.md)
 - [Tìm hiểu về chọn model](../models/overview.md)
+
 

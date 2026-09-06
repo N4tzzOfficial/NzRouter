@@ -9,7 +9,7 @@ NzRouterを5分で起動し、AIリクエストをインテリジェントにル
 ### 1. インストール
 
 ```bash
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
 **要件:** Node.js 20+ ([インストール詳細](getting-started/installation.md))
@@ -17,7 +17,7 @@ npm install -g NzRouter
 ### 2. 起動
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 🎉 **ダッシュボードが自動的に開きます** (`http://localhost:20128`)
@@ -101,7 +101,7 @@ Settings → Models → Advanced:
 ```json
 {
   "anthropic_api_base": "http://localhost:20128/v1",
-  "anthropic_api_key": "your-NzRouter-api-key"
+  "anthropic_api_key": "your-N4tzzOfficial-api-key"
 }
 ```
 
@@ -118,7 +118,7 @@ Model: cc/claude-opus-4-5-20251101
 
 ```bash
 export OPENAI_BASE_URL="http://localhost:20128"
-export OPENAI_API_KEY="your-NzRouter-api-key"
+export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 
 codex "your prompt"
 ```
@@ -242,7 +242,8 @@ CLIで使用: premium-coding
 
 ## ヘルプが必要?
 
-- **ウェブサイト**: [NzRouter.com](https://NzRouter.com)
-- **GitHub**: [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues**: [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **ウェブサイト**: [n4tzz.com](https://n4tzz.com)
+- **GitHub**: [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
+- **Issues**: [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
+
 

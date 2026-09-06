@@ -1,15 +1,15 @@
 # 🏠 Triển khai Localhost
 
-Chạy NzRouter trên máy cá nhân để phát triển và dùng cá nhân.
+Chạy N4tzzOfficial trên máy cá nhân để phát triển và dùng cá nhân.
 
 ---
 
 ## 📦 Cài đặt
 
-Cài đặt NzRouter toàn cục qua npm:
+Cài đặt N4tzzOfficial toàn cục qua npm:
 
 ```bash
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
 **Yêu cầu:**
@@ -20,10 +20,10 @@ npm install -g NzRouter
 
 ## 🚀 Khởi động Server
 
-Khởi động NzRouter với một lệnh duy nhất:
+Khởi động N4tzzOfficial với một lệnh duy nhất:
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 Dashboard sẽ tự động mở trong trình duyệt tại `http://localhost:3000`
@@ -31,7 +31,7 @@ Dashboard sẽ tự động mở trong trình duyệt tại `http://localhost:30
 **Cấu hình mặc định:**
 - **Dashboard**: `http://localhost:3000`
 - **API Endpoint**: `http://localhost:20128/v1`
-- **Data Directory**: `~/.NzRouter`
+- **Data Directory**: `~/.N4tzzOfficial`
 
 ---
 
@@ -42,7 +42,7 @@ Dashboard sẽ tự động mở trong trình duyệt tại `http://localhost:30
 Đặt thư mục data tùy chỉnh qua biến môi trường:
 
 ```bash
-DATA_DIR=/path/to/data NzRouter
+DATA_DIR=/path/to/data N4tzzOfficial
 ```
 
 ### Custom Port
@@ -53,10 +53,10 @@ Port API (20128) và port dashboard (3000) được cấu hình trong applicatio
 
 ## 🛑 Dừng Server
 
-Nhấn `Ctrl+C` trong terminal đang chạy NzRouter.
+Nhấn `Ctrl+C` trong terminal đang chạy N4tzzOfficial.
 
 ```bash
-# In the terminal running NzRouter
+# In the terminal running N4tzzOfficial
 ^C  # Press Ctrl+C
 ```
 
@@ -69,25 +69,25 @@ Server sẽ shutdown an toàn và lưu mọi dữ liệu.
 Chỉ cần chạy lệnh start lại:
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 Mọi cấu hình, API keys và combos được giữ lại trong thư mục data.
 
 ---
 
-## 📊 Cập nhật NzRouter
+## 📊 Cập nhật N4tzzOfficial
 
 Cập nhật phiên bản mới nhất:
 
 ```bash
-npm update -g NzRouter
+npm update -g N4tzzOfficial
 ```
 
 Kiểm tra version hiện tại:
 
 ```bash
-npm list -g NzRouter
+npm list -g N4tzzOfficial
 ```
 
 ---
@@ -113,7 +113,7 @@ Nếu gặp lỗi permission khi cài đặt:
 
 ```bash
 # Use sudo (not recommended)
-sudo npm install -g NzRouter
+sudo npm install -g N4tzzOfficial
 
 # Or fix npm permissions (recommended)
 mkdir ~/.npm-global
@@ -128,10 +128,10 @@ Nếu thư mục data không truy cập được:
 
 ```bash
 # Check permissions
-ls -la ~/.NzRouter
+ls -la ~/.N4tzzOfficial
 
 # Fix permissions
-chmod 755 ~/.NzRouter
+chmod 755 ~/.N4tzzOfficial
 ```
 
 ---
@@ -139,7 +139,7 @@ chmod 755 ~/.NzRouter
 ## 📁 Cấu trúc Data Directory
 
 ```
-~/.NzRouter/
+~/.N4tzzOfficial/
 ├── db.json           # Main database (providers, combos, settings)
 ├── logs/             # Application logs
 └── cache/            # Temporary cache files
@@ -149,10 +149,10 @@ chmod 755 ~/.NzRouter
 
 ```bash
 # Backup
-cp -r ~/.NzRouter ~/.NzRouter.backup
+cp -r ~/.N4tzzOfficial ~/.N4tzzOfficial.backup
 
 # Restore
-cp -r ~/.NzRouter.backup ~/.NzRouter
+cp -r ~/.N4tzzOfficial.backup ~/.N4tzzOfficial
 ```
 
 ---
@@ -162,4 +162,5 @@ cp -r ~/.NzRouter.backup ~/.NzRouter
 - [Kết nối Providers](/providers/subscription.md)
 - [Tạo Combos](/features/combos.md)
 - [Tích hợp với CLI Tools](/integration/cursor.md)
+
 

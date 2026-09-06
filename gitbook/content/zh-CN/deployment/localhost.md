@@ -1,15 +1,15 @@
 # 🏠 本地部署
 
-在本机运行 NzRouter,用于开发和个人使用。
+在本机运行 N4tzzOfficial,用于开发和个人使用。
 
 ---
 
 ## 📦 安装
 
-通过 npm 全局安装 NzRouter:
+通过 npm 全局安装 N4tzzOfficial:
 
 ```bash
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
 **要求:**
@@ -20,10 +20,10 @@ npm install -g NzRouter
 
 ## 🚀 启动服务器
 
-一条命令启动 NzRouter:
+一条命令启动 N4tzzOfficial:
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 仪表盘会自动在浏览器中打开,地址为 `http://localhost:3000`
@@ -31,7 +31,7 @@ NzRouter
 **默认配置:**
 - **仪表盘**: `http://localhost:3000`
 - **API Endpoint**: `http://localhost:20128/v1`
-- **数据目录**: `~/.NzRouter`
+- **数据目录**: `~/.N4tzzOfficial`
 
 ---
 
@@ -42,7 +42,7 @@ NzRouter
 通过环境变量设置自定义数据目录:
 
 ```bash
-DATA_DIR=/path/to/data NzRouter
+DATA_DIR=/path/to/data N4tzzOfficial
 ```
 
 ### 自定义端口
@@ -53,10 +53,10 @@ API 端口(20128)和仪表盘端口(3000)在应用中配置。如需修改,你�
 
 ## 🛑 停止服务器
 
-在运行 NzRouter 的终端中按 `Ctrl+C`。
+在运行 N4tzzOfficial 的终端中按 `Ctrl+C`。
 
 ```bash
-# 在运行 NzRouter 的终端中
+# 在运行 N4tzzOfficial 的终端中
 ^C  # 按 Ctrl+C
 ```
 
@@ -69,25 +69,25 @@ API 端口(20128)和仪表盘端口(3000)在应用中配置。如需修改,你�
 再次运行启动命令即可:
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 所有配置、API keys 和组合都保存在数据目录中。
 
 ---
 
-## 📊 更新 NzRouter
+## 📊 更新 N4tzzOfficial
 
 更新到最新版本:
 
 ```bash
-npm update -g NzRouter
+npm update -g N4tzzOfficial
 ```
 
 查看当前版本:
 
 ```bash
-npm list -g NzRouter
+npm list -g N4tzzOfficial
 ```
 
 ---
@@ -113,7 +113,7 @@ kill -9 <PID>
 
 ```bash
 # 使用 sudo(不推荐)
-sudo npm install -g NzRouter
+sudo npm install -g N4tzzOfficial
 
 # 或修复 npm 权限(推荐)
 mkdir ~/.npm-global
@@ -128,10 +128,10 @@ source ~/.bashrc
 
 ```bash
 # 检查权限
-ls -la ~/.NzRouter
+ls -la ~/.N4tzzOfficial
 
 # 修复权限
-chmod 755 ~/.NzRouter
+chmod 755 ~/.N4tzzOfficial
 ```
 
 ---
@@ -139,7 +139,7 @@ chmod 755 ~/.NzRouter
 ## 📁 数据目录结构
 
 ```
-~/.NzRouter/
+~/.N4tzzOfficial/
 ├── db.json           # 主数据库(提供商、组合、设置)
 ├── logs/             # 应用日志
 └── cache/            # 临时缓存文件
@@ -149,10 +149,10 @@ chmod 755 ~/.NzRouter
 
 ```bash
 # 备份
-cp -r ~/.NzRouter ~/.NzRouter.backup
+cp -r ~/.N4tzzOfficial ~/.N4tzzOfficial.backup
 
 # 恢复
-cp -r ~/.NzRouter.backup ~/.NzRouter
+cp -r ~/.N4tzzOfficial.backup ~/.N4tzzOfficial
 ```
 
 ---
@@ -162,4 +162,5 @@ cp -r ~/.NzRouter.backup ~/.NzRouter
 - [连接提供商](/providers/subscription.md)
 - [创建组合](/features/combos.md)
 - [集成 CLI 工具](/integration/cursor.md)
+
 

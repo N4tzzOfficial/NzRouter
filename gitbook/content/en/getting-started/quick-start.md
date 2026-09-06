@@ -1,6 +1,6 @@
 # Getting Started
 
-Get NzRouter running in 5 minutes and start routing AI requests intelligently.
+Get N4tzzOfficial running in 5 minutes and start routing AI requests intelligently.
 
 ---
 
@@ -9,7 +9,7 @@ Get NzRouter running in 5 minutes and start routing AI requests intelligently.
 ### 1. Install
 
 ```bash
-npm install -g NzRouter
+npm install -g N4tzzOfficial
 ```
 
 **Requirements:** Node.js 20+ ([Installation details](getting-started/installation.md))
@@ -17,7 +17,7 @@ npm install -g NzRouter
 ### 2. Start
 
 ```bash
-NzRouter
+N4tzzOfficial
 ```
 
 🎉 **Dashboard opens automatically** at `http://localhost:20128`
@@ -43,7 +43,7 @@ Dashboard → Providers → Connect [Provider]
 **Example: Claude Code**
 1. Click "Connect Claude Code"
 2. Login with your Claude account
-3. Authorize NzRouter
+3. Authorize N4tzzOfficial
 4. ✅ Done! Use model: `cc/claude-opus-4-5-20251101`
 
 #### Option B: API Key (Cheap Providers)
@@ -83,14 +83,14 @@ Dashboard → Providers → Connect [Free Provider]
 
 ## 4. Use in CLI Tools
 
-Point your coding tool to NzRouter:
+Point your coding tool to N4tzzOfficial:
 
 ### Cursor IDE
 
 ```
 Settings → Models → Advanced:
   OpenAI API Base URL: http://localhost:20128/v1
-  OpenAI API Key: [from NzRouter dashboard]
+  OpenAI API Key: [from N4tzzOfficial dashboard]
   Model: cc/claude-opus-4-5-20251101
 ```
 
@@ -101,7 +101,7 @@ Edit `~/.claude/config.json`:
 ```json
 {
   "anthropic_api_base": "http://localhost:20128/v1",
-  "anthropic_api_key": "your-NzRouter-api-key"
+  "anthropic_api_key": "your-N4tzzOfficial-api-key"
 }
 ```
 
@@ -118,7 +118,7 @@ Model: cc/claude-opus-4-5-20251101
 
 ```bash
 export OPENAI_BASE_URL="http://localhost:20128"
-export OPENAI_API_KEY="your-NzRouter-api-key"
+export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 
 codex "your prompt"
 ```
@@ -242,7 +242,8 @@ Daily routine:
 
 ## Need Help?
 
-- **Website**: [NzRouter.com](https://NzRouter.com)
-- **GitHub**: [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues**: [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **Website**: [n4tzz.com](https://n4tzz.com)
+- **GitHub**: [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
+- **Issues**: [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
+
 

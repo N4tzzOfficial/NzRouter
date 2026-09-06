@@ -1,6 +1,6 @@
 # ☁️ Despliegue en la nube
 
-Despliega NzRouter en VPS o Docker para acceso remoto y uso en producción.
+Despliega N4tzzOfficial en VPS o Docker para acceso remoto y uso en producción.
 
 ---
 
@@ -16,8 +16,8 @@ Despliega NzRouter en VPS o Docker para acceso remoto y uso en producción.
 ### Paso 1: Clonar el repositorio
 
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 ```
 
 ### Paso 2: Instalar dependencias
@@ -39,7 +39,7 @@ Crea un archivo `.env` o exporta variables:
 ```bash
 export JWT_SECRET="your-secure-secret-change-this-to-random-string"
 export INITIAL_PASSWORD="your-secure-password"
-export DATA_DIR="/var/lib/NzRouter"
+export DATA_DIR="/var/lib/N4tzzOfficial"
 export NODE_ENV="production"
 ```
 
@@ -49,15 +49,15 @@ export NODE_ENV="production"
 |----------|---------|-------------|
 | `JWT_SECRET` | Auto-generado | **¡DEBE cambiarse en producción!** Usado para firmar tokens JWT |
 | `INITIAL_PASSWORD` | `123456` | Contraseña de login del dashboard |
-| `DATA_DIR` | `~/.NzRouter` | Ruta de almacenamiento de la base de datos |
+| `DATA_DIR` | `~/.N4tzzOfficial` | Ruta de almacenamiento de la base de datos |
 | `NODE_ENV` | `development` | Establece a `production` para despliegue |
 | `ENABLE_REQUEST_LOGS` | `false` | Habilita logs de debug de request/response |
 
 ### Paso 5: Crear el directorio de datos
 
 ```bash
-sudo mkdir -p /var/lib/NzRouter
-sudo chown $USER:$USER /var/lib/NzRouter
+sudo mkdir -p /var/lib/N4tzzOfficial
+sudo chown $USER:$USER /var/lib/N4tzzOfficial
 ```
 
 ### Paso 6: Iniciar la aplicación
@@ -74,8 +74,8 @@ PM2 mantiene tu aplicación corriendo y la reinicia en caso de crash:
 # Instalar PM2 globalmente
 npm install -g pm2
 
-# Iniciar NzRouter con PM2
-pm2 start npm --name NzRouter -- start
+# Iniciar N4tzzOfficial con PM2
+pm2 start npm --name N4tzzOfficial -- start
 
 # Guardar la configuración de PM2
 pm2 save
@@ -89,13 +89,13 @@ pm2 startup
 
 ```bash
 # Ver logs
-pm2 logs NzRouter
+pm2 logs N4tzzOfficial
 
 # Reiniciar aplicación
-pm2 restart NzRouter
+pm2 restart N4tzzOfficial
 
 # Detener aplicación
-pm2 stop NzRouter
+pm2 stop N4tzzOfficial
 
 # Ver estado
 pm2 status
@@ -147,17 +147,17 @@ CMD ["npm", "run", "start"]
 
 ```bash
 # Construir imagen
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 
 # Ejecutar contenedor
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 3000:3000 \
   -p 20128:20128 \
   -e JWT_SECRET="your-secure-secret-change-this" \
   -e INITIAL_PASSWORD="your-secure-password" \
-  -v NzRouter-data:/app/data \
-  NzRouter
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial
 ```
 
 ### Opción 2: Docker Compose
@@ -168,9 +168,9 @@ Crea `docker-compose.yml`:
 version: '3.8'
 
 services:
-  NzRouter:
+  N4tzzOfficial:
     build: .
-    container_name: NzRouter
+    container_name: N4tzzOfficial
     ports:
       - "3000:3000"
       - "20128:20128"
@@ -180,11 +180,11 @@ services:
       - INITIAL_PASSWORD=your-secure-password
       - DATA_DIR=/app/data
     volumes:
-      - NzRouter-data:/app/data
+      - N4tzzOfficial-data:/app/data
     restart: unless-stopped
 
 volumes:
-  NzRouter-data:
+  N4tzzOfficial-data:
 ```
 
 **Ejecutar con Docker Compose:**
@@ -223,7 +223,7 @@ sudo apt install nginx
 
 ### Paso 2: Configurar Nginx
 
-Crea `/etc/nginx/sites-available/NzRouter`:
+Crea `/etc/nginx/sites-available/N4tzzOfficial`:
 
 ```nginx
 server {
@@ -247,7 +247,7 @@ server {
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
-    # Proxy to NzRouter
+    # Proxy to N4tzzOfficial
     location / {
         proxy_pass http://localhost:3000;
         proxy_http_version 1.1;
@@ -284,7 +284,7 @@ server {
 
 ```bash
 # Crear enlace simbólico
-sudo ln -s /etc/nginx/sites-available/NzRouter /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/N4tzzOfficial /etc/nginx/sites-enabled/
 
 # Probar configuración
 sudo nginx -t
@@ -333,7 +333,7 @@ sudo ufw allow 22/tcp
 sudo ufw allow 80/tcp
 sudo ufw allow 443/tcp
 
-# Si NO usas proxy reverso, permite los puertos de NzRouter
+# Si NO usas proxy reverso, permite los puertos de N4tzzOfficial
 sudo ufw allow 3000/tcp
 sudo ufw allow 20128/tcp
 
@@ -363,22 +363,22 @@ ssh -L 3000:localhost:3000 user@your-server.com
 # Actualizar paquetes del sistema
 sudo apt update && sudo apt upgrade -y
 
-# Actualizar NzRouter
-cd /path/to/NzRouter/app
+# Actualizar N4tzzOfficial
+cd /path/to/N4tzzOfficial/app
 git pull
 npm install
 npm run build
-pm2 restart NzRouter
+pm2 restart N4tzzOfficial
 ```
 
 ### 5. Estrategia de respaldo
 
 ```bash
 # Respaldar el directorio de datos
-tar -czf NzRouter-backup-$(date +%Y%m%d).tar.gz /var/lib/NzRouter
+tar -czf N4tzzOfficial-backup-$(date +%Y%m%d).tar.gz /var/lib/N4tzzOfficial
 
 # Respaldo automatizado diario (agregar a crontab)
-0 2 * * * tar -czf /backups/NzRouter-$(date +\%Y\%m\%d).tar.gz /var/lib/NzRouter
+0 2 * * * tar -czf /backups/N4tzzOfficial-$(date +\%Y\%m\%d).tar.gz /var/lib/N4tzzOfficial
 ```
 
 ---
@@ -392,7 +392,7 @@ tar -czf NzRouter-backup-$(date +%Y%m%d).tar.gz /var/lib/NzRouter
 pm2 status
 
 # Ver logs
-pm2 logs NzRouter --lines 100
+pm2 logs N4tzzOfficial --lines 100
 
 # Monitorear recursos
 pm2 monit
@@ -429,20 +429,20 @@ netstat -tulpn | grep -E '3000|20128'
 
 ```bash
 # Verificar logs
-pm2 logs NzRouter
+pm2 logs N4tzzOfficial
 
 # Verificar si los puertos están en uso
 sudo lsof -i :3000
 sudo lsof -i :20128
 
 # Verificar variables de entorno
-pm2 env NzRouter
+pm2 env N4tzzOfficial
 ```
 
 ### Nginx 502 Bad Gateway
 
 ```bash
-# Verificar si NzRouter está corriendo
+# Verificar si N4tzzOfficial está corriendo
 pm2 status
 
 # Verificar logs de error de Nginx
@@ -460,8 +460,8 @@ Asegúrate de que `proxy_buffering off` esté configurado en Nginx para soporte 
 
 ```bash
 # Corregir permisos del directorio de datos
-sudo chown -R $USER:$USER /var/lib/NzRouter
-chmod 755 /var/lib/NzRouter
+sudo chown -R $USER:$USER /var/lib/N4tzzOfficial
+chmod 755 /var/lib/N4tzzOfficial
 ```
 
 ---
@@ -471,4 +471,5 @@ chmod 755 /var/lib/NzRouter
 - [Conectar proveedores](/providers/subscription.md)
 - [Configurar combos](/features/combos.md)
 - [Integrar con herramientas](/integration/cursor.md)
+
 

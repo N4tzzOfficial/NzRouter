@@ -1,12 +1,12 @@
 # Câu hỏi thường gặp
 
-Những câu hỏi phổ biến về NzRouter.
+Những câu hỏi phổ biến về N4tzzOfficial.
 
 ---
 
-## NzRouter là gì?
+## N4tzzOfficial là gì?
 
-**NzRouter là bộ định tuyến mô hình AI giúp tối đa hóa giá trị subscription và giảm chi phí.**
+**N4tzzOfficial là bộ định tuyến mô hình AI giúp tối đa hóa giá trị subscription và giảm chi phí.**
 
 Nó định tuyến request thông minh qua nhiều provider AI bằng hệ thống fallback 3 tầng:
 1. **Tầng Subscription** - Tối đa quota Claude Code, Codex, Gemini bạn đang trả tiền
@@ -23,7 +23,7 @@ Nó định tuyến request thông minh qua nhiều provider AI bằng hệ th�
 
 ## Pricing hoạt động thế nào?
 
-**NzRouter dùng chiến lược pricing 3 tầng:**
+**N4tzzOfficial dùng chiến lược pricing 3 tầng:**
 
 ### Tier 1: Subscription (Dùng đầu tiên)
 - **Claude Code** (Pro/Max): $20-100/tháng - Quota 5 giờ + hàng tuần
@@ -50,9 +50,9 @@ Nó định tuyến request thông minh qua nhiều provider AI bằng hệ th�
 
 ---
 
-## NzRouter có miễn phí không?
+## N4tzzOfficial có miễn phí không?
 
-**Có, NzRouter hoàn toàn miễn phí và mã nguồn mở 100%.**
+**Có, N4tzzOfficial hoàn toàn miễn phí và mã nguồn mở 100%.**
 
 **Provider free tier có sẵn:**
 - **Gemini CLI** - 180K completions/tháng (MIỄN PHÍ tài khoản Google)
@@ -96,7 +96,7 @@ Xem [tài liệu providers](providers/subscription.md) để biết chi tiết.
 
 ## Tôi có thể dùng nhiều provider không?
 
-**Có! Đây là tính năng cốt lõi của NzRouter.**
+**Có! Đây là tính năng cốt lõi của N4tzzOfficial.**
 
 **Combo cho phép bạn nối nhiều provider với fallback tự động:**
 
@@ -129,7 +129,7 @@ Xem [tài liệu combos](features/combos.md) để biết ví dụ.
 
 ## Quota tracking hoạt động thế nào?
 
-**NzRouter theo dõi quota thời gian thực cho tất cả provider:**
+**N4tzzOfficial theo dõi quota thời gian thực cho tất cả provider:**
 
 **Tính năng:**
 - **Token consumption** - Tokens input/output mỗi request
@@ -154,17 +154,17 @@ Xem [tài liệu quota tracking](features/quota-tracking.md) để biết chi ti
 
 ---
 
-## NzRouter có hoạt động với Cursor không?
+## N4tzzOfficial có hoạt động với Cursor không?
 
 **Có, nhưng Cursor yêu cầu endpoint cloud.**
 
 **Vấn đề:** Cursor IDE không hỗ trợ endpoint localhost.
 
-**Giải pháp:** Dùng NzRouter cloud deployment:
+**Giải pháp:** Dùng N4tzzOfficial cloud deployment:
 
 ```
 Cursor Settings → Models → Advanced:
-  OpenAI API Base URL: https://NzRouter.com/v1
+  OpenAI API Base URL: https://n4tzz.com/v1
   OpenAI API Key: [from dashboard]
   Model: cc/claude-opus-4-5-20251101
 ```
@@ -172,8 +172,8 @@ Cursor Settings → Models → Advanced:
 **Thay thế:** Self-host trên VPS với domain công khai:
 ```bash
 # Deploy to VPS
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install && npm run build
 npm start
 
@@ -192,22 +192,22 @@ Xem [hướng dẫn tích hợp Cursor](integration/cursor.md) để biết chi 
 
 ---
 
-## Tôi có thể self-host NzRouter không?
+## Tôi có thể self-host N4tzzOfficial không?
 
-**Có! NzRouter hỗ trợ nhiều tùy chọn deployment:**
+**Có! N4tzzOfficial hỗ trợ nhiều tùy chọn deployment:**
 
 ### Localhost (Mặc định)
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 → Dashboard: http://localhost:3000
 → API: http://localhost:20128/v1
 ```
 
 ### VPS/Cloud
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install && npm run build
 
 export JWT_SECRET="your-secure-secret"
@@ -219,23 +219,23 @@ npm start
 
 ### Docker
 ```bash
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 docker run -d \
   -p 3000:3000 \
   -e JWT_SECRET="your-secret" \
-  -v NzRouter-data:/app/data \
-  NzRouter
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial
 ```
 
 ### Cloudflare Workers
 ```bash
-cd NzRouter/app
+cd N4tzzOfficial/app
 npm run deploy:cloudflare
 ```
 
 **Biến môi trường:**
 - `JWT_SECRET` - **PHẢI đổi trong production!**
-- `DATA_DIR` - Đường dẫn lưu database (mặc định: `~/.NzRouter`)
+- `DATA_DIR` - Đường dẫn lưu database (mặc định: `~/.N4tzzOfficial`)
 - `INITIAL_PASSWORD` - Đăng nhập Dashboard (mặc định: `123456`)
 - `NODE_ENV` - Đặt `production` để deploy
 
@@ -245,11 +245,11 @@ Xem [hướng dẫn deployment](getting-started/installation.md#deployment) đ�
 
 ## Dữ liệu của tôi có an toàn không?
 
-**Có, NzRouter ưu tiên bảo mật và quyền riêng tư:**
+**Có, N4tzzOfficial ưu tiên bảo mật và quyền riêng tư:**
 
 **Local storage:**
-- Mọi dữ liệu lưu cục bộ tại `~/.NzRouter` (hoặc `DATA_DIR` tùy chỉnh)
-- Không gửi data đến server NzRouter
+- Mọi dữ liệu lưu cục bộ tại `~/.N4tzzOfficial` (hoặc `DATA_DIR` tùy chỉnh)
+- Không gửi data đến server N4tzzOfficial
 - OAuth tokens mã hóa bằng JWT
 
 **Không telemetry:**
@@ -268,31 +268,31 @@ Xem [hướng dẫn deployment](getting-started/installation.md#deployment) đ�
 - Bật HTTPS cho cloud deployment
 - Xoay API key định kỳ
 
-**NzRouter lưu gì:**
+**N4tzzOfficial lưu gì:**
 - Tokens OAuth của provider (mã hóa)
 - API keys (mã hóa)
 - Thống kê sử dụng (chỉ cục bộ)
 - Cấu hình combo
 
-**NzRouter KHÔNG lưu:**
+**N4tzzOfficial KHÔNG lưu:**
 - Prompts hoặc responses của bạn
 - Code bạn tạo
 - Thông tin cá nhân
 
 ---
 
-## Làm thế nào để cập nhật NzRouter?
+## Làm thế nào để cập nhật N4tzzOfficial?
 
 **Phương thức cập nhật phụ thuộc loại cài đặt:**
 
 ### Global NPM Install
 ```bash
-npm update -g NzRouter
+npm update -g N4tzzOfficial
 ```
 
 ### Local Install
 ```bash
-cd NzRouter/app
+cd N4tzzOfficial/app
 git pull origin main
 npm install
 npm run build
@@ -301,23 +301,23 @@ npm start
 
 ### Docker
 ```bash
-docker pull NzRouter:latest
-docker stop NzRouter
-docker rm NzRouter
+docker pull N4tzzOfficial:latest
+docker stop N4tzzOfficial
+docker rm N4tzzOfficial
 docker run -d \
   -p 3000:3000 \
-  -v NzRouter-data:/app/data \
-  NzRouter:latest
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial:latest
 ```
 
 **Kiểm tra version:**
 ```bash
-NzRouter --version
+N4tzzOfficial --version
 ```
 
 **Breaking changes:**
-- Xem [CHANGELOG.md](https://github.com/decolua/NzRouter/blob/main/CHANGELOG.md)
-- Backup `~/.NzRouter` trước khi update lớn
+- Xem [CHANGELOG.md](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/CHANGELOG.md)
+- Backup `~/.N4tzzOfficial` trước khi update lớn
 - Xem hướng dẫn migration cho major version
 
 ---
@@ -329,18 +329,18 @@ NzRouter --version
 ### Các cách đóng góp:
 
 1. **Report bugs:**
-   - [GitHub Issues](https://github.com/decolua/NzRouter/issues)
+   - [GitHub Issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
    - Bao gồm error logs, các bước reproduce
 
 2. **Request features:**
-   - [GitHub Discussions](https://github.com/decolua/NzRouter/discussions)
+   - [GitHub Discussions](https://github.com/N4tzzOfficial/N4tzzOfficial/discussions)
    - Mô tả use case và lợi ích
 
 3. **Submit code:**
    ```bash
    # Fork repo
-   git clone https://github.com/YOUR_USERNAME/NzRouter.git
-   cd NzRouter
+   git clone https://github.com/YOUR_USERNAME/N4tzzOfficial.git
+   cd N4tzzOfficial
    
    # Create branch
    git checkout -b feature/your-feature
@@ -375,14 +375,15 @@ NzRouter --version
 - Cập nhật tài liệu
 - Giữ commit nhỏ gọn và mô tả rõ ràng
 
-Xem [CONTRIBUTING.md](https://github.com/decolua/NzRouter/blob/main/CONTRIBUTING.md) để biết chi tiết.
+Xem [CONTRIBUTING.md](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/CONTRIBUTING.md) để biết chi tiết.
 
 ---
 
 ## Cần trợ giúp thêm?
 
-- **Documentation:** [NzRouter.com/docs](https://NzRouter.com/docs)
-- **GitHub:** [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues:** [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **Documentation:** [n4tzz.com/docs](https://n4tzz.com/docs)
+- **GitHub:** [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
+- **Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
 - **Troubleshooting:** [troubleshooting.md](troubleshooting.md)
+
 

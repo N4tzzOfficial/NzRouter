@@ -19,7 +19,7 @@ NzRouterをOpenAI Codex CLIと統合し、OpenAI APIリクエストをNzRouter�
 export OPENAI_BASE_URL="http://localhost:20128/v1"
 
 # NzRouterダッシュボードからのAPIキー
-export OPENAI_API_KEY="your-NzRouter-api-key"
+export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 ```
 
 ### 2. シェル設定をリロード
@@ -77,7 +77,7 @@ codex --model cx/gpt-5.1-codex-max "Explain what this code does: $(cat myfile.js
 ```json
 {
   "baseUrl": "http://localhost:20128/v1",
-  "apiKey": "your-NzRouter-api-key",
+  "apiKey": "your-N4tzzOfficial-api-key",
   "defaultModel": "cx/gpt-5.2-codex"
 }
 ```
@@ -113,7 +113,7 @@ codex --model cx/gpt-5.1-codex-max "Explain what this code does: $(cat myfile.js
 localhostの代わりにNzRouterクラウドエンドポイントを使用するには:
 
 ```bash
-export OPENAI_BASE_URL="https://NzRouter.com"
+export OPENAI_BASE_URL="https://n4tzz.com"
 ```
 
 NzRouterクラウドダッシュボードでAPIキーが設定されていることを確認してください。
@@ -134,4 +134,5 @@ export OPENAI_TIMEOUT=60  # 秒
 export CODEX_DEBUG=true
 codex --model cx/gpt-5.2-codex "Your prompt"
 ```
+
 

@@ -1,22 +1,22 @@
 <div align="center">
-  <img src="../images/NzRouter.png?1" alt="Bảng điều khiển NzRouter" width="800"/>
+  <img src="../images/NzRouter.png?1" alt="Bảng điều khiển N4tzzOfficial" width="800"/>
   
-  # NzRouter - Free AI Router & Token Saver
+  # N4tzzOfficial - Free AI Router & Token Saver
   
   **Không bao giờ ngừng code. Tiết kiệm 20-40% token với RTK + tự động dự phòng sang các mô hình AI MIỄN PHÍ & giá rẻ.**
   
   **Kết nối tất cả công cụ AI Code (Claude Code, Codex, Cursor, Cline, Copilot, Antigravity...) tới 40+ Nhà cung cấp AI & 100+ Mô hình.**
   
-  [![npm](https://img.shields.io/npm/v/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![Downloads](https://img.shields.io/npm/dm/NzRouter.svg)](https://www.npmjs.com/package/NzRouter)
-  [![License](https://github.com/decolua/NzRouter/blob/main/LICENSE)](https://github.com/decolua/NzRouter/blob/main/LICENSE)
+  [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
+  [![License](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
   
-  [🚀 Bắt đầu nhanh](#-quick-start) • [💡 Tính năng](#-key-features) • [📖 Cài đặt](#-setup-guide) • [🌐 Website](https://NzRouter.com)
+  [🚀 Bắt đầu nhanh](#-quick-start) • [💡 Tính năng](#-key-features) • [📖 Cài đặt](#-setup-guide) • [🌐 Website](https://n4tzz.com)
 </div>
 
 ---
 
-## 🤔 Tại sao chọn NzRouter?
+## 🤔 Tại sao chọn N4tzzOfficial?
 
 **Ngừng lãng phí tiền bạc, token và không bao giờ lo chạm giới hạn (rate limit):**
 
@@ -26,7 +26,7 @@
 - ❌ Chi phí API đắt đỏ ($20-50/tháng cho từng nhà cung cấp)
 - ❌ Phải chuyển đổi thủ công giữa các nhà cung cấp AI
 
-**NzRouter giải quyết vấn đề này:**
+**N4tzzOfficial giải quyết vấn đề này:**
 
 - ✅ **RTK Token Saver** - Tự động nén nội dung `tool_result`, tiết kiệm 20-40% token trên mỗi request
 - ✅ **Tối đa hóa gói đăng ký** - Theo dõi hạn mức, tận dụng triệt để trước khi reset
@@ -46,7 +46,7 @@
        │ http://localhost:20128/v1
        ↓
 ┌─────────────────────────────────────────────┐
-│           NzRouter (Smart Router)            │
+│           N4tzzOfficial (Smart Router)            │
 │  • RTK Token Saver (nén tool_result token) │
 │  • Dịch chuyển định dạng (OpenAI ↔ Claude) │
 │  • Quota tracking (theo dõi hạn mức)       │
@@ -69,8 +69,8 @@ Kết quả: Không bao giờ ngừng code, chi phí tối thiểu + tiết ki�
 **1. Cài đặt toàn cục:**
 
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 ```
 
 🎉 Bảng điều khiển (Dashboard) sẽ tự động mở tại `http://localhost:20128`
@@ -118,12 +118,12 @@ URL mặc định:
 
 <div align="center">
   
-### 📺 Hướng dẫn thiết lập hoàn chỉnh - NzRouter + Claude Code MIỄN PHÍ
+### 📺 Hướng dẫn thiết lập hoàn chỉnh - N4tzzOfficial + Claude Code MIỄN PHÍ
   
-[![Thiết lập NzRouter + Claude Code](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
+[![Thiết lập N4tzzOfficial + Claude Code](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
 
 **🎬 Xem hướng dẫn từng đầy đủ:**
-- ✅ Cài đặt & thiết lập NzRouter
+- ✅ Cài đặt & thiết lập N4tzzOfficial
 - ✅ Cấu hình Claude Sonnet 4.5 MIỄN PHÍ
 - ✅ Tích hợp Claude Code
 - ✅ Thử nghiệm code trực tiếp
@@ -138,7 +138,7 @@ URL mặc định:
 
 ## 🛠️ Các công cụ CLI được hỗ trợ
 
-NzRouter hoạt động liền mạch với tất cả các công cụ code AI chính:
+N4tzzOfficial hoạt động liền mạch với tất cả các công cụ code AI chính:
 
 <div align="center">
   <table>
@@ -389,7 +389,7 @@ Combo: "my-coding-stack"
 
 Dịch chuyển liền mạch giữa các định dạng:
 - **OpenAI** ↔ **Claude** ↔ **Gemini** ↔ **OpenAI Responses**
-- Công cụ CLI của bạn gửi định dạng OpenAI → NzRouter dịch chuyển → Nhà cung cấp nhận định dạng gốc
+- Công cụ CLI của bạn gửi định dạng OpenAI → N4tzzOfficial dịch chuyển → Nhà cung cấp nhận định dạng gốc
 - Hoạt động với mọi công cụ hỗ trợ endpoint OpenAI tùy chỉnh
 
 ### 👥 Hỗ trợ Đa tài khoản
@@ -443,13 +443,13 @@ Dịch chuyển liền mạch giữa các định dạng:
 > **💡AN TRỌNG - Hiểu về Chi phí trên Bảng điều khiển:**
 > 
 > "Chi phí" hiển thị trong Phân tích sử dụng là **chỉ để theo dõi và so sánh**. 
-> Bản thân NzRouter **không bao giờ thu phí** bạn bất cứ thứ gì. Bạn chỉ trả tiền trực tiếp cho các nhà cung cấp (nếu sử dụng dịch vụ trả phí).
+> Bản thân N4tzzOfficial **không bao giờ thu phí** bạn bất cứ thứ gì. Bạn chỉ trả tiền trực tiếp cho các nhà cung cấp (nếu sử dụng dịch vụ trả phí).
 > 
 > **Ví dụ:** Nếu bảng điều khiển của bạn hiển thị "tổng chi phí $290" trong khi sử dụng các mô hìnhFlow, điều này đại diện cho 
 > số tiền bạn sẽ phải trả nếu sử dụng API trả phí trực tiếp. Chi phí thực tế của bạn = **$0** (iFlow miễn phí không giới hạn).
 > 
 > Hãy coi nó như một "trình theo dõi tiết kiệm" cho thấy bạn đang tiết kiệm được bao nhiêu bằng cách sử dụng các mô hình miễn phí hoặc 
-> định tuyến qua NzRouter!
+> định tuyến qua N4tzzOfficial!
 
 ### 🌐 Triển khai ở bất cứ đâu
 
@@ -481,15 +481,15 @@ Dịch chuyển liền mạch giữa các định dạng:
 
 ---
 
-### 📊 Hiểu về Chi phí & Thanh toán của NzRouter
+### 📊 Hiểu về Chi phí & Thanh toán của N4tzzOfficial
 
-**Thực tế Thanh toán NzRouter:**
+**Thực tế Thanh toán N4tzzOfficial:**
 
-✅ **Phần mềm NzRouter = MIỄN PHÍ mãi mãi** (mã nguồn mở, không bao giờ thu phí)  
+✅ **Phần mềm N4tzzOfficial = MIỄN PHÍ mãi mãi** (mã nguồn mở, không bao giờ thu phí)  
 ✅ **"Chi phí" trên bảng điều khiển = Chỉ để Hiển thị/Theo dõi** (không phải hóa đơn thực tế)  
  **Bạn trả tiền trực tiếp cho nhà cung cấp** (gói đăng ký hoặc phí API)  
 ✅ **Nhà cung cấp MIỄN PHÍ vẫn MIỄN PHÍ** (iFlow, Kiro, Qwen = $0 không giới hạn)  
-❌ **NzRouter không bao giờ gửi hóa đơn** hoặc tính phí thẻ của bạn
+❌ **N4tzzOfficial không bao giờ gửi hóa đơn** hoặc tính phí thẻ của bạn
 
 **Cách Hoạt động của Hiển thị Chi phí:**
 
@@ -510,7 +510,7 @@ Kiểm tra Thực tế:
 
 **Quy tắc Thanh toán:**
 - **Nhà cung cấp gói đăng ký** (Claude Code, Codex): Trả tiền trực tiếp cho họ qua website của họ
-- **Nhà cung cấp giá rẻ** (GLM, MiniMax): Trả tiền trực tiếp cho họ, NzRouter chỉ định tuyến
+- **Nhà cung cấp giá rẻ** (GLM, MiniMax): Trả tiền trực tiếp cho họ, N4tzzOfficial chỉ định tuyến
 - **Nhà cung cấp MIỄN PHÍ** (iFlow, Kiro, Qwen): Thực sự miễn phí mãi mãi, không có phí ẩn
 - **9**: Không bao giờ thu phí bất cứ thứ gì, ever
 
@@ -586,7 +586,7 @@ Truy cập qua: WhatsApp, Telegram, Slack, Discord, iMessage, Signal...
 <details>
 <summary><b>📊 Tại sao bảng điều khiển của tôi hiển thị chi phí cao?</b></summary>
 
-Bảng điều khiển theo dõi mức sử dụng token của bạn và hiển thị **chi phí ước tính** như thể bạn đang sử dụng API trả phí trực tiếp. Đâykhông phải là thanh toán thực tế** - đó là tài liệu tham khảo để cho thấy bạn đang tiết kiệm được bao nhiêu bằng cách sử dụng các mô hình miễn phí hoặc gói đăng ký hiện có thông qua NzRouter.
+Bảng điều khiển theo dõi mức sử dụng token của bạn và hiển thị **chi phí ước tính** như thể bạn đang sử dụng API trả phí trực tiếp. Đâykhông phải là thanh toán thực tế** - đó là tài liệu tham khảo để cho thấy bạn đang tiết kiệm được bao nhiêu bằng cách sử dụng các mô hình miễn phí hoặc gói đăng ký hiện có thông qua N4tzzOfficial.
 
 **Ví dụ:**
 - **Bảng điều khiển hiển thị:** "Tổng chi phí $290"
@@ -599,16 +599,16 @@ Màn hình chi phí là một "trình theo dõi tiết kiệm" để giúp bạn
 </details>
 
 <details>
-<summary><b>💳 Tôi có bị NzRouter tính phí không?</b></summary>
+<summary><b>💳 Tôi có bị N4tzzOfficial tính phí không?</b></summary>
 
-**Không.** NzRouter là phần mềm miễn phí, mã nguồn mở chạy trên máy tính của chính bạn. Nó không bao giờ tính phí bạn bất cứ thứ gì.
+**Không.** N4tzzOfficial là phần mềm miễn phí, mã nguồn mở chạy trên máy tính của chính bạn. Nó không bao giờ tính phí bạn bất cứ thứ gì.
 
 **Bạn chỉ trả tiền:**
 - ✅ **Nhà cung cấp gói đăng ký** (Claude Code $20/tháng, Codex $20-200/tháng) → Trả tiền trực tiếp cho họ trên website của họ
-- ✅ **Nhà cung cấp giá rẻ** (GLM, MiniMax) → Trả tiền trực tiếp cho họ, NzRouter chỉ định tuyến yêu cầu của bạn
-- ❌ **Bản thân NzRouter** → **Không bao giờ tính phí bất cứ thứ gì, ever**
+- ✅ **Nhà cung cấp giá rẻ** (GLM, MiniMax) → Trả tiền trực tiếp cho họ, N4tzzOfficial chỉ định tuyến yêu cầu của bạn
+- ❌ **Bản thân N4tzzOfficial** → **Không bao giờ tính phí bất cứ thứ gì, ever**
 
-NzRouter là một proxy/router cục bộ. Nó không cóẻ tín dụng của bạn, không thể gửi hóa đơn và không có hệ thống thanh toán. Đó là phần mềm hoàn toàn miễn phí.
+N4tzzOfficial là một proxy/router cục bộ. Nó không cóẻ tín dụng của bạn, không thể gửi hóa đơn và không có hệ thống thanh toán. Đó là phần mềm hoàn toàn miễn phí.
 
 </details>
 
@@ -622,9 +622,9 @@ NzRouter là một proxy/router cục bộ. Nó không cóẻ tín dụng của 
 - **Kiro**: Các mô hình Claude miễn phí không giới hạn qua AWS Builder ID  
 - **Qwen**: Truy cập miễn phí không giới hạn vào các mô hình Qwen qua xác thực thiết bị
 
-NzRouter chỉ định tuyến yêu cầu của bạn đến họ - không có "cạm bẫy" hay thanh toán trong tương lai. Đó là các dịch vụ thực sự miễn phí, và NzRouter giúp chúng dễ sử dụng với hỗ trợ dự phòng.
+N4tzzOfficial chỉ định tuyến yêu cầu của bạn đến họ - không có "cạm bẫy" hay thanh toán trong tương lai. Đó là các dịch vụ thực sự miễn phí, và N4tzzOfficial giúp chúng dễ sử dụng với hỗ trợ dự phòng.
 
-**Lưu ý:** số nhà cung cấp gói đăng ký (Antigravity, GitHub Copilot) có thể có các khoảng thời gian dùng thử miễn phí có thể trở thành trả phí sau này, nhưng điều này sẽ được các nhà cung cấp đó thông báo rõ ràng, không phải NzRouter.
+**Lưu ý:** số nhà cung cấp gói đăng ký (Antigravity, GitHub Copilot) có thể có các khoảng thời gian dùng thử miễn phí có thể trở thành trả phí sau này, nhưng điều này sẽ được các nhà cung cấp đó thông báo rõ ràng, không phải N4tzzOfficial.
 
 </details>
 
@@ -649,7 +649,7 @@ NzRouter chỉ định tuyến yêu cầu của bạn đến họ - không có "
 
 3. **Sử dụng nhà cung cấp gói đăng ký cuối cùng:**
    - Chỉ khi bạn đã có chúng
-   - NzRouter giúp tối đa hóa giá trị của chúng thông qua theo dõi hạn mức
+   - N4tzzOfficial giúp tối đa hóa giá trị của chúng thông qua theo dõi hạn mức
 
 **Kết quả:** Hầu hết người dùng có thể hoạt động ở mức $0/tháng chỉ sử dụng các tầng miễn phí!
 
@@ -658,20 +658,20 @@ NzRouter chỉ định tuyến yêu cầu của bạn đến họ - không có "
 <details>
 <summary><b>📈 Điều gì xảy ra nếu mức sử dụng của tôi đột ngột tăng vọt?</b></summary>
 
-Cơ chế dự phòng thông minh của NzRouter ngăn chặn các khoản phí bất ngờ:
+Cơ chế dự phòng thông minh của N4tzzOfficial ngăn chặn các khoản phí bất ngờ:
 
 **Kịch bản:** Bạn đang trong giai đoạn code nước rút và vượt qua các hạn mức
 
-**Không có NzRouter:**
+**Không có N4tzzOfficial:**
 - ❌ Chạm giới hạn tốc độ → Công việc dừng lại → Thất vọng
 - ❌ Hoặc: Vô tình tích lũy hóa đơn API khổng lồ
 
-**Có NzRouter:**
+**Có N4tzzOfficial:**
 - ✅ Gói đăng ký chạm giới hạn → Tự động dự phòng sang tầng giá rẻ
 - ✅ Tầng giá rẻ trở nên đắt đỏ → Tự động dự phòng sang tầng miễn phí
 - ✅ Không bao giờ ngừng code → Chi phí dự đoán được
 
-**Bạn nắm quyền kiểm soát:** Đặt giới hạn chi tiêu cho mỗi nhà cung cấp trong bảng điều khiển, và NzRouter sẽ tuân thủ chúng.
+**Bạn nắm quyền kiểm soát:** Đặt giới hạn chi tiêu cho mỗi nhà cung cấp trong bảng điều khiển, và N4tzzOfficial sẽ tuân thủ chúng.
 
 </details>
 
@@ -695,7 +695,7 @@ Các mô hình:
   cc/claude-haiku-4-5-20251001
 ```
 
-**Mẹo Chuyên nghiệp:** Sử dụng Opus cho các tác vụ phức tạp, Sonnet cho tốc độ. NzRouter theo dõi hạn mức cho mỗi mô hình!
+**Mẹo Chuyên nghiệp:** Sử dụng Opus cho các tác vụ phức tạp, Sonnet cho tốc độ. N4tzzOfficial theo dõi hạn mức cho mỗi mô hình!
 
 ### OpenAI Codex (Plus/Pro)
 
@@ -864,7 +864,7 @@ Chi phí: $0 mãi mãi!
 ```
 Settings → Models → Advanced:
   OpenAI API Base URL: http://localhost:20128/v1
-  OpenAI API Key: [từ bảng điều khiển NzRouter]
+  OpenAI API Key: [từ bảng điều khiển N4tzzOfficial]
   Model: cc/claude-opus-4-6
 ``Hoặc sử dụng combo: `premium-coding`
 
@@ -903,13 +903,13 @@ Bảng điều khiển → CLI Tools → OpenClaw → Chọn Mô hình → Áp d
   "agents": {
     "defaults": {
       "model": {
-        "primary": "NzRouter/if/glm-4.7"
+        "primary": "N4tzzOfficial/if/glm-4.7"
       }
     }
   },
   "models": {
     "providers": {
-      "NzRouter": {
+      "N4tzzOfficial": {
         "baseUrl": "://127.0.0.1:20128/v1",
         "apiKey": "sk_NzRouter",
         "api": "openai-completions",
@@ -925,7 +925,7 @@ Bảng điều khiển → CLI Tools → OpenClaw → Chọn Mô hình → Áp d
 }
 ```
 
-> **Lưu ý:** OpenClaw chỉ hoạt động với NzRouter cục bộ. Sử dụng `127.0.0.1` thay vì `localhost` để tránh các vấn đề phân giải6.
+> **Lưu ý:** OpenClaw chỉ hoạt động với N4tzzOfficial cục bộ. Sử dụng `127.0.0.1` thay vì `localhost` để tránh các vấn đề phân giải6.
 
 ### Cline / Continue / RooCode
 
@@ -945,20 +945,20 @@ Model: cc/claude-opus-4-6
 
 ```bash
 # Clone và cài đặt
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter
+git clone https://github.com/N4tzzOfficial/NzRouter.git
+cd N4tzzOfficial
 npm install
 npm run build
 
 # Cấu hình
 export JWT="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
-export DATA_DIR="/var/lib/NzRouter"
+export DATA_DIR="/var/lib/N4tzzOfficial"
 export PORT="20128"
 export HOSTNAME="0.0.0.0"
 export NODE_ENV="production"
 export NEXT_PUBLIC_BASE_URL="http://localhost:20128"
-export NEXT_PUBLIC_CLOUD_URL="https://NzRouter.com"
+export NEXT_PUBLIC_CLOUD_URL="https://n4tzz.com"
 export API_KEY_SECRET="endpoint-proxy-api-key-secret"
 export MACHINE_ID_SALT="endpoint-proxy-salt"
 
@@ -967,7 +967,7 @@ npm run start
 
 # Hoặc sử dụng PM2
 npm install -g pm2
-pm2 start --name NzRouter -- start
+pm2 start --name N4tzzOfficial -- start
 pm2 save
 pm2 startup
 ```
@@ -976,28 +976,28 @@ pm2 startup
 
 ```bash
 # Build image (từ gốc kho lưu trữ)
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 
 # Chạy container (lệnh được sử dụng trong thiết lập hiện tại)
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 20128:20128 \
-  --env-file /root/dev/NzRouter/.env \
+  --env-file /root/dev/N4tzzOfficial/.env \
   -v NzRouter-data:/app/data \
-  -v NzRouter-usage:/root/.NzRouter \
-  NzRouter
+  -v NzRouter-usage:/root/.N4tzzOfficial \
+  N4tzzOfficial
 ```
 
 Lệnh di động (nếu bạn đã ở gốc kho lưu trữ):
 
 ```bash
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 20128:20128 \
   --env-file ./.env \
   -v NzRouter-data:/app/data \
-  -v NzRouter-usage:/root/.NzRouter \
-  NzRouter
+  -v NzRouter-usage:/root/.N4tzzOfficial \
+  N4tzzOfficial
 ```
 
 Mặc định container:
@@ -1007,25 +1007,25 @@ Mặc định container:
 Các lệnh hữu ích:
 
 ```bash
-docker logs -f NzRouter
- restart NzRouter
-docker stop NzRouter && docker rm NzRouter
+docker logs -f N4tzzOfficial
+ restart N4tzzOfficial
+docker stop N4tzzOfficial && docker rm N4tzzOfficial
 ```
 
 ### Biến môi trường
 
 | Biến | Mặc định | Mô tả |
 |----------|---------|-------------|
-| `JWT_SECRET` | Tự động sinh (`~/.NzRouter/jwt-secret`) | Bí mật ký JWT cho cookie xác thực bảng điều khiển (đặt để chia sẻ giữa nhiều instance) |
+| `JWT_SECRET` | Tự động sinh (`~/.N4tzzOfficial/jwt-secret`) | Bí mật ký JWT cho cookie xác thực bảng điều khiển (đặt để chia sẻ giữa nhiều instance) |
 | `INITIAL_PASSWORD` | `123456` | Mật khẩu đăng nhập đầu tiên khi không có hash đã lưu tồn tại |
-| `DATA_DIR` | `~/.NzRouter` |ị trí cơ sở dữ liệu ứng dụng chính (`db.json`) |
+| `DATA_DIR` | `~/.N4tzzOfficial` |ị trí cơ sở dữ liệu ứng dụng chính (`db.json`) |
 | `PORT` | framework default | Cổng dịch vụ (`20128` trong các ví dụ) |
 | `HOSTNAME` | framework default | Bind host (Docker mặc định là `0.0.0.0`) |
 | `NODE_ENV` | runtime default | Đặt `production` để triển khai |
 | `BASE_URL` | `http://localhost:20128` | URL cơ sở nội bộ phía máy chủ được sử dụng bởi các tác vụ đồng bộ đám mây |
-| `CLOUD_URL` | `https://NzRouter.com` | URL cơ sở endpoint đồng bộ đám mây phía máy chủ |
+| `CLOUD_URL` | `https://n4tzz.com` | URL cơ sở endpoint đồng bộ đám mây phía máy chủ |
 | `NEXT_PUBLIC_BASE_URL` | `http://localhost:3000` | URL cơ sở tương thích ngược/công khai (ưu tiên `BASE_URL` cho runtime máy chủ) |
-| `NEXT_PUBLIC_CLOUD_URL` | `https://NzRouter.com` | URL đám mây tương thích ngược/công khai (ưu tiên `CLOUD_URL` cho runtime máy chủ) |
+| `NEXT_PUBLIC_CLOUD_URL` | `https://n4tzz.com` | URL đám mây tương thích ngược/công khai (ưu tiên `CLOUD_URL` cho runtime máy chủ) |
 | `API_KEY_SECRET` | `endpoint-proxy-api-key-secret` | B mật HMAC cho các API key được tạo |
 | `MACHINE_ID_SALT` | `endpoint-proxy-salt` | Salt cho việc băm ID máy ổn định |
 | `ENABLE_REQUEST_LOGS` | `false` | Bật log request/response dưới `logs/` |
@@ -1042,9 +1042,9 @@ Ghi chú:
 ### Tệp Runtime và Lưu trữ
 
 - Trạng thái ứng dụng chính: `${DATA_DIR}/db.json` (nhà cung cấp, combo, alias, key, cài đặt), được quản lý bởi `src/lib/localDb.js`.
-- Lịch sử sử dụng và log: `~/.NzRouter/usage.json` và `~/.NzRouter/log.txt`, được quản lý bởi `src/lib/usageDb.js`.
+- Lịch sử sử dụng và log: `~/.N4tzzOfficial/usage.json` và `~/.N4tzzOfficial/log.txt`, được quản lý bởi `src/lib/usageDb.js`.
 - request/translator tùy chọn: `<repo>/logs/...` khi `ENABLE_REQUEST_LOGS=true`.
-- Lưu trữ sử dụng hiện tại tuân theo logic đường dẫn `~/.NzRouter` và độc lập với `DATA_DIR`.
+- Lưu trữ sử dụng hiện tại tuân theo logic đường dẫn `~/.N4tzzOfficial` và độc lập với `DATA_DIR`.
 
 </details>
 
@@ -1106,7 +1106,7 @@ Ghi chú:
 - Thêm combo: `cc/claude-opus-4-6 → glm/glm-4.7 → if/kimi-k2-thinking`
 
 **Token OAuth hết hạn**
-- Tự động làm mới bởi NzRouter
+- Tự động làm mới bởi N4tzzOfficial
 - Nếu sự cố vẫn tiếp diễn: Bảng điều khiển → Nhà cung cấp → Kết nối lại
 
 **Chi phí cao**
@@ -1119,14 +1119,14 @@ Ghi chú:
 
 **Lỗi đồng bộ đám mây**
 - Xác minh `BASE_URL` trỏ đến phiên bản đang chạy của bạn (ví dụ: `http://localhost:20128`)
-- Xác minh `CLOUD_URL` trỏ đến endpoint đám mây dự kiến của bạn (ví dụ: `https://NzRouter.com`)
+- Xác minh `CLOUD_URL` trỏ đến endpoint đám mây dự kiến của bạn (ví dụ: `https://n4tzz.com`)
 - Giữ các giá trị `NEXT_PUBLIC_*` phù hợp với giá trị phía máy chủ khi có thể.
 
 **Endpoint đám mây `stream=false` trả về 500 (`Unexpected token 'd'...`)**
-- Triệu chứng thường xuất hiện trên endpoint đám mây công khai (`https://NzRouter.com/v1`) cho các lệnh gọi không phát trực tiếp (non-streaming).
+- Triệu chứng thường xuất hiện trên endpoint đám mây công khai (`https://n4tzz.com/v1`) cho các lệnh gọi không phát trực tiếp (non-streaming).
 - Nguyên nhân gốc rễ: upstream trả về payload SSE (`data: ...`) trong khi client mong đợi JSON.
 -ải pháp thay thế: sử dụng `stream=true` cho các lệnh gọi trực tiếp đến đám mây.
-- Runtime NzRouter cục bộ bao gồm dự phòng SSE→JSON cho các lệnh gọi không phát trực tiếp khi upstream trả về `text/event-stream`.
+- Runtime N4tzzOfficial cục bộ bao gồm dự phòng SSE→JSON cho các lệnh gọi không phát trực tiếp khi upstream trả về `text/event-stream`.
 
 **Đám mây báo đã kết nối, nhưng yêu cầu vẫn thất bại với `Invalid API key`**
 - Tạo một key mới từ bảng điều khiển cục bộ (`/api/keys`) và chạy đồng bộ đám mây (`Enable Cloud` sau đó `Sync Now`).
@@ -1197,7 +1197,7 @@ Authorization: Bearer your-api-key
 - `tester/security/test-docker-hardening.sh`
   - Build image Docker và xác thực các kiểm tra hardening (`/api/cloud/auth` auth guard, `REQUIRE_API_KEY`, hành vi cookie xác thực bảo).
 - `tester/security/test-cloud-openai-compatible.sh`
-  - Gửi một yêu cầu tương thích OpenAI trực tiếp đến endpoint đám mây (`https://NzRouter.com/v1/chat/completions`) với mô hình/key được cung cấp.
+  - Gửi một yêu cầu tương thích OpenAI trực tiếp đến endpoint đám mây (`https://n4tzz.com/v1/chat/completions`) với mô hình/key được cung cấp.
 - `tester/security/test-cloud-sync-and-call.sh`
   - Quy trình end-to-end: tạo key cục bộ -> bật/đồng bộ đám mây -> gọi endpoint đám mây với thử lại.
   - Bao gồm kiểm tra dự phòng với `stream=true` để phân biệt lỗi xác thực với các vấn đề phân tích phát trực tiếp.
@@ -1217,7 +1217,7 @@ Hành vi dự kiến từ việc xác thực gần đây:
 
 - cục bộ (`http://127.0.0.1:20128/v1/chat/completions`): hoạt động với `stream=false` và `stream=true`.
 - Runtime Docker (cùng đường dẫn API được expose bởi container): các kiểm tra hardening đạt, cloud auth guard hoạt động, chế độ API key nghiêm ngặt hoạt động khi được bật.
-- Endpoint đám mây công khai (`https://NzRouter.com/v1/chat/completions`):
+- Endpoint đám mây công khai (`https://n4tzz.com/v1/chat/completions`):
   - `stream=true`: dự kiến thành công (trả về các khối SSE).
   - `stream=false`: có thể thất bại với `500` + lỗi phân tích (`Unexpected token 'd'`) khi upstream trả về nội dung SSE cho đường dẫn client không phát trực tiếp.
 
@@ -1255,23 +1255,23 @@ Tài liệu tham khảo kiến trúc đầy đủ: [`docs/ARCHITECTURE.md`](../d
 
 ## 📧 Hỗ trợ
 
-- **Website**: [NzRouter.com](https://NzRouter.com)
-- **GitHub**: [github.com/decolua/9](https://github.com/decolua/NzRouter)
-- **Issues**: [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **Website**: [n4tzz.com](https://n4tzz.com)
+- **GitHub**: [github.com/decolua/9](https://github.com/N4tzzOfficial/NzRouter)
+- **Issues**: [github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
 ---
 
 ## 👥 Người đóng góp
 
-Cảm ơn tất cả những người đã đóng góp giúp NzRouter tốt hơn!
+Cảm ơn tất cả những người đã đóng góp giúp N4tzzOfficial tốt hơn!
 
-[![Contributors](https://contrib.rocks/image?repo=decolua/NzRouter&max=100&columns=20&anon=1)](https://github.com/decolua/NzRouter/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=N4tzzOfficial/N4tzzOfficial&max=100&columns=20&anon=1)](https://github.com/N4tzzOfficial/NzRouter/graphs/contributors)
 
 ---
 
 ## 📊 Star Chart
 
-[![ Chart](https://starchart.cc/decolua/NzRouter.svg?variant=adaptive)](https://starchart.cc/decolua/NzRouter)
+[![ Chart](https://starchart.cc/N4tzzOfficial/N4tzzOfficial.svg?variant=adaptive)](https://starchart.cc/N4tzzOfficial/N4tzzOfficial)
 
 ### Cách Đóng góp
 
@@ -1281,13 +1281,13 @@ Cảm ơn tất cả những người đã đóng góp giúp NzRouter tốt hơn
 4. Push lên nhánh (`git push origin feature/amazing-feature`)
 5. Mở một Pull Request
 
-Xem [Pull Requests](https://github.com/decolua/NzRouter/pulls) để biết hướng dẫn chi tiết.
+Xem [Pull Requests](https://github.com/N4tzzOfficial/NzRouter/pulls) để biết hướng dẫn chi tiết.
 
 ---
 
 ## 🔀 Forks
 
-**[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** — Một fork TypeScript đầy đủ tính năng của NzRouter. Thêm 36+ nhà cung cấp, tự động dự phòng 4 tầng, API đa phương thức (hình ảnh, embedding, âm thanh, TTS), circuit breaker, bộ nhớ đệm ngữ nghĩa, đánh giá LLM và bảng điều khiển được tinh chỉnh. 368+ bài kiểm tra đơn vị. Có sẵn qua npm và.
+**[OmniRoute](https://github.com/diegosouzapw/OmniRoute)** — Một fork TypeScript đầy đủ tính năng của N4tzzOfficial. Thêm 36+ nhà cung cấp, tự động dự phòng 4 tầng, API đa phương thức (hình ảnh, embedding, âm thanh, TTS), circuit breaker, bộ nhớ đệm ngữ nghĩa, đánh giá LLM và bảng điều khiển được tinh chỉnh. 368+ bài kiểm tra đơn vị. Có sẵn qua npm và.
 
 ---
 
@@ -1306,4 +1306,6 @@ Giấy phép MIT - xem [LICENSE](../LICENSE) để biết chi tiết.
 <div align="center">
   <sub>Được xây dựng với ❤️ cho các nhà phát triển code 24/7</sub>
 </div>
+
+
 

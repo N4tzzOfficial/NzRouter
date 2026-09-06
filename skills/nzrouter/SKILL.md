@@ -46,13 +46,13 @@ When the user needs a specific capability, fetch that skill's `SKILL.md` from it
 
 | Capability | Raw URL |
 |---|---|
-| Chat / code-gen | https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter-chat/SKILL.md |
-| Image generation | https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter-image/SKILL.md |
-| Text-to-speech | https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter-tts/SKILL.md |
-| Speech-to-text | https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter-stt/SKILL.md |
-| Embeddings | https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter-embeddings/SKILL.md |
-| Web search | https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter-web-search/SKILL.md |
-| Web fetch (URL → markdown) | https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter-web-fetch/SKILL.md |
+| Chat / code-gen | https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter-chat/SKILL.md |
+| Image generation | https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter-image/SKILL.md |
+| Text-to-speech | https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter-tts/SKILL.md |
+| Speech-to-text | https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter-stt/SKILL.md |
+| Embeddings | https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter-embeddings/SKILL.md |
+| Web search | https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter-web-search/SKILL.md |
+| Web fetch (URL → markdown) | https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter-web-fetch/SKILL.md |
 
 ## Errors
 

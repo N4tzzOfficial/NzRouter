@@ -5,7 +5,7 @@ description: Chat / code generation via nzrouter using OpenAI /v1/chat/completio
 
 # nzrouter — Chat
 
-Requires `NZROUTER_URL` (and `NZROUTER_KEY` if auth enabled). See https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter/SKILL.md for setup.
+Requires `NZROUTER_URL` (and `NZROUTER_KEY` if auth enabled). See https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter/SKILL.md for setup.
 
 ## Endpoints
 

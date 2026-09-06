@@ -1,12 +1,12 @@
 # Roo AI Assistant Integration
 
-Integrate NzRouter with Roo AI Assistant to access multiple AI models through a unified interface.
+Integrate N4tzzOfficial with Roo AI Assistant to access multiple AI models through a unified interface.
 
 ## Prerequisites
 
 - Roo AI Assistant installed
-- NzRouter API key from [dashboard](https://NzRouter.com/dashboard)
-- NzRouter running (local or cloud)
+- N4tzzOfficial API key from [dashboard](https://n4tzz.com/dashboard)
+- N4tzzOfficial running (local or cloud)
 
 ## Configuration Steps
 
@@ -20,21 +20,21 @@ Launch Roo AI Assistant and open the settings panel.
 2. Select **Ollama** as the provider type
 3. Configure the following settings:
 
-**For Local NzRouter:**
+**For Local N4tzzOfficial:**
 ```
 Base URL: http://localhost:20128/v1
 API Key: your-api-key-from-dashboard
 ```
 
-**For Cloud NzRouter:**
+**For Cloud N4tzzOfficial:**
 ```
-Base URL: https://NzRouter.com/v1
+Base URL: https://n4tzz.com/v1
 API Key: your-api-key-from-dashboard
 ```
 
 ### 3. Select Model
 
-Choose from available NzRouter models:
+Choose from available N4tzzOfficial models:
 
 **Claude Models:**
 - `cc/claude-opus-4-5-20251101` - Most capable
@@ -54,7 +54,7 @@ Choose from available NzRouter models:
 Send a test message to verify the integration:
 
 ```
-Hello! Can you confirm you're connected through NzRouter?
+Hello! Can you confirm you're connected through N4tzzOfficial?
 ```
 
 ## Usage Examples
@@ -87,19 +87,19 @@ Model: cx/deepseek-reasoner
 ## Troubleshooting
 
 ### Connection Failed
-- Verify NzRouter is running: `curl http://localhost:20128/health`
+- Verify N4tzzOfficial is running: `curl http://localhost:20128/health`
 - Check API key is correct
 - Ensure Base URL includes `/v1` suffix
 
 ### Model Not Available
 - Check model name matches exactly (case-sensitive)
-- Verify model is enabled in your NzRouter plan
+- Verify model is enabled in your N4tzzOfficial plan
 - Try a different model from the list
 
 ### Slow Responses
 - Switch to faster models (haiku, flash)
 - Check network connection
-- Monitor NzRouter logs for issues
+- Monitor N4tzzOfficial logs for issues
 
 ## Advanced Configuration
 
@@ -125,4 +125,5 @@ Set up different profiles for different use cases:
 - [Configure Cursor](cursor.md) for IDE integration
 - [Set up Continue](continue.md) for VSCode
 - [Explore CLI usage](../cli/basic-usage.md)
+
 

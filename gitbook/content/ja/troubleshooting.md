@@ -143,7 +143,7 @@ NzRouter利用時の一般的な問題と解決策。
 
 1. **NzRouterを起動:**
    ```bash
-   NzRouter
+   N4tzzOfficial
    ```
    ダッシュボードがhttp://localhost:3000で開くはず
 
@@ -164,7 +164,7 @@ NzRouter利用時の一般的な問題と解決策。
 4. **クラウドエンドポイントを使用:**
    localhostが動作しない場合(例: Cursor IDE):
    ```
-   Endpoint: https://NzRouter.com/v1
+   Endpoint: https://n4tzz.com/v1
    ```
 
 ---
@@ -183,7 +183,7 @@ NzRouter利用時の一般的な問題と解決策。
 1. **NzRouterが実行中か確認:**
    ```bash
    # プロセスを確認
-   ps aux | grep NzRouter
+   ps aux | grep N4tzzOfficial
    
    # ポート3000を確認
    lsof -i :3000
@@ -202,10 +202,10 @@ NzRouter利用時の一般的な問題と解決策。
 3. **NzRouterを再起動:**
    ```bash
    # 停止
-   pkill -f NzRouter
+   pkill -f N4tzzOfficial
    
    # 起動
-   NzRouter
+   N4tzzOfficial
    ```
 
 4. **ブラウザキャッシュをクリア:**
@@ -346,7 +346,8 @@ NzRouter利用時の一般的な問題と解決策。
 
 ## さらにヘルプが必要?
 
-- **GitHub Issues:** [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
-- **ドキュメント:** [NzRouter.com/docs](https://NzRouter.com/docs)
+- **GitHub Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
+- **ドキュメント:** [n4tzz.com/docs](https://n4tzz.com/docs)
 - **FAQ:** [faq.md](faq.md)
+
 

@@ -1,12 +1,12 @@
 # 常见问题
 
-关于 NzRouter 的常见问题。
+关于 N4tzzOfficial 的常见问题。
 
 ---
 
-## 什么是 NzRouter?
+## 什么是 N4tzzOfficial?
 
-**NzRouter 是一款 AI 模型路由工具,能够最大化你的订阅价值并最小化成本。**
+**N4tzzOfficial 是一款 AI 模型路由工具,能够最大化你的订阅价值并最小化成本。**
 
 它使用 3 层回退系统在多个 AI 提供商之间智能路由请求:
 1. **订阅层** - 充分利用你已付费的 Claude Code、Codex、Gemini 配额
@@ -23,7 +23,7 @@
 
 ## 价格是如何计算的?
 
-**NzRouter 采用三层定价策略:**
+**N4tzzOfficial 采用三层定价策略:**
 
 ### 第 1 层:订阅(优先使用)
 - **Claude Code**(Pro/Max):$20-100/月 - 5 小时 + 每周配额
@@ -50,9 +50,9 @@
 
 ---
 
-## NzRouter 是免费的吗?
+## N4tzzOfficial 是免费的吗?
 
-**是的,NzRouter 本身 100% 免费且开源。**
+**是的,N4tzzOfficial 本身 100% 免费且开源。**
 
 **可用的免费层提供商:**
 - **Gemini CLI** - 每月 180K 次补全(免费 Google 账户)
@@ -96,7 +96,7 @@
 
 ## 可以同时使用多个提供商吗?
 
-**可以!这正是 NzRouter 的核心功能。**
+**可以!这正是 N4tzzOfficial 的核心功能。**
 
 **通过组合(Combos),你可以把多个提供商串联起来实现自动回退:**
 
@@ -129,7 +129,7 @@
 
 ## 配额跟踪是如何工作的?
 
-**NzRouter 为所有提供商提供实时配额跟踪:**
+**N4tzzOfficial 为所有提供商提供实时配额跟踪:**
 
 **功能:**
 - **Token 消耗** - 每次请求的输入/输出 tokens
@@ -154,17 +154,17 @@
 
 ---
 
-## NzRouter 能配合 Cursor 使用吗?
+## N4tzzOfficial 能配合 Cursor 使用吗?
 
 **可以,但 Cursor 需要使用云端 endpoint。**
 
 **问题:** Cursor IDE 不支持 localhost endpoint。
 
-**解决方案:** 使用 NzRouter 云端部署:
+**解决方案:** 使用 N4tzzOfficial 云端部署:
 
 ```
 Cursor Settings → Models → Advanced:
-  OpenAI API Base URL: https://NzRouter.com/v1
+  OpenAI API Base URL: https://n4tzz.com/v1
   OpenAI API Key: [从仪表盘获取]
   Model: cc/claude-opus-4-5-20251101
 ```
@@ -172,8 +172,8 @@ Cursor Settings → Models → Advanced:
 **替代方案:** 在 VPS 上自托管,使用公开域名:
 ```bash
 # 部署到 VPS
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install && npm run build
 npm start
 
@@ -192,22 +192,22 @@ npm start
 
 ---
 
-## 可以自托管 NzRouter 吗?
+## 可以自托管 N4tzzOfficial 吗?
 
-**可以!NzRouter 支持多种部署方式:**
+**可以!N4tzzOfficial 支持多种部署方式:**
 
 ### Localhost(默认)
 ```bash
-npm install -g NzRouter
-NzRouter
+npm install -g N4tzzOfficial
+N4tzzOfficial
 → 仪表盘: http://localhost:3000
 → API: http://localhost:20128/v1
 ```
 
 ### VPS/云
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 npm install && npm run build
 
 export JWT_SECRET="your-secure-secret"
@@ -219,23 +219,23 @@ npm start
 
 ### Docker
 ```bash
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 docker run -d \
   -p 3000:3000 \
   -e JWT_SECRET="your-secret" \
-  -v NzRouter-data:/app/data \
-  NzRouter
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial
 ```
 
 ### Cloudflare Workers
 ```bash
-cd NzRouter/app
+cd N4tzzOfficial/app
 npm run deploy:cloudflare
 ```
 
 **环境变量:**
 - `JWT_SECRET` - **生产环境必须修改!**
-- `DATA_DIR` - 数据库存储路径(默认:`~/.NzRouter`)
+- `DATA_DIR` - 数据库存储路径(默认:`~/.N4tzzOfficial`)
 - `INITIAL_PASSWORD` - 仪表盘登录(默认:`123456`)
 - `NODE_ENV` - 部署时设为 `production`
 
@@ -245,11 +245,11 @@ npm run deploy:cloudflare
 
 ## 我的数据安全吗?
 
-**是的,NzRouter 优先考虑安全和隐私:**
+**是的,N4tzzOfficial 优先考虑安全和隐私:**
 
 **本地存储:**
-- 所有数据存储在本地 `~/.NzRouter`(或自定义 `DATA_DIR`)
-- 不会发送数据到 NzRouter 服务器
+- 所有数据存储在本地 `~/.N4tzzOfficial`(或自定义 `DATA_DIR`)
+- 不会发送数据到 N4tzzOfficial 服务器
 - OAuth tokens 使用 JWT 加密
 
 **无遥测:**
@@ -268,31 +268,31 @@ npm run deploy:cloudflare
 - 云端部署启用 HTTPS
 - 定期轮换 API keys
 
-**NzRouter 存储的内容:**
+**N4tzzOfficial 存储的内容:**
 - 提供商 OAuth tokens(加密)
 - API keys(加密)
 - 使用统计(仅本地)
 - 组合配置
 
-**NzRouter 不存储的内容:**
+**N4tzzOfficial 不存储的内容:**
 - 你的 prompt 或响应
 - 你生成的代码
 - 个人信息
 
 ---
 
-## 如何更新 NzRouter?
+## 如何更新 N4tzzOfficial?
 
 **更新方式取决于安装类型:**
 
 ### 全局 NPM 安装
 ```bash
-npm update -g NzRouter
+npm update -g N4tzzOfficial
 ```
 
 ### 本地安装
 ```bash
-cd NzRouter/app
+cd N4tzzOfficial/app
 git pull origin main
 npm install
 npm run build
@@ -301,23 +301,23 @@ npm start
 
 ### Docker
 ```bash
-docker pull NzRouter:latest
-docker stop NzRouter
-docker rm NzRouter
+docker pull N4tzzOfficial:latest
+docker stop N4tzzOfficial
+docker rm N4tzzOfficial
 docker run -d \
   -p 3000:3000 \
-  -v NzRouter-data:/app/data \
-  NzRouter:latest
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial:latest
 ```
 
 **查看版本:**
 ```bash
-NzRouter --version
+N4tzzOfficial --version
 ```
 
 **破坏性变更:**
-- 查看 [CHANGELOG.md](https://github.com/decolua/NzRouter/blob/main/CHANGELOG.md)
-- 大版本更新前备份 `~/.NzRouter`
+- 查看 [CHANGELOG.md](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/CHANGELOG.md)
+- 大版本更新前备份 `~/.N4tzzOfficial`
 - 阅读大版本的迁移指南
 
 ---
@@ -329,18 +329,18 @@ NzRouter --version
 ### 贡献方式:
 
 1. **报告 bug:**
-   - [GitHub Issues](https://github.com/decolua/NzRouter/issues)
+   - [GitHub Issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
    - 附上错误日志、复现步骤
 
 2. **功能请求:**
-   - [GitHub Discussions](https://github.com/decolua/NzRouter/discussions)
+   - [GitHub Discussions](https://github.com/N4tzzOfficial/N4tzzOfficial/discussions)
    - 描述使用场景和价值
 
 3. **提交代码:**
    ```bash
    # Fork 仓库
-   git clone https://github.com/YOUR_USERNAME/NzRouter.git
-   cd NzRouter
+   git clone https://github.com/YOUR_USERNAME/N4tzzOfficial.git
+   cd N4tzzOfficial
    
    # 创建分支
    git checkout -b feature/your-feature
@@ -375,14 +375,15 @@ NzRouter --version
 - 更新文档
 - 提交保持原子化、描述清晰
 
-详情见 [CONTRIBUTING.md](https://github.com/decolua/NzRouter/blob/main/CONTRIBUTING.md)。
+详情见 [CONTRIBUTING.md](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/CONTRIBUTING.md)。
 
 ---
 
 ## 需要更多帮助?
 
-- **文档:** [NzRouter.com/docs](https://NzRouter.com/docs)
-- **GitHub:** [github.com/decolua/NzRouter](https://github.com/decolua/NzRouter)
-- **Issues:** [github.com/decolua/NzRouter/issues](https://github.com/decolua/NzRouter/issues)
+- **文档:** [n4tzz.com/docs](https://n4tzz.com/docs)
+- **GitHub:** [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
+- **Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
 - **故障排除:** [troubleshooting.md](troubleshooting.md)
+
 

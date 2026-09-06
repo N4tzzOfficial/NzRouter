@@ -16,8 +16,8 @@
 ### ステップ1: リポジトリをクローン
 
 ```bash
-git clone https://github.com/decolua/NzRouter.git
-cd NzRouter/app
+git clone https://github.com/N4tzzOfficial/N4tzzOfficial.git
+cd N4tzzOfficial/app
 ```
 
 ### ステップ2: 依存関係をインストール
@@ -39,7 +39,7 @@ npm run build
 ```bash
 export JWT_SECRET="your-secure-secret-change-this-to-random-string"
 export INITIAL_PASSWORD="your-secure-password"
-export DATA_DIR="/var/lib/NzRouter"
+export DATA_DIR="/var/lib/N4tzzOfficial"
 export NODE_ENV="production"
 ```
 
@@ -49,15 +49,15 @@ export NODE_ENV="production"
 |----------|---------|-------------|
 | `JWT_SECRET` | 自動生成 | **本番環境では必ず変更!** JWTトークンの署名に使用 |
 | `INITIAL_PASSWORD` | `123456` | ダッシュボードログインパスワード |
-| `DATA_DIR` | `~/.NzRouter` | データベースとデータの保存パス |
+| `DATA_DIR` | `~/.N4tzzOfficial` | データベースとデータの保存パス |
 | `NODE_ENV` | `development` | デプロイ時は `production` に設定 |
 | `ENABLE_REQUEST_LOGS` | `false` | デバッグリクエスト/レスポンスログを有効化 |
 
 ### ステップ5: データディレクトリを作成
 
 ```bash
-sudo mkdir -p /var/lib/NzRouter
-sudo chown $USER:$USER /var/lib/NzRouter
+sudo mkdir -p /var/lib/N4tzzOfficial
+sudo chown $USER:$USER /var/lib/N4tzzOfficial
 ```
 
 ### ステップ6: アプリケーションを起動
@@ -75,7 +75,7 @@ PM2はアプリケーションを稼働させ続け、クラッシュ時に再�
 npm install -g pm2
 
 # PM2でNzRouterを起動
-pm2 start npm --name NzRouter -- start
+pm2 start npm --name N4tzzOfficial -- start
 
 # PM2設定を保存
 pm2 save
@@ -89,13 +89,13 @@ pm2 startup
 
 ```bash
 # ログを表示
-pm2 logs NzRouter
+pm2 logs N4tzzOfficial
 
 # アプリケーションを再起動
-pm2 restart NzRouter
+pm2 restart N4tzzOfficial
 
 # アプリケーションを停止
-pm2 stop NzRouter
+pm2 stop N4tzzOfficial
 
 # ステータスを表示
 pm2 status
@@ -147,17 +147,17 @@ CMD ["npm", "run", "start"]
 
 ```bash
 # イメージをビルド
-docker build -t NzRouter .
+docker build -t N4tzzOfficial .
 
 # コンテナを実行
 docker run -d \
-  --name NzRouter \
+  --name N4tzzOfficial \
   -p 3000:3000 \
   -p 20128:20128 \
   -e JWT_SECRET="your-secure-secret-change-this" \
   -e INITIAL_PASSWORD="your-secure-password" \
-  -v NzRouter-data:/app/data \
-  NzRouter
+  -v N4tzzOfficial-data:/app/data \
+  N4tzzOfficial
 ```
 
 ### オプション2: Docker Compose
@@ -168,9 +168,9 @@ docker run -d \
 version: '3.8'
 
 services:
-  NzRouter:
+  N4tzzOfficial:
     build: .
-    container_name: NzRouter
+    container_name: N4tzzOfficial
     ports:
       - "3000:3000"
       - "20128:20128"
@@ -180,11 +180,11 @@ services:
       - INITIAL_PASSWORD=your-secure-password
       - DATA_DIR=/app/data
     volumes:
-      - NzRouter-data:/app/data
+      - N4tzzOfficial-data:/app/data
     restart: unless-stopped
 
 volumes:
-  NzRouter-data:
+  N4tzzOfficial-data:
 ```
 
 **Docker Composeで実行:**
@@ -223,7 +223,7 @@ sudo apt install nginx
 
 ### ステップ2: Nginxを設定
 
-`/etc/nginx/sites-available/NzRouter` を作成:
+`/etc/nginx/sites-available/N4tzzOfficial` を作成:
 
 ```nginx
 server {
@@ -247,7 +247,7 @@ server {
     ssl_ciphers HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 
-    # Proxy to NzRouter
+    # Proxy to N4tzzOfficial
     location / {
         proxy_pass http://localhost:3000;
         proxy_http_version 1.1;
@@ -284,7 +284,7 @@ server {
 
 ```bash
 # シンボリックリンクを作成
-sudo ln -s /etc/nginx/sites-available/NzRouter /etc/nginx/sites-enabled/
+sudo ln -s /etc/nginx/sites-available/N4tzzOfficial /etc/nginx/sites-enabled/
 
 # 設定をテスト
 sudo nginx -t
@@ -364,21 +364,21 @@ ssh -L 3000:localhost:3000 user@your-server.com
 sudo apt update && sudo apt upgrade -y
 
 # NzRouterを更新
-cd /path/to/NzRouter/app
+cd /path/to/N4tzzOfficial/app
 git pull
 npm install
 npm run build
-pm2 restart NzRouter
+pm2 restart N4tzzOfficial
 ```
 
 ### 5. バックアップ戦略
 
 ```bash
 # データディレクトリをバックアップ
-tar -czf NzRouter-backup-$(date +%Y%m%d).tar.gz /var/lib/NzRouter
+tar -czf N4tzzOfficial-backup-$(date +%Y%m%d).tar.gz /var/lib/N4tzzOfficial
 
 # 自動毎日バックアップ (crontabに追加)
-0 2 * * * tar -czf /backups/NzRouter-$(date +\%Y\%m\%d).tar.gz /var/lib/NzRouter
+0 2 * * * tar -czf /backups/N4tzzOfficial-$(date +\%Y\%m\%d).tar.gz /var/lib/N4tzzOfficial
 ```
 
 ---
@@ -392,7 +392,7 @@ tar -czf NzRouter-backup-$(date +%Y%m%d).tar.gz /var/lib/NzRouter
 pm2 status
 
 # ログを表示
-pm2 logs NzRouter --lines 100
+pm2 logs N4tzzOfficial --lines 100
 
 # リソースをモニタリング
 pm2 monit
@@ -429,14 +429,14 @@ netstat -tulpn | grep -E '3000|20128'
 
 ```bash
 # ログを確認
-pm2 logs NzRouter
+pm2 logs N4tzzOfficial
 
 # ポートが使用中か確認
 sudo lsof -i :3000
 sudo lsof -i :20128
 
 # 環境変数を確認
-pm2 env NzRouter
+pm2 env N4tzzOfficial
 ```
 
 ### Nginx 502 Bad Gateway
@@ -460,8 +460,8 @@ SSEサポート用にNginx設定で `proxy_buffering off` が設定されてい�
 
 ```bash
 # データディレクトリ権限を修正
-sudo chown -R $USER:$USER /var/lib/NzRouter
-chmod 755 /var/lib/NzRouter
+sudo chown -R $USER:$USER /var/lib/N4tzzOfficial
+chmod 755 /var/lib/N4tzzOfficial
 ```
 
 ---
@@ -471,4 +471,5 @@ chmod 755 /var/lib/NzRouter
 - [プロバイダーを接続](/providers/subscription.md)
 - [コンボをセットアップ](/features/combos.md)
 - [ツールと統合](/integration/cursor.md)
+
 

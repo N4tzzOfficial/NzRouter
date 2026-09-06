@@ -337,6 +337,21 @@ export default function ProfilePage() {
     }
   };
 
+  const updateRequireApiKey = async (requireApiKey) => {
+    try {
+      const res = await fetch("/api/settings", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ requireApiKey }),
+      });
+      if (res.ok) {
+        setSettings(prev => ({ ...prev, requireApiKey }));
+      }
+    } catch (err) {
+      console.error("Failed to update require API key:", err);
+    }
+  };
+
   const updateOidcForm = (field, value) => {
     setOidcForm((prev) => ({ ...prev, [field]: value }));
   };
@@ -875,6 +890,20 @@ export default function ProfilePage() {
                 disabled={loading}
               />
             </div>
+            <div className="flex items-start sm:items-center justify-between gap-4 pt-2 border-t border-border/50">
+              <div className="flex-1 min-w-0">
+                <p className="font-medium text-sm sm:text-base">Require API Key on /v1/*</p>
+                <p className="text-xs sm:text-sm text-text-muted">
+                  When ON, all /v1/* endpoints require a valid API key. When OFF, local access allowed without key.
+                </p>
+              </div>
+              <Toggle
+                checked={settings.requireApiKey !== false}
+                onChange={() => updateRequireApiKey(settings.requireApiKey === false)}
+                disabled={loading}
+              />
+            </div>
+
             {settings.requireLogin === true && (
               <form onSubmit={handlePasswordChange} className="flex flex-col gap-4 pt-4 border-t border-border/50">
                 {settings.hasPassword && (

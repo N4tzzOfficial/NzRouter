@@ -5,7 +5,7 @@ description: Text-to-speech via NzRouter /v1/audio/speech using OpenAI / ElevenL
 
 # NzRouter — Text-to-Speech
 
-Requires `NZROUTER_URL` (and `NZROUTER_KEY` if auth enabled). See https://raw.githubusercontent.com/decolua/nzrouter/refs/heads/master/skills/nzrouter/SKILL.md for setup.
+Requires `NZROUTER_URL` (and `NZROUTER_KEY` if auth enabled). See https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/skills/nzrouter/SKILL.md for setup.
 
 ## Discover
 

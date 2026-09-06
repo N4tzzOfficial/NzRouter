@@ -3,9 +3,21 @@ import pkg from "../../../../package.json" with { type: "json" };
 
 const NPM_PACKAGE_NAME = "nzrouter";
 const VERSION_CACHE_TTL_MS = 3600000; // cache npm latest lookup for 1h
+const GITHUB_CACHE_TTL_MS = 6 * 60 * 60 * 1000; // 6 hours for GitHub check
 
 // Survive hot reload; one cache per process
 const versionCache = (global.__npmVersionCache ??= { value: null, fetchedAt: 0 });
+const githubCache = (global.__githubVersionCache ??= { value: null, fetchedAt: 0 });
+
+function compareVersions(a, b) {
+  const pa = a.split(".").map(Number);
+  const pb = b.split(".").map(Number);
+  for (let i = 0; i < 3; i++) {
+    if (pa[i] > pb[i]) return 1;
+    if (pa[i] < pb[i]) return -1;
+  }
+  return 0;
+}
 
 // Fetch latest version from npm registry
 function fetchLatestVersion() {
@@ -30,14 +42,32 @@ function fetchLatestVersion() {
   });
 }
 
-function compareVersions(a, b) {
-  const pa = a.split(".").map(Number);
-  const pb = b.split(".").map(Number);
-  for (let i = 0; i < 3; i++) {
-    if (pa[i] > pb[i]) return 1;
-    if (pa[i] < pb[i]) return -1;
-  }
-  return 0;
+// Fetch latest version from GitHub releases
+function fetchGitHubVersion() {
+  return new Promise((resolve) => {
+    const req = https.get(
+      "https://api.github.com/repos/N4tzzOfficial/NzRouter/releases/latest",
+      { timeout: 5000, headers: { 'User-Agent': 'NzRouter-Server' } },
+      (res) => {
+        let data = "";
+        res.on("data", (chunk) => (data += chunk));
+        res.on("end", () => {
+          try {
+            const release = JSON.parse(data);
+            if (release.tag_name) {
+              resolve(release.tag_name.replace('v', ''));
+            } else {
+              resolve(null);
+            }
+          } catch {
+            resolve(null);
+          }
+        });
+      }
+    );
+    req.on("error", () => resolve(null));
+    req.on("timeout", () => { req.destroy(); resolve(null); });
+  });
 }
 
 async function getLatestVersionCached() {
@@ -52,10 +82,36 @@ async function getLatestVersionCached() {
   return latest;
 }
 
+async function getGitHubVersionCached() {
+  if (githubCache.value && Date.now() - githubCache.fetchedAt < GITHUB_CACHE_TTL_MS) {
+    return githubCache.value;
+  }
+  const latest = await fetchGitHubVersion();
+  if (latest) {
+    githubCache.value = latest;
+    githubCache.fetchedAt = Date.now();
+  }
+  return latest;
+}
+
 export async function GET() {
-  const latestVersion = await getLatestVersionCached();
+  // Check both npm and GitHub, use the newer one
+  const [npmLatest, githubLatest] = await Promise.all([
+    getLatestVersionCached(),
+    getGitHubVersionCached()
+  ]);
+
   const currentVersion = pkg.version;
-  const hasUpdate = latestVersion ? compareVersions(latestVersion, currentVersion) > 0 : false;
+  let latestVersion = currentVersion;
+
+  if (npmLatest && compareVersions(npmLatest, latestVersion) > 0) {
+    latestVersion = npmLatest;
+  }
+  if (githubLatest && compareVersions(githubLatest, latestVersion) > 0) {
+    latestVersion = githubLatest;
+  }
+
+  const hasUpdate = compareVersions(latestVersion, currentVersion) > 0;
 
   return Response.json({ currentVersion, latestVersion, hasUpdate });
 }

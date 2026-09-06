@@ -219,7 +219,7 @@ export async function proxy(request) {
       return NextResponse.json({
         error: "Local only: CLI token required",
         message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
-        creator: "N4tzzTeam"
+        creator: "N4tzzOfficial"
       }, { status: 403 });
     }
   }
@@ -231,7 +231,7 @@ export async function proxy(request) {
     return NextResponse.json({
       error: "Unauthorized",
       message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
-      creator: "N4tzzTeam"
+      creator: "N4tzzOfficial"
     }, { status: 401 });
   }
 
@@ -240,7 +240,7 @@ export async function proxy(request) {
     return NextResponse.json({
       error: "API key required for remote API access",
       message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
-      creator: "N4tzzTeam"
+      creator: "N4tzzOfficial"
     }, { status: 401 });
   }
 
@@ -252,7 +252,7 @@ export async function proxy(request) {
     return NextResponse.json({
       error: "Unauthorized",
       message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
-      creator: "N4tzzTeam"
+      creator: "N4tzzOfficial"
     }, { status: 401 });
   }
 

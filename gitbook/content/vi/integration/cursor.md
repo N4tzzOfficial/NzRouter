@@ -1,17 +1,17 @@
 # Tích hợp Cursor
 
-Tích hợp NzRouter với Cursor IDE để định tuyến request AI qua hệ thống routing thông minh của NzRouter.
+Tích hợp N4tzzOfficial với Cursor IDE để định tuyến request AI qua hệ thống routing thông minh của N4tzzOfficial.
 
 ## Yêu cầu
 
 - Cursor IDE đã cài đặt
 - Tài khoản Cursor Pro (cần thiết cho custom API endpoint)
-- NzRouter cloud endpoint đã cấu hình
-- API key từ NzRouter dashboard
+- N4tzzOfficial cloud endpoint đã cấu hình
+- API key từ N4tzzOfficial dashboard
 
 ## ⚠️ Lưu ý Quan trọng
 
-> **Yêu cầu Cloud Endpoint**: Cursor định tuyến request qua server của chính nó và không hỗ trợ endpoint localhost. Bạn phải dùng NzRouter cloud endpoint: `https://NzRouter.com`
+> **Yêu cầu Cloud Endpoint**: Cursor định tuyến request qua server của chính nó và không hỗ trợ endpoint localhost. Bạn phải dùng N4tzzOfficial cloud endpoint: `https://n4tzz.com`
 
 > **Yêu cầu Cursor Pro**: Tính năng này yêu cầu tài khoản Cursor Pro để dùng custom API endpoint.
 
@@ -30,35 +30,35 @@ Tích hợp NzRouter với Cursor IDE để định tuyến request AI qua hệ 
 
 ### 3. Cấu hình Base URL
 
-Đặt base URL tới NzRouter cloud endpoint:
+Đặt base URL tới N4tzzOfficial cloud endpoint:
 
 ```
-https://NzRouter.com
+https://n4tzz.com
 ```
 
 **Các bước:**
 1. Trong cài đặt Models, tìm field **Base URL**
-2. Nhập: `https://NzRouter.com`
+2. Nhập: `https://n4tzz.com`
 3. Click **Save**
 
 ### 4. Thêm API Key
 
-1. Trong field **API Key**, nhập API key NzRouter
-2. Bạn có thể tìm API key trong NzRouter dashboard tại **Settings → API Keys**
+1. Trong field **API Key**, nhập API key N4tzzOfficial
+2. Bạn có thể tìm API key trong N4tzzOfficial dashboard tại **Settings → API Keys**
 3. Click **Save**
 
 ### 5. Thêm Custom Model
 
 1. Click nút **View All Models**
 2. Click **Add Custom Model**
-3. Nhập tên model từ cấu hình NzRouter (ví dụ: `gpt-4`, `claude-opus-4-5`, v.v.)
+3. Nhập tên model từ cấu hình N4tzzOfficial (ví dụ: `gpt-4`, `claude-opus-4-5`, v.v.)
 4. Click **Add**
 
 ### 6. Chọn Model
 
 1. Trong giao diện chat Cursor, click dropdown chọn model
 2. Chọn custom model từ danh sách
-3. Bắt đầu dùng NzRouter với Cursor!
+3. Bắt đầu dùng N4tzzOfficial với Cursor!
 
 ## Ví dụ Cấu hình
 
@@ -66,14 +66,14 @@ Cursor settings của bạn nên trông như sau:
 
 ```
 OpenAI API: ✓ Enabled
-Base URL: https://NzRouter.com
-API Key: sk-NzRouter-xxxxxxxxxxxxx
+Base URL: https://n4tzz.com
+API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Custom Models: gpt-4, claude-opus-4-5, gemini-2.0-flash
 ```
 
 ## Model có sẵn
 
-Bạn có thể dùng bất kỳ model nào đã cấu hình trong NzRouter dashboard. Ví dụ phổ biến:
+Bạn có thể dùng bất kỳ model nào đã cấu hình trong N4tzzOfficial dashboard. Ví dụ phổ biến:
 
 | Tên Model | Provider | Mô tả |
 |------------|----------|-------------|
@@ -89,62 +89,63 @@ Bạn có thể dùng bất kỳ model nào đã cấu hình trong NzRouter dash
 
 1. Mở Cursor chat (Cmd/Ctrl + L)
 2. Chọn model từ dropdown
-3. Bắt đầu chat với AI qua NzRouter
+3. Bắt đầu chat với AI qua N4tzzOfficial
 
 ### Tạo Code Inline
 
 1. Chọn code trong editor
 2. Nhấn Cmd/Ctrl + K
 3. Nhập prompt
-4. Cursor sẽ dùng NzRouter để tạo code
+4. Cursor sẽ dùng N4tzzOfficial để tạo code
 
 ### Giải thích Code
 
 1. Chọn code trong editor
 2. Nhấn Cmd/Ctrl + L
 3. Hỏi "Explain this code"
-4. Nhận giải thích AI qua NzRouter
+4. Nhận giải thích AI qua N4tzzOfficial
 
 ## Troubleshooting
 
 ### Lỗi "Invalid API Key"
 
-1. Xác minh API key trong NzRouter dashboard
-2. Đảm bảo bạn sao chép đầy đủ key bao gồm prefix `sk-NzRouter-`
+1. Xác minh API key trong N4tzzOfficial dashboard
+2. Đảm bảo bạn sao chép đầy đủ key bao gồm prefix `sk-N4tzzOfficial-`
 3. Kiểm tra API key chưa hết hạn
 4. Thử tạo API key mới
 
 ### Lỗi "Model Not Found"
 
-1. Xác minh tên model khớp chính xác với cấu hình NzRouter
-2. Kiểm tra kết nối provider đang hoạt động trong NzRouter dashboard
+1. Xác minh tên model khớp chính xác với cấu hình N4tzzOfficial
+2. Kiểm tra kết nối provider đang hoạt động trong N4tzzOfficial dashboard
 3. Đảm bảo model có sẵn trong các provider đã kết nối
 4. Thử dùng tên model đầy đủ (ví dụ: `openai/gpt-4` thay vì `gpt-4`)
 
 ### Lỗi Connection
 
-1. Xác minh bạn đang dùng cloud endpoint: `https://NzRouter.com`
+1. Xác minh bạn đang dùng cloud endpoint: `https://n4tzz.com`
 2. Kiểm tra kết nối internet
-3. Đảm bảo dịch vụ NzRouter cloud đang hoạt động
+3. Đảm bảo dịch vụ N4tzzOfficial cloud đang hoạt động
 4. Thử tắt VPN hoặc proxy nếu đang bật
 
 ### Localhost không hoạt động
 
-> **Nhớ**: Cursor không hỗ trợ endpoint localhost. Bạn phải dùng cloud endpoint `https://NzRouter.com`. Nếu cần dùng NzRouter cục bộ, hãy cân nhắc dùng dịch vụ tunneling như ngrok để expose endpoint cục bộ.
+> **Nhớ**: Cursor không hỗ trợ endpoint localhost. Bạn phải dùng cloud endpoint `https://n4tzz.com`. Nếu cần dùng N4tzzOfficial cục bộ, hãy cân nhắc dùng dịch vụ tunneling như ngrok để expose endpoint cục bộ.
 
 ## Setup Cloud Endpoint
 
-Nếu bạn chạy NzRouter cục bộ và muốn dùng với Cursor:
+Nếu bạn chạy N4tzzOfficial cục bộ và muốn dùng với Cursor:
 
-1. Bật cloud endpoint trong NzRouter settings
-2. Cấu hình URL cloud endpoint trong NzRouter dashboard
+1. Bật cloud endpoint trong N4tzzOfficial settings
+2. Cấu hình URL cloud endpoint trong N4tzzOfficial dashboard
 3. Dùng URL cloud trong Cursor settings
-4. Đảm bảo NzRouter instance cục bộ có thể truy cập từ internet
+4. Đảm bảo N4tzzOfficial instance cục bộ có thể truy cập từ internet
 
 ## Best Practices
 
-1. **Dùng Model Aliases**: Tạo alias ngắn cho model thường dùng trong NzRouter
-2. **Theo dõi Usage**: Kiểm tra NzRouter dashboard để xem thống kê và chi phí
+1. **Dùng Model Aliases**: Tạo alias ngắn cho model thường dùng trong N4tzzOfficial
+2. **Theo dõi Usage**: Kiểm tra N4tzzOfficial dashboard để xem thống kê và chi phí
 3. **Xoay API Key**: Định kỳ xoay API key để bảo mật
 4. **Test Model**: Thử các model khác nhau để tìm model tốt nhất cho use case
+
 

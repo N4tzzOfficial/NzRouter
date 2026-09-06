@@ -1,15 +1,15 @@
 # Smart Routing & Auto Fallback
 
-NzRouter tự động định tuyến request qua provider tốt nhất hiện có bằng hệ thống fallback 3 tầng. Không bao giờ ngừng code vì giới hạn quota hay rate limiting.
+N4tzzOfficial tự động định tuyến request qua provider tốt nhất hiện có bằng hệ thống fallback 3 tầng. Không bao giờ ngừng code vì giới hạn quota hay rate limiting.
 
 ---
 
 ## Cách hoạt động
 
-NzRouter dùng định tuyến thông minh để tối đa hóa subscription hiện có, giảm chi phí và đảm bảo khả dụng 24/7:
+N4tzzOfficial dùng định tuyến thông minh để tối đa hóa subscription hiện có, giảm chi phí và đảm bảo khả dụng 24/7:
 
 ```
-Request → NzRouter → Check Tier 1 (Subscription)
+Request → N4tzzOfficial → Check Tier 1 (Subscription)
                      ↓ quota exhausted
                      Check Tier 2 (Cheap)
                      ↓ budget limit
@@ -47,7 +47,7 @@ Request → NzRouter → Check Tier 1 (Subscription)
 
 ## Chuyển đổi Tự động
 
-NzRouter giám sát quota thời gian thực và chuyển provider tự động:
+N4tzzOfficial giám sát quota thời gian thực và chuyển provider tự động:
 
 ### Kịch bản 1: Hết Quota Subscription
 
@@ -89,7 +89,7 @@ User request → cc/claude-opus-4-5
 
 ## Logic chọn Model
 
-NzRouter chọn model tốt nhất dựa trên:
+N4tzzOfficial chọn model tốt nhất dựa trên:
 
 1. **Khả dụng quota** - Kiểm tra provider còn quota không
 2. **Tier chi phí** - Ưu tiên subscription → cheap → free
@@ -138,7 +138,7 @@ Dashboard → Settings → Budget Control
 → Monthly limit: $50
 ```
 
-Khi đạt ngân sách, NzRouter tự động chuyển sang free tier.
+Khi đạt ngân sách, N4tzzOfficial tự động chuyển sang free tier.
 
 **3. Cấu hình Thứ tự Fallback**
 
@@ -405,4 +405,5 @@ Dashboard → Analytics:
 
 - [Combos](./combos.md) - Tạo chuỗi fallback tùy chỉnh
 - [Quota Tracking](./quota-tracking.md) - Theo dõi usage và chi phí
+
 

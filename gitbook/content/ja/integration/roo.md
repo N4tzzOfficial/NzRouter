@@ -5,7 +5,7 @@ NzRouterをRoo AIアシスタントと統合し、統一インターフェイス
 ## 前提条件
 
 - Roo AIアシスタントがインストール済み
-- [ダッシュボード](https://NzRouter.com/dashboard)からのNzRouter APIキー
+- [ダッシュボード](https://n4tzz.com/dashboard)からのNzRouter APIキー
 - NzRouterが動作中 (ローカルまたはクラウド)
 
 ## 設定手順
@@ -28,7 +28,7 @@ API Key: your-api-key-from-dashboard
 
 **クラウドNzRouter用:**
 ```
-Base URL: https://NzRouter.com/v1
+Base URL: https://n4tzz.com/v1
 API Key: your-api-key-from-dashboard
 ```
 
@@ -54,7 +54,7 @@ API Key: your-api-key-from-dashboard
 統合を確認するためにテストメッセージを送信:
 
 ```
-Hello! Can you confirm you're connected through NzRouter?
+Hello! Can you confirm you're connected through N4tzzOfficial?
 ```
 
 ## 使用例
@@ -125,4 +125,5 @@ Roo設定で頻繁に使うモデルのショートカットを作成:
 - [Cursorを設定](cursor.md) IDE統合用
 - [Continueをセットアップ](continue.md) VSCode用
 - [CLI使用法を確認](../cli/basic-usage.md)
+
 

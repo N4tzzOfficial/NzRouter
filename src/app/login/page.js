@@ -179,15 +179,15 @@ export default function LoginPage() {
       <div className="landing-grid absolute inset-0 pointer-events-none" aria-hidden="true" />
       <div className="relative z-10 w-full max-w-md">
         <div className="text-center mb-8">
-          {/* NzRouter Logo */}
+          {/* N4tzzOfficial Logo */}
           <div className="flex justify-center mb-6">
             <img
               src="https://avatars.githubusercontent.com/u/181945053?v=4"
-              alt="NzRouter"
+              alt="N4tzzOfficial"
               className="size-20 rounded-[16px] shadow-[var(--shadow-glass)] ring-1 ring-border-subtle"
             />
           </div>
-          <h1 className="text-3xl font-bold text-text-main mb-2">NzRouter</h1>
+          <h1 className="text-3xl font-bold text-text-main mb-2">N4tzzOfficial</h1>
           <p className="text-text-muted">
             {samlAvailable
               ? "Sign in with SAML 2.0 Single Sign-On"
@@ -307,7 +307,7 @@ export default function LoginPage() {
         </Card>
 
         <p className="text-xs text-center text-text-subtle mt-6">
-          N4tzzTeam — AI Infrastructure Management
+          N4tzzOfficial — AI Infrastructure Management
         </p>
       </div>
     </div>

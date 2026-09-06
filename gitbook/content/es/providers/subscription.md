@@ -32,7 +32,7 @@ Los proveedores del nivel de suscripción son tu opción **principal** - ya est�
 **Paso 1: Conectar vía Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Se abre el dashboard → Providers → Connect Claude Code
 ```
 
@@ -82,7 +82,7 @@ Model: cc/claude-opus-4-5-20251101
 **Paso 1: Conectar vía Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect Codex
 ```
 
@@ -134,7 +134,7 @@ Model: cx/gpt-5.2-codex
 **Paso 1: Conectar vía Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect Gemini CLI
 ```
 
@@ -186,7 +186,7 @@ Model: gc/gemini-3-flash-preview
 **Paso 1: Conectar vía Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect GitHub
 ```
 
@@ -236,7 +236,7 @@ Model: gh/gpt-5
 **Paso 1: Conectar vía Dashboard**
 
 ```bash
-NzRouter
+N4tzzOfficial
 # Dashboard → Providers → Connect Antigravity
 ```
 
@@ -292,7 +292,7 @@ Model: ag/gemini-3-pro-high
 ```
 Settings → Models → Advanced:
   OpenAI API Base URL: http://localhost:20128/v1
-  OpenAI API Key: [desde el dashboard de NzRouter]
+  OpenAI API Key: [desde el dashboard de N4tzzOfficial]
   Model: cc/claude-opus-4-5-20251101
 ```
 
@@ -316,7 +316,7 @@ Usar en CLI: premium-coding
 
 ## Seguimiento de cuota
 
-NzRouter rastrea la cuota en tiempo real:
+N4tzzOfficial rastrea la cuota en tiempo real:
 
 - **Consumo de tokens** - Tokens de entrada/salida por solicitud
 - **Cuenta regresiva de reinicio** - Tiempo hasta el próximo reinicio de cuota
@@ -385,7 +385,7 @@ Madrugada: Nivel barato/gratis
 ### "Token OAuth expirado"
 
 **Solución:**
-- Auto-refresh por NzRouter
+- Auto-refresh por N4tzzOfficial
 - Si hay problemas: Dashboard → Provider → Reconnect
 
 ### "Rate limiting"
@@ -402,4 +402,5 @@ Madrugada: Nivel barato/gratis
 - **Configurar respaldo barato:** [Proveedores baratos](./cheap.md)
 - **Agregar fallback gratis:** [Proveedores gratis](./free.md)
 - **Crear combos:** Dashboard → Combos → Create New
+
 
