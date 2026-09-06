@@ -10,7 +10,7 @@ your traffic to 40+ providers — with format translation, multi-account fallbac
 OAuth token refresh, quota tracking, and 20–40% token savings baked in.
 
 ```bash
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter
+npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
 nzrouter
 ```
 
@@ -44,7 +44,7 @@ Dashboard → `http://localhost:20514/dashboard` &nbsp;·&nbsp; API → `http://
 ### From GitHub (always latest)
 
 ```bash
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter
+npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
 nzrouter
 ```
 

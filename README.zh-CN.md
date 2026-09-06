@@ -1,6 +1,6 @@
 
 <div align="center">
-  <img src="./images/9router.png?1" alt="NzRouter Dashboard" width="800"/>
+  <img src="./images/nzrouter.png?1" alt="NzRouter Dashboard" width="800"/>
   
   # NzRouter - 免费 AI 路由器与 Token 节省器
   
@@ -8,9 +8,9 @@
   
   **将所有 AI 编程工具（Claude Code、Cursor、Antigravity、Copilot、Codex、Gemini、OpenCode、Cline、OpenClaw...）连接到 40+ AI 提供商和 100+ 模型。**
   
-  [![npm](https://img.shields.io/npm/v/9router.svg)](https://www.npmjs.com/package/9router)
-  [![Downloads](https://img.shields.io/npm/dm/9router.svg)](https://www.npmjs.com/package/9router)
-  [![License](https://img.shields.io/npm/l/9router.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
+  [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/nzrouter)
+  [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/nzrouter)
+  [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/master/LICENSE)
 
   <a href="https://github.com/N4tzzOfficial/NzRouter" target="_blank"><img src="https://img.shields.io/github/stars/N4tzzOfficial/NzRouter?style=social" alt="GitHub stars" style="width: 200px; height: 32px;" width="200" height="32"/></a>
   
@@ -74,8 +74,8 @@
 **1. 全局安装：**
 
 ```bash
-npm install -g 9router
-9router
+npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
+nzrouter
 ```
 
 🎉 控制面板在 `http://localhost:20514` 打开
@@ -97,7 +97,7 @@ Claude Code/Codex/OpenClaw/Cursor/Cline 设置：
 
 **替代方案：从源码运行（本仓库）：**
 
-本仓库的包是私有的（`nzrouter-app`），所以源码/Docker 执行是预期的本地开发方式。
+本仓库的包是 `nzrouter`，所以源码/Docker 执行是预期的本地开发方式。
 
 ```bash
 cp .env.example .env
@@ -880,7 +880,7 @@ Vertex 合作伙伴（通过 Vertex 提供 Anthropic / DeepSeek / GLM / Qwen）�
 ```
 设置 → 模型 → 高级：
   OpenAI API Base URL：http://localhost:20514/v1
-  OpenAI API Key：[来自 9router 控制面板]
+  OpenAI API Key：[来自 NzRouter 控制面板]
   Model：cc/claude-opus-4-7
 ```
 
@@ -893,7 +893,7 @@ Vertex 合作伙伴（通过 Vertex 提供 Anthropic / DeepSeek / GLM / Qwen）�
 ```json
 {
   "anthropic_api_base": "http://localhost:20514/v1",
-  "anthropic_api_key": "your-9router-api-key"
+  "anthropic_api_key": "your-nzrouter-api-key"
 }
 ```
 
@@ -901,7 +901,7 @@ Vertex 合作伙伴（通过 Vertex 提供 Anthropic / DeepSeek / GLM / Qwen）�
 
 ```bash
 export OPENAI_BASE_URL="http://localhost:20514"
-export OPENAI_API_KEY="your-9router-api-key"
+export OPENAI_API_KEY="your-nzrouter-api-key"
 
 codex "your prompt"
 ```
@@ -921,15 +921,15 @@ codex "your prompt"
   "agents": {
     "defaults": {
       "model": {
-        "primary": "9router/kr/claude-sonnet-4.5"
+        "primary": "nzrouter/kr/claude-sonnet-4.5"
       }
     }
   },
   "models": {
     "providers": {
-      "9router": {
+      "nzrouter": {
         "baseUrl": "http://127.0.0.1:20514/v1",
-        "apiKey": "sk_9router",
+        "apiKey": "sk_nzrouter",
         "api": "openai-completions",
         "models": [
           {
@@ -964,14 +964,14 @@ Model：cc/claude-opus-4-7
 ```bash
 # 克隆并安装
 git clone https://github.com/N4tzzOfficial/NzRouter.git
-cd 9router
+cd NzRouter
 npm install
 npm run build
 
 # 配置
 export JWT_SECRET="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
-export DATA_DIR="/var/lib/9router"
+export DATA_DIR="/var/lib/nzrouter"
 export PORT="20514"
 export HOSTNAME="0.0.0.0"
 export NODE_ENV="production"
@@ -985,7 +985,7 @@ npm run start
 
 # 或使用 PM2
 npm install -g pm2
-pm2 start npm --name 9router -- start
+pm2 start npm --name nzrouter -- start
 pm2 save
 pm2 startup
 ```
@@ -994,28 +994,28 @@ pm2 startup
 
 ```bash
 # 构建镜像（从仓库根目录）
-docker build -t 9router .
+docker build -t nzrouter .
 
 # 运行容器（当前设置使用的命令）
 docker run -d \
-  --name 9router \
+  --name nzrouter \
   -p 20514:20514 \
-  --env-file /root/dev/9router/.env \
-  -v 9router-data:/app/data \
-  -v 9router-usage:/root/.9router \
-  9router
+  --env-file ./.env \
+  -v nzrouter-data:/app/data \
+  -v nzrouter-usage:/root/.nzrouter \
+  nzrouter
 ```
 
 便携命令（如果你已经在仓库根目录）：
 
 ```bash
 docker run -d \
-  --name 9router \
+  --name nzrouter \
   -p 20514:20514 \
   --env-file ./.env \
-  -v 9router-data:/app/data \
-  -v 9router-usage:/root/.9router \
-  9router
+  -v nzrouter-data:/app/data \
+  -v nzrouter-usage:/root/.nzrouter \
+  nzrouter
 ```
 
 容器默认值：
@@ -1025,18 +1025,18 @@ docker run -d \
 常用命令：
 
 ```bash
-docker logs -f 9router
-docker restart 9router
-docker stop 9router && docker rm 9router
+docker logs -f nzrouter
+docker restart nzrouter
+docker stop nzrouter && docker rm nzrouter
 ```
 
 ### 环境变量
 
 | 变量 | 默认值 | 描述 |
 |----------|---------|-------------|
-| `JWT_SECRET` | 自动生成（`~/.9router/jwt-secret`） | 用于控制面板 auth cookie 的 JWT 签名密钥（设置可在多实例间共享） |
-| `INITIAL_PASSWORD` | `123456` | 当没有保存的哈希时首次登录的密码 |
-| `DATA_DIR` | `~/.9router` | 主应用数据库位置（`db.json`） |
+| `JWT_SECRET` | 自动生成（`~/.nzrouter/jwt-secret`） | 用于控制面板 auth cookie 的 JWT 签名密钥（设置可在多实例间共享） |
+| `INITIAL_PASSWORD` | `nzrouter123` | 当没有保存的哈希时首次登录的密码（请立即修改！） |
+| `DATA_DIR` | `~/.nzrouter` | 主应用 SQLite 数据库位置（`db/data.sqlite`） |
 | `PORT` | 框架默认值 | 服务端口（示例中为 `20514`） |
 | `HOSTNAME` | 框架默认值 | 绑定主机（Docker 默认为 `0.0.0.0`） |
 | `NODE_ENV` | 运行时默认值 | 设置 `production` 用于部署 |
@@ -1048,7 +1048,7 @@ docker stop 9router && docker rm 9router
 | `MACHINE_ID_SALT` | `endpoint-proxy-salt` | 稳定机器 ID 哈希的盐值 |
 | `ENABLE_REQUEST_LOGS` | `false` | 在 `logs/` 下启用请求/响应日志 |
 | `AUTH_COOKIE_SECURE` | `false` | 强制 `Secure` auth cookie（在 HTTPS 反向代理后面设置为 `true`） |
-| `REQUIRE_API_KEY` | `false` | 在 `/v1/*` 路由上强制使用 Bearer API key（面向互联网部署时推荐） |
+| `REQUIRE_API_KEY` | `true` | 在 `/v1/*` 路由上强制使用 Bearer API key（默认开启） |
 | `HTTP_PROXY`、`HTTPS_PROXY`、`ALL_PROXY`、`NO_PROXY` | 空 | 用于上游提供商调用的可选出站代理 |
 
 注意：
@@ -1059,10 +1059,10 @@ docker stop 9router && docker rm 9router
 
 ### 运行时文件和存储
 
-- 主应用状态：`${DATA_DIR}/db.json`（提供商、组合、别名、密钥、设置），由 `src/lib/localDb.js` 管理。
-- 使用历史和日志：`${DATA_DIR}/usage.json` 和 `${DATA_DIR}/log.txt`，由 `src/lib/usageDb.js` 管理。
+- 主应用状态：`${DATA_DIR}/db/data.sqlite`（提供商、组合、别名、密钥、设置），由 `src/lib/db/` 管理。
+- 使用历史和日志：`~/.nzrouter` 下的 `usage.json` 和 `log.txt`，由使用统计层管理。
 - 可选的请求/翻译器日志：`ENABLE_REQUEST_LOGS=true` 时位于 `<repo>/logs/...`。
-- `${DATA_DIR}` 和 `~/.9router` 在 Docker 容器中解析到同一位置 — 符号链接 `/root/.9router -> /app/data` 在构建时创建。
+- `${DATA_DIR}` 和 `~/.nzrouter` 在 Docker 容器中解析到同一位置 — 符号链接 `/root/.nzrouter -> /app/data` 在构建时创建。
 
 </details>
 
@@ -1160,7 +1160,7 @@ docker stop 9router && docker rm 9router
 
 **首次登录不工作**
 - 检查 `.env` 中的 `INITIAL_PASSWORD`
-- 如果未设置，回退密码是 `123456`
+- 如果未设置，默认密码是 `nzrouter123`（请立即修改！）
 
 **`logs/` 下没有请求日志**
 - 设置 `ENABLE_REQUEST_LOGS=true`
@@ -1172,7 +1172,7 @@ docker stop 9router && docker rm 9router
 - **运行时**：Node.js 20+
 - **框架**：Next.js 16
 - **UI**：React 19 + Tailwind CSS 4
-- **数据库**：LowDB（基于 JSON 文件）
+- **数据库**：SQLite（`bun:sqlite` → `better-sqlite3` → `node:sqlite` → `sql.js` 回退链）
 - **流式传输**：Server-Sent Events (SSE)
 - **认证**：OAuth 2.0 (PKCE) + JWT + API Keys
 

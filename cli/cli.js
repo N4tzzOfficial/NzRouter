@@ -172,7 +172,7 @@ Commands:
                       (see: ${APP_NAME} xai video --help)
 
 Install from GitHub (always latest):
-  npm install -g git+https://github.com/N4tzzOfficial/NzRouter
+  npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
 `);
     process.exit(0);
   } else if (args[i] === "--version" || args[i] === "-v") {

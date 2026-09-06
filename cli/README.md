@@ -3,7 +3,7 @@
 The launcher for the N4tzzOfficial self-hosted AI router.
 
 ```bash
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter
+npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
 nzrouter
 ```
 
@@ -46,10 +46,24 @@ optional system tray. Use `--background` (or `--daemon`) for servers / WSL / SSH
 
 ### From GitHub (recommended, always latest)
 
+> The launcher lives in the `cli/` subfolder. `npm install -g git+https://…`
+> without a subfolder pulls the **whole monorepo** (Next.js + dashboard deps)
+> and hits `TAR_ENTRY_ERROR` on Windows — don't use it. Always install from
+> the `cli/` subfolder:
+
 ```bash
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter
+npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
 nzrouter --version
 nzrouter
+```
+
+If a previous broken global install left junk behind, clean it first:
+
+```bash
+npm rm -g nzrouter
+rmdir /s /q "%AppData%\npm\node_modules\nzrouter"   # Windows
+# rm -rf "$(npm root -g)/nzrouter"                  # macOS/Linux
+npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
 ```
 
 ### From npm (when published)
@@ -82,7 +96,7 @@ Other artifacts:
 
 - `~/.nzrouter/jwt-secret` — auto-generated JWT signing secret
 - `~/.nzrouter/usage.json` + `log.txt` — usage history (does **not** follow `DATA_DIR`)
-- `~/.nzrouter/runtime/node_modules/nzrouter/` — global install root
+- `~/.nzrouter/runtime/node_modules/` — SQLite + tray runtime deps (self-healed on start)
 
 ---
 
