@@ -40,7 +40,7 @@ export default function GetStarted() {
                 <div className="flex-none w-8 h-8 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold">3</div>
                 <div>
                   <h4 className="font-bold text-lg">Route Requests</h4>
-                  <p className="text-sm text-text-muted mt-1">Point your CLI tools to http://localhost:20128</p>
+                  <p className="text-sm text-text-muted mt-1">Point your CLI tools to http://localhost:20514</p>
                 </div>
               </div>
             </div>
@@ -72,8 +72,8 @@ export default function GetStarted() {
 
                 <div className="text-text-muted mb-6">
                   <span className="text-primary">></span> Starting NzRouter...<br/>
-                  <span className="text-primary">></span> Server running on <span className="text-primary">http://localhost:20128</span><br/>
-                  <span className="text-primary">></span> Dashboard: <span className="text-primary">http://localhost:20128/dashboard</span><br/>
+                  <span className="text-primary">></span> Server running on <span className="text-primary">http://localhost:20514</span><br/>
+                  <span className="text-primary">></span> Dashboard: <span className="text-primary">http://localhost:20514/dashboard</span><br/>
                   <span className="text-green-400">></span> Ready to route! ✓
                 </div>
 

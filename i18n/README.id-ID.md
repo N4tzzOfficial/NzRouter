@@ -11,7 +11,7 @@
   [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
   [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
 
-  [🚀 Mulai Cepat](#-mulai-cepat) • [💡 Fitur](#-fitur-utama) • [📖 Setup](#-panduan-setup) • [🌐 Website](https://n4tzz.com)
+  [🚀 Mulai Cepat](#-mulai-cepat) • [💡 Fitur](#-fitur-utama) • [📖 Setup](#-panduan-setup) • [🌐 Website](https://n4tzzofficial.my.id/nzrouter/)
 
   [🇻🇳 Tiếng Việt](./README.vi.md) • [🇨🇳 中文](./README.zh-CN.md) • [🇯🇵 日本語](./README.ja-JP.md) • [🇮🇩 Bahasa Indonesia](./README.id-ID.md)
 </div>
@@ -43,7 +43,7 @@
 │   Tool CLI  │  (Claude Code, Codex, Gemini CLI, OpenClaw, Cursor, Cline...)
 │    kamu     │
 └──────┬──────┘
-       │ http://localhost:20128/v1
+       │ http://localhost:20514/v1
        ↓
 ┌─────────────────────────────────────────┐
 │         N4tzzOfficial (Smart Router)          │
@@ -68,11 +68,11 @@ Hasil: ngoding tanpa berhenti, biaya minimum
 **1. Install secara global:**
 
 ```bash
-npm install -g N4tzzOfficial
+npm install -g nzrouter
 N4tzzOfficial
 ```
 
-🎉 Dashboard terbuka di `http://localhost:20128`
+🎉 Dashboard terbuka di `http://localhost:20514`
 
 **2. Hubungkan provider gratis (tanpa perlu daftar):**
 
@@ -82,7 +82,7 @@ Dashboard → Providers → hubungkan **Claude Code** atau **Antigravity** → l
 
 ```
 Konfigurasi Claude Code/Codex/Gemini CLI/OpenClaw/Cursor/Cline:
-  Endpoint: http://localhost:20128/v1
+  Endpoint: http://localhost:20514/v1
   API Key: [salin dari dashboard]
   Model: if/kimi-k2-thinking
 ```
@@ -91,46 +91,24 @@ Konfigurasi Claude Code/Codex/Gemini CLI/OpenClaw/Cursor/Cline:
 
 **Alternatif: jalankan dari source (repo ini):**
 
-Paket repo ini bersifat privat (`NzRouter-app`), jadi menjalankan dari source/Docker adalah jalur yang diharapkan untuk pengembangan lokal.
+Paket repo ini bersifat privat (`nzrouter-app`), jadi menjalankan dari source/Docker adalah jalur yang diharapkan untuk pengembangan lokal.
 
 ```bash
 cp .env.example .env
 npm install
-PORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev
+PORT=20514 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run dev
 ```
 
 Mode produksi:
 
 ```bash
 npm run build
-PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run start
+PORT=20514 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run start
 ```
 
 URL default:
-- Dashboard: `http://localhost:20128/dashboard`
-- API kompatibel OpenAI: `http://localhost:20128/v1`
-
----
-
-## 🎥 Video Tutorial
-
-<div align="center">
-
-### 📺 Panduan Setup Lengkap - N4tzzOfficial + Claude Code Gratis
-
-[![N4tzzOfficial + Claude Code Setup](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
-
-**🎬 Tonton tutorial langkah demi langkah:**
-- ✅ Install dan setup N4tzzOfficial
-- ✅ Konfigurasi Claude Sonnet 4.5 gratis
-- ✅ Integrasi dengan Claude Code
-- ✅ Demo live coding
-
-**⏱️ Durasi:** 20 menit | **👥 Dibuat oleh:** Developer Community
-
-[▶️ Tonton di YouTube](https://www.youtube.com/watch?v=o3qYCyjrFYg)
-
-</div>
+- Dashboard: `http://localhost:20514/dashboard`
+- API kompatibel OpenAI: `http://localhost:20514/v1`
 
 ---
 
@@ -872,14 +850,14 @@ Biaya bulanan: $0
 ```bash
 docker run -d \
   --name N4tzzOfficial \
-  -p 20128:20128 \
+  -p 20514:20514 \
   -v NzRouter-data:/app/data \
-  -e PORT=20128 \
-  -e BASE_URL=http://localhost:20128 \
+  -e PORT=20514 \
+  -e BASE_URL=http://localhost:20514 \
   ghcr.io/N4tzzOfficial/N4tzzOfficial:latest
 ```
 
-Dashboard: `http://localhost:20128/dashboard`
+Dashboard: `http://localhost:20514/dashboard`
 
 </details>
 
@@ -887,8 +865,8 @@ Dashboard: `http://localhost:20128/dashboard`
 <summary><b>VPS / Cloud</b></summary>
 
 ```bash
-npm install -g N4tzzOfficial
-PORT=20128 HOSTNAME=0.0.0.0 BASE_URL=https://your-domain.com N4tzzOfficial
+npm install -g nzrouter
+PORT=20514 HOSTNAME=0.0.0.0 BASE_URL=https://your-domain.com N4tzzOfficial
 ```
 
 Disarankan menaruhnya di belakang reverse proxy (Nginx/Caddy) dengan HTTPS, dan membatasi akses hanya untuk dirimu sendiri.
@@ -913,7 +891,7 @@ Atur `BASE_URL` dan `CLOUD_URL` sebagai environment variable di dashboard Cloudf
 
 | Masalah | Kemungkinan Penyebab | Solusi |
 |---------|----------------------|--------|
-| Tool CLI tidak bisa konek | Endpoint salah | Pastikan `http://localhost:20128/v1` |
+| Tool CLI tidak bisa konek | Endpoint salah | Pastikan `http://localhost:20514/v1` |
 | 401 / Unauthorized | API key salah | Salin ulang key dari dashboard |
 | Model tidak ditemukan | Prefix provider salah | Pakai format `provider/model`, mis. `if/kimi-k2-thinking` |
 | Selalu fallback ke gratis | Kuota langganan habis | Cek hitung mundur reset di dashboard |
@@ -946,9 +924,8 @@ MIT License — lihat [LICENSE](https://github.com/N4tzzOfficial/NzRouter/blob/m
 
 **Kalau N4tzzOfficial membantumu, kasih ⭐ di [GitHub](https://github.com/N4tzzOfficial/NzRouter)!**
 
-[🌐 Website](https://n4tzz.com) • [📦 npm](https://www.npmjs.com/package/N4tzzOfficial) • [🐛 Laporkan Bug](https://github.com/N4tzzOfficial/NzRouter/issues)
+[🌐 Website](https://n4tzzofficial.my.id/nzrouter/) • [📦 GitHub](https://github.com/N4tzzOfficial/NzRouter) • [🐛 Laporkan Bug](https://github.com/N4tzzOfficial/NzRouter/issues)
 
 </div>
-
 
 

@@ -29,12 +29,12 @@
 
 **本地 N4tzzOfficial:**
 ```
-http://localhost:20128/v1
+http://localhost:20514/v1
 ```
 
 **云端 N4tzzOfficial:**
 ```
-https://n4tzz.com
+https://n4tzzofficial.my.id/nzrouter
 ```
 
 **步骤:**
@@ -70,7 +70,7 @@ https://n4tzz.com
 
 ```
 API Provider: Ollama
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Model: gpt-4
 ```
@@ -118,9 +118,9 @@ Model: gpt-4
 
 ### "Connection Failed" 错误
 
-1. 确认 N4tzzOfficial 正在运行:`curl http://localhost:20128/health`
+1. 确认 N4tzzOfficial 正在运行:`curl http://localhost:20514/health`
 2. 确认 base URL 正确且包含 `/v1`
-3. 确保防火墙没有阻止 20128 端口
+3. 确保防火墙没有阻止 20514 端口
 4. 尝试重启 VSCode
 
 ### "Invalid API Key" 错误
@@ -150,7 +150,7 @@ Model: gpt-4
 
 使用 N4tzzOfficial 云端 endpoint 而非 localhost:
 
-1. 在 Cline 设置中将 Base URL 设为:`https://n4tzz.com`
+1. 在 Cline 设置中将 Base URL 设为:`https://n4tzzofficial.my.id/nzrouter`
 2. 确保已在 N4tzzOfficial 云端仪表盘中配置 API key
 3. 确保云端 endpoint 已激活且可访问
 

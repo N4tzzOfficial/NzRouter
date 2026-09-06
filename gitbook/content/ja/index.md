@@ -116,7 +116,7 @@ N4tzzOfficial
 **CLIツールで使う:**
 
 ```
-Endpoint: http://localhost:20128/v1
+Endpoint: http://localhost:20514/v1
 API Key: [ダッシュボードから取得]
 Model: cc/claude-opus-4-5-20251101
 ```
@@ -143,7 +143,7 @@ Model: cc/claude-opus-4-5-20251101
 
 ### モバイル/リモートコーディング向け
 
-- クラウドデプロイ(https://n4tzz.com)を使用
+- クラウドデプロイ(https://n4tzzofficial.my.id/nzrouter)を使用
 - iPad、スマホ、どこからでもアクセス
 - localhost制限なし
 - Cloudflareエッジネットワーク(300以上のロケーション)

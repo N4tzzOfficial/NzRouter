@@ -6,7 +6,7 @@
 
 - 已安装 Visual Studio Code
 - 从 VSCode 市场安装了 Continue 扩展
-- 来自 [仪表盘](https://n4tzz.com/dashboard) 的 N4tzzOfficial API key
+- 来自 [仪表盘](https://n4tzzofficial.my.id/nzrouter/dashboard) 的 N4tzzOfficial API key
 - N4tzzOfficial 正在运行(本地或云端)
 
 ## 配置步骤
@@ -31,7 +31,7 @@
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     }
   ]
 }
@@ -46,28 +46,28 @@
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     },
     {
       "title": "N4tzzOfficial - Claude Sonnet (Balanced)",
       "provider": "openai",
       "model": "cc/claude-sonnet-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     },
     {
       "title": "N4tzzOfficial - DeepSeek Chat (Code)",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     },
     {
       "title": "N4tzzOfficial - Claude Haiku (Fast)",
       "provider": "openai",
       "model": "cc/claude-haiku-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     }
   ]
 }
@@ -76,7 +76,7 @@
 **云端 N4tzzOfficial:**
 将 `apiBase` 替换为:
 ```json
-"apiBase": "https://n4tzz.com/v1"
+"apiBase": "https://n4tzzofficial.my.id/nzrouter/v1"
 ```
 
 ### 3. 保存并重新加载
@@ -143,7 +143,7 @@
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key",
-      "apiBase": "http://localhost:20128/v1",
+      "apiBase": "http://localhost:20514/v1",
       "systemMessage": "You are an expert programmer. Always provide clean, well-documented code with best practices."
     }
   ]
@@ -162,7 +162,7 @@
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key",
-      "apiBase": "http://localhost:20128/v1",
+      "apiBase": "http://localhost:20514/v1",
       "temperature": 0.9,
       "topP": 0.95
     }
@@ -204,7 +204,7 @@
 ## 故障排除
 
 ### 模型无响应
-- 确认 N4tzzOfficial 正在运行:`curl http://localhost:20128/health`
+- 确认 N4tzzOfficial 正在运行:`curl http://localhost:20514/health`
 - 检查 config.json 中的 API key
 - 查看 VSCode 开发者控制台错误:`Help` → `Toggle Developer Tools`
 

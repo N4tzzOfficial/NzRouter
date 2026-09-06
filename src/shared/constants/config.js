@@ -10,7 +10,7 @@ export const APP_CONFIG = {
 // GitHub configuration
 export const GITHUB_CONFIG = {
   changelogUrl: "https://raw.githubusercontent.com/N4tzzOfficial/NzRouter/refs/heads/master/CHANGELOG.md",
-  donateUrl: "https://n4tzz.com/api/donate",
+  donateUrl: "https://n4tzzofficial.my.id/nzrouter/",
 };
 
 // Updater configuration
@@ -29,7 +29,7 @@ export const UPDATER_CONFIG = {
   waitForExitMinMs: 5000,
   waitForExitMaxMs: 20000,
   waitForExitCheckMs: 500,
-  appPort: 20128,
+  appPort: 20514,
 };
 
 // Theme configuration

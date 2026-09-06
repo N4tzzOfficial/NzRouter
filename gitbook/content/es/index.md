@@ -116,7 +116,7 @@ N4tzzOfficial
 **Úsalo en tu herramienta CLI:**
 
 ```
-Endpoint: http://localhost:20128/v1
+Endpoint: http://localhost:20514/v1
 API Key: [desde el dashboard]
 Model: cc/claude-opus-4-5-20251101
 ```
@@ -143,7 +143,7 @@ Model: cc/claude-opus-4-5-20251101
 
 ### Para codificación móvil/remota
 
-- Usa el despliegue en la nube (https://n4tzz.com)
+- Usa el despliegue en la nube (https://n4tzzofficial.my.id/nzrouter)
 - Accede desde iPad, teléfono, donde sea
 - Sin limitaciones de localhost
 - Red edge de Cloudflare (300+ ubicaciones)

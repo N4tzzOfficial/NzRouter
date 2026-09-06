@@ -16,7 +16,7 @@ Tích hợp N4tzzOfficial với Claude Code CLI để định tuyến request AP
 
 ```bash
 # Base URL for N4tzzOfficial
-export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
+export ANTHROPIC_BASE_URL="http://localhost:20514/v1"
 
 # Optional: Set default models for aliases
 export ANTHROPIC_DEFAULT_OPUS_MODEL="cc/claude-opus-4-5-20251101"
@@ -75,7 +75,7 @@ Claude Code lưu cấu hình trong `~/.claude/settings.json`. Bạn có thể s�
 
 ```json
 {
-  "baseUrl": "http://localhost:20128/v1",
+  "baseUrl": "http://localhost:20514/v1",
   "defaultModel": "sonnet"
 }
 ```
@@ -86,9 +86,9 @@ Claude Code lưu cấu hình trong `~/.claude/settings.json`. Bạn có thể s�
 
 Nếu gặp lỗi kết nối:
 
-1. Xác minh N4tzzOfficial đang chạy: `curl http://localhost:20128/health`
+1. Xác minh N4tzzOfficial đang chạy: `curl http://localhost:20514/health`
 2. Kiểm tra biến môi trường đã set đúng
-3. Đảm bảo không firewall nào chặn port 20128
+3. Đảm bảo không firewall nào chặn port 20514
 
 ### Model Not Found
 
@@ -103,7 +103,7 @@ Nếu gặp lỗi "model not found":
 Để dùng N4tzzOfficial cloud endpoint thay vì localhost:
 
 ```bash
-export ANTHROPIC_BASE_URL="https://n4tzz.com"
+export ANTHROPIC_BASE_URL="https://n4tzzofficial.my.id/nzrouter"
 ```
 
 Đảm bảo bạn đã cấu hình API key trong N4tzzOfficial cloud dashboard.

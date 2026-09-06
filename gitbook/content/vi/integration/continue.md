@@ -6,7 +6,7 @@ Tích hợp N4tzzOfficial với extension Continue để mang trợ lý AI trự
 
 - Visual Studio Code đã cài đặt
 - Extension Continue đã cài đặt từ VSCode marketplace
-- N4tzzOfficial API key từ [dashboard](https://n4tzz.com/dashboard)
+- N4tzzOfficial API key từ [dashboard](https://n4tzzofficial.my.id/nzrouter/dashboard)
 - N4tzzOfficial đang chạy (cục bộ hoặc cloud)
 
 ## Các bước Cấu hình
@@ -31,7 +31,7 @@ Thêm cấu hình sau vào `config.json`:
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     }
   ]
 }
@@ -46,28 +46,28 @@ Thêm cấu hình sau vào `config.json`:
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     },
     {
       "title": "N4tzzOfficial - Claude Sonnet (Balanced)",
       "provider": "openai",
       "model": "cc/claude-sonnet-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     },
     {
       "title": "N4tzzOfficial - DeepSeek Chat (Code)",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     },
     {
       "title": "N4tzzOfficial - Claude Haiku (Fast)",
       "provider": "openai",
       "model": "cc/claude-haiku-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     }
   ]
 }
@@ -76,7 +76,7 @@ Thêm cấu hình sau vào `config.json`:
 **Cho Cloud N4tzzOfficial:**
 Thay `apiBase` bằng:
 ```json
-"apiBase": "https://n4tzz.com/v1"
+"apiBase": "https://n4tzzofficial.my.id/nzrouter/v1"
 ```
 
 ### 3. Lưu và Reload
@@ -143,7 +143,7 @@ Thêm system prompt tùy chỉnh cho hành vi cụ thể:
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key",
-      "apiBase": "http://localhost:20128/v1",
+      "apiBase": "http://localhost:20514/v1",
       "systemMessage": "You are an expert programmer. Always provide clean, well-documented code with best practices."
     }
   ]
@@ -162,7 +162,7 @@ Thêm system prompt tùy chỉnh cho hành vi cụ thể:
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key",
-      "apiBase": "http://localhost:20128/v1",
+      "apiBase": "http://localhost:20514/v1",
       "temperature": 0.9,
       "topP": 0.95
     }
@@ -204,7 +204,7 @@ Cấu hình context Continue gửi đến model:
 ## Troubleshooting
 
 ### Model không phản hồi
-- Kiểm tra N4tzzOfficial đang chạy: `curl http://localhost:20128/health`
+- Kiểm tra N4tzzOfficial đang chạy: `curl http://localhost:20514/health`
 - Xác minh API key trong config.json
 - Kiểm tra VSCode Developer Console để xem lỗi: `Help` → `Toggle Developer Tools`
 

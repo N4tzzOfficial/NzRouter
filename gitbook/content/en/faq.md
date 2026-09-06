@@ -164,7 +164,7 @@ See [quota tracking documentation](features/quota-tracking.md) for details.
 
 ```
 Cursor Settings → Models → Advanced:
-  OpenAI API Base URL: https://n4tzz.com/v1
+  OpenAI API Base URL: https://n4tzzofficial.my.id/nzrouter/v1
   OpenAI API Key: [from dashboard]
   Model: cc/claude-opus-4-5-20251101
 ```
@@ -201,7 +201,7 @@ See [Cursor integration guide](integration/cursor.md) for details.
 npm install -g N4tzzOfficial
 N4tzzOfficial
 → Dashboard: http://localhost:3000
-→ API: http://localhost:20128/v1
+→ API: http://localhost:20514/v1
 ```
 
 ### VPS/Cloud
@@ -381,7 +381,7 @@ See [CONTRIBUTING.md](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/C
 
 ## Need More Help?
 
-- **Documentation:** [n4tzz.com/docs](https://n4tzz.com/docs)
+- **Documentation:** [n4tzzofficial.my.id/nzrouter/docs](https://n4tzzofficial.my.id/nzrouter/docs)
 - **GitHub:** [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
 - **Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
 - **Troubleshooting:** [troubleshooting.md](troubleshooting.md)

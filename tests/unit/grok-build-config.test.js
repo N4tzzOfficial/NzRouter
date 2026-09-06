@@ -30,7 +30,7 @@ enabled = true
 `;
 
 const APPLY_INPUT = {
-  baseUrl: "http://127.0.0.1:20128/v1",
+  baseUrl: "http://127.0.0.1:20514/v1",
   apiKey: "sk-test",
   model: "cx/gpt-5.6-sol",
   contextWindow: 400000,
@@ -48,7 +48,7 @@ describe("grokBuildConfig", () => {
     expect(parsed.default).toBe("NzRouter");
     expect(parsed.model).toMatchObject({
       model: "cx/gpt-5.6-sol",
-      base_url: "http://127.0.0.1:20128/v1",
+      base_url: "http://127.0.0.1:20514/v1",
       context_window: 400000,
     });
     expect(parsed.subagentMappings).toMatchObject({

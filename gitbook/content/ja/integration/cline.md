@@ -29,12 +29,12 @@ Base URLをNzRouterエンドポイントに設定:
 
 **ローカルNzRouter用:**
 ```
-http://localhost:20128/v1
+http://localhost:20514/v1
 ```
 
 **クラウドNzRouter用:**
 ```
-https://n4tzz.com
+https://n4tzzofficial.my.id/nzrouter
 ```
 
 **手順:**
@@ -70,7 +70,7 @@ Cline設定は次のようになります:
 
 ```
 API Provider: Ollama
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Model: gpt-4
 ```
@@ -118,9 +118,9 @@ NzRouterダッシュボードで設定されたモデルを使用できます。
 
 ### 「Connection Failed」エラー
 
-1. NzRouterが動作中か確認: `curl http://localhost:20128/health`
+1. NzRouterが動作中か確認: `curl http://localhost:20514/health`
 2. Base URLが正しく、`/v1` を含むことを確認
-3. ファイアウォールがポート20128をブロックしていないか確認
+3. ファイアウォールがポート20514をブロックしていないか確認
 4. VSCodeを再起動してみる
 
 ### 「Invalid API Key」エラー
@@ -150,7 +150,7 @@ NzRouterダッシュボードで設定されたモデルを使用できます。
 
 localhostの代わりにNzRouterクラウドエンドポイントを使用:
 
-1. Cline設定で、Base URLを設定: `https://n4tzz.com`
+1. Cline設定で、Base URLを設定: `https://n4tzzofficial.my.id/nzrouter`
 2. NzRouterクラウドダッシュボードでAPIキーが設定されていることを確認
 3. クラウドエンドポイントがアクティブでアクセス可能か確認
 

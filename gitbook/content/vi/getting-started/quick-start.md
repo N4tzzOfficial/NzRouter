@@ -20,7 +20,7 @@ npm install -g N4tzzOfficial
 N4tzzOfficial
 ```
 
-🎉 **Dashboard tự động mở** tại `http://localhost:20128`
+🎉 **Dashboard tự động mở** tại `http://localhost:20514`
 
 - Mật khẩu mặc định: `123456` (đổi trong dashboard)
 - API key được tạo tự động
@@ -89,7 +89,7 @@ Trỏ công cụ code của bạn tới N4tzzOfficial:
 
 ```
 Settings → Models → Advanced:
-  OpenAI API Base URL: http://localhost:20128/v1
+  OpenAI API Base URL: http://localhost:20514/v1
   OpenAI API Key: [from N4tzzOfficial dashboard]
   Model: cc/claude-opus-4-5-20251101
 ```
@@ -100,7 +100,7 @@ Sửa `~/.claude/config.json`:
 
 ```json
 {
-  "anthropic_api_base": "http://localhost:20128/v1",
+  "anthropic_api_base": "http://localhost:20514/v1",
   "anthropic_api_key": "your-N4tzzOfficial-api-key"
 }
 ```
@@ -109,7 +109,7 @@ Sửa `~/.claude/config.json`:
 
 ```
 Provider: OpenAI Compatible
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: [from dashboard]
 Model: cc/claude-opus-4-5-20251101
 ```
@@ -117,7 +117,7 @@ Model: cc/claude-opus-4-5-20251101
 ### Codex CLI
 
 ```bash
-export OPENAI_BASE_URL="http://localhost:20128"
+export OPENAI_BASE_URL="http://localhost:20514"
 export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 
 codex "your prompt"
@@ -242,7 +242,7 @@ Daily routine:
 
 ## Cần trợ giúp?
 
-- **Website**: [n4tzz.com](https://n4tzz.com)
+- **Website**: [n4tzzofficial.my.id/nzrouter](https://n4tzzofficial.my.id/nzrouter)
 - **GitHub**: [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
 - **Issues**: [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
 

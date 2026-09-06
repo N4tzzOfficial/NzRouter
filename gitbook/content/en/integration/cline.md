@@ -29,12 +29,12 @@ Set the base URL to your N4tzzOfficial endpoint:
 
 **For Local N4tzzOfficial:**
 ```
-http://localhost:20128/v1
+http://localhost:20514/v1
 ```
 
 **For Cloud N4tzzOfficial:**
 ```
-https://n4tzz.com
+https://n4tzzofficial.my.id/nzrouter
 ```
 
 **Steps:**
@@ -70,7 +70,7 @@ Your Cline settings should look like this:
 
 ```
 API Provider: Ollama
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Model: gpt-4
 ```
@@ -118,9 +118,9 @@ You can use any model configured in your N4tzzOfficial dashboard. Common example
 
 ### "Connection Failed" Error
 
-1. Verify N4tzzOfficial is running: `curl http://localhost:20128/health`
+1. Verify N4tzzOfficial is running: `curl http://localhost:20514/health`
 2. Check that the base URL is correct and includes `/v1`
-3. Ensure no firewall is blocking port 20128
+3. Ensure no firewall is blocking port 20514
 4. Try restarting VSCode
 
 ### "Invalid API Key" Error
@@ -150,7 +150,7 @@ You can use any model configured in your N4tzzOfficial dashboard. Common example
 
 To use N4tzzOfficial cloud endpoint instead of localhost:
 
-1. In Cline settings, set Base URL to: `https://n4tzz.com`
+1. In Cline settings, set Base URL to: `https://n4tzzofficial.my.id/nzrouter`
 2. Make sure you have configured your API key in the N4tzzOfficial cloud dashboard
 3. Ensure your cloud endpoint is active and accessible
 

@@ -5,7 +5,7 @@
 ## 前置要求
 
 - 已安装 Roo AI 助手
-- 来自 [仪表盘](https://n4tzz.com/dashboard) 的 N4tzzOfficial API key
+- 来自 [仪表盘](https://n4tzzofficial.my.id/nzrouter/dashboard) 的 N4tzzOfficial API key
 - N4tzzOfficial 正在运行(本地或云端)
 
 ## 配置步骤
@@ -22,13 +22,13 @@
 
 **本地 N4tzzOfficial:**
 ```
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: your-api-key-from-dashboard
 ```
 
 **云端 N4tzzOfficial:**
 ```
-Base URL: https://n4tzz.com/v1
+Base URL: https://n4tzzofficial.my.id/nzrouter/v1
 API Key: your-api-key-from-dashboard
 ```
 
@@ -87,7 +87,7 @@ Hello! Can you confirm you're connected through N4tzzOfficial?
 ## 故障排除
 
 ### 连接失败
-- 确认 N4tzzOfficial 正在运行:`curl http://localhost:20128/health`
+- 确认 N4tzzOfficial 正在运行:`curl http://localhost:20514/health`
 - 检查 API key 是否正确
 - 确保 Base URL 末尾包含 `/v1`
 

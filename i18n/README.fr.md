@@ -1,21 +1,15 @@
 <div align="center">
   <img src="../images/NzRouter.png?1" alt="Tableau de bord N4tzzOfficial" width="800"/>
-  
   # N4tzzOfficial - Routeur IA GRATUIT et économiseur de tokens
-  
   **N'arrêtez jamais de coder. Économisez 20 à 40 % de tokens avec RTK + bascule automatique vers des modèles d'IA GRATUITS et bon marché.**
-  
   **Connectez tous vos outils de codage IA (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) à plus de 40 fournisseurs d'IA et plus de 100 modèles.**
-  
   [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
   [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
-  [![Docker Pulls](https://img.shields.io/docker/pulls/N4tzzOfficial/N4tzzOfficial.svg?logo=docker&label=Docker%20pulls)](https://hub.docker.com/r/N4tzzOfficial/N4tzzOfficial)
-  [![GHCR](https://img.shields.io/badge/GHCR-decolua%2FNzRouter-blue?logo=github)](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/N4tzzOfficial)
+  [![Docker Pulls](https://img.shields.io/github.com/N4tzzOfficial/NzRouter.svg?logo=docker&label=Docker%20pulls)](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/NzRouter)
+  [![GHCR](https://img.shields.io/badge/GHCR-N4tzzOfficial%2FNzRouter-blue?logo=github)](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/NzRouter)
   [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
 
-<a href="https://trendshift.io/repositories/22628" target="_blank"><img src="https://trendshift.io/api/badge/repositories/22628" alt="decolua%2FNzRouter | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-
-[🚀 Démarrage rapide](#-démarrage-rapide) • [💡 Fonctionnalités](#-fonctionnalités-clés) • [📖 Configuration](#-guide-dinstallation) • [🌐 Site web](https://n4tzz.com)
+[🚀 Démarrage rapide](#-démarrage-rapide) • [💡 Fonctionnalités](#-fonctionnalités-clés) • [📖 Configuration](#-guide-dinstallation) • [🌐 Site web](https://n4tzzofficial.my.id/nzrouter)
 
 [🇻🇳 Tiếng Việt](./README.vi.md) • [🇨🇳 中文](./README.zh-CN.md) • [🇯🇵 日本語](./README.ja-JP.md) • [🇷🇺 Русский](./README.ru.md) • [🇹🇭 ไทย](./README.th.md) • [🇮🇷 فارسی](./README.fa_IR.md) • [🇮🇩 Indonesia](./README.id-ID.md) • [🇪🇸 Español](./README.es.md) • [🇫🇷 Français](./README.fr.md)
 
@@ -50,7 +44,7 @@
 │  Your CLI   │  (Claude Code, Codex, OpenClaw, Cursor, Cline...)
 │   Tool      │
 └──────┬──────┘
-       │ http://localhost:20128/v1
+       │ http://localhost:20514/v1
        ↓
 ┌─────────────────────────────────────────────┐
 │           N4tzzOfficial (Smart Router)            │
@@ -76,11 +70,11 @@ Result: Never stop coding, minimal cost + 20-40% token savings via RTK
 **1. Installez globalement :**
 
 ```bash
-npm install -g N4tzzOfficial
-N4tzzOfficial
+npm install -g nzrouter
+nzrouter
 ```
 
-🎉 Le tableau de bord s'ouvre sur `http://localhost:20128`
+🎉 Le tableau de bord s'ouvre sur `http://localhost:20514`
 
 **2. Connectez un fournisseur GRATUIT (aucune inscription requise) :**
 
@@ -90,7 +84,7 @@ Tableau de bord → Providers → Connectez **Kiro AI** (Claude gratuit et illim
 
 ```
 Paramètres de Claude Code/Codex/OpenClaw/Cursor/Cline :
-  Endpoint : http://localhost:20128/v1
+  Endpoint : http://localhost:20514/v1
   API Key : [copiez depuis le tableau de bord]
   Model : kr/claude-sonnet-4.5
 ```
@@ -99,121 +93,25 @@ Paramètres de Claude Code/Codex/OpenClaw/Cursor/Cline :
 
 **Alternative : exécuter depuis le code source (ce dépôt) :**
 
-Le paquet de ce dépôt est privé (`NzRouter-app`), donc l'exécution depuis le code source/Docker est le chemin de développement local attendu.
+Le paquet de ce dépôt est privé (`nzrouter-app`), donc l'exécution depuis le code source/Docker est le chemin de développement local attendu.
 
 ```bash
 cp .env.example .env
 npm install
-PORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev
+PORT=20514 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run dev
 ```
 
 Mode production :
 
 ```bash
 npm run build
-PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run start
+PORT=20514 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run start
 ```
 
 URL par défaut :
 
-- Tableau de bord : `http://localhost:20128/dashboard`
-- API compatible OpenAI : `http://localhost:20128/v1`
-
----
-
-## 🎥 Guides vidéo
-
-<div align="center">
-
-<table>
-  <tr>
-  <td align="center" width="320">
-  <a href="https://www.youtube.com/watch?v=X69n5Lm06Yw">
-    <img src="https://img.youtube.com/vi/X69n5Lm06Yw/maxresdefault.jpg" alt="Tiết kiệm chi phí LLM với N4tzzOfficial" width="300"/>
-  </a><br/>
-  <b>🇻🇳 Tiếng Việt</b><br/>
-  <sub>Tiết kiệm chi phí LLM cho OpenClaw với N4tzzOfficial<br/>by <a href="https://www.youtube.com/c/M%C3%ACAIblog">Mì AI</a></sub>
-</td>
-<td align="center" width="320">
-      <a href="https://youtu.be/VQAw612S27Y">
-        <img src="https://img.youtube.com/vi/VQAw612S27Y/maxresdefault.jpg" alt="N4tzzOfficial + Claude Code FREE Unlimited Setup" width="300"/>
-      </a><br/>
-      <b>🇵🇰 اردو / हिन्दी</b><br/>
-      <sub>N4tzzOfficial + Claude Code FREE Unlimited Setup<br/>by <a href="https://www.youtube.com/@BuildAIWithHamid">Build AI With Hamid</a></sub>
-    </td>
-    <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=raEyZPg5xE0">
-        <img src="https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg" alt="N4tzzOfficial Setup Tutorial" width="300"/>
-      </a><br/>
-      <b>🇺🇸 English</b><br/>
-      <sub>N4tzzOfficial + Claude Code FREE Setup<br/>by <a href="https://www.youtube.com/@BuildAIWithHamid">Build AI With Hamid</a></sub>
-    </td>
-    
-  </tr>
-  <tr>
-  <td align="center" width="320">
-      <a href="https://youtu.be/3dF5GIYMrcQ?si=bAyfyiHbARJQAHj_">
-        <img src="https://img.youtube.com/vi/3dF5GIYMrcQ/hqdefault.jpg" alt="N4tzzOfficial Setup Tutorial" width="300"/>
-      </a><br/>
-      <b>🇺🇸 English</b><br/>
-      <sub>N4tzzOfficial + Claude Code FREE Setup<br/>by <a href="https://www.youtube.com/@BuildAIWithHamid">Build AI With Hamid</a></sub>
-    </td>
-    <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=o3qYCyjrFYg">
-        <img src="https://img.youtube.com/vi/o3qYCyjrFYg/maxresdefault.jpg" alt="Claude Code FREE Forever" width="300"/>
-      </a><br/>
-      <b>🇺🇸 English</b><br/>
-      <sub>Claude Code FREE Forever — Unlimited Models<br/>by <a href="https://www.youtube.com/@BuildAIWithHamid">Build AI With Hamid</a></sub>
-    </td>
-    <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=Ttpc26m39Dw">
-        <img src="https://img.youtube.com/vi/Ttpc26m39Dw/maxresdefault.jpg" alt="Claude CLI Free Setup" width="300"/>
-      </a><br/>
-      <b>🇺🇸 English</b><br/>
-      <sub>Claude CLI Free Setup with N4tzzOfficial 🚀<br/>by <a href="https://www.youtube.com/@CodeVerseSoban">CodeVerse Soban</a></sub>
-    </td>
-    
-  </tr>
-  <tr>
-  <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=G-5A_D5Pm6Y">
-        <img src="https://img.youtube.com/vi/G-5A_D5Pm6Y/maxresdefault.jpg" alt="Cài đặt OpenClaw Free A-Z" width="300"/>
-      </a><br/>
-      <b>🇻🇳 Tiếng Việt</b><br/>
-      <sub>Cài Đặt OpenClaw Free Từ A-Z + N4tzzOfficial<br/>by <a href="https://www.youtube.com/@maigia">Mai Gia</a></sub>
-    </td>
-    <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=JXmg8_gccgE">
-        <img src="https://img.youtube.com/vi/JXmg8_gccgE/maxresdefault.jpg" alt="FREE OpenClaw with Claude Opus" width="300"/>
-      </a><br/>
-      <b>🇺🇸 English</b><br/>
-      <sub>FREE OpenClaw + Claude Opus 4.6<br/>by <a href="https://www.youtube.com/@BuildAIWithHamid">Build AI With Hamid</a></sub>
-    </td>
-    <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=CkVZZUSTXAI">
-        <img src="https://img.youtube.com/vi/CkVZZUSTXAI/mqdefault.jpg" alt="Claude CLI Free Setup" width="300"/>
-      </a><br/>
-      <b>🇮🇩 Indonesia</b><br/>
-      <sub>Koding 24 Jam Anti Rate Limit! Hemat Token AI 65% | Tutorial Quick Setup N4tzzOfficial 🚀<br/>by <a href="https://www.youtube.com/@krisswuh">Krisswuh</a></sub>
-    </td>
-    
-  </tr>
-  
-  <tr>
-  <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=TXGv4eofe1I">
-        <img src="https://img.youtube.com/vi/TXGv4eofe1I/mqdefault.jpg" alt="Cara Deploy N4tzzOfficial di Hugging Face GRATIS Non-Stop! | Alternatif VPS RAM 16GB" width="300"/>
-      </a><br/>
-      <b>🇮🇩 Indonesia</b><br/>
-      <sub>Cara Deploy N4tzzOfficial di Hugging Face GRATIS Non-Stop! | Alternatif VPS RAM 16GB<br/>by <a href="https://www.youtube.com/@krisswuh">Krisswuh</a></sub>
-    </td>
-  </tr>
-
-</table>
-
-</div>
-
-> 🎬 **Vous avez réalisé une vidéo sur N4tzzOfficial ?** Envoyez une [Pull Request](https://github.com/N4tzzOfficial/NzRouter/pulls) en ajoutant votre vidéo à cette section — nous la fusionnerons !
+- Tableau de bord : `http://localhost:20514/dashboard`
+- API compatible OpenAI : `http://localhost:20514/v1`
 
 ---
 
@@ -1043,7 +941,7 @@ Coût : 0 $ pour toujours (+ 20 à 40 % d'économie de tokens via RTK) !
 
 ```
 Settings → Models → Advanced :
-  OpenAI API Base URL : http://localhost:20128/v1
+  OpenAI API Base URL : http://localhost:20514/v1
   OpenAI API Key : [depuis le tableau de bord N4tzzOfficial]
   Model : cc/claude-opus-4-7
 ```
@@ -1056,7 +954,7 @@ Modifiez `~/.claude/config.json` :
 
 ```json
 {
-  "anthropic_api_base": "http://localhost:20128/v1",
+  "anthropic_api_base": "http://localhost:20514/v1",
   "anthropic_api_key": "votre-clé-api-N4tzzOfficial"
 }
 ```
@@ -1064,7 +962,7 @@ Modifiez `~/.claude/config.json` :
 ### Codex CLI
 
 ```bash
-export OPENAI_BASE_URL="http://localhost:20128"
+export OPENAI_BASE_URL="http://localhost:20514"
 export OPENAI_API_KEY="votre-clé-api-N4tzzOfficial"
 
 codex "votre prompt"
@@ -1092,7 +990,7 @@ Tableau de bord → CLI Tools → OpenClaw → Sélectionnez le modèle → Appl
   "models": {
     "providers": {
       "N4tzzOfficial": {
-        "baseUrl": "http://127.0.0.1:20128/v1",
+        "baseUrl": "http://127.0.0.1:20514/v1",
         "apiKey": "sk_NzRouter",
         "api": "openai-completions",
         "models": [
@@ -1113,7 +1011,7 @@ Tableau de bord → CLI Tools → OpenClaw → Sélectionnez le modèle → Appl
 
 ```
 Provider : OpenAI Compatible
-Base URL : http://localhost:20128/v1
+Base URL : http://localhost:20514/v1
 API Key : [depuis le tableau de bord]
 Model : cc/claude-opus-4-7
 ```
@@ -1136,11 +1034,11 @@ npm run build
 export JWT_SECRET="votre-secret-sécurisé-changez-le"
 export INITIAL_PASSWORD="votre-mot-de-passe"
 export DATA_DIR="/var/lib/N4tzzOfficial"
-export PORT="20128"
+export PORT="20514"
 export HOSTNAME="0.0.0.0"
 export NODE_ENV="production"
-export NEXT_PUBLIC_BASE_URL="http://localhost:20128"
-export NEXT_PUBLIC_CLOUD_URL="https://n4tzz.com"
+export NEXT_PUBLIC_BASE_URL="http://localhost:20514"
+export NEXT_PUBLIC_CLOUD_URL="https://n4tzzofficial.my.id/nzrouter"
 export API_KEY_SECRET="endpoint-proxy-api-key-secret"
 export MACHINE_ID_SALT="endpoint-proxy-salt"
 
@@ -1158,7 +1056,7 @@ pm2 startup
 
 Images publiées (multi-plateformes `linux/amd64` + `linux/arm64`) :
 
-- Docker Hub : [`N4tzzOfficial/N4tzzOfficial`](https://hub.docker.com/r/N4tzzOfficial/N4tzzOfficial)
+- Docker Hub : [`N4tzzOfficial/N4tzzOfficial`](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/NzRouter)
 - GHCR : [`ghcr.io/N4tzzOfficial/N4tzzOfficial`](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/N4tzzOfficial)
 
 **Démarrage rapide (utilisez l'image publiée) :**
@@ -1166,13 +1064,13 @@ Images publiées (multi-plateformes `linux/amd64` + `linux/arm64`) :
 ```bash
 docker run -d \
   --name N4tzzOfficial \
-  -p 20128:20128 \
+  -p 20514:20514 \
   -v "$HOME/.N4tzzOfficial:/app/data" \
   -e DATA_DIR=/app/data \
   N4tzzOfficial/N4tzzOfficial:latest
 ```
 
-→ Ouvrez http://localhost:20128
+→ Ouvrez http://localhost:20514
 
 **Compiler depuis le code source (dev) :**
 
@@ -1180,13 +1078,13 @@ docker run -d \
 git clone https://github.com/N4tzzOfficial/NzRouter.git
 cd N4tzzOfficial/app
 docker build -t N4tzzOfficial .
-docker run -d --name N4tzzOfficial -p 20128:20128 \
+docker run -d --name N4tzzOfficial -p 20514:20514 \
   -v "$HOME/.N4tzzOfficial:/app/data" -e DATA_DIR=/app/data N4tzzOfficial
 ```
 
 **Valeurs par défaut du conteneur :**
 
-- `PORT=20128`
+- `PORT=20514`
 - `HOSTNAME=0.0.0.0`
 
 **Commandes utiles :**
@@ -1207,13 +1105,13 @@ docker pull N4tzzOfficial/N4tzzOfficial:latest   # mise à jour vers la dernièr
 | `JWT_SECRET`                                         | Généré automatiquement (`~/.N4tzzOfficial/jwt-secret`) | Secret de signature JWT pour le cookie d'authentification du tableau de bord (remplacez-le pour partager entre instances) |
 | `INITIAL_PASSWORD`                                   | `123456`                                    | Mot de passe de première connexion quand aucun hash n'est enregistré                          |
 | `DATA_DIR`                                           | `~/.N4tzzOfficial`                                | Emplacement principal des données de l'app (SQLite dans `$DATA_DIR/db/data.sqlite`)          |
-| `PORT`                                               | défaut du framework                         | Port du service (`20128` dans les exemples)                                                   |
+| `PORT`                                               | défaut du framework                         | Port du service (`20514` dans les exemples)                                                   |
 | `HOSTNAME`                                           | défaut du framework                         | Hôte de liaison (Docker utilise `0.0.0.0` par défaut)                                         |
 | `NODE_ENV`                                           | défaut du runtime                           | Définissez `production` pour le déploiement                                                   |
-| `BASE_URL`                                           | `http://localhost:20128`                    | URL de base interne côté serveur utilisée par les tâches de synchronisation cloud             |
-| `CLOUD_URL`                                          | `https://n4tzz.com`                       | URL de base de l'endpoint de synchronisation cloud côté serveur                               |
+| `BASE_URL`                                           | `http://localhost:20514`                    | URL de base interne côté serveur utilisée par les tâches de synchronisation cloud             |
+| `CLOUD_URL`                                          | `https://n4tzzofficial.my.id/nzrouter`                       | URL de base de l'endpoint de synchronisation cloud côté serveur                               |
 | `NEXT_PUBLIC_BASE_URL`                               | `http://localhost:3000`                     | URL de base publique/rétrocompatible (préférez `BASE_URL` pour le runtime serveur)            |
-| `NEXT_PUBLIC_CLOUD_URL`                              | `https://n4tzz.com`                       | URL cloud publique/rétrocompatible (préférez `CLOUD_URL` pour le runtime serveur)             |
+| `NEXT_PUBLIC_CLOUD_URL`                              | `https://n4tzzofficial.my.id/nzrouter`                       | URL cloud publique/rétrocompatible (préférez `CLOUD_URL` pour le runtime serveur)             |
 | `API_KEY_SECRET`                                     | `endpoint-proxy-api-key-secret`             | Secret HMAC pour les clés API générées                                                         |
 | `MACHINE_ID_SALT`                                    | `endpoint-proxy-salt`                       | Sel pour le hachage stable de l'ID machine                                                    |
 | `ENABLE_REQUEST_LOGS`                                | `false`                                     | Active les journaux de requêtes/réponses dans `logs/`                                         |
@@ -1343,7 +1241,7 @@ Remarques :
 
 **Le tableau de bord s'ouvre sur le mauvais port**
 
-- Définissez `PORT=20128` et `NEXT_PUBLIC_BASE_URL=http://localhost:20128`
+- Définissez `PORT=20514` et `NEXT_PUBLIC_BASE_URL=http://localhost:20514`
 
 **La première connexion ne fonctionne pas**
 
@@ -1372,7 +1270,7 @@ Remarques :
 ### Chat Completions
 
 ```bash
-POST http://localhost:20128/v1/chat/completions
+POST http://localhost:20514/v1/chat/completions
 Authorization: Bearer votre-clé-api
 Content-Type: application/json
 
@@ -1388,7 +1286,7 @@ Content-Type: application/json
 ### Lister les modèles
 
 ```bash
-GET http://localhost:20128/v1/models
+GET http://localhost:20514/v1/models
 Authorization: Bearer votre-clé-api
 
 → Renvoie tous les modèles et combos au format OpenAI
@@ -1396,7 +1294,7 @@ Authorization: Bearer votre-clé-api
 
 ## 📧 Support
 
-- **Site web** : [n4tzz.com](https://n4tzz.com)
+- **Site web** : [n4tzzofficial.my.id/nzrouter](https://n4tzzofficial.my.id/nzrouter)
 - **GitHub** : [github.com/N4tzzOfficial/NzRouter](https://github.com/N4tzzOfficial/NzRouter)
 - **Problèmes** : [github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
@@ -1442,7 +1340,5 @@ Licence MIT - voir [LICENSE](LICENSE) pour plus de détails.
 <div align="center">
   <sub>Conçu avec ❤️ pour les développeurs qui codent 24h/24 et 7j/7</sub>
 </div>
-
-
 
 

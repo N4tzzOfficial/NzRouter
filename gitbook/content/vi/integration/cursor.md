@@ -11,7 +11,7 @@ Tích hợp N4tzzOfficial với Cursor IDE để định tuyến request AI qua 
 
 ## ⚠️ Lưu ý Quan trọng
 
-> **Yêu cầu Cloud Endpoint**: Cursor định tuyến request qua server của chính nó và không hỗ trợ endpoint localhost. Bạn phải dùng N4tzzOfficial cloud endpoint: `https://n4tzz.com`
+> **Yêu cầu Cloud Endpoint**: Cursor định tuyến request qua server của chính nó và không hỗ trợ endpoint localhost. Bạn phải dùng N4tzzOfficial cloud endpoint: `https://n4tzzofficial.my.id/nzrouter`
 
 > **Yêu cầu Cursor Pro**: Tính năng này yêu cầu tài khoản Cursor Pro để dùng custom API endpoint.
 
@@ -33,12 +33,12 @@ Tích hợp N4tzzOfficial với Cursor IDE để định tuyến request AI qua 
 Đặt base URL tới N4tzzOfficial cloud endpoint:
 
 ```
-https://n4tzz.com
+https://n4tzzofficial.my.id/nzrouter
 ```
 
 **Các bước:**
 1. Trong cài đặt Models, tìm field **Base URL**
-2. Nhập: `https://n4tzz.com`
+2. Nhập: `https://n4tzzofficial.my.id/nzrouter`
 3. Click **Save**
 
 ### 4. Thêm API Key
@@ -66,7 +66,7 @@ Cursor settings của bạn nên trông như sau:
 
 ```
 OpenAI API: ✓ Enabled
-Base URL: https://n4tzz.com
+Base URL: https://n4tzzofficial.my.id/nzrouter
 API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Custom Models: gpt-4, claude-opus-4-5, gemini-2.0-flash
 ```
@@ -123,14 +123,14 @@ Bạn có thể dùng bất kỳ model nào đã cấu hình trong N4tzzOfficial
 
 ### Lỗi Connection
 
-1. Xác minh bạn đang dùng cloud endpoint: `https://n4tzz.com`
+1. Xác minh bạn đang dùng cloud endpoint: `https://n4tzzofficial.my.id/nzrouter`
 2. Kiểm tra kết nối internet
 3. Đảm bảo dịch vụ N4tzzOfficial cloud đang hoạt động
 4. Thử tắt VPN hoặc proxy nếu đang bật
 
 ### Localhost không hoạt động
 
-> **Nhớ**: Cursor không hỗ trợ endpoint localhost. Bạn phải dùng cloud endpoint `https://n4tzz.com`. Nếu cần dùng N4tzzOfficial cục bộ, hãy cân nhắc dùng dịch vụ tunneling như ngrok để expose endpoint cục bộ.
+> **Nhớ**: Cursor không hỗ trợ endpoint localhost. Bạn phải dùng cloud endpoint `https://n4tzzofficial.my.id/nzrouter`. Nếu cần dùng N4tzzOfficial cục bộ, hãy cân nhắc dùng dịch vụ tunneling như ngrok để expose endpoint cục bộ.
 
 ## Setup Cloud Endpoint
 

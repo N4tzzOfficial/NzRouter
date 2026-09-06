@@ -20,7 +20,7 @@ npm install -g N4tzzOfficial
 N4tzzOfficial
 ```
 
-🎉 **ダッシュボードが自動的に開きます** (`http://localhost:20128`)
+🎉 **ダッシュボードが自動的に開きます** (`http://localhost:20514`)
 
 - デフォルトパスワード: `123456` (ダッシュボードで変更)
 - APIキーは自動生成
@@ -89,7 +89,7 @@ Dashboard → Providers → Connect [Free Provider]
 
 ```
 Settings → Models → Advanced:
-  OpenAI API Base URL: http://localhost:20128/v1
+  OpenAI API Base URL: http://localhost:20514/v1
   OpenAI API Key: [NzRouterダッシュボードから取得]
   Model: cc/claude-opus-4-5-20251101
 ```
@@ -100,7 +100,7 @@ Settings → Models → Advanced:
 
 ```json
 {
-  "anthropic_api_base": "http://localhost:20128/v1",
+  "anthropic_api_base": "http://localhost:20514/v1",
   "anthropic_api_key": "your-N4tzzOfficial-api-key"
 }
 ```
@@ -109,7 +109,7 @@ Settings → Models → Advanced:
 
 ```
 Provider: OpenAI Compatible
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: [ダッシュボードから取得]
 Model: cc/claude-opus-4-5-20251101
 ```
@@ -117,7 +117,7 @@ Model: cc/claude-opus-4-5-20251101
 ### Codex CLI
 
 ```bash
-export OPENAI_BASE_URL="http://localhost:20128"
+export OPENAI_BASE_URL="http://localhost:20514"
 export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 
 codex "your prompt"
@@ -242,7 +242,7 @@ CLIで使用: premium-coding
 
 ## ヘルプが必要?
 
-- **ウェブサイト**: [n4tzz.com](https://n4tzz.com)
+- **ウェブサイト**: [n4tzzofficial.my.id/nzrouter](https://n4tzzofficial.my.id/nzrouter)
 - **GitHub**: [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
 - **Issues**: [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
 

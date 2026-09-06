@@ -116,7 +116,7 @@ N4tzzOfficial
 **在你的 CLI 工具中使用:**
 
 ```
-Endpoint: http://localhost:20128/v1
+Endpoint: http://localhost:20514/v1
 API Key: [从仪表盘获取]
 Model: cc/claude-opus-4-5-20251101
 ```
@@ -143,7 +143,7 @@ Model: cc/claude-opus-4-5-20251101
 
 ### 移动/远程编码
 
-- 使用云端部署(https://n4tzz.com)
+- 使用云端部署(https://n4tzzofficial.my.id/nzrouter)
 - 从 iPad、手机、任何地方访问
 - 没有 localhost 限制
 - Cloudflare 边缘网络(300+ 节点)

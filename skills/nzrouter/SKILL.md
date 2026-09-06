@@ -10,7 +10,7 @@ Local/remote AI gateway exposing OpenAI-compatible REST. One key, many providers
 ## Setup
 
 ```bash
-export NZROUTER_URL="http://localhost:20128"      # or VPS / tunnel URL
+export NZROUTER_URL="http://localhost:20514"      # or VPS / tunnel URL
 export NZROUTER_KEY="sk-..."                      # from Dashboard → Keys (only if requireApiKey=true)
 ```
 

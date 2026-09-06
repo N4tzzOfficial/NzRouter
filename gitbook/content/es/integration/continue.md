@@ -6,7 +6,7 @@ Integra N4tzzOfficial con la extensión Continue para llevar la asistencia de IA
 
 - Visual Studio Code instalado
 - Extensión Continue instalada desde el marketplace de VSCode
-- API key de N4tzzOfficial desde el [dashboard](https://n4tzz.com/dashboard)
+- API key de N4tzzOfficial desde el [dashboard](https://n4tzzofficial.my.id/nzrouter/dashboard)
 - N4tzzOfficial ejecutándose (local o en la nube)
 
 ## Pasos de configuración
@@ -31,7 +31,7 @@ Agrega la siguiente configuración a tu `config.json`:
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     }
   ]
 }
@@ -46,28 +46,28 @@ Agrega la siguiente configuración a tu `config.json`:
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     },
     {
       "title": "N4tzzOfficial - Claude Sonnet (Balanced)",
       "provider": "openai",
       "model": "cc/claude-sonnet-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     },
     {
       "title": "N4tzzOfficial - DeepSeek Chat (Code)",
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     },
     {
       "title": "N4tzzOfficial - Claude Haiku (Fast)",
       "provider": "openai",
       "model": "cc/claude-haiku-4-20250514",
       "apiKey": "your-api-key-from-dashboard",
-      "apiBase": "http://localhost:20128/v1"
+      "apiBase": "http://localhost:20514/v1"
     }
   ]
 }
@@ -76,7 +76,7 @@ Agrega la siguiente configuración a tu `config.json`:
 **Para N4tzzOfficial en la nube:**
 Reemplaza `apiBase` con:
 ```json
-"apiBase": "https://n4tzz.com/v1"
+"apiBase": "https://n4tzzofficial.my.id/nzrouter/v1"
 ```
 
 ### 3. Guardar y recargar
@@ -143,7 +143,7 @@ Agrega prompts de sistema personalizados para comportamientos específicos:
       "provider": "openai",
       "model": "cx/deepseek-chat",
       "apiKey": "your-api-key",
-      "apiBase": "http://localhost:20128/v1",
+      "apiBase": "http://localhost:20514/v1",
       "systemMessage": "You are an expert programmer. Always provide clean, well-documented code with best practices."
     }
   ]
@@ -162,7 +162,7 @@ Ajusta el comportamiento del modelo con parámetros:
       "provider": "openai",
       "model": "cc/claude-opus-4-5-20251101",
       "apiKey": "your-api-key",
-      "apiBase": "http://localhost:20128/v1",
+      "apiBase": "http://localhost:20514/v1",
       "temperature": 0.9,
       "topP": 0.95
     }
@@ -204,7 +204,7 @@ Configura qué contexto envía Continue al modelo:
 ## Solución de problemas
 
 ### El modelo no responde
-- Verifica que N4tzzOfficial esté corriendo: `curl http://localhost:20128/health`
+- Verifica que N4tzzOfficial esté corriendo: `curl http://localhost:20514/health`
 - Verifica la API key en config.json
 - Revisa la consola de desarrollador de VSCode por errores: `Help` → `Toggle Developer Tools`
 

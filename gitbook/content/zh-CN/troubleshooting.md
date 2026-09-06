@@ -132,11 +132,11 @@
 
 ## 连接被拒绝
 
-**问题:** 出现 "ECONNREFUSED" 或 "Cannot connect to localhost:20128"。
+**问题:** 出现 "ECONNREFUSED" 或 "Cannot connect to localhost:20514"。
 
 **原因:**
 - N4tzzOfficial 未运行
-- 端口 20128 被阻止
+- 端口 20514 被阻止
 - 防火墙拦截连接
 
 **解决方案:**
@@ -147,24 +147,24 @@
    ```
    仪表盘应该在 http://localhost:3000 打开。
 
-2. **检查端口 20128:**
+2. **检查端口 20514:**
    ```bash
    # 检查端口是否监听
-   lsof -i :20128
+   lsof -i :20514
    
    # Windows
-   netstat -ano | findstr :20128
+   netstat -ano | findstr :20514
    ```
 
 3. **检查防火墙:**
    - macOS: 系统设置 → 网络 → 防火墙
    - Windows: Windows Defender 防火墙 → 允许应用
-   - Linux: `sudo ufw allow 20128`
+   - Linux: `sudo ufw allow 20514`
 
 4. **使用云端 endpoint:**
    如果 localhost 不行(例如 Cursor IDE):
    ```
-   Endpoint: https://n4tzz.com/v1
+   Endpoint: https://n4tzzofficial.my.id/nzrouter/v1
    ```
 
 ---
@@ -243,7 +243,7 @@
 
 3. **列出可用模型:**
    ```bash
-   curl http://localhost:20128/v1/models \
+   curl http://localhost:20514/v1/models \
      -H "Authorization: Bearer your-api-key"
    ```
 
@@ -338,7 +338,7 @@
 
 4. **测试 API key:**
    ```bash
-   curl http://localhost:20128/v1/models \
+   curl http://localhost:20514/v1/models \
      -H "Authorization: Bearer 9r_your_key"
    ```
 
@@ -347,7 +347,7 @@
 ## 需要更多帮助?
 
 - **GitHub Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
-- **文档:** [n4tzz.com/docs](https://n4tzz.com/docs)
+- **文档:** [n4tzzofficial.my.id/nzrouter/docs](https://n4tzzofficial.my.id/nzrouter/docs)
 - **常见问题:** [faq.md](faq.md)
 
 

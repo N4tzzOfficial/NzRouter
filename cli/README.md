@@ -1,128 +1,148 @@
-# N4tzzOfficial - FREE AI Router & Token Saver
+# N4tzzOfficial CLI
 
-**Never stop coding. Save 20-40% tokens with RTK + auto-fallback to FREE & cheap AI models.**
+The launcher for the N4tzzOfficial self-hosted AI router.
 
-**Connect All AI Code Tools (Claude Code, Cursor, Antigravity, Copilot, Codex, Gemini, OpenCode, Cline, OpenClaw...) to 40+ AI Providers & 100+ Models.**
+```bash
+npm install -g git+https://github.com/N4tzzOfficial/NzRouter
+nzrouter
+```
 
-[![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/nzrouter)
-[![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/nzrouter)
-[![Docker Pulls](https://img.shields.io/docker/pulls/N4tzzOfficial/N4tzzOfficial.svg?logo=docker&label=Docker%20pulls)](https://hub.docker.com/r/N4tzzOfficial/N4tzzOfficial)
-[![GHCR](https://img.shields.io/badge/GHCR-decolua%2Fnzrouter-blue?logo=github)](https://github.com/N4tzzOfficial/N4tzzOfficial/pkgs/container/nzrouter)
-[![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/LICENSE)
-
-<a href="https://trendshift.io/repositories/22628" target="_blank"><img src="https://trendshift.io/api/badge/repositories/22628" alt="decolua%2Fnzrouter | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-
-[🌐 Website](https://n4tzz.com) • [📖 Full Docs](https://github.com/N4tzzOfficial/N4tzzOfficial)
+Dashboard → `http://localhost:20514/dashboard` &nbsp;·&nbsp; API → `http://localhost:20514/v1`
+First-login password: **`nzrouter123`** (change in Dashboard → Profile).
 
 ---
 
-## 🤔 Why N4tzzOfficial?
+## What it does
 
-**Stop wasting money, tokens and hitting limits:**
-
-- ❌ Subscription quota expires unused every month
-- ❌ Rate limits stop you mid-coding
-- ❌ Tool outputs (git diff, grep, ls...) burn tokens fast
-- ❌ Expensive APIs ($20-50/month per provider)
-
-**N4tzzOfficial solves this:**
-
-- ✅ **RTK Token Saver** - Auto-compress tool_result, save 20-40% tokens
-- ✅ **Maximize subscriptions** - Track quota, use every bit before reset
-- ✅ **Auto fallback** - Subscription → Cheap → Free, zero downtime
-- ✅ **Multi-account** - Round-robin between accounts per provider
-- ✅ **Universal** - Works with any OpenAI/Claude-compatible CLI
+- **Installs and starts** the N4tzzOfficial server (Next.js + SQLite).
+- **System tray** with quick links: dashboard, API key, restart, update, quit.
+- **Background / daemon mode** for headless servers.
+- **Auto-update** — every 6 h the background executor checks the GitHub release, then
+  `git pull --rebase` → `npm install` → `npm run build` → graceful restart.
+- **Data directory** at `~/.nzrouter/` (macOS/Linux) or `%APPDATA%\nzrouter\` (Windows).
+  In Docker, mount `/app/data`.
 
 ---
 
-## ⚡ Quick Start
+## Usage
 
-**Option 1 — npm (recommended for desktop):**
+```bash
+nzrouter                       # start with default settings (interactive)
+nzrouter --background          # run in background (no tray, no console)
+nzrouter --daemon              # alias for --background
+nzrouter --no-browser          # don't open the dashboard on start
+nzrouter --port 9000           # custom port
+nzrouter --skip-update         # skip the auto-update check on this run
+nzrouter --version             # print version and exit
+nzrouter --help                # full option list
+```
+
+When started without `--background`, the CLI runs an interactive terminal UI plus an
+optional system tray. Use `--background` (or `--daemon`) for servers / WSL / SSH.
+
+---
+
+## Install
+
+### From GitHub (recommended, always latest)
+
+```bash
+npm install -g git+https://github.com/N4tzzOfficial/NzRouter
+nzrouter --version
+nzrouter
+```
+
+### From npm (when published)
 
 ```bash
 npm install -g nzrouter
 nzrouter
-
-# Or run directly with npx
-npx nzrouter
-
-# Or install from GitHub (always latest)
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter
 ```
 
-**Option 2 — Docker (server/VPS):**
+### From source (development)
 
 ```bash
-docker run -d --name nzrouter -p 20128:20128 \
-  -v "$HOME/.nzrouter:/app/data" -e DATA_DIR=/app/data \
-  N4tzzOfficial/N4tzzOfficial:latest
+git clone https://github.com/N4tzzOfficial/NzRouter.git
+cd NzRouter/cli
+npm install
+node cli.js
 ```
 
-Published images: [Docker Hub](https://hub.docker.com/r/N4tzzOfficial/N4tzzOfficial) • [GHCR](https://github.com/N4tzzOfficial/N4tzzOfficial/pkgs/container/nzrouter) (multi-platform amd64/arm64).
+---
 
-🎉 Dashboard opens at `http://localhost:20128`
+## Data location
 
-**2. Connect a FREE provider (no signup needed):**
+| Platform | Path |
+|---|---|
+| macOS / Linux | `~/.nzrouter/db/data.sqlite` |
+| Windows | `%APPDATA%\nzrouter\db\data.sqlite` |
+| Docker | `/app/data/db/data.sqlite` (mount `$HOME/.nzrouter` to persist) |
 
-Dashboard → Providers → Connect **Kiro AI** (free Claude unlimited) or **OpenCode Free** (no auth) → Done!
+Other artifacts:
 
-**3. Use in your CLI tool:**
-
-```
-Claude Code/Codex/OpenClaw/Cursor/Cline Settings:
-  Endpoint: http://localhost:20128/v1
-  API Key:  [copy from dashboard]
-  Model:    kr/claude-sonnet-4.5
-```
-
-That's it! Start coding with FREE AI models.
+- `~/.nzrouter/jwt-secret` — auto-generated JWT signing secret
+- `~/.nzrouter/usage.json` + `log.txt` — usage history (does **not** follow `DATA_DIR`)
+- `~/.nzrouter/runtime/node_modules/nzrouter/` — global install root
 
 ---
 
-## 🚀 CLI Options
+## Configuration
 
-```bash
-nzrouter                    # Start with default settings
-nzrouter --port 8080        # Custom port
-nzrouter --no-browser       # Don't open browser
-nzrouter --skip-update      # Skip auto-update check
-nzrouter --help             # Show all options
-```
+The CLI reads its config from the same `.env` and SQLite store as the server. Relevant
+variables (all optional, set in `.env` or in your shell):
 
-**Dashboard**: `http://localhost:20128/dashboard`
-
----
-
-## 🛠️ Supported CLI Tools
-
-Claude-Code • OpenClaw • Codex • OpenCode • Cursor • Antigravity • Cline • Continue • Droid • Roo • Copilot • Kilo Code • Gemini CLI • Qwen Code • iFlow • Crush • Crusher • Aider
-
-Any tool supporting OpenAI/Claude-compatible API works.
+| Variable | Default | Purpose |
+|---|---|---|
+| `PORT` | framework default | Service port (use `20514` to match the README examples) |
+| `HOSTNAME` | framework default | Bind host (`0.0.0.0` for Docker / remote access) |
+| `INITIAL_PASSWORD` | `nzrouter123` | First-login password (change immediately) |
+| `JWT_SECRET` | auto | JWT session cookie secret |
+| `API_KEY_SECRET` | placeholder | HMAC secret for issued API keys |
+| `DATA_DIR` | `~/.nzrouter` | SQLite + settings + keys location |
+| `REQUIRE_API_KEY` | `true` | Enforce Bearer API key on `/v1/*` |
+| `NZROUTER_SKIP_UPDATE` | unset | Set to `1` to disable the auto-update check |
+| `NZROUTER_REPO_PATH` | auto-detected | Override repo root for the background executor |
 
 ---
 
-## 💾 Data Location
+## Updates
 
-- **macOS/Linux**: `~/.nzrouter/db/data.sqlite`
-- **Windows**: `%APPDATA%/nzrouter/db/data.sqlite`
-- **Docker**: `/app/data/db/data.sqlite` (mount `$HOME/.nzrouter` to persist)
+The CLI ships with a background executor that runs every 6 hours. When a newer
+`releases/latest` is published on GitHub it:
 
----
+1. `git fetch origin`
+2. `git pull --rebase`
+3. `npm install` (root + `cli/`)
+4. `npm run build` (root + `cli/`)
+5. Restart the server (SIGTERM + port cleanup)
 
-## 📚 Documentation
-
-Full docs, advanced setup, video tutorials & development guide:
-
-- **GitHub**: https://github.com/N4tzzOfficial/N4tzzOfficial
-- **Full README**: https://github.com/N4tzzOfficial/N4tzzOfficial/blob/main/app/README.md
-- **Website**: https://n4tzz.com
+Disable per-run with `nzrouter --skip-update`, or persistently with
+`NZROUTER_SKIP_UPDATE=1`.
 
 ---
 
-## 🙏 Acknowledgments
+## Troubleshooting
 
-- **[CLIProxyAPI](https://github.com/router-for-me/CLIProxyAPI)** - Original Go implementation
+**`nzrouter: command not found`**
+The npm global bin directory isn't on `PATH`. Add `$(npm config get prefix)/bin` (macOS/Linux)
+or `%AppData%\npm` (Windows) to your `PATH`, then restart the shell.
 
-## 📄 License
+**Port 20514 already in use**
+Pick another port: `nzrouter --port 9000`. Update any CLI tools pointing at `20514` too.
 
-MIT License - see [LICENSE](LICENSE) for details.
+**`Wow, you idiot, N4tzzOfficial won't work without the API KEY, you idiot`**
+Your tool isn't sending the API key. Copy it from **Dashboard → Profile** and set it as
+`Authorization: Bearer <key>` (or the tool's *API Key* field).
+
+**Auto-update fails**
+Make sure the install is a git checkout (not a tarball from npm), and that `git`,
+`node`, and `npm` are on `PATH`. Check the server logs in `~/.nzrouter/log.txt`.
+
+**Tray icon doesn't appear**
+Tray is a desktop feature — disable it on headless servers with `nzrouter --background`.
+
+---
+
+## License
+
+MIT — see [LICENSE](../LICENSE).

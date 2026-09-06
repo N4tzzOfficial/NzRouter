@@ -164,7 +164,7 @@ Dashboard → Providers → Quota Tracking
 
 ```
 Cursor Settings → Models → Advanced:
-  OpenAI API Base URL: https://n4tzz.com/v1
+  OpenAI API Base URL: https://n4tzzofficial.my.id/nzrouter/v1
   OpenAI API Key: [ダッシュボードから取得]
   Model: cc/claude-opus-4-5-20251101
 ```
@@ -201,7 +201,7 @@ npm start
 npm install -g N4tzzOfficial
 N4tzzOfficial
 → Dashboard: http://localhost:3000
-→ API: http://localhost:20128/v1
+→ API: http://localhost:20514/v1
 ```
 
 ### VPS/クラウド
@@ -381,7 +381,7 @@ N4tzzOfficial --version
 
 ## さらにヘルプが必要?
 
-- **ドキュメント:** [n4tzz.com/docs](https://n4tzz.com/docs)
+- **ドキュメント:** [n4tzzofficial.my.id/nzrouter/docs](https://n4tzzofficial.my.id/nzrouter/docs)
 - **GitHub:** [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
 - **Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
 - **トラブルシューティング:** [troubleshooting.md](troubleshooting.md)

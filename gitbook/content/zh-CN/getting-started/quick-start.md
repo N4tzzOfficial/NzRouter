@@ -20,7 +20,7 @@ npm install -g N4tzzOfficial
 N4tzzOfficial
 ```
 
-🎉 **仪表盘自动打开** 地址为 `http://localhost:20128`
+🎉 **仪表盘自动打开** 地址为 `http://localhost:20514`
 
 - 默认密码:`123456`(在仪表盘中修改)
 - API key 自动生成
@@ -89,7 +89,7 @@ N4tzzOfficial
 
 ```
 Settings → Models → Advanced:
-  OpenAI API Base URL: http://localhost:20128/v1
+  OpenAI API Base URL: http://localhost:20514/v1
   OpenAI API Key: [从 N4tzzOfficial 仪表盘获取]
   Model: cc/claude-opus-4-5-20251101
 ```
@@ -100,7 +100,7 @@ Settings → Models → Advanced:
 
 ```json
 {
-  "anthropic_api_base": "http://localhost:20128/v1",
+  "anthropic_api_base": "http://localhost:20514/v1",
   "anthropic_api_key": "your-N4tzzOfficial-api-key"
 }
 ```
@@ -109,7 +109,7 @@ Settings → Models → Advanced:
 
 ```
 Provider: OpenAI Compatible
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: [从仪表盘获取]
 Model: cc/claude-opus-4-5-20251101
 ```
@@ -117,7 +117,7 @@ Model: cc/claude-opus-4-5-20251101
 ### Codex CLI
 
 ```bash
-export OPENAI_BASE_URL="http://localhost:20128"
+export OPENAI_BASE_URL="http://localhost:20514"
 export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
 
 codex "your prompt"
@@ -242,7 +242,7 @@ CLI 中使用: premium-coding
 
 ## 需要帮助?
 
-- **网站**: [n4tzz.com](https://n4tzz.com)
+- **网站**: [n4tzzofficial.my.id/nzrouter](https://n4tzzofficial.my.id/nzrouter)
 - **GitHub**: [github.com/N4tzzOfficial/N4tzzOfficial](https://github.com/N4tzzOfficial/N4tzzOfficial)
 - **Issues**: [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
 

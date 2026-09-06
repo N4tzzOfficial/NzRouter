@@ -86,3 +86,11 @@ graphify-out/*
 .codegraph/
 .PR/
 .next-analyze/*
+
+# Local-only junk (dev logs, stray deploy helpers, AI assistant notes)
+.dev-*.log
+cookies.txt
+captain-definition
+start.sh
+.npmignore
+CLAUDE.md

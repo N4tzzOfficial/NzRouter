@@ -132,11 +132,11 @@ Common issues and solutions when using N4tzzOfficial.
 
 ## Connection Refused
 
-**Problem:** "ECONNREFUSED" or "Cannot connect to localhost:20128".
+**Problem:** "ECONNREFUSED" or "Cannot connect to localhost:20514".
 
 **Causes:**
 - N4tzzOfficial not running
-- Port 20128 blocked
+- Port 20514 blocked
 - Firewall blocking connection
 
 **Solutions:**
@@ -147,24 +147,24 @@ Common issues and solutions when using N4tzzOfficial.
    ```
    Dashboard should open at http://localhost:3000
 
-2. **Verify port 20128:**
+2. **Verify port 20514:**
    ```bash
    # Check if port is listening
-   lsof -i :20128
+   lsof -i :20514
    
    # Or on Windows
-   netstat -ano | findstr :20128
+   netstat -ano | findstr :20514
    ```
 
 3. **Check firewall:**
    - macOS: System Settings → Network → Firewall
    - Windows: Windows Defender Firewall → Allow app
-   - Linux: `sudo ufw allow 20128`
+   - Linux: `sudo ufw allow 20514`
 
 4. **Use cloud endpoint:**
    If localhost doesn't work (e.g., Cursor IDE):
    ```
-   Endpoint: https://n4tzz.com/v1
+   Endpoint: https://n4tzzofficial.my.id/nzrouter/v1
    ```
 
 ---
@@ -243,7 +243,7 @@ Common issues and solutions when using N4tzzOfficial.
 
 3. **List available models:**
    ```bash
-   curl http://localhost:20128/v1/models \
+   curl http://localhost:20514/v1/models \
      -H "Authorization: Bearer your-api-key"
    ```
 
@@ -338,7 +338,7 @@ Common issues and solutions when using N4tzzOfficial.
 
 4. **Test API key:**
    ```bash
-   curl http://localhost:20128/v1/models \
+   curl http://localhost:20514/v1/models \
      -H "Authorization: Bearer 9r_your_key"
    ```
 
@@ -347,7 +347,7 @@ Common issues and solutions when using N4tzzOfficial.
 ## Need More Help?
 
 - **GitHub Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
-- **Documentation:** [n4tzz.com/docs](https://n4tzz.com/docs)
+- **Documentation:** [n4tzzofficial.my.id/nzrouter/docs](https://n4tzzofficial.my.id/nzrouter/docs)
 - **FAQ:** [faq.md](faq.md)
 
 

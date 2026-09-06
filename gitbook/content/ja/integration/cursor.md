@@ -11,7 +11,7 @@ NzRouterをCursor IDEと統合し、AIリクエストをNzRouterのインテリ�
 
 ## ⚠️ 重要な注意点
 
-> **クラウドエンドポイントが必要**: Cursorは独自のサーバー経由でリクエストをルーティングし、localhostエンドポイントをサポートしません。NzRouterクラウドエンドポイント `https://n4tzz.com` を使用する必要があります。
+> **クラウドエンドポイントが必要**: Cursorは独自のサーバー経由でリクエストをルーティングし、localhostエンドポイントをサポートしません。NzRouterクラウドエンドポイント `https://n4tzzofficial.my.id/nzrouter` を使用する必要があります。
 
 > **Cursor Proが必要**: この機能はカスタムAPIエンドポイントを使用するためにCursor Proアカウントが必要です。
 
@@ -33,12 +33,12 @@ NzRouterをCursor IDEと統合し、AIリクエストをNzRouterのインテリ�
 Base URLをNzRouterクラウドエンドポイントに設定:
 
 ```
-https://n4tzz.com
+https://n4tzzofficial.my.id/nzrouter
 ```
 
 **手順:**
 1. Models設定で **Base URL** フィールドを見つける
-2. 入力: `https://n4tzz.com`
+2. 入力: `https://n4tzzofficial.my.id/nzrouter`
 3. **Save** をクリック
 
 ### 4. APIキーを追加
@@ -66,7 +66,7 @@ Cursor設定は次のようになります:
 
 ```
 OpenAI API: ✓ Enabled
-Base URL: https://n4tzz.com
+Base URL: https://n4tzzofficial.my.id/nzrouter
 API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Custom Models: gpt-4, claude-opus-4-5, gemini-2.0-flash
 ```
@@ -123,14 +123,14 @@ NzRouterダッシュボードで設定されたモデルを使用できます。
 
 ### 接続の問題
 
-1. クラウドエンドポイントを使用しているか確認: `https://n4tzz.com`
+1. クラウドエンドポイントを使用しているか確認: `https://n4tzzofficial.my.id/nzrouter`
 2. インターネット接続を確認
 3. NzRouterクラウドサービスが運用中か確認
 4. VPNまたはプロキシが有効な場合は無効化してみる
 
 ### Localhostが動作しない
 
-> **覚えておいてください**: Cursorはlocalhostエンドポイントをサポートしません。クラウドエンドポイント `https://n4tzz.com` を使用する必要があります。ローカルNzRouterインスタンスを使用したい場合は、ngrokなどのトンネリングサービスを検討してローカルエンドポイントを公開してください。
+> **覚えておいてください**: Cursorはlocalhostエンドポイントをサポートしません。クラウドエンドポイント `https://n4tzzofficial.my.id/nzrouter` を使用する必要があります。ローカルNzRouterインスタンスを使用したい場合は、ngrokなどのトンネリングサービスを検討してローカルエンドポイントを公開してください。
 
 ## クラウドエンドポイントのセットアップ
 

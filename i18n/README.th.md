@@ -2,22 +2,16 @@
 
 <div align="center">
   <img src="../images/NzRouter.png?1" alt="แดชบอร์ด N4tzzOfficial" width="800"/>
-  
   # N4tzzOfficial - Free AI Router
-  
   **ไม่ต้องหยุดเขียนโค้ด ประหยัดโทเค็น 20-40% ด้วย RTK + สลับอัตโนมัติไปยังโมเดล AI ฟรีและราคาถูก**
-  
   **ผู้ให้บริการ AI ฟรีสำหรับ OpenClaw**
-  
   <p align="center">
     <img src="../public/providers/openclaw.png" alt="OpenClaw" width="80"/>
   </p>
-  
   [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
   [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
   [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
-  
-  [🚀 เริ่มต้นใช้งาน](#-quick-start) • [💡 ฟีเจอร์](#-key-features) • [📖 การตั้งค่า](#-setup-guide) • [🌐 เว็บไซต์](https://n4tzz.com)
+  [🚀 เริ่มต้นใช้งาน](#-quick-start) • [💡 ฟีเจอร์](#-key-features) • [📖 การตั้งค่า](#-setup-guide) • [🌐 เว็บไซต์](https://n4tzzofficial.my.id/nzrouter)
 </div>
 
 ---
@@ -48,7 +42,7 @@
 │  Your CLI   │  (Claude Code, Codex, OpenClaw, Cursor, Cline...)
 │   Tool      │
 └──────┬──────┘
-       │ http://localhost:20128/v1
+       │ http://localhost:20514/v1
        ↓
 ┌─────────────────────────────────────────────┐
 │           N4tzzOfficial (Smart Router)            │
@@ -74,11 +68,11 @@
 **1. ติดตั้งแบบ Global:**
 
 ```bash
-npm install -g N4tzzOfficial
-N4tzzOfficial
+npm install -g nzrouter
+nzrouter
 ```
 
-🎉 เปิดแดชบอร์ดที่ `http://localhost:20128`
+🎉 เปิดแดชบอร์ดที่ `http://localhost:20514`
 
 **2. เชื่อมต่อผู้ให้บริการฟรี (ไม่ต้องสมัคร):**
 
@@ -88,7 +82,7 @@ N4tzzOfficial
 
 ```
 ตั้งค่า Claude Code/Codex/OpenClaw/Cursor/Cline:
-  Endpoint: http://localhost:20128/v1
+  Endpoint: http://localhost:20514/v1
   API Key: [คัดลอกจากแดชบอร์ด]
   Model: kr/claude-sonnet-4.5
 ```
@@ -97,24 +91,24 @@ N4tzzOfficial
 
 **วิธีอื่น: รันจากซอร์สโค้ด (เก็บรักษาไว้ใน repo นี้):**
 
-Repo นี้เป็น private package (`NzRouter-app`) ดังนั้นการรันจากซอร์ส/Docker คือเส้นทางพัฒนาท้องถิ่นที่คาดไว้
+Repo นี้เป็น private package (`nzrouter-app`) ดังนั้นการรันจากซอร์ส/Docker คือเส้นทางพัฒนาท้องถิ่นที่คาดไว้
 
 ```bash
 cp .env.example .env
 npm install
-PORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev
+PORT=20514 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run dev
 ```
 
 โหมด Production:
 
 ```bash
 npm run build
-PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run start
+PORT=20514 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run start
 ```
 
 URL ค่าเริ่มต้น:
-- แดชบอร์ด: `http://localhost:20128/dashboard`
-- OpenAI-compatible API: `http://localhost:20128/v1`
+- แดชบอร์ด: `http://localhost:20514/dashboard`
+- OpenAI-compatible API: `http://localhost:20514/v1`
 
 ---
 
@@ -645,7 +639,7 @@ N4tzzOfficial แค่เลือกเส้นทางคำขอของ
 - ใช้ชั้นฟรี (Kiro, OpenCode Free, Vertex) สำหรับงานที่ไม่สำคัญ
 
 **แดชบอร์ดเปิดผิดพอร์ต**
-- ตั้ง `PORT=20128` และ `NEXT_PUBLIC_BASE_URL=http://localhost:20128`
+- ตั้ง `PORT=20514` และ `NEXT_PUBLIC_BASE_URL=http://localhost:20514`
 
 **ล็อกอินครั้งแรกไม่ทำงาน**
 - ตรวจสอบ `INITIAL_PASSWORD` ใน `.env`
@@ -672,7 +666,7 @@ N4tzzOfficial แค่เลือกเส้นทางคำขอของ
 ### Chat Completions
 
 ```bash
-POST http://localhost:20128/v1/chat/completions
+POST http://localhost:20514/v1/chat/completions
 Authorization: Bearer your-api-key
 Content-Type: application/json
 
@@ -688,7 +682,7 @@ Content-Type: application/json
 ### List Models
 
 ```bash
-GET http://localhost:20128/v1/models
+GET http://localhost:20514/v1/models
 Authorization: Bearer your-api-key
 
 → คืนค่าโมเดลทั้งหมด + combo ในรูปแบบ OpenAI
@@ -698,7 +692,7 @@ Authorization: Bearer your-api-key
 
 ## 📧 สนับสนุน
 
-- **เว็บไซต์**: [n4tzz.com](https://n4tzz.com)
+- **เว็บไซต์**: [n4tzzofficial.my.id/nzrouter](https://n4tzzofficial.my.id/nzrouter)
 - **GitHub**: [github.com/N4tzzOfficial/NzRouter](https://github.com/N4tzzOfficial/NzRouter)
 - **Issues**: [github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
@@ -721,6 +715,5 @@ MIT License - ดู [LICENSE](../LICENSE) สำหรับรายละเ�
 <div align="center">
   <sub>สร้างด้วย ❤️ สำหรับนักพัฒนาที่เขียนโค้ด 24/7</sub>
 </div>
-
 
 

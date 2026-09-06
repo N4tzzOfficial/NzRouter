@@ -5,7 +5,7 @@ Integrate N4tzzOfficial with Roo AI Assistant to access multiple AI models throu
 ## Prerequisites
 
 - Roo AI Assistant installed
-- N4tzzOfficial API key from [dashboard](https://n4tzz.com/dashboard)
+- N4tzzOfficial API key from [dashboard](https://n4tzzofficial.my.id/nzrouter/dashboard)
 - N4tzzOfficial running (local or cloud)
 
 ## Configuration Steps
@@ -22,13 +22,13 @@ Launch Roo AI Assistant and open the settings panel.
 
 **For Local N4tzzOfficial:**
 ```
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: your-api-key-from-dashboard
 ```
 
 **For Cloud N4tzzOfficial:**
 ```
-Base URL: https://n4tzz.com/v1
+Base URL: https://n4tzzofficial.my.id/nzrouter/v1
 API Key: your-api-key-from-dashboard
 ```
 
@@ -87,7 +87,7 @@ Model: cx/deepseek-reasoner
 ## Troubleshooting
 
 ### Connection Failed
-- Verify N4tzzOfficial is running: `curl http://localhost:20128/health`
+- Verify N4tzzOfficial is running: `curl http://localhost:20514/health`
 - Check API key is correct
 - Ensure Base URL includes `/v1` suffix
 

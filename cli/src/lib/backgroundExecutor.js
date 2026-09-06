@@ -204,7 +204,7 @@ class BackgroundExecutor {
       // Import dynamically to avoid circular dependency
       const cliModule = require("../cli.js");
       if (cliModule.killAllAppProcesses) {
-        await cliModule.killAllAppProcesses(20128);
+        await cliModule.killAllAppProcesses(20514);
       }
     } catch (e) {
       // Ignore

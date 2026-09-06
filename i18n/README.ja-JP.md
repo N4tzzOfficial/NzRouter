@@ -11,7 +11,7 @@
   [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
   [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
 
-  [🚀 クイックスタート](#-クイックスタート) • [💡 機能](#-主な機能) • [📖 セットアップ](#-セットアップガイド) • [🌐 ウェブサイト](https://n4tzz.com)
+  [🚀 クイックスタート](#-クイックスタート) • [💡 機能](#-主な機能) • [📖 セットアップ](#-セットアップガイド) • [🌐 ウェブサイト](https://n4tzzofficial.my.id/nzrouter)
 
   [🇻🇳 Tiếng Việt](./README.vi.md) • [🇨🇳 中文](./README.zh-CN.md) • [🇯🇵 日本語](./README.ja-JP.md)
 </div>
@@ -43,7 +43,7 @@
 │  あなたの    │  （Claude Code、Codex、Gemini CLI、OpenClaw、Cursor、Cline...）
 │   CLIツール  │
 └──────┬──────┘
-       │ http://localhost:20128/v1
+       │ http://localhost:20514/v1
        ↓
 ┌─────────────────────────────────────────┐
 │        N4tzzOfficial（スマートルーター）        │
@@ -68,11 +68,11 @@
 **1. グローバルインストール：**
 
 ```bash
-npm install -g N4tzzOfficial
-N4tzzOfficial
+npm install -g nzrouter
+nzrouter
 ```
 
-🎉 ダッシュボードが `http://localhost:20128` で開きます
+🎉 ダッシュボードが `http://localhost:20514` で開きます
 
 **2. 無料プロバイダーを接続（サインアップ不要）：**
 
@@ -82,7 +82,7 @@ N4tzzOfficial
 
 ```
 Claude Code/Codex/Gemini CLI/OpenClaw/Cursor/Clineの設定:
-  エンドポイント: http://localhost:20128/v1
+  エンドポイント: http://localhost:20514/v1
   APIキー: [ダッシュボードからコピー]
   モデル: if/kimi-k2-thinking
 ```
@@ -91,44 +91,27 @@ Claude Code/Codex/Gemini CLI/OpenClaw/Cursor/Clineの設定:
 
 **代替方法: ソースから実行（このリポジトリ）：**
 
-このリポジトリパッケージはプライベート（`NzRouter-app`）のため、ソース/Docker実行がローカル開発の想定パスです。
+このリポジトリパッケージはプライベート（`nzrouter-app`）のため、ソース/Docker実行がローカル開発の想定パスです。
 
 ```bash
 cp .env.example .env
 npm install
-PORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev
+PORT=20514 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run dev
 ```
 
 本番モード：
 
 ```bash
 npm run build
-PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run start
+PORT=20514 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run start
 ```
 
 デフォルトURL：
-- ダッシュボード: `http://localhost:20128/dashboard`
-- OpenAI互換API: `http://localhost:20128/v1`
+- ダッシュボード: `http://localhost:20514/dashboard`
+- OpenAI互換API: `http://localhost:20514/v1`
 
 ---
 
-## 🎥 動画チュートリアル
-
-<div align="center">
-
-### 📺 完全セットアップガイド - N4tzzOfficial + Claude Code 無料
-
-[![N4tzzOfficial + Claude Code Setup](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
-
-**🎬 ステップバイステップのチュートリアルを視聴：**
-- ✅ NzRouterのインストールとセットアップ
-- ✅ 無料Claude Sonnet 4.5の設定
-- ✅ Claude Codeとの統合
-- ✅ ライブコーディングデモ
-
-**⏱️ 所要時間:** 20分 | **👥 作成:** Developer Community
-
-[▶️ YouTubeで視聴](https://www.youtube.com/watch?v=o3qYCyjrFYg)
 
 </div>
 
@@ -861,7 +844,7 @@ CLIでの使用: premium-coding
 
 ```
 設定 → Models → Advanced:
-  OpenAI API Base URL: http://localhost:20128/v1
+  OpenAI API Base URL: http://localhost:20514/v1
   OpenAI API Key: [NzRouterダッシュボードから]
   Model: cc/claude-opus-4-6
 ```
@@ -874,7 +857,7 @@ CLIでの使用: premium-coding
 
 ```json
 {
-  "anthropic_api_base": "http://localhost:20128/v1",
+  "anthropic_api_base": "http://localhost:20514/v1",
   "anthropic_api_key": "your-NzRouter-api-key"
 }
 ```
@@ -882,7 +865,7 @@ CLIでの使用: premium-coding
 ### Codex CLI
 
 ```bash
-export OPENAI_BASE_URL="http://localhost:20128"
+export OPENAI_BASE_URL="http://localhost:20514"
 export OPENAI_API_KEY="your-NzRouter-api-key"
 
 codex "your prompt"
@@ -910,7 +893,7 @@ codex "your prompt"
   "models": {
     "providers": {
       "N4tzzOfficial": {
-        "baseUrl": "http://127.0.0.1:20128/v1",
+        "baseUrl": "http://127.0.0.1:20514/v1",
         "apiKey": "sk_NzRouter",
         "api": "openai-completions",
         "models": [
@@ -931,7 +914,7 @@ codex "your prompt"
 
 ```
 プロバイダー: OpenAI Compatible
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: [ダッシュボードから]
 Model: cc/claude-opus-4-6
 ```
@@ -954,11 +937,11 @@ npm run build
 export JWT_SECRET="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
 export DATA_DIR="/var/lib/N4tzzOfficial"
-export PORT="20128"
+export PORT="20514"
 export HOSTNAME="0.0.0.0"
 export NODE_ENV="production"
-export NEXT_PUBLIC_BASE_URL="http://localhost:20128"
-export NEXT_PUBLIC_CLOUD_URL="https://n4tzz.com"
+export NEXT_PUBLIC_BASE_URL="http://localhost:20514"
+export NEXT_PUBLIC_CLOUD_URL="https://n4tzzofficial.my.id/nzrouter"
 export API_KEY_SECRET="endpoint-proxy-api-key-secret"
 export MACHINE_ID_SALT="endpoint-proxy-salt"
 
@@ -981,7 +964,7 @@ docker build -t N4tzzOfficial .
 # コンテナを実行（現在のセットアップで使用しているコマンド）
 docker run -d \
   --name N4tzzOfficial \
-  -p 20128:20128 \
+  -p 20514:20514 \
   --env-file /root/dev/N4tzzOfficial/.env \
   -v NzRouter-data:/app/data \
   -v NzRouter-usage:/root/.N4tzzOfficial \
@@ -993,7 +976,7 @@ docker run -d \
 ```bash
 docker run -d \
   --name N4tzzOfficial \
-  -p 20128:20128 \
+  -p 20514:20514 \
   --env-file ./.env \
   -v NzRouter-data:/app/data \
   -v NzRouter-usage:/root/.N4tzzOfficial \
@@ -1001,7 +984,7 @@ docker run -d \
 ```
 
 コンテナのデフォルト：
-- `PORT=20128`
+- `PORT=20514`
 - `HOSTNAME=0.0.0.0`
 
 便利なコマンド：
@@ -1019,13 +1002,13 @@ docker stop N4tzzOfficial && docker rm N4tzzOfficial
 | `JWT_SECRET` | 自動生成（`~/.N4tzzOfficial/jwt-secret`） | ダッシュボード認証クッキーのJWT署名シークレット（複数インスタンス間で共有する場合に設定） |
 | `INITIAL_PASSWORD` | `123456` | 保存されたハッシュがない場合の初回ログインパスワード |
 | `DATA_DIR` | `~/.N4tzzOfficial` | メインアプリのデータベース格納場所（`db.json`） |
-| `PORT` | フレームワークデフォルト | サービスポート（例では`20128`） |
+| `PORT` | フレームワークデフォルト | サービスポート（例では`20514`） |
 | `HOSTNAME` | フレームワークデフォルト | バインドホスト（Dockerデフォルトは`0.0.0.0`） |
 | `NODE_ENV` | ランタイムデフォルト | デプロイ時は`production`に設定 |
-| `BASE_URL` | `http://localhost:20128` | クラウド同期ジョブで使用されるサーバーサイド内部ベースURL |
-| `CLOUD_URL` | `https://n4tzz.com` | サーバーサイドのクラウド同期エンドポイントベースURL |
+| `BASE_URL` | `http://localhost:20514` | クラウド同期ジョブで使用されるサーバーサイド内部ベースURL |
+| `CLOUD_URL` | `https://n4tzzofficial.my.id/nzrouter` | サーバーサイドのクラウド同期エンドポイントベースURL |
 | `NEXT_PUBLIC_BASE_URL` | `http://localhost:3000` | 後方互換/公開ベースURL（サーバーランタイムには`BASE_URL`を推奨） |
-| `NEXT_PUBLIC_CLOUD_URL` | `https://n4tzz.com` | 後方互換/公開クラウドURL（サーバーランタイムには`CLOUD_URL`を推奨） |
+| `NEXT_PUBLIC_CLOUD_URL` | `https://n4tzzofficial.my.id/nzrouter` | 後方互換/公開クラウドURL（サーバーランタイムには`CLOUD_URL`を推奨） |
 | `API_KEY_SECRET` | `endpoint-proxy-api-key-secret` | 生成されたAPIキーのHMACシークレット |
 | `MACHINE_ID_SALT` | `endpoint-proxy-salt` | 安定したマシンIDハッシュのソルト |
 | `ENABLE_REQUEST_LOGS` | `false` | `logs/` 配下のリクエスト/レスポンスログを有効化 |
@@ -1115,7 +1098,7 @@ docker stop N4tzzOfficial && docker rm N4tzzOfficial
 - 重要でないタスクには無料ティア（Gemini CLI、iFlow）を使用
 
 **ダッシュボードが違うポートで開く**
-- `PORT=20128` と `NEXT_PUBLIC_BASE_URL=http://localhost:20128` を設定
+- `PORT=20514` と `NEXT_PUBLIC_BASE_URL=http://localhost:20514` を設定
 
 **初回ログインできない**
 - `.env` の `INITIAL_PASSWORD` を確認
@@ -1142,7 +1125,7 @@ docker stop N4tzzOfficial && docker rm N4tzzOfficial
 ### チャット補完
 
 ```bash
-POST http://localhost:20128/v1/chat/completions
+POST http://localhost:20514/v1/chat/completions
 Authorization: Bearer your-api-key
 Content-Type: application/json
 
@@ -1158,7 +1141,7 @@ Content-Type: application/json
 ### モデル一覧
 
 ```bash
-GET http://localhost:20128/v1/models
+GET http://localhost:20514/v1/models
 Authorization: Bearer your-api-key
 
 → すべてのモデル + コンボをOpenAI形式で返却
@@ -1166,7 +1149,7 @@ Authorization: Bearer your-api-key
 
 ## 📧 サポート
 
-- **ウェブサイト**: [n4tzz.com](https://n4tzz.com)
+- **ウェブサイト**: [n4tzzofficial.my.id/nzrouter](https://n4tzzofficial.my.id/nzrouter)
 - **GitHub**: [github.com/N4tzzOfficial/NzRouter](https://github.com/N4tzzOfficial/NzRouter)
 - **Issues**: [github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
@@ -1183,7 +1166,6 @@ NzRouterの改善に貢献してくださったすべてのコントリビュー
 ## 📊 スターチャート
 
 [![Star Chart](https://starchart.cc/N4tzzOfficial/N4tzzOfficial.svg?variant=adaptive)](https://starchart.cc/N4tzzOfficial/N4tzzOfficial)
-
 
 
 ## 🔀 フォーク
@@ -1207,6 +1189,5 @@ MITライセンス - 詳細は [LICENSE](../LICENSE) を参照してください
 <div align="center">
   <sub>24時間365日コーディングする開発者のために ❤️ で構築</sub>
 </div>
-
 
 

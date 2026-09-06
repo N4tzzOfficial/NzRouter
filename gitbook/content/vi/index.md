@@ -116,7 +116,7 @@ N4tzzOfficial
 **Dùng trong CLI tool:**
 
 ```
-Endpoint: http://localhost:20128/v1
+Endpoint: http://localhost:20514/v1
 API Key: [from dashboard]
 Model: cc/claude-opus-4-5-20251101
 ```
@@ -143,7 +143,7 @@ Model: cc/claude-opus-4-5-20251101
 
 ### Cho Mobile/Remote Coding
 
-- Dùng cloud deployment (https://n4tzz.com)
+- Dùng cloud deployment (https://n4tzzofficial.my.id/nzrouter)
 - Truy cập từ iPad, điện thoại, mọi nơi
 - Không bị giới hạn localhost
 - Mạng Cloudflare edge (300+ vị trí)

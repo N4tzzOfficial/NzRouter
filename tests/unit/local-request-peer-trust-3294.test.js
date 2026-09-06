@@ -105,7 +105,7 @@ describe("peer header trust", () => {
 
   it("keeps serving a genuinely local request stamped by the wrapper", async () => {
     const response = await proxy(request("/api/v1/models", {
-      host: "localhost:20128",
+      host: "localhost:20514",
       "x-9r-real-ip": "127.0.0.1",
       "x-9r-peer-token": PEER_TOKEN,
     }));
@@ -120,7 +120,7 @@ describe("peer header trust", () => {
     "treats %s as a loopback peer",
     async (peerIp) => {
       const response = await proxy(request("/api/v1/models", {
-        host: "localhost:20128",
+        host: "localhost:20514",
         "x-9r-real-ip": peerIp,
         "x-9r-peer-token": PEER_TOKEN,
       }));
@@ -133,7 +133,7 @@ describe("peer header trust", () => {
     "refuses %s as a peer",
     async (peerIp) => {
       const response = await proxy(request("/api/v1/models", {
-        host: "localhost:20128",
+        host: "localhost:20514",
         "x-9r-real-ip": peerIp,
         "x-9r-peer-token": PEER_TOKEN,
       }));
@@ -144,7 +144,7 @@ describe("peer header trust", () => {
 
   it("still refuses a stamped non-loopback peer IP", async () => {
     const response = await proxy(request("/api/v1/models", {
-      host: "localhost:20128",
+      host: "localhost:20514",
       "x-9r-real-ip": "10.204.111.34",
       "x-9r-peer-token": PEER_TOKEN,
     }));

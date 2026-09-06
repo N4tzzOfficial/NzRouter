@@ -5,7 +5,7 @@ Integra N4tzzOfficial con Roo AI Assistant para acceder a múltiples modelos de 
 ## Requisitos previos
 
 - Roo AI Assistant instalado
-- API key de N4tzzOfficial desde el [dashboard](https://n4tzz.com/dashboard)
+- API key de N4tzzOfficial desde el [dashboard](https://n4tzzofficial.my.id/nzrouter/dashboard)
 - N4tzzOfficial ejecutándose (local o en la nube)
 
 ## Pasos de configuración
@@ -22,13 +22,13 @@ Inicia Roo AI Assistant y abre el panel de configuración.
 
 **Para N4tzzOfficial local:**
 ```
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: your-api-key-from-dashboard
 ```
 
 **Para N4tzzOfficial en la nube:**
 ```
-Base URL: https://n4tzz.com/v1
+Base URL: https://n4tzzofficial.my.id/nzrouter/v1
 API Key: your-api-key-from-dashboard
 ```
 
@@ -87,7 +87,7 @@ Modelo: cx/deepseek-reasoner
 ## Solución de problemas
 
 ### Connection Failed
-- Verifica que N4tzzOfficial esté corriendo: `curl http://localhost:20128/health`
+- Verifica que N4tzzOfficial esté corriendo: `curl http://localhost:20514/health`
 - Verifica que la API key sea correcta
 - Asegúrate de que la Base URL incluya el sufijo `/v1`
 

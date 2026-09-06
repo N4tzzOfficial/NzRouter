@@ -236,7 +236,7 @@ export const DOCS_CONFIG = {
   title: "N4tzzOfficial Documentation",
   description: "Smart AI model router - Maximize subscriptions, minimize costs",
   logo: "N4tzzOfficial",
-  appUrl: "https://n4tzz.com",
+  appUrl: "https://n4tzzofficial.my.id/nzrouter/",
   githubUrl: "https://github.com/N4tzzOfficial/NzRouter",
   navigation: getNavigation(DEFAULT_LANG)
 };

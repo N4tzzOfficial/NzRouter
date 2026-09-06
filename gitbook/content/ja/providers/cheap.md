@@ -254,7 +254,7 @@ Model: kimi/kimi-latest
 
 ```
 Settings → Models → Advanced:
-  OpenAI API Base URL: http://localhost:20128/v1
+  OpenAI API Base URL: http://localhost:20514/v1
   OpenAI API Key: [NzRouterダッシュボードから取得]
   Model: glm/glm-4.7
 ```

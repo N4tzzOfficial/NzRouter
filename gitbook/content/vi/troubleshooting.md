@@ -132,11 +132,11 @@ Các vấn đề và giải pháp phổ biến khi dùng N4tzzOfficial.
 
 ## Connection Refused
 
-**Vấn đề:** Lỗi "ECONNREFUSED" hoặc "Cannot connect to localhost:20128".
+**Vấn đề:** Lỗi "ECONNREFUSED" hoặc "Cannot connect to localhost:20514".
 
 **Nguyên nhân:**
 - N4tzzOfficial không chạy
-- Port 20128 bị chặn
+- Port 20514 bị chặn
 - Firewall chặn kết nối
 
 **Giải pháp:**
@@ -147,24 +147,24 @@ Các vấn đề và giải pháp phổ biến khi dùng N4tzzOfficial.
    ```
    Dashboard sẽ mở tại http://localhost:3000
 
-2. **Xác minh port 20128:**
+2. **Xác minh port 20514:**
    ```bash
    # Check if port is listening
-   lsof -i :20128
+   lsof -i :20514
    
    # Or on Windows
-   netstat -ano | findstr :20128
+   netstat -ano | findstr :20514
    ```
 
 3. **Kiểm tra firewall:**
    - macOS: System Settings → Network → Firewall
    - Windows: Windows Defender Firewall → Allow app
-   - Linux: `sudo ufw allow 20128`
+   - Linux: `sudo ufw allow 20514`
 
 4. **Dùng cloud endpoint:**
    Nếu localhost không hoạt động (ví dụ: Cursor IDE):
    ```
-   Endpoint: https://n4tzz.com/v1
+   Endpoint: https://n4tzzofficial.my.id/nzrouter/v1
    ```
 
 ---
@@ -243,7 +243,7 @@ Các vấn đề và giải pháp phổ biến khi dùng N4tzzOfficial.
 
 3. **Liệt kê model khả dụng:**
    ```bash
-   curl http://localhost:20128/v1/models \
+   curl http://localhost:20514/v1/models \
      -H "Authorization: Bearer your-api-key"
    ```
 
@@ -338,7 +338,7 @@ Các vấn đề và giải pháp phổ biến khi dùng N4tzzOfficial.
 
 4. **Test API key:**
    ```bash
-   curl http://localhost:20128/v1/models \
+   curl http://localhost:20514/v1/models \
      -H "Authorization: Bearer 9r_your_key"
    ```
 
@@ -347,7 +347,7 @@ Các vấn đề và giải pháp phổ biến khi dùng N4tzzOfficial.
 ## Cần trợ giúp thêm?
 
 - **GitHub Issues:** [github.com/N4tzzOfficial/N4tzzOfficial/issues](https://github.com/N4tzzOfficial/N4tzzOfficial/issues)
-- **Documentation:** [n4tzz.com/docs](https://n4tzz.com/docs)
+- **Documentation:** [n4tzzofficial.my.id/nzrouter/docs](https://n4tzzofficial.my.id/nzrouter/docs)
 - **FAQ:** [faq.md](faq.md)
 
 

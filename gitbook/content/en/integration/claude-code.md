@@ -16,7 +16,7 @@ Set the following environment variables in your shell configuration file (`~/.ba
 
 ```bash
 # Base URL for N4tzzOfficial
-export ANTHROPIC_BASE_URL="http://localhost:20128/v1"
+export ANTHROPIC_BASE_URL="http://localhost:20514/v1"
 
 # Optional: Set default models for aliases
 export ANTHROPIC_DEFAULT_OPUS_MODEL="cc/claude-opus-4-5-20251101"
@@ -75,7 +75,7 @@ Claude Code stores its configuration in `~/.claude/settings.json`. You can manua
 
 ```json
 {
-  "baseUrl": "http://localhost:20128/v1",
+  "baseUrl": "http://localhost:20514/v1",
   "defaultModel": "sonnet"
 }
 ```
@@ -86,9 +86,9 @@ Claude Code stores its configuration in `~/.claude/settings.json`. You can manua
 
 If you encounter connection errors:
 
-1. Verify N4tzzOfficial is running: `curl http://localhost:20128/health`
+1. Verify N4tzzOfficial is running: `curl http://localhost:20514/health`
 2. Check environment variables are set correctly
-3. Ensure no firewall is blocking port 20128
+3. Ensure no firewall is blocking port 20514
 
 ### Model Not Found
 
@@ -103,7 +103,7 @@ If you get "model not found" errors:
 To use N4tzzOfficial cloud endpoint instead of localhost:
 
 ```bash
-export ANTHROPIC_BASE_URL="https://n4tzz.com"
+export ANTHROPIC_BASE_URL="https://n4tzzofficial.my.id/nzrouter"
 ```
 
 Make sure you have configured your API key in the N4tzzOfficial cloud dashboard.

@@ -16,7 +16,7 @@ Set the following environment variables in your shell configuration file (`~/.ba
 
 ```bash
 # Base URL for N4tzzOfficial
-export OPENAI_BASE_URL="http://localhost:20128/v1"
+export OPENAI_BASE_URL="http://localhost:20514/v1"
 
 # API Key from N4tzzOfficial dashboard
 export OPENAI_API_KEY="your-N4tzzOfficial-api-key"
@@ -76,7 +76,7 @@ You can also configure Codex CLI using a configuration file. Create or edit `~/.
 
 ```json
 {
-  "baseUrl": "http://localhost:20128/v1",
+  "baseUrl": "http://localhost:20514/v1",
   "apiKey": "your-N4tzzOfficial-api-key",
   "defaultModel": "cx/gpt-5.2-codex"
 }
@@ -96,9 +96,9 @@ If you encounter authentication errors:
 
 If you encounter connection errors:
 
-1. Verify N4tzzOfficial is running: `curl http://localhost:20128/health`
+1. Verify N4tzzOfficial is running: `curl http://localhost:20514/health`
 2. Check environment variables are set correctly
-3. Ensure no firewall is blocking port 20128
+3. Ensure no firewall is blocking port 20514
 
 ### Model Not Available
 
@@ -113,7 +113,7 @@ If you get "model not available" errors:
 To use N4tzzOfficial cloud endpoint instead of localhost:
 
 ```bash
-export OPENAI_BASE_URL="https://n4tzz.com"
+export OPENAI_BASE_URL="https://n4tzzofficial.my.id/nzrouter"
 ```
 
 Make sure you have configured your API key in the N4tzzOfficial cloud dashboard.

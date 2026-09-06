@@ -5,7 +5,7 @@ NzRouterをRoo AIアシスタントと統合し、統一インターフェイス
 ## 前提条件
 
 - Roo AIアシスタントがインストール済み
-- [ダッシュボード](https://n4tzz.com/dashboard)からのNzRouter APIキー
+- [ダッシュボード](https://n4tzzofficial.my.id/nzrouter/dashboard)からのNzRouter APIキー
 - NzRouterが動作中 (ローカルまたはクラウド)
 
 ## 設定手順
@@ -22,13 +22,13 @@ Roo AIアシスタントを起動し、設定パネルを開きます。
 
 **ローカルNzRouter用:**
 ```
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: your-api-key-from-dashboard
 ```
 
 **クラウドNzRouter用:**
 ```
-Base URL: https://n4tzz.com/v1
+Base URL: https://n4tzzofficial.my.id/nzrouter/v1
 API Key: your-api-key-from-dashboard
 ```
 
@@ -87,7 +87,7 @@ Model: cx/deepseek-reasoner
 ## トラブルシューティング
 
 ### 接続失敗
-- NzRouterが動作中か確認: `curl http://localhost:20128/health`
+- NzRouterが動作中か確認: `curl http://localhost:20514/health`
 - APIキーが正しいか確認
 - Base URLに `/v1` サフィックスが含まれていることを確認
 

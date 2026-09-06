@@ -4,14 +4,14 @@ services:
     container_name: nzrouter
     restart: always
     ports:
-      - "20128:20128"
+      - "20514:20514"
     volumes:
       - nzrouter-data:/app/data
     env_file:
       - .env
     environment:
       DATA_DIR: /app/data
-      PORT: "20128"
+      PORT: "20514"
       HOSTNAME: "0.0.0.0"
       NODE_ENV: production
       HEADROOM_URL: http://headroom:8787

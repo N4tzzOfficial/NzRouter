@@ -1,17 +1,12 @@
 <div align="center">
   <img src="../images/NzRouter.png?1" alt="Bảng điều khiển N4tzzOfficial" width="800"/>
-  
   # N4tzzOfficial - Free AI Router & Token Saver
-  
   **Không bao giờ ngừng code. Tiết kiệm 20-40% token với RTK + tự động dự phòng sang các mô hình AI MIỄN PHÍ & giá rẻ.**
-  
   **Kết nối tất cả công cụ AI Code (Claude Code, Codex, Cursor, Cline, Copilot, Antigravity...) tới 40+ Nhà cung cấp AI & 100+ Mô hình.**
-  
   [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
   [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
   [![License](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
-  
-  [🚀 Bắt đầu nhanh](#-quick-start) • [💡 Tính năng](#-key-features) • [📖 Cài đặt](#-setup-guide) • [🌐 Website](https://n4tzz.com)
+  [🚀 Bắt đầu nhanh](#-quick-start) • [💡 Tính năng](#-key-features) • [📖 Cài đặt](#-setup-guide) • [🌐 Website](https://n4tzzofficial.my.id/nzrouter)
 </div>
 
 ---
@@ -43,7 +38,7 @@
 │  Công cụ    │  (Claude Code, Codex, OpenClaw, Cursor, Cline, Antigravity...)
 │  CLI AI     │
 └──────┬──────┘
-       │ http://localhost:20128/v1
+       │ http://localhost:20514/v1
        ↓
 ┌─────────────────────────────────────────────┐
 │           N4tzzOfficial (Smart Router)            │
@@ -69,11 +64,11 @@ Kết quả: Không bao giờ ngừng code, chi phí tối thiểu + tiết ki�
 **1. Cài đặt toàn cục:**
 
 ```bash
-npm install -g N4tzzOfficial
-N4tzzOfficial
+npm install -g nzrouter
+nzrouter
 ```
 
-🎉 Bảng điều khiển (Dashboard) sẽ tự động mở tại `http://localhost:20128`
+🎉 Bảng điều khiển (Dashboard) sẽ tự động mở tại `http://localhost:20514`
 
 **2. Kết nối nhà cung cấp MIỄN PHÍ (không cần đăng ký):**
 
@@ -83,7 +78,7 @@ Bảng điều khiển → Providers → Kết nối **Kiro AI** (~50 credits/th
 
 ```
 Cài đặt Claude Code/Codex/OpenClaw/Cursor/Cline/Antigravity:
-  Endpoint: http://localhost:20128/v1
+  Endpoint: http://localhost:20514/v1
   API Key: [sao chép từ bảng điều khiển]
   Model: kr/claude-sonnet-4.5
 ```
@@ -92,49 +87,28 @@ Cài đặt Claude Code/Codex/OpenClaw/Cursor/Cline/Antigravity:
 
 **Phương án khác: chạy từ mã nguồn (repository này):**
 
-Gói kho lưu trữ này là riêng tư (`NzRouter-app`), vì vậy việc chạy từ nguồn/Docker là cách phát triển cục bộ mặc định.
+Gói kho lưu trữ này là riêng tư (`nzrouter-app`), vì vậy việc chạy từ nguồn/Docker là cách phát triển cục bộ mặc định.
 
 ```bash
 cp .env.example .env
 npm install
-PORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev
+PORT=20514 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run dev
 ```
 
 Chế độ Production:
 
 ```bash
 npm run build
-PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run start
+PORT=20514 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run start
 ```
 
 URL mặc định:
-- Bảng điều khiển Dashboard: `http://localhost:20128/dashboard`
-- API tương thích OpenAI: `http://localhost:20128/v1`
+- Bảng điều khiển Dashboard: `http://localhost:20514/dashboard`
+- API tương thích OpenAI: `http://localhost:20514/v1`
 
 ---
 
 
-## 🎥 Hướng dẫn Video
-
-<div align="center">
-  
-### 📺 Hướng dẫn thiết lập hoàn chỉnh - N4tzzOfficial + Claude Code MIỄN PHÍ
-  
-[![Thiết lập N4tzzOfficial + Claude Code](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
-
-**🎬 Xem hướng dẫn từng đầy đủ:**
-- ✅ Cài đặt & thiết lập N4tzzOfficial
-- ✅ Cấu hình Claude Sonnet 4.5 MIỄN PHÍ
-- ✅ Tích hợp Claude Code
-- ✅ Thử nghiệm code trực tiếp
-
-**⏱️ Thời lượng:** 20 phút | **👥 Bởi:** Cộng đồng Nhà phát triển
-
-[▶️ Xem trên YouTube](https://www.youtube.com/watch?v=o3qYCyjrFYg)
-
-</div>
-
----
 
 ## 🛠️ Các công cụ CLI được hỗ trợ
 
@@ -863,7 +837,7 @@ Chi phí: $0 mãi mãi!
 
 ```
 Settings → Models → Advanced:
-  OpenAI API Base URL: http://localhost:20128/v1
+  OpenAI API Base URL: http://localhost:20514/v1
   OpenAI API Key: [từ bảng điều khiển N4tzzOfficial]
   Model: cc/claude-opus-4-6
 ``Hoặc sử dụng combo: `premium-coding`
@@ -874,7 +848,7 @@ Chỉnh sửa `~/.claude/config.json`:
 
 ```json
 {
-  "anthropic_api_base": "http://localhost:20128/v1",
+  "anthropic_api_base": "http://localhost:20514/v1",
   "anthropic_api_key": "your-NzRouter-api-key"
 }
 ```
@@ -882,7 +856,7 @@ Chỉnh sửa `~/.claude/config.json`:
 ### Codex CLI
 
 ```bash
-export OPENAI_BASE_URL="http://localhost:20128"
+export OPENAI_BASE_URL="http://localhost:20514"
 export OPENAI_API_KEY="your-NzRouter-api-key"
 
 codex "prompt của bạn"
@@ -910,7 +884,7 @@ Bảng điều khiển → CLI Tools → OpenClaw → Chọn Mô hình → Áp d
   "models": {
     "providers": {
       "N4tzzOfficial": {
-        "baseUrl": "://127.0.0.1:20128/v1",
+        "baseUrl": "://127.0.0.1:20514/v1",
         "apiKey": "sk_NzRouter",
         "api": "openai-completions",
         "models": [
@@ -931,7 +905,7 @@ Bảng điều khiển → CLI Tools → OpenClaw → Chọn Mô hình → Áp d
 
 ```
 Provider: OpenAI Compatible
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: [từ bảng điều khiển]
 Model: cc/claude-opus-4-6
 ```
@@ -954,11 +928,11 @@ npm run build
 export JWT="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
 export DATA_DIR="/var/lib/N4tzzOfficial"
-export PORT="20128"
+export PORT="20514"
 export HOSTNAME="0.0.0.0"
 export NODE_ENV="production"
-export NEXT_PUBLIC_BASE_URL="http://localhost:20128"
-export NEXT_PUBLIC_CLOUD_URL="https://n4tzz.com"
+export NEXT_PUBLIC_BASE_URL="http://localhost:20514"
+export NEXT_PUBLIC_CLOUD_URL="https://n4tzzofficial.my.id/nzrouter"
 export API_KEY_SECRET="endpoint-proxy-api-key-secret"
 export MACHINE_ID_SALT="endpoint-proxy-salt"
 
@@ -981,7 +955,7 @@ docker build -t N4tzzOfficial .
 # Chạy container (lệnh được sử dụng trong thiết lập hiện tại)
 docker run -d \
   --name N4tzzOfficial \
-  -p 20128:20128 \
+  -p 20514:20514 \
   --env-file /root/dev/N4tzzOfficial/.env \
   -v NzRouter-data:/app/data \
   -v NzRouter-usage:/root/.N4tzzOfficial \
@@ -993,7 +967,7 @@ Lệnh di động (nếu bạn đã ở gốc kho lưu trữ):
 ```bash
 docker run -d \
   --name N4tzzOfficial \
-  -p 20128:20128 \
+  -p 20514:20514 \
   --env-file ./.env \
   -v NzRouter-data:/app/data \
   -v NzRouter-usage:/root/.N4tzzOfficial \
@@ -1001,7 +975,7 @@ docker run -d \
 ```
 
 Mặc định container:
-- `PORT=20128`
+- `PORT=20514`
 - `HOSTNAME=0.0.0.0`
 
 Các lệnh hữu ích:
@@ -1019,13 +993,13 @@ docker stop N4tzzOfficial && docker rm N4tzzOfficial
 | `JWT_SECRET` | Tự động sinh (`~/.N4tzzOfficial/jwt-secret`) | Bí mật ký JWT cho cookie xác thực bảng điều khiển (đặt để chia sẻ giữa nhiều instance) |
 | `INITIAL_PASSWORD` | `123456` | Mật khẩu đăng nhập đầu tiên khi không có hash đã lưu tồn tại |
 | `DATA_DIR` | `~/.N4tzzOfficial` |ị trí cơ sở dữ liệu ứng dụng chính (`db.json`) |
-| `PORT` | framework default | Cổng dịch vụ (`20128` trong các ví dụ) |
+| `PORT` | framework default | Cổng dịch vụ (`20514` trong các ví dụ) |
 | `HOSTNAME` | framework default | Bind host (Docker mặc định là `0.0.0.0`) |
 | `NODE_ENV` | runtime default | Đặt `production` để triển khai |
-| `BASE_URL` | `http://localhost:20128` | URL cơ sở nội bộ phía máy chủ được sử dụng bởi các tác vụ đồng bộ đám mây |
-| `CLOUD_URL` | `https://n4tzz.com` | URL cơ sở endpoint đồng bộ đám mây phía máy chủ |
+| `BASE_URL` | `http://localhost:20514` | URL cơ sở nội bộ phía máy chủ được sử dụng bởi các tác vụ đồng bộ đám mây |
+| `CLOUD_URL` | `https://n4tzzofficial.my.id/nzrouter` | URL cơ sở endpoint đồng bộ đám mây phía máy chủ |
 | `NEXT_PUBLIC_BASE_URL` | `http://localhost:3000` | URL cơ sở tương thích ngược/công khai (ưu tiên `BASE_URL` cho runtime máy chủ) |
-| `NEXT_PUBLIC_CLOUD_URL` | `https://n4tzz.com` | URL đám mây tương thích ngược/công khai (ưu tiên `CLOUD_URL` cho runtime máy chủ) |
+| `NEXT_PUBLIC_CLOUD_URL` | `https://n4tzzofficial.my.id/nzrouter` | URL đám mây tương thích ngược/công khai (ưu tiên `CLOUD_URL` cho runtime máy chủ) |
 | `API_KEY_SECRET` | `endpoint-proxy-api-key-secret` | B mật HMAC cho các API key được tạo |
 | `MACHINE_ID_SALT` | `endpoint-proxy-salt` | Salt cho việc băm ID máy ổn định |
 | `ENABLE_REQUEST_LOGS` | `false` | Bật log request/response dưới `logs/` |
@@ -1115,15 +1089,15 @@ Ghi chú:
 - Sử dụng tầng miễn phí (Gemini CLI, iFlow) cho các tác vụ không quan trọng
 
 **Bảng điều khiển mở sai cổng**
-- Đặt `PORT=20128` và `NEXT_PUBLIC_BASE_URL=http://localhost:20128`
+- Đặt `PORT=20514` và `NEXT_PUBLIC_BASE_URL=http://localhost:20514`
 
 **Lỗi đồng bộ đám mây**
-- Xác minh `BASE_URL` trỏ đến phiên bản đang chạy của bạn (ví dụ: `http://localhost:20128`)
-- Xác minh `CLOUD_URL` trỏ đến endpoint đám mây dự kiến của bạn (ví dụ: `https://n4tzz.com`)
+- Xác minh `BASE_URL` trỏ đến phiên bản đang chạy của bạn (ví dụ: `http://localhost:20514`)
+- Xác minh `CLOUD_URL` trỏ đến endpoint đám mây dự kiến của bạn (ví dụ: `https://n4tzzofficial.my.id/nzrouter`)
 - Giữ các giá trị `NEXT_PUBLIC_*` phù hợp với giá trị phía máy chủ khi có thể.
 
 **Endpoint đám mây `stream=false` trả về 500 (`Unexpected token 'd'...`)**
-- Triệu chứng thường xuất hiện trên endpoint đám mây công khai (`https://n4tzz.com/v1`) cho các lệnh gọi không phát trực tiếp (non-streaming).
+- Triệu chứng thường xuất hiện trên endpoint đám mây công khai (`https://n4tzzofficial.my.id/nzrouter/v1`) cho các lệnh gọi không phát trực tiếp (non-streaming).
 - Nguyên nhân gốc rễ: upstream trả về payload SSE (`data: ...`) trong khi client mong đợi JSON.
 -ải pháp thay thế: sử dụng `stream=true` cho các lệnh gọi trực tiếp đến đám mây.
 - Runtime N4tzzOfficial cục bộ bao gồm dự phòng SSE→JSON cho các lệnh gọi không phát trực tiếp khi upstream trả về `text/event-stream`.
@@ -1157,7 +1131,7 @@ Ghi chú:
 ### Chat Completions
 
 ```bash
-POST http://localhost:20128/v1/chat/completions
+POST http://localhost:20514/v1/chat/completions
 Authorization: Bearer your-api-key
 Content-Type: application/json
 
@@ -1173,7 +1147,7 @@ Content-Type: application/json
 ### Liệt kê Mô hình
 
 ```bash
-GET http://localhost:20128/v1/models
+GET http://localhost:20514/v1/models
 Authorization: Bearer your-api-key
 
 → Trả về tất cả các mô hình + combo ở định dạng OpenAI
@@ -1197,7 +1171,7 @@ Authorization: Bearer your-api-key
 - `tester/security/test-docker-hardening.sh`
   - Build image Docker và xác thực các kiểm tra hardening (`/api/cloud/auth` auth guard, `REQUIRE_API_KEY`, hành vi cookie xác thực bảo).
 - `tester/security/test-cloud-openai-compatible.sh`
-  - Gửi một yêu cầu tương thích OpenAI trực tiếp đến endpoint đám mây (`https://n4tzz.com/v1/chat/completions`) với mô hình/key được cung cấp.
+  - Gửi một yêu cầu tương thích OpenAI trực tiếp đến endpoint đám mây (`https://n4tzzofficial.my.id/nzrouter/v1/chat/completions`) với mô hình/key được cung cấp.
 - `tester/security/test-cloud-sync-and-call.sh`
   - Quy trình end-to-end: tạo key cục bộ -> bật/đồng bộ đám mây -> gọi endpoint đám mây với thử lại.
   - Bao gồm kiểm tra dự phòng với `stream=true` để phân biệt lỗi xác thực với các vấn đề phân tích phát trực tiếp.
@@ -1215,9 +1189,9 @@ OPENAI_API_KEY="your-cloud-key" bash tester/security/test-cloud-openai-compatibl
 
 Hành vi dự kiến từ việc xác thực gần đây:
 
-- cục bộ (`http://127.0.0.1:20128/v1/chat/completions`): hoạt động với `stream=false` và `stream=true`.
+- cục bộ (`http://127.0.0.1:20514/v1/chat/completions`): hoạt động với `stream=false` và `stream=true`.
 - Runtime Docker (cùng đường dẫn API được expose bởi container): các kiểm tra hardening đạt, cloud auth guard hoạt động, chế độ API key nghiêm ngặt hoạt động khi được bật.
-- Endpoint đám mây công khai (`https://n4tzz.com/v1/chat/completions`):
+- Endpoint đám mây công khai (`https://n4tzzofficial.my.id/nzrouter/v1/chat/completions`):
   - `stream=true`: dự kiến thành công (trả về các khối SSE).
   - `stream=false`: có thể thất bại với `500` + lỗi phân tích (`Unexpected token 'd'`) khi upstream trả về nội dung SSE cho đường dẫn client không phát trực tiếp.
 
@@ -1255,8 +1229,8 @@ Tài liệu tham khảo kiến trúc đầy đủ: [`docs/ARCHITECTURE.md`](../d
 
 ## 📧 Hỗ trợ
 
-- **Website**: [n4tzz.com](https://n4tzz.com)
-- **GitHub**: [github.com/decolua/9](https://github.com/N4tzzOfficial/NzRouter)
+- **Website**: [n4tzzofficial.my.id/nzrouter](https://n4tzzofficial.my.id/nzrouter)
+- **GitHub**: [github.com/N4tzzOfficial/NzRouter](https://github.com/N4tzzOfficial/NzRouter)
 - **Issues**: [github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
 ---
@@ -1306,6 +1280,5 @@ Giấy phép MIT - xem [LICENSE](../LICENSE) để biết chi tiết.
 <div align="center">
   <sub>Được xây dựng với ❤️ cho các nhà phát triển code 24/7</sub>
 </div>
-
 
 

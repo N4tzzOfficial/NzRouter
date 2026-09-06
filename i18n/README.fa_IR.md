@@ -1,21 +1,15 @@
 <div align="center">
   <img src="./images/NzRouter.png?1" alt="داشبورد N4tzzOfficial" width="800"/>
-  
   # N4tzzOfficial - مسیریاب رایگان هوش مصنوعی و ذخیره‌ساز توکن
-  
   **هرگز کدنویسی را متوقف نکنید. با RTK بین ۲۰ تا ۴۰٪ در توکن‌ها صرفه‌جویی کنید + بازگشت خودکار به مدل‌های رایگان و ارزان هوش مصنوعی.**
-  
   **همه ابزارهای کدنویسی مبتنی بر هوش مصنوعی (Claude Code، Cursor، Antigravity، Copilot، Codex، Gemini، OpenCode، Cline، OpenClaw...) را به بیش از ۴۰ ارائه‌دهنده و ۱۰۰+ مدل متصل کنید.**
-  
   [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
   [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
-  [![Docker Pulls](https://img.shields.io/docker/pulls/N4tzzOfficial/N4tzzOfficial.svg?logo=docker&label=Docker%20pulls)](https://hub.docker.com/r/N4tzzOfficial/N4tzzOfficial)
-  [![GHCR](https://img.shields.io/badge/GHCR-decolua%2FNzRouter-blue?logo=github)](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/N4tzzOfficial)
+  [![Docker Pulls](https://img.shields.io/github.com/N4tzzOfficial/NzRouter.svg?logo=docker&label=Docker%20pulls)](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/NzRouter)
+  [![GHCR](https://img.shields.io/badge/GHCR-N4tzzOfficial%2FNzRouter-blue?logo=github)](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/NzRouter)
   [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
 
-<a href="https://trendshift.io/repositories/22628" target="_blank"><img src="https://trendshift.io/api/badge/repositories/22628" alt="decolua%2FNzRouter | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-
-[🚀 شروع سریع](#-شروع-سریع) • [💡 ویژگی‌ها](#-ویژگی‌های-کلیدی) • [📖 راه‌اندازی](#-راهنمای-راه‌اندازی) • [🌐 وب‌سایت](https://n4tzz.com)
+[🚀 شروع سریع](#-شروع-سریع) • [💡 ویژگی‌ها](#-ویژگی‌های-کلیدی) • [📖 راه‌اندازی](#-راهنمای-راه‌اندازی) • [🌐 وب‌سایت](https://n4tzzofficial.my.id/nzrouter)
 
 [🇻🇳 Tiếng Việt](./i18n/README.vi.md) • [🇨🇳 中文](./i18n/README.zh-CN.md) • [🇯🇵 日本語](./i18n/README.ja-JP.md) • [🇷🇺 Русский](./i18n/README.ru.md) • [🇮🇷 فارسی](./i18n/README.fa_IR.md)
 
@@ -50,7 +44,7 @@
 │  ابزار خط   │  (Claude Code, Codex, OpenClaw, Cursor, Cline...)
 │  فرمان شما  │
 └──────┬──────┘
-       │ http://localhost:20128/v1
+       │ http://localhost:20514/v1
        ↓
 ┌─────────────────────────────────────────────┐
 │           N4tzzOfficial (مسیریاب هوشمند)          │
@@ -76,11 +70,11 @@
 **۱. نصب سراسری:**
 
 ```bash
-npm install -g N4tzzOfficial
-N4tzzOfficial
+npm install -g nzrouter
+nzrouter
 ```
 
-🎉 داشبورد در آدرس `http://localhost:20128` باز می‌شود
+🎉 داشبورد در آدرس `http://localhost:20514` باز می‌شود
 
 **۲. اتصال یک ارائه‌دهنده رایگان (بدون نیاز به ثبت‌نام):**
 
@@ -90,7 +84,7 @@ N4tzzOfficial
 
 ```
 تنظیمات Claude Code/Codex/OpenClaw/Cursor/Cline:
-  آدرس端点: http://localhost:20128/v1
+  آدرس端点: http://localhost:20514/v1
   کلید API: [کپی از داشبورد]
   مدل: kr/claude-sonnet-4.5
 ```
@@ -99,121 +93,25 @@ N4tzzOfficial
 
 **روش جایگزین: اجرا از سورس (این مخزن):**
 
-بسته این مخزن خصوصی است (`NzRouter-app`)، بنابراین اجرا از سورس/داکر مسیر معمول توسعه محلی است.
+بسته این مخزن خصوصی است (`nzrouter-app`)، بنابراین اجرا از سورس/داکر مسیر معمول توسعه محلی است.
 
 ```bash
 cp .env.example .env
 npm install
-PORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev
+PORT=20514 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run dev
 ```
 
 حالت تولید:
 
 ```bash
 npm run build
-PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run start
+PORT=20514 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run start
 ```
 
 آدرس‌های پیش‌فرض:
 
-- داشبورد: `http://localhost:20128/dashboard`
-- API سازگار با OpenAI: `http://localhost:20128/v1`
-
----
-
-## راهنماهای تصویری
-
-<div align="center">
-
-<table>
-  <tr>
-  <td align="center" width="320">
-  <a href="https://www.youtube.com/watch?v=X69n5Lm06Yw">
-    <img src="https://img.youtube.com/vi/X69n5Lm06Yw/maxresdefault.jpg" alt="صرفه‌جویی در هزینه LLM با N4tzzOfficial" width="300"/>
-  </a><br/>
-  <b>🇻🇳 ویتنامی</b><br/>
-  <sub>صرفه‌جویی در هزینه LLM برای OpenClaw با N4tzzOfficial<br/>توسط <a href="https://www.youtube.com/c/M%C3%ACAIblog">Mì AI</a></sub>
-</td>
-<td align="center" width="320">
-      <a href="https://youtu.be/VQAw612S27Y">
-        <img src="https://img.youtube.com/vi/VQAw612S27Y/maxresdefault.jpg" alt="راه‌اندازی نامحدود رایگان N4tzzOfficial + Claude Code" width="300"/>
-      </a><br/>
-      <b>🇵🇰 اردو / हिन्दी</b><br/>
-      <sub>راه‌اندازی نامحدود رایگان N4tzzOfficial + Claude Code<br/>توسط <a href="https://www.youtube.com/@BuildAIWithHamid">Build AI With Hamid</a></sub>
-    </td>
-    <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=raEyZPg5xE0">
-        <img src="https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg" alt="آموزش راه‌اندازی N4tzzOfficial" width="300"/>
-      </a><br/>
-      <b>🇺🇸 انگلیسی</b><br/>
-      <sub>راه‌اندازی رایگان N4tzzOfficial + Claude Code<br/>توسط <a href="https://www.youtube.com/@BuildAIWithHamid">Build AI With Hamid</a></sub>
-    </td>
-    
-  </tr>
-  <tr>
-  <td align="center" width="320">
-      <a href="https://youtu.be/3dF5GIYMrcQ?si=bAyfyiHbARJQAHj_">
-        <img src="https://img.youtube.com/vi/3dF5GIYMrcQ/hqdefault.jpg" alt="آموزش راه‌اندازی N4tzzOfficial" width="300"/>
-      </a><br/>
-      <b>🇺🇸 انگلیسی</b><br/>
-      <sub>راه‌اندازی رایگان N4tzzOfficial + Claude Code<br/>توسط <a href="https://www.youtube.com/@BuildAIWithHamid">Build AI With Hamid</a></sub>
-    </td>
-    <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=o3qYCyjrFYg">
-        <img src="https://img.youtube.com/vi/o3qYCyjrFYg/maxresdefault.jpg" alt="Claude Code رایگان برای همیشه" width="300"/>
-      </a><br/>
-      <b>🇺🇸 انگلیسی</b><br/>
-      <sub>Claude Code رایگان برای همیشه — مدل‌های نامحدود<br/>توسط <a href="https://www.youtube.com/@BuildAIWithHamid">Build AI With Hamid</a></sub>
-    </td>
-    <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=Ttpc26m39Dw">
-        <img src="https://img.youtube.com/vi/Ttpc26m39Dw/maxresdefault.jpg" alt="راه‌اندازی رایگان Claude CLI" width="300"/>
-      </a><br/>
-      <b>🇺🇸 انگلیسی</b><br/>
-      <sub>راه‌اندازی رایگان Claude CLI با N4tzzOfficial 🚀<br/>توسط <a href="https://www.youtube.com/@CodeVerseSoban">CodeVerse Soban</a></sub>
-    </td>
-    
-  </tr>
-  <tr>
-  <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=G-5A_D5Pm6Y">
-        <img src="https://img.youtube.com/vi/G-5A_D5Pm6Y/maxresdefault.jpg" alt="نصب کامل OpenClaw رایگان" width="300"/>
-      </a><br/>
-      <b>🇻🇳 ویتنامی</b><br/>
-      <sub>نصب کامل OpenClaw رایگان از صفر تا صد + N4tzzOfficial<br/>توسط <a href="https://www.youtube.com/@maigia">Mai Gia</a></sub>
-    </td>
-    <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=JXmg8_gccgE">
-        <img src="https://img.youtube.com/vi/JXmg8_gccgE/maxresdefault.jpg" alt="OpenClaw رایگان با Claude Opus" width="300"/>
-      </a><br/>
-      <b>🇺🇸 انگلیسی</b><br/>
-      <sub>OpenClaw رایگان + Claude Opus 4.6<br/>توسط <a href="https://www.youtube.com/@BuildAIWithHamid">Build AI With Hamid</a></sub>
-    </td>
-    <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=CkVZZUSTXAI">
-        <img src="https://img.youtube.com/vi/CkVZZUSTXAI/mqdefault.jpg" alt="راه‌اندازی رایگان Claude CLI" width="300"/>
-      </a><br/>
-      <b>🇮🇩 اندونزیایی</b><br/>
-      <sub>کدنویسی ۲۴ ساعته بدون محدودیت نرخ! صرفه‌جویی ۶۵٪ توکن هوش مصنوعی | آموزش راه‌اندازی سریع N4tzzOfficial 🚀<br/>توسط <a href="https://www.youtube.com/@krisswuh">Krisswuh</a></sub>
-    </td>
-    
-  </tr>
-  
-  <tr>
-  <td align="center" width="320">
-      <a href="https://www.youtube.com/watch?v=TXGv4eofe1I">
-        <img src="https://img.youtube.com/vi/TXGv4eofe1I/mqdefault.jpg" alt="روش استقرار N4tzzOfficial در Hugging Face رایگان و همیشه روشن! | جایگزین VPS با ۱۶ گیگابایت رم" width="300"/>
-      </a><br/>
-      <b>🇮🇩 اندونزیایی</b><br/>
-      <sub>روش استقرار N4tzzOfficial در Hugging Face رایگان و همیشه روشن! | جایگزین VPS با ۱۶ گیگابایت رم<br/>توسط <a href="https://www.youtube.com/@krisswuh">Krisswuh</a></sub>
-    </td>
-  </tr>
-
-</table>
-
-</div>
-
-> 🎬 **درباره N4tzzOfficial ویدیو ساخته‌اید؟** یک [درخواست Pull](https://github.com/N4tzzOfficial/NzRouter/pulls) برای افزودن ویدیوی خود به این بخش ارسال کنید — ما آن را ادغام خواهیم کرد!
+- داشبورد: `http://localhost:20514/dashboard`
+- API سازگار با OpenAI: `http://localhost:20514/v1`
 
 ---
 
@@ -1041,7 +939,7 @@ Vertex Partner (Anthropic / DeepSeek / GLM / Qwen از طریق Vertex):
 
 ```
 تنظیمات → مدل‌ها → پیشرفته:
-  آدرس پایه API OpenAI: http://localhost:20128/v1
+  آدرس پایه API OpenAI: http://localhost:20514/v1
   کلید API OpenAI: [از داشبورد N4tzzOfficial]
   مدل: cc/claude-opus-4-7
 ```
@@ -1054,7 +952,7 @@ Vertex Partner (Anthropic / DeepSeek / GLM / Qwen از طریق Vertex):
 
 ```json
 {
-  "anthropic_api_base": "http://localhost:20128/v1",
+  "anthropic_api_base": "http://localhost:20514/v1",
   "anthropic_api_key": "your-NzRouter-api-key"
 }
 ```
@@ -1062,7 +960,7 @@ Vertex Partner (Anthropic / DeepSeek / GLM / Qwen از طریق Vertex):
 ### Codex CLI
 
 ```bash
-export OPENAI_BASE_URL="http://localhost:20128"
+export OPENAI_BASE_URL="http://localhost:20514"
 export OPENAI_API_KEY="your-NzRouter-api-key"
 
 codex "your prompt"
@@ -1090,7 +988,7 @@ codex "your prompt"
   "models": {
     "providers": {
       "N4tzzOfficial": {
-        "baseUrl": "http://127.0.0.1:20128/v1",
+        "baseUrl": "http://127.0.0.1:20514/v1",
         "apiKey": "sk_NzRouter",
         "api": "openai-completions",
         "models": [
@@ -1111,7 +1009,7 @@ codex "your prompt"
 
 ```
 ارائه‌دهنده: سازگار با OpenAI
-آدرس پایه: http://localhost:20128/v1
+آدرس پایه: http://localhost:20514/v1
 کلید API: [از داشبورد]
 مدل: cc/claude-opus-4-7
 ```
@@ -1134,11 +1032,11 @@ npm run build
 export JWT_SECRET="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
 export DATA_DIR="/var/lib/N4tzzOfficial"
-export PORT="20128"
+export PORT="20514"
 export HOSTNAME="0.0.0.0"
 export NODE_ENV="production"
-export NEXT_PUBLIC_BASE_URL="http://localhost:20128"
-export NEXT_PUBLIC_CLOUD_URL="https://n4tzz.com"
+export NEXT_PUBLIC_BASE_URL="http://localhost:20514"
+export NEXT_PUBLIC_CLOUD_URL="https://n4tzzofficial.my.id/nzrouter"
 export API_KEY_SECRET="endpoint-proxy-api-key-secret"
 export MACHINE_ID_SALT="endpoint-proxy-salt"
 
@@ -1156,7 +1054,7 @@ pm2 startup
 
 تصاویر منتشر شده (چند پلتفرم `linux/amd64` + `linux/arm64`):
 
-- Docker Hub: [`N4tzzOfficial/N4tzzOfficial`](https://hub.docker.com/r/N4tzzOfficial/N4tzzOfficial)
+- Docker Hub: [`N4tzzOfficial/N4tzzOfficial`](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/NzRouter)
 - GHCR: [`ghcr.io/N4tzzOfficial/N4tzzOfficial`](https://github.com/N4tzzOfficial/NzRouter/pkgs/container/N4tzzOfficial)
 
 **شروع سریع (استفاده از تصویر منتشر شده):**
@@ -1164,13 +1062,13 @@ pm2 startup
 ```bash
 docker run -d \
   --name N4tzzOfficial \
-  -p 20128:20128 \
+  -p 20514:20514 \
   -v "$HOME/.N4tzzOfficial:/app/data" \
   -e DATA_DIR=/app/data \
   N4tzzOfficial/N4tzzOfficial:latest
 ```
 
-→ باز کردن http://localhost:20128
+→ باز کردن http://localhost:20514
 
 **ساخت از سورس (توسعه):**
 
@@ -1178,13 +1076,13 @@ docker run -d \
 git clone https://github.com/N4tzzOfficial/NzRouter.git
 cd N4tzzOfficial/app
 docker build -t N4tzzOfficial .
-docker run -d --name N4tzzOfficial -p 20128:20128 \
+docker run -d --name N4tzzOfficial -p 20514:20514 \
   -v "$HOME/.N4tzzOfficial:/app/data" -e DATA_DIR=/app/data N4tzzOfficial
 ```
 
 **پیش‌فرض‌های کانتینر:**
 
-- `PORT=20128`
+- `PORT=20514`
 - `HOSTNAME=0.0.0.0`
 
 **دستورات مفید:**
@@ -1208,10 +1106,10 @@ docker pull N4tzzOfficial/N4tzzOfficial:latest   # به‌روزرسانی به 
 | `PORT`                                               | پیش‌فرض فریم‌ورک                        | پورت سرویس (`۲۰۱۲۸` در مثال‌ها)                                                  |
 | `HOSTNAME`                                           | پیش‌فرض فریم‌ورک                        | هاست بایند (داکر پیش‌فرض `۰.۰.۰.۰` است)                                            |
 | `NODE_ENV`                                           | پیش‌فرض زمان اجرا                          | برای استقرار `production` را تنظیم کنید                                                         |
-| `BASE_URL`                                           | `http://localhost:20128`                 | آدرس پایه داخلی سمت سرور که توسط کارهای همگام‌سازی ابری استفاده می‌شود                               |
-| `CLOUD_URL`                                          | `https://n4tzz.com`                    | آدرس پایه نقطه پایانی همگام‌سازی ابری سمت سرور                                            |
+| `BASE_URL`                                           | `http://localhost:20514`                 | آدرس پایه داخلی سمت سرور که توسط کارهای همگام‌سازی ابری استفاده می‌شود                               |
+| `CLOUD_URL`                                          | `https://n4tzzofficial.my.id/nzrouter`                    | آدرس پایه نقطه پایانی همگام‌سازی ابری سمت سرور                                            |
 | `NEXT_PUBLIC_BASE_URL`                               | `http://localhost:3000`                  | آدرس پایه عمومی/سازگار با گذشته (برای زمان اجرای سرور `BASE_URL` را ترجیح دهید)          |
-| `NEXT_PUBLIC_CLOUD_URL`                              | `https://n4tzz.com`                    | آدرس ابری عمومی/سازگار با گذشته (برای زمان اجرای سرور `CLOUD_URL` را ترجیح دهید)        |
+| `NEXT_PUBLIC_CLOUD_URL`                              | `https://n4tzzofficial.my.id/nzrouter`                    | آدرس ابری عمومی/سازگار با گذشته (برای زمان اجرای سرور `CLOUD_URL` را ترجیح دهید)        |
 | `API_KEY_SECRET`                                     | `endpoint-proxy-api-key-secret`          | راز HMAC برای کلیدهای API تولید شده                                                  |
 | `MACHINE_ID_SALT`                                    | `endpoint-proxy-salt`                    | نمک برای هش کردن شناسه ماشین پایدار                                                  |
 | `ENABLE_REQUEST_LOGS`                                | `false`                                  | لاگ‌های درخواست/پاسخ را در `logs/` فعال می‌کند                                         |
@@ -1341,7 +1239,7 @@ docker pull N4tzzOfficial/N4tzzOfficial:latest   # به‌روزرسانی به 
 
 **داشبورد در پورت اشتباه باز می‌شود**
 
-- `PORT=20128` و `NEXT_PUBLIC_BASE_URL=http://localhost:20128` را تنظیم کنید
+- `PORT=20514` و `NEXT_PUBLIC_BASE_URL=http://localhost:20514` را تنظیم کنید
 
 **اولین ورود کار نمی‌کند**
 
@@ -1370,7 +1268,7 @@ docker pull N4tzzOfficial/N4tzzOfficial:latest   # به‌روزرسانی به 
 ### تکمیل‌های چت
 
 ```bash
-POST http://localhost:20128/v1/chat/completions
+POST http://localhost:20514/v1/chat/completions
 Authorization: Bearer your-api-key
 Content-Type: application/json
 
@@ -1386,7 +1284,7 @@ Content-Type: application/json
 ### لیست مدل‌ها
 
 ```bash
-GET http://localhost:20128/v1/models
+GET http://localhost:20514/v1/models
 Authorization: Bearer your-api-key
 
 → همه مدل‌ها + ترکیب‌ها را در قالب OpenAI برمی‌گرداند
@@ -1394,7 +1292,7 @@ Authorization: Bearer your-api-key
 
 ## 📧 پشتیبانی
 
-- **وب‌سایت**: [n4tzz.com](https://n4tzz.com)
+- **وب‌سایت**: [n4tzzofficial.my.id/nzrouter](https://n4tzzofficial.my.id/nzrouter)
 - **GitHub**: [github.com/N4tzzOfficial/NzRouter](https://github.com/N4tzzOfficial/NzRouter)
 - **مسائل**: [github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
@@ -1440,6 +1338,5 @@ Authorization: Bearer your-api-key
 <div align="center">
   <sub>ساخته شده با ❤️ برای توسعه‌دهندگانی که ۲۴/۷ کدنویسی می‌کنند</sub>
 </div>
-
 
 

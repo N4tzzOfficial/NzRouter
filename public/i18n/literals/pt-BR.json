@@ -745,7 +745,7 @@
   "Please copy the URL from the address bar and paste it in the application.": "Copie a URL da barra de endereço e cole no aplicativo.",
   "Please enter a Proxy URL to test": "Por favor, digite uma URL de proxy para testar",
   "Please wait while we complete the authorization.": "Aguarde enquanto concluímos a autorização.",
-  "Point your CLI tools to http://localhost:20128": "Aponte suas ferramentas CLI para http://localhost:20128",
+  "Point your CLI tools to http://localhost:20514": "Aponte suas ferramentas CLI para http://localhost:20514",
   "Popup was blocked. After authorizing in the browser, paste the full callback URL here:": "O pop-up foi bloqueado. Depois de autorizar no navegador, cole a URL completa de callback aqui:",
   "Port 443 Already In Use": "Porta 443 já está em uso",
   "Port 443 is currently used by another process:": "A porta 443 está sendo usada por outro processo:",

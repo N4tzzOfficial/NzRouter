@@ -1,21 +1,15 @@
 <div align="center">
   <img src="../images/NzRouter.png?1" alt="N4tzzOfficial Dashboard" width="800"/>
-  
   # N4tzzOfficial - 免费 AI 路由器
-  
   **永不停歇的编程体验。智能回退，自动路由到免费和廉价的 AI 模型。**
-  
   **OpenClaw 的免费 AI 提供商。**
-  
   <p align="center">
     <img src="../public/providers/openclaw.png" alt="OpenClaw" width="80"/>
   </p>
-  
   [![npm](https://img.shields.io/npm/v/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
   [![Downloads](https://img.shields.io/npm/dm/nzrouter.svg)](https://www.npmjs.com/package/N4tzzOfficial)
   [![License](https://img.shields.io/npm/l/nzrouter.svg)](https://github.com/N4tzzOfficial/NzRouter/blob/main/LICENSE)
-  
-  [🚀 快速开始](#-quick-start) • [💡 特性](#-key-features) • [📖 设置](#-setup) • [🌐 网站](https://n4tzz.com)
+  [🚀 快速开始](#-quick-start) • [💡 特性](#-key-features) • [📖 设置](#-setup) • [🌐 网站](https://n4tzzofficial.my.id/nzrouter)
 </div>
 
 ---
@@ -45,7 +39,7 @@
 │  Your CLI   │  (Claude Code, Codex, OpenClaw, Cursor, Cline, Antigravity...)
 │   Tool      │
 └──────┬──────┘
-       │ http://localhost:20128/v1
+       │ http://localhost:20514/v1
        ↓
 ┌─────────────────────────────────────────────┐
 │           N4tzzOfficial (Smart Router)            │
@@ -71,11 +65,11 @@
 **1. 全局安装：**
 
 ```bash
-npm install -g N4tzzOfficial
-N4tzzOfficial
+npm install -g nzrouter
+nzrouter
 ```
 
-🎉 仪表板将在 `http://localhost:20128` 打开
+🎉 仪表板将在 `http://localhost:20514` 打开
 
 **2. 连接免费提供商（无需注册）：**
 
@@ -85,7 +79,7 @@ N4tzzOfficial
 
 ```
 Claude Code/Codex/Gemini CLI/OpenClaw/Cursor/Cline 设置:
-  Endpoint: http://localhost:20128/v1
+  Endpoint: http://localhost:20514/v1
   API Key: [从仪表板复制]
   Model: if/kimi-k2-thinking
 ```
@@ -94,48 +88,28 @@ Claude Code/Codex/Gemini CLI/OpenClaw/Cursor/Cline 设置:
 
 **替代方案：从源码运行（此仓库）：**
 
-此仓库包是私有的（`NzRouter-app`），因此源码/Docker 执行是预期的本地开发路径。
+此仓库包是私有的（`nzrouter-app`），因此源码/Docker 执行是预期的本地开发路径。
 
 ```bash
 cp .env.example .env
 npm install
-PORT=20128 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run dev
+PORT=20514 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run dev
 ```
 
 生产模式：
 
 ```bash
 npm run build
-PORT=20128 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20128 npm run start
+PORT=20514 HOSTNAME=0.0.0.0 NEXT_PUBLIC_BASE_URL=http://localhost:20514 npm run start
 ```
 
 默认 URL：
-- 仪表板：`http://localhost:20128/dashboard`
-- OpenAI 兼容 API：`http://localhost:20128/v1`
+- 仪表板：`http://localhost:20514/dashboard`
+- OpenAI 兼容 API：`http://localhost:20514/v1`
 
 ---
 
-## 🎥 视频教程
 
-<div align="center">
-  
-### 📺完整设置指南 - N4tzzOfficial + Claude Code 免费
-  
-[![N4tzzOfficial + Claude Code Setup](https://img.youtube.com/vi/raEyZPg5xE0/maxresdefault.jpg)](https://www.youtube.com/watch?v=raEyZPg5xE0)
-
-**🎬 观看完整的分步教程：**
-- ✅ N4tzzOfficial 安装与设置
-- ✅ 免费 Claude Sonnet 4.5 配置
-- ✅ Claude Code 集成
-- ✅ 实时编程演示
-
-**⏱️ 时长：** 20 分钟 | **👥 作者** 开发者社区
-
-[▶️ 在 YouTube 上观看](https://www.youtube.com/watch?v=o3qYCyjrFYg)
-
-</div>
-
----
 
 ## 🛠️ 支持的 CLI 工具
 
@@ -862,7 +836,7 @@ Cost: $0 forever!
 
 ```
 Settings → Models → Advanced:
-  OpenAI API Base URL: http://localhost:20128/v1
+  OpenAI API Base URL: http://localhost:20514/v1
   OpenAI API Key: [from N4tzzOfficial dashboard]
   Model: cc/claude-opus-4-6
 ```
@@ -875,7 +849,7 @@ Settings → Models → Advanced:
 
 ```json
 {
-  "anthropic_api_base": "http://localhost:20128/v1",
+  "anthropic_api_base": "http://localhost:20514/v1",
   "anthropic_api_key": "your-NzRouter-api-key"
 }
 ```
@@ -883,7 +857,7 @@ Settings → Models → Advanced:
 ### Codex CLI
 
 ```bash
-export OPENAI_BASE_URL="http://localhost:20128"
+export OPENAI_BASE_URL="http://localhost:20514"
 export OPENAI_API_KEY="your-NzRouter-api-key"
 
 codex "your prompt"
@@ -911,7 +885,7 @@ Dashboard → CLI Tools →Claw → Select Model → Apply
   "models": {
     "providers": {
       "N4tzzOfficial": {
-        "baseUrl": "http://127.0.0.1:20128/v1",
+        "baseUrl": "http://127.0.0.1:20514/v1",
         "apiKey": "sk_NzRouter",
         "api": "openai-completions",
         "models": [
@@ -932,7 +906,7 @@ Dashboard → CLI Tools →Claw → Select Model → Apply
 
 ```
 Provider: OpenAI Compatible
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: [from dashboard]
 Model: cc/claudeus-4-6
 ```
@@ -955,11 +929,11 @@ npm run build
 export JWT_SECRET="your-secure-secret-change-this"
 export INITIAL_PASSWORD="your-password"
 export DATA_DIR="/var/lib/N4tzzOfficial"
-export PORT="20128"
+export PORT="20514"
 export HOSTNAME="0.0.0.0"
 export NODE_ENV="production"
-export NEXT_PUBLIC_BASE_URLhttp://localhost:20128"
-export NEXT_PUBLIC_CLOUD_URL="https://n4tzz.com"
+export NEXT_PUBLIC_BASE_URLhttp://localhost:20514"
+export NEXT_PUBLIC_CLOUD_URL="https://n4tzzofficial.my.id/nzrouter"
 export API_KEY_SECRET="endpoint-proxy-api-key-secret"
 export MACHINE_ID_SALT="endpoint-proxy-salt"
 
@@ -981,7 +955,7 @@ docker build -t N4tzzOfficial .
 
 # Run container (command used in current setup)
 docker run -d \
-  --name N4tzzOfficial  -p 20128:20128 \
+  --name N4tzzOfficial  -p 20514:20514 \
   --env-file /root/dev/N4tzzOfficial/.env \
   -v NzRouter-data:/app/data \
   -v NzRouter-usage:/root/.N4tzzOfficial \
@@ -993,7 +967,7 @@ docker run -d \
 ```bash
 docker run -d \
   --name N4tzzOfficial \
-  -p 20128:20128 \
+  -p 20514:20514 \
   --env-file ./.env \
   -v NzRouter-data:/app/data \
   -v NzRouter-usage:/root/.N4tzzOfficial \
@@ -1001,7 +975,7 @@ docker run -d \
 ```
 
 容器默认值：
-- `PORT=20128`
+- `PORT=20514`
 - `HOSTNAME=0.0.0.0`
 
 有用命令：
@@ -1019,13 +993,13 @@ docker stop N4tzzOfficial && docker rm N4tzzOfficial
 | `JWT_SECRET` | 自动生成（`~/.N4tzzOfficial/jwt-secret`） | 仪表板认证 cookie 的 JWT 签名密钥（设置可在多实例间共享） |
 | `INITIAL_PASSWORD | `123456` | 当没有保存的哈希时的首次登录密码 |
 | `DATA_DIR` | `~/.N4tzzOfficial` | 主应用数据库位置（`db.json`） |
-| `PORT` | 框架默认值 | 服务端口（示例中为 `20128`） |
+| `PORT` | 框架默认值 | 服务端口（示例中为 `20514`） |
 | `HOSTNAME` | 框架默认值 | 绑定主机（Docker 默认为 `0.0.0.0`） |
 | `NODE_ENV` | 运行时默认值 | 部署时设置 `production` |
-| `BASE_URL` |http://localhost:20128` | 云同步作业使用的服务器端内部基础 URL |
-| `CLOUD_URL` | `https://n4tzz.com` | 服务器端云同步端点基础 URL |
+| `BASE_URL` |http://localhost:20514` | 云同步作业使用的服务器端内部基础 URL |
+| `CLOUD_URL` | `https://n4tzzofficial.my.id/nzrouter` | 服务器端云同步端点基础 URL |
 | `NEXT_PUBLIC_BASE_URL` | `http://localhost:3000` | 向后兼容/公共基础 URL（服务器运行时优先使用 `BASE_URL`） |
-| `NEXT_PUBLIC_CLOUD_URL` | `https://n4tzz.com` | 向后兼容/公共云 URL（服务器运行时优先使用 `CLOUD_URL`） |
+| `NEXT_PUBLIC_CLOUD_URL` | `https://n4tzzofficial.my.id/nzrouter` | 向后兼容/公共云 URL（服务器运行时优先使用 `CLOUD_URL`） |
 | `API_KEY_SECRET` | `endpoint-proxy-api-secret` | 生成的 API Key 的 HMAC 密钥 |
 | `MACHINE_ID_SALT` | `endpoint-proxy-salt` | 稳定机器 ID 哈希的盐值 |
 | `ENABLE_REQUEST_LOGS` | `false` | 在 `logs/` 下启用请求/响应日志 |
@@ -1114,15 +1088,15 @@ docker stop N4tzzOfficial && docker rm N4tzzOfficial
 - 对非关键任务使用免费层（Gemini CLI, iFlow）
 
 **仪表板在错误的端口打开**
-- 设置 `PORT=20128` 和 `NEXT_PUBLIC_BASE_URL=http://localhost:20128`
+- 设置 `PORT=20514` 和 `NEXT_PUBLIC_BASE_URL=http://localhost:20514`
 
 **云端同步错误**
-- 验证 `BASE_URL` 指向您正在运行的实例（例如：`http://localhost:20128`）
-- 验证 `CLOUD_URL` 指向您预期的云端端点（例如：`https://n4tzz.com`）
+- 验证 `BASE_URL` 指向您正在运行的实例（例如：`http://localhost:20514`）
+- 验证 `CLOUD_URL` 指向您预期的云端端点（例如：`https://n4tzzofficial.my.id/nzrouter`）
 - 尽可能保持 `NEXT_PUBLIC_*` 值与服务器端值一致。
 
 **云端端点 `stream=false` 返回 500（`Unexpected token 'd'...`）**
-- 症状通常出现在公共云端端点（`https://n4tzz.com/v1`）的非流式调用上。
+- 症状通常出现在公共云端端点（`https://n4tzzofficial.my.id/nzrouter/v1`）的非流式调用上。
 - 根本原因：上游返回 SSE 负载（`data: ...`）而客户端期望 JSON。
 - 变通方法：对云端直接调用使用 `stream=true`。
 - 当上游返回 `text/event-stream` 时，本地 N4tzzOfficial 运行时包含 SSE→JSON 回退用于非流式调用。
@@ -1156,7 +1130,7 @@ docker stop N4tzzOfficial && docker rm N4tzzOfficial
 ### Chat Completions
 
 ```bash
-POST httplocalhost:20128/v1/chat/completions
+POST httplocalhost:20514/v1/chat/completions
 Authorization: Bearer your-api-key
 Content-Type: application/json
 
@@ -1172,7 +1146,7 @@ Content-Type: application/json
 ### 列出模型
 
 ```bash
-GET http://localhost:20128/v1/models
+GET http://localhost:20514/v1/models
 Authorization: Bearer your-api-key
 
 → Returns all models + combos in OpenAI format
@@ -1196,7 +1170,7 @@ Authorization: Bearer your-api-key
 - `tester/security/test-docker-hardening.sh`
   - 构建 Docker 镜像并验证加固检查（`/api/cloud/auth` 认证保护、`REQUIRE_API_KEY`、安全认证 cookie 行为）。
 - `tester/security/test-cloud-openai-compatible.sh`
-  - 使用提供的模型/密钥向云端端点（`https://n4tzz.com/v1/chat/completions`）发送直接的 OpenAI 兼容请求。
+  - 使用提供的模型/密钥向云端端点（`https://n4tzzofficial.my.id/nzrouter/v1/chat/completions`）发送直接的 OpenAI 兼容请求。
 - `tester/security/test-cloud-sync-and-call.sh`
   - 端到端流程：创建本地密钥 -> 启用/同步云端 -> 带重试调用云端端点。
   - 包含使用 `stream` 的回退检查，以区分认证错误和非流式解析问题。
@@ -1214,9 +1188,9 @@ OPENAI_API_KEY="your-cloud-key" bash tester/security/test-cloud-openai-compatibl
 
 最近验证的预期行为：
 
-- 本地运行时（`http://127.0.0.1:20128/v1/chat/completions`）：使用 `stream=false` 和 `stream=true` 都可以工作。
+- 本地运行时（`http://127.0.0.1:20514/v1/chat/completions`）：使用 `stream=false` 和 `stream=true` 都可以工作。
 - Docker 运行时（容器暴露的相同 API 路径）：加固检查通过，云端认证保护工作，启用时严格 API 密钥模式工作。
-- 公共云端端点（`https://n4tzz.com/v1/chat/completions`）：
+- 公共云端端点（`https://n4tzzofficial.my.id/nzrouter/v1/chat/completions`）：
   - `stream=true`：预期成功（返回 SSE 块）。
   - `stream=false`：当上游向非流式客户端路径返回 SSE 内容时，可能失败并显示 `500` + 解析错误（`Unexpected token 'd'`）。
 
@@ -1254,7 +1228,7 @@ OPENAI_API_KEY="your-cloud-key" bash tester/security/test-cloud-openai-compatibl
 
 ## 📧 支持
 
-- **网站**：[n4tzz.com](https://n4tzz.com)
+- **网站**：[n4tzzofficial.my.id/nzrouter](https://n4tzzofficial.my.id/nzrouter)
 - **GitHub**：[github.com/N4tzzOfficial/NzRouter](https://github.com/N4tzzOfficial/NzRouter)
 - **问题**：[github.com/N4tzzOfficial/NzRouter/issues](https://github.com/N4tzzOfficial/NzRouter/issues)
 
@@ -1305,6 +1279,5 @@ MIT License - 详情请参阅 [LICENSE](../LICENSE)。
 <div align="center">
   <sub>用 ❤️ 为 24/7 编程的开发者构建</sub>
 </div>
-
 
 

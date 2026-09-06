@@ -29,12 +29,12 @@ Tích hợp N4tzzOfficial với extension Cline VSCode để định tuyến req
 
 **Cho N4tzzOfficial cục bộ:**
 ```
-http://localhost:20128/v1
+http://localhost:20514/v1
 ```
 
 **Cho N4tzzOfficial cloud:**
 ```
-https://n4tzz.com
+https://n4tzzofficial.my.id/nzrouter
 ```
 
 **Các bước:**
@@ -70,7 +70,7 @@ Cline settings của bạn nên trông như sau:
 
 ```
 API Provider: Ollama
-Base URL: http://localhost:20128/v1
+Base URL: http://localhost:20514/v1
 API Key: sk-N4tzzOfficial-xxxxxxxxxxxxx
 Model: gpt-4
 ```
@@ -118,9 +118,9 @@ Bạn có thể dùng bất kỳ model nào đã cấu hình trong N4tzzOfficial
 
 ### Lỗi "Connection Failed"
 
-1. Xác minh N4tzzOfficial đang chạy: `curl http://localhost:20128/health`
+1. Xác minh N4tzzOfficial đang chạy: `curl http://localhost:20514/health`
 2. Kiểm tra base URL đúng và bao gồm `/v1`
-3. Đảm bảo không firewall nào chặn port 20128
+3. Đảm bảo không firewall nào chặn port 20514
 4. Thử khởi động lại VSCode
 
 ### Lỗi "Invalid API Key"
@@ -150,7 +150,7 @@ Bạn có thể dùng bất kỳ model nào đã cấu hình trong N4tzzOfficial
 
 Để dùng N4tzzOfficial cloud endpoint thay vì localhost:
 
-1. Trong Cline settings, đặt Base URL: `https://n4tzz.com`
+1. Trong Cline settings, đặt Base URL: `https://n4tzzofficial.my.id/nzrouter`
 2. Đảm bảo bạn đã cấu hình API key trong N4tzzOfficial cloud dashboard
 3. Đảm bảo cloud endpoint đang hoạt động và truy cập được
 
