@@ -171,8 +171,8 @@ Commands:
                       Generate a Grok Imagine video via the running gateway
                       (see: ${APP_NAME} xai video --help)
 
-Install from GitHub (always latest):
-  npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
+Install latest:
+  npm i -g nzrouter
 `);
     process.exit(0);
   } else if (args[i] === "--version" || args[i] === "-v") {
@@ -597,7 +597,7 @@ function startBackgroundUpdateChecker() {
     checkGitHubUpdate().then(latestVersion => {
       if (latestVersion) {
         console.log(`\n⬆  New version available: v${latestVersion} (current: v${pkg.version})`);
-        console.log(`   Run: npm i -g git+https://github.com/N4tzzOfficial/NzRouter\n`);
+        console.log(`   Run: ${INSTALL_CMD_LATEST}\n`);
       }
     }).catch(() => {});
   }, 30000);
@@ -607,7 +607,7 @@ function startBackgroundUpdateChecker() {
     checkGitHubUpdate().then(latestVersion => {
       if (latestVersion) {
         console.log(`\n⬆  New version available: v${latestVersion} (current: v${pkg.version})`);
-        console.log(`   Run: npm i -g git+https://github.com/N4tzzOfficial/NzRouter\n`);
+        console.log(`   Run: ${INSTALL_CMD_LATEST}\n`);
       }
     }).catch(() => {});
   }, 6 * 60 * 60 * 1000);
@@ -653,7 +653,7 @@ const serverPath = fs.existsSync(customServerPath)
 
 if (!fs.existsSync(serverPath)) {
   console.error("Error: Standalone build not found.");
-  console.error("Please run 'npm run build:cli' first.");
+  console.error("Please run 'npm run build' inside cli/ first (or 'npm run cli:pack' from repo root).");
   process.exit(1);
 }
 

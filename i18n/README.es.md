@@ -93,7 +93,7 @@ Ajustes de Claude Code/Codex/OpenClaw/Cursor/Cline:
 
 **Alternativa: ejecutar desde el código fuente (este repositorio):**
 
-El paquete de este repositorio es privado (`nzrouter-app`), por lo que ejecutar desde el código fuente/Docker es la ruta de desarrollo local prevista.
+El paquete de este repositorio es privado (`nzrouter-dashboard`), por lo que ejecutar desde el código fuente/Docker es la ruta de desarrollo local prevista.
 
 ```bash
 cp .env.example .env

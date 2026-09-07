@@ -1,6 +1,6 @@
 {
   "name": "nzrouter",
-  "version": "0.5.59",
+  "version": "0.5.60",
   "description": "N4tzzOfficial CLI - Start and manage N4tzzOfficial server",
   "bin": {
     "nzrouter": "./cli.js",

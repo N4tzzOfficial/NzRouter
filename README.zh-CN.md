@@ -74,11 +74,31 @@
 **1. 全局安装：**
 
 ```bash
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
+npm i -g nzrouter
 nzrouter
 ```
 
 🎉 控制面板在 `http://localhost:20514` 打开
+
+如果全局安装残留损坏，先清理再重装：
+
+```bash
+npm rm -g nzrouter
+rmdir /s /q "%AppData%\npm\node_modules\nzrouter"   # Windows
+del /q "%AppData%\npm\nzrouter*"                    # Windows shims
+# rm -rf "$(npm root -g)/nzrouter"                  # macOS/Linux
+# rm -f "$(npm root -g)/../bin/nzrouter*"           # macOS/Linux shims
+npm i -g nzrouter
+```
+
+备选方案：从源码运行：
+
+```bash
+git clone https://github.com/N4tzzOfficial/NzRouter.git C:/NzRouter
+cd C:/NzRouter
+npm install
+npm run build
+```
 
 **2. 连接免费提供商（无需注册）：**
 

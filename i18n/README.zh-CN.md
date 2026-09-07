@@ -88,7 +88,7 @@ Claude Code/Codex/Gemini CLI/OpenClaw/Cursor/Cline 设置:
 
 **替代方案：从源码运行（此仓库）：**
 
-此仓库包是私有的（`nzrouter-app`），因此源码/Docker 执行是预期的本地开发路径。
+此仓库包是私有的（`nzrouter-dashboard`），因此源码/Docker 执行是预期的本地开发路径。
 
 ```bash
 cp .env.example .env

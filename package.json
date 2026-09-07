@@ -1,12 +1,7 @@
 {
-  "name": "nzrouter",
+  "name": "nzrouter-dashboard",
   "version": "0.5.59",
   "description": "N4tzzOfficial web dashboard - AI Infrastructure Management",
-  "main": "cli/cli.js",
-  "bin": {
-    "nzrouter": "cli/cli.js",
-    "n4tzzrouter": "cli/cli.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/N4tzzOfficial/NzRouter.git"

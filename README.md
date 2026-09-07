@@ -10,7 +10,7 @@ your traffic to 40+ providers — with format translation, multi-account fallbac
 OAuth token refresh, quota tracking, and 20–40% token savings baked in.
 
 ```bash
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
+npm i -g nzrouter
 nzrouter
 ```
 
@@ -41,11 +41,31 @@ Dashboard → `http://localhost:20514/dashboard` &nbsp;·&nbsp; API → `http://
 
 ## ⚡ Install
 
-### From GitHub (always latest)
+### From npm (recommended)
 
 ```bash
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
+npm i -g nzrouter
 nzrouter
+```
+
+### From source (fallback)
+
+```bash
+git clone https://github.com/N4tzzOfficial/NzRouter.git C:/NzRouter
+cd C:/NzRouter
+npm install
+npm run build
+```
+
+If a previous broken global install left junk behind, clean it first:
+
+```bash
+npm rm -g nzrouter
+rmdir /s /q "%AppData%\npm\node_modules\nzrouter"   # Windows
+del /q "%AppData%\npm\nzrouter*"                    # Windows shims
+# rm -rf "$(npm root -g)/nzrouter"                  # macOS/Linux
+# rm -f "$(npm root -g)/../bin/nzrouter*"           # macOS/Linux shims
+npm i -g nzrouter
 ```
 
 > First login password: **`nzrouter123`** — change it in **Dashboard → Profile** immediately.

@@ -87,7 +87,7 @@ Cài đặt Claude Code/Codex/OpenClaw/Cursor/Cline/Antigravity:
 
 **Phương án khác: chạy từ mã nguồn (repository này):**
 
-Gói kho lưu trữ này là riêng tư (`nzrouter-app`), vì vậy việc chạy từ nguồn/Docker là cách phát triển cục bộ mặc định.
+Gói kho lưu trữ này là riêng tư (`nzrouter-dashboard`), vì vậy việc chạy từ nguồn/Docker là cách phát triển cục bộ mặc định.
 
 ```bash
 cp .env.example .env

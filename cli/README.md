@@ -3,7 +3,7 @@
 The launcher for the N4tzzOfficial self-hosted AI router.
 
 ```bash
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
+npm install -g nzrouter
 nzrouter
 ```
 
@@ -44,15 +44,10 @@ optional system tray. Use `--background` (or `--daemon`) for servers / WSL / SSH
 
 ## Install
 
-### From GitHub (recommended, always latest)
-
-> The launcher lives in the `cli/` subfolder. `npm install -g git+https://…`
-> without a subfolder pulls the **whole monorepo** (Next.js + dashboard deps)
-> and hits `TAR_ENTRY_ERROR` on Windows — don't use it. Always install from
-> the `cli/` subfolder:
+### From npm (recommended)
 
 ```bash
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
+npm install -g nzrouter
 nzrouter --version
 nzrouter
 ```
@@ -62,15 +57,19 @@ If a previous broken global install left junk behind, clean it first:
 ```bash
 npm rm -g nzrouter
 rmdir /s /q "%AppData%\npm\node_modules\nzrouter"   # Windows
+del /q "%AppData%\npm\nzrouter*"                    # Windows shims
 # rm -rf "$(npm root -g)/nzrouter"                  # macOS/Linux
-npm install -g git+https://github.com/N4tzzOfficial/NzRouter#master:cli
+# rm -f "$(npm root -g)/../bin/nzrouter*"           # macOS/Linux shims
+npm install -g nzrouter
 ```
 
-### From npm (when published)
+### From source (fallback)
 
 ```bash
-npm install -g nzrouter
-nzrouter
+git clone https://github.com/N4tzzOfficial/NzRouter.git C:/NzRouter
+cd C:/NzRouter
+npm install
+npm run build
 ```
 
 ### From source (development)
