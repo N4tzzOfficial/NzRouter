@@ -71,10 +71,10 @@ export default function GetStarted() {
                 </div>
 
                 <div className="text-text-muted mb-6">
-                  <span className="text-primary">></span> Starting NzRouter...<br/>
-                  <span className="text-primary">></span> Server running on <span className="text-primary">http://localhost:20514</span><br/>
-                  <span className="text-primary">></span> Dashboard: <span className="text-primary">http://localhost:20514/dashboard</span><br/>
-                  <span className="text-green-400">></span> Ready to route! ✓
+                  <span className="text-primary">{'>'}</span> Starting NzRouter...<br/>
+                  <span className="text-primary">{'>'}</span> Server running on <span className="text-primary">http://localhost:20514</span><br/>
+                  <span className="text-primary">{'>'}</span> Dashboard: <span className="text-primary">http://localhost:20514/dashboard</span><br/>
+                  <span className="text-green-400">{'>'}</span> Ready to route! ✓
                 </div>
 
                 <div className="text-xs text-text-muted mb-2 border-t border-border pt-4">
