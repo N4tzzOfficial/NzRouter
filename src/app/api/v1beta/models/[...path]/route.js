@@ -9,6 +9,7 @@ import { getSettings } from "@/lib/localDb";
 import { PROVIDER_MODELS } from "@/shared/constants/models";
 import { GEMINI_NATIVE_TTS_FETCH_TIMEOUT_MS } from "open-sse/config/runtimeConfig.js";
 import { initTranslators } from "open-sse/translator/index.js";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 let initialized = false;
 const GEMINI_NATIVE_BASE_URL = "https://generativelanguage.googleapis.com/v1beta/models";
@@ -50,7 +51,7 @@ export async function OPTIONS() {
  * The upstream handleChat returns OpenAI SSE format; we transform it to
  * Gemini SSE format on the fly via transformOpenAISSEToGeminiSSE().
  */
-export async function POST(request, { params }) {
+async function geminiPostHandler(request, { params }) {
   await ensureInitialized();
 
   try {
@@ -123,9 +124,14 @@ export async function POST(request, { params }) {
   }
 }
 
+export const POST = withApiKey(geminiPostHandler);
+
 function extractGeminiClientApiKey(request) {
   const authHeader = request.headers.get("Authorization");
   if (authHeader?.startsWith("Bearer ")) return authHeader.slice(7);
+
+  const apiKeyHeader = request.headers.get("x-api-key");
+  if (apiKeyHeader) return apiKeyHeader;
 
   const googleApiKey = request.headers.get("x-goog-api-key");
   if (googleApiKey) return googleApiKey;
@@ -179,16 +185,35 @@ function buildGeminiNativeUrl(requestUrl, model, action) {
 
 async function validateGeminiNativeClientKey(request) {
   const settings = await getSettings();
-  if (!settings.requireApiKey) return null;
+  // Default ON — only an explicit `false` disables the gate (fail-secure).
+  if (settings && settings.requireApiKey === false) return null;
 
   const apiKey = extractGeminiClientApiKey(request);
   if (!apiKey) {
-    return Response.json({ error: { message: "Missing API key" } }, { status: 401 });
+    return Response.json(
+      {
+        error: {
+          message: "Wow, you idiot, the NzRouter won't work without the API KEY, you idiot",
+          type: "authentication_error",
+          code: "invalid_api_key",
+        },
+      },
+      { status: 401 }
+    );
   }
 
   const valid = await isValidApiKey(apiKey);
   if (!valid) {
-    return Response.json({ error: { message: "Invalid API key" } }, { status: 401 });
+    return Response.json(
+      {
+        error: {
+          message: "Wow, you idiot, the API KEY you sent is wrong. Check the dashboard Endpoint & Key page, you idiot",
+          type: "authentication_error",
+          code: "invalid_api_key",
+        },
+      },
+      { status: 401 }
+    );
   }
 
   return null;

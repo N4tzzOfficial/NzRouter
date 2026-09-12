@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Card, Button, ManualConfigModal, ComboFormModal, McpMarketplaceModal, ModelSelectModal } from "@/shared/components";
 import Image from "next/image";
 import BaseUrlSelect from "./BaseUrlSelect";
@@ -51,52 +51,32 @@ export default function CoworkToolCard({
   const [addMcpOpen, setAddMcpOpen] = useState(false);
   const [addMcpForm, setAddMcpForm] = useState({ name: "", url: "" });
 
+  // Keep apiKeys in a ref for access in callbacks
+  const apiKeysRef = useRef(apiKeys);
   useEffect(() => {
-    if (apiKeys?.length > 0 && !selectedApiKey) {
+    apiKeysRef.current = apiKeys;
+  }, [apiKeys]);
+
+  // Initialize selectedApiKey from apiKeys when available - use ref to avoid effect setState
+  const selectedApiKeyInitialized = useRef(false);
+  useEffect(() => {
+    if (!selectedApiKeyInitialized.current && apiKeys?.length > 0 && !selectedApiKey) {
+      selectedApiKeyInitialized.current = true;
       setSelectedApiKey(apiKeys[0].key);
     }
   }, [apiKeys, selectedApiKey]);
 
+  // Initialize status from initialStatus - only on first render
+  const initialStatusRef = useRef(initialStatus);
   useEffect(() => {
-    if (initialStatus) setStatus(initialStatus);
-  }, [initialStatus]);
+    if (initialStatusRef.current) {
+      setStatus(initialStatusRef.current);
+      initialStatusRef.current = null;
+    }
+  }, []);
 
-  useEffect(() => {
-    if (isExpanded && !status) checkStatus();
-  }, [isExpanded]);
-
-  useEffect(() => {
-    if (!isExpanded) return;
-    fetch("/api/models/alias")
-      .then((r) => r.ok ? r.json() : null)
-      .then((data) => {
-        if (data) setModelAliases(data.aliases || {});
-      })
-      .catch(() => {});
-  }, [isExpanded]);
-
-  useEffect(() => {
-    if (status?.cowork?.models?.length) {
-      setSelectedModels(status.cowork.models);
-    }
-    if (status?.cowork?.baseUrl && !customBaseUrl) {
-      setCustomBaseUrl(stripV1(status.cowork.baseUrl));
-    }
-    // Initialize plugins: from current config, fallback to defaultPlugins
-    if (Array.isArray(status?.cowork?.plugins) && status.cowork.plugins.length > 0) {
-      setPlugins(status.cowork.plugins);
-    } else if (plugins.length === 0 && Array.isArray(status?.defaultPlugins)) {
-      setPlugins(status.defaultPlugins);
-    }
-    if (Array.isArray(status?.cowork?.localPlugins)) {
-      setLocalPlugins(status.cowork.localPlugins);
-    }
-    if (Array.isArray(status?.cowork?.customPlugins) && status.cowork.customPlugins.length > 0) {
-      setCustomPlugins(status.cowork.customPlugins);
-    }
-  }, [status]);
-
-  const checkStatus = async () => {
+  // Load data when expanded
+  const checkStatus = useCallback(async () => {
     setChecking(true);
     try {
       const res = await fetch(ENDPOINT);
@@ -107,7 +87,72 @@ export default function CoworkToolCard({
     } finally {
       setChecking(false);
     }
-  };
+  }, []);
+
+  const loadModelAliases = useCallback(async () => {
+    try {
+      const res = await fetch("/api/models/alias");
+      const data = await res.json();
+      if (res.ok) setModelAliases(data.aliases || {});
+    } catch (error) {
+      console.log("Error fetching model aliases:", error);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isExpanded) return;
+    let cancelled = false;
+    const load = async () => {
+      if (!status) {
+        try {
+          const res = await fetch(ENDPOINT);
+          if (res.ok && !cancelled) {
+            const data = await res.json();
+            setStatus(data);
+          }
+        } catch (error) {
+          console.log("Error fetching status:", error);
+          if (!cancelled) setStatus({ installed: false, error: error.message });
+        }
+      }
+      await loadModelAliases();
+    };
+    load();
+    return () => { cancelled = true; };
+  }, [isExpanded, status, loadModelAliases]);
+
+  // Initialize from status - use ref guards to run once
+  const hasInitializedFromStatus = useRef(false);
+  const hasInitializedCustomBaseUrl = useRef(false);
+  const hasInitializedPlugins = useRef(false);
+  const hasInitializedLocalPlugins = useRef(false);
+  const hasInitializedCustomPlugins = useRef(false);
+  useEffect(() => {
+    if (!hasInitializedFromStatus.current && status?.cowork?.models?.length) {
+      hasInitializedFromStatus.current = true;
+      setSelectedModels(status.cowork.models);
+    }
+    if (!hasInitializedCustomBaseUrl.current && status?.cowork?.baseUrl && !customBaseUrl) {
+      hasInitializedCustomBaseUrl.current = true;
+      setCustomBaseUrl(stripV1(status.cowork.baseUrl));
+    }
+    // Initialize plugins: from current config, fallback to defaultPlugins
+    if (!hasInitializedPlugins.current && Array.isArray(status?.cowork?.plugins) && status.cowork.plugins.length > 0) {
+      hasInitializedPlugins.current = true;
+      setPlugins(status.cowork.plugins);
+    } else if (!hasInitializedPlugins.current && plugins.length === 0 && Array.isArray(status?.defaultPlugins)) {
+      hasInitializedPlugins.current = true;
+      setPlugins(status.defaultPlugins);
+    }
+    if (!hasInitializedLocalPlugins.current && Array.isArray(status?.cowork?.localPlugins)) {
+      hasInitializedLocalPlugins.current = true;
+      setLocalPlugins(status.cowork.localPlugins);
+    }
+    if (!hasInitializedCustomPlugins.current && Array.isArray(status?.cowork?.customPlugins) && status.cowork.customPlugins.length > 0) {
+      hasInitializedCustomPlugins.current = true;
+      setCustomPlugins(status.cowork.customPlugins);
+    }
+  }, [status, customBaseUrl, plugins.length]);
 
   const getEffectiveBaseUrl = () => ensureV1(customBaseUrl);
 

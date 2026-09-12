@@ -1,16 +1,17 @@
 const { formatNumber } = require("./format");
+const { COLORS: INPUT_COLORS } = require("./input");
 
-// ANSI color codes
+// ANSI color codes — use NzRouter brand cyan from input.js
 const COLORS = {
-  reset: "\x1b[0m",
+  reset: INPUT_COLORS.reset,
   success: "\x1b[32m",
   error: "\x1b[31m",
   warning: "\x1b[33m",
-  info: "\x1b[36m",
-  dim: "\x1b[2m",
-  bold: "\x1b[1m",
-  bright: "\x1b[1m",
-  cyan: "\x1b[36m"
+  info: INPUT_COLORS.brand,
+  dim: INPUT_COLORS.dim,
+  bold: INPUT_COLORS.bright,
+  bright: INPUT_COLORS.bright,
+  cyan: INPUT_COLORS.brand
 };
 
 // Box drawing characters

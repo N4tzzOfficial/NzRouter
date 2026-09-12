@@ -39,7 +39,7 @@ export default function EndpointPresetControl({
   const [selectedName, setSelectedName] = useState("");
 
   useEffect(() => {
-    setPresets(readPresets());
+    setTimeout(() => setPresets(readPresets()), 0);
   }, []);
 
   const selectedPreset = useMemo(

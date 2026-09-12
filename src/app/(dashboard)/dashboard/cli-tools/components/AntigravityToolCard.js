@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Card, Button, Badge, Modal, Input, ModelSelectModal } from "@/shared/components";
 import Image from "next/image";
 
@@ -26,25 +26,27 @@ export default function AntigravityToolCard({
   const [modalOpen, setModalOpen] = useState(false);
   const [currentEditingAlias, setCurrentEditingAlias] = useState(null);
   const [modelAliases, setModelAliases] = useState({});
+  const apiKeysRef = useRef(apiKeys);
 
+  // Update ref when apiKeys change (outside render)
   useEffect(() => {
-    if (apiKeys?.length > 0 && !selectedApiKey) {
-      setSelectedApiKey(apiKeys[0].key);
+    apiKeysRef.current = apiKeys;
+  }, [apiKeys]);
+
+  const fetchStatus = useCallback(async () => {
+    try {
+      const res = await fetch("/api/cli-tools/antigravity-mitm");
+      if (res.ok) {
+        const data = await res.json();
+        setStatus(data);
+      }
+    } catch (error) {
+      console.log("Error fetching status:", error);
+      setStatus({ running: false });
     }
-  }, [apiKeys, selectedApiKey]);
+  }, []);
 
-  useEffect(() => {
-    if (initialStatus) setStatus(initialStatus);
-  }, [initialStatus]);
-
-  useEffect(() => {
-    if (!isExpanded) return;
-    if (!status) fetchStatus();
-    loadSavedMappings();
-    fetchModelAliases();
-  }, [isExpanded]);
-
-  const loadSavedMappings = async () => {
+  const loadSavedMappings = useCallback(async () => {
     try {
       const res = await fetch("/api/cli-tools/antigravity-mitm/alias?tool=antigravity");
       if (res.ok) {
@@ -58,9 +60,9 @@ export default function AntigravityToolCard({
     } catch (error) {
       console.log("Error loading saved mappings:", error);
     }
-  };
+  }, []);
 
-  const fetchModelAliases = async () => {
+  const fetchModelAliases = useCallback(async () => {
     try {
       const res = await fetch("/api/models/alias");
       const data = await res.json();
@@ -68,20 +70,49 @@ export default function AntigravityToolCard({
     } catch (error) {
       console.log("Error fetching model aliases:", error);
     }
-  };
+  }, []);
 
-  const fetchStatus = async () => {
-    try {
-      const res = await fetch("/api/cli-tools/antigravity-mitm");
-      if (res.ok) {
-        const data = await res.json();
-        setStatus(data);
-      }
-    } catch (error) {
-      console.log("Error fetching status:", error);
-      setStatus({ running: false });
+  // Initialize selectedApiKey from apiKeys when available - use ref to avoid effect setState
+  const selectedApiKeyInitialized = useRef(false);
+  useEffect(() => {
+    if (!selectedApiKeyInitialized.current && apiKeys?.length > 0 && !selectedApiKey) {
+      selectedApiKeyInitialized.current = true;
+      setSelectedApiKey(apiKeys[0].key);
     }
-  };
+  }, [apiKeys, selectedApiKey]);
+
+  // Initialize status from initialStatus - only on first render
+  const initialStatusRef = useRef(initialStatus);
+  useEffect(() => {
+    if (initialStatusRef.current) {
+      setStatus(initialStatusRef.current);
+      initialStatusRef.current = null;
+    }
+  }, []);
+
+  // Load data when expanded
+  useEffect(() => {
+    if (!isExpanded) return;
+    let cancelled = false;
+    const load = async () => {
+      if (!status) {
+        try {
+          const res = await fetch("/api/cli-tools/antigravity-mitm");
+          if (res.ok && !cancelled) {
+            const data = await res.json();
+            setStatus(data);
+          }
+        } catch (error) {
+          console.log("Error fetching status:", error);
+          if (!cancelled) setStatus({ running: false });
+        }
+      }
+      await loadSavedMappings();
+      await fetchModelAliases();
+    };
+    load();
+    return () => { cancelled = true; };
+  }, [isExpanded, status, loadSavedMappings, fetchModelAliases]);
 
   // MITM elevation is decided by the server OS, not by this browser's OS.
   const serverIsWindows = status?.isWin === true;
@@ -112,7 +143,7 @@ export default function AntigravityToolCard({
     setStartingStep("cert");
     try {
       const keyToUse = selectedApiKey?.trim()
-        || (apiKeys?.length > 0 ? apiKeys[0].key : null)
+        || (apiKeysRef.current?.length > 0 ? apiKeysRef.current[0].key : null)
         || (!cloudEnabled ? "sk_nzrouter" : null);
 
       const res = await fetch("/api/cli-tools/antigravity-mitm", {
@@ -226,8 +257,9 @@ export default function AntigravityToolCard({
   const isRunning = status?.running;
 
   return (
-    <Card padding="xs" className="overflow-hidden">
-      <div className="flex items-start justify-between gap-3 hover:cursor-pointer sm:items-center" onClick={onToggle}>
+    <div>
+      <Card padding="xs" className="overflow-hidden">
+        <div className="flex items-start justify-between gap-3 hover:cursor-pointer sm:items-center" onClick={onToggle}>
         <div className="flex min-w-0 items-center gap-3">
           <div className="size-8 flex items-center justify-center shrink-0">
             <Image
@@ -407,6 +439,7 @@ export default function AntigravityToolCard({
           )}
         </div>
       )}
+      </Card>
 
       {/* Password Modal */}
       <Modal
@@ -475,6 +508,6 @@ export default function AntigravityToolCard({
           title={`Select model for ${currentEditingAlias}`}
         />
       )}
-    </Card>
+    </div>
   );
 }

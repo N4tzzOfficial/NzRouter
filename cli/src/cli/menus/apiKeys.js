@@ -5,6 +5,7 @@ const { maskKey, formatDate, getRelativeTime } = require("../utils/format");
 const { showMenuWithBack } = require("../utils/menuHelper");
 const { copyToClipboard } = require("../utils/clipboard");
 const { getEndpoint } = require("../utils/endpoint");
+const { COLORS: INPUT_COLORS } = require("../utils/input");
 
 /**
  * Display API keys list with formatted output

@@ -33,6 +33,11 @@ const nextConfig = {
       "**/Intel/**/*",
       "**/SUR/**/*",
       "**/AppData/Local/Intel/**",
+      "**/AppData/Local/Temp/**",
+      "**/AppData/Roaming/**",
+      "**/AppData/Local/Intel/SUR/**/*",
+      "**/AppData/Local/Intel/SUR/QUEENCREEK/**/*",
+      "**/AppData/Local/Intel/SUR/QUEENCREEK/intermediate_data/**/*",
     ],
   },
   images: {
@@ -45,7 +50,8 @@ const nextConfig = {
     // Cache fetch responses across HMR refreshes for faster dev reloads.
     serverComponentsHmrCache: true,
     // Tree-shake heavy barrel imports to cut compile + bundle size
-    optimizePackageImports: ["@xyflow/react", "@dnd-kit/core", "@dnd-kit/sortable", "material-symbols", "marked"],
+    // (also cuts peak webpack memory — recharts/framer-motion/monaco are huge barrels)
+    optimizePackageImports: ["@xyflow/react", "@dnd-kit/core", "@dnd-kit/sortable", "material-symbols", "marked", "recharts", "framer-motion", "@monaco-editor/react"],
   },
   webpack: (config, { isServer }) => {
     // Ignore fs/path modules in browser bundle

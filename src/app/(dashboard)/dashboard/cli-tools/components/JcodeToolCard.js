@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Card, Button, ModelSelectModal, ManualConfigModal } from "@/shared/components";
 import Image from "next/image";
 import BaseUrlSelect from "./BaseUrlSelect";
@@ -23,7 +23,7 @@ export default function JcodeToolCard({
   tailscaleEnabled,
   tailscaleUrl,
 }) {
-  const [jcodeStatus, setJcodeStatus] = useState(initialStatus || null);
+  const [jcodeStatus, setJcodeStatus] = useState(null);
   const [checkingJcode, setCheckingJcode] = useState(false);
   const [applying, setApplying] = useState(false);
   const [restoring, setRestoring] = useState(false);
@@ -35,6 +35,12 @@ export default function JcodeToolCard({
   const [showManualConfigModal, setShowManualConfigModal] = useState(false);
   const [customBaseUrl, setCustomBaseUrl] = useState("");
   const hasInitializedModel = useRef(false);
+  const apiKeysRef = useRef(apiKeys);
+
+  // Update ref when apiKeys change (outside render)
+  useEffect(() => {
+    apiKeysRef.current = apiKeys;
+  }, [apiKeys]);
 
   const currentBaseUrl = jcodeStatus?.config?.providers?.["nzrouter"]?.base_url || "";
 
@@ -48,24 +54,25 @@ export default function JcodeToolCard({
 
   const configStatus = getConfigStatus();
 
+  // Initialize selectedApiKey from apiKeys when available - use ref to avoid effect setState
+  const selectedApiKeyInitialized = useRef(false);
   useEffect(() => {
-    if (apiKeys?.length > 0 && !selectedApiKey) {
+    if (!selectedApiKeyInitialized.current && apiKeys?.length > 0 && !selectedApiKey) {
+      selectedApiKeyInitialized.current = true;
       setSelectedApiKey(apiKeys[0].key);
     }
   }, [apiKeys, selectedApiKey]);
 
+  // Initialize status from initialStatus - only on first render
+  const initialStatusRef = useRef(initialStatus);
   useEffect(() => {
-    if (initialStatus) setJcodeStatus(initialStatus);
-  }, [initialStatus]);
-
-  useEffect(() => {
-    if (isExpanded) {
-      if (!jcodeStatus) checkJcodeStatus();
-      fetchModelAliases();
+    if (initialStatusRef.current) {
+      setJcodeStatus(initialStatusRef.current);
+      initialStatusRef.current = null;
     }
-  }, [isExpanded]);
+  }, []);
 
-  const fetchModelAliases = async () => {
+  const fetchModelAliases = useCallback(async () => {
     try {
       const res = await fetch("/api/models/alias");
       const data = await res.json();
@@ -73,26 +80,9 @@ export default function JcodeToolCard({
     } catch (error) {
       console.log("Error fetching model aliases:", error);
     }
-  };
+  }, []);
 
-  useEffect(() => {
-    if (jcodeStatus?.installed && !hasInitializedModel.current) {
-      hasInitializedModel.current = true;
-      const provider = jcodeStatus.config?.providers?.["nzrouter"];
-      if (provider) {
-        if (provider.default_model) {
-          setSelectedModel(provider.default_model);
-        }
-        // Try to match API key from env file
-        const envApiKey = jcodeStatus.envApiKey;
-        if (envApiKey && apiKeys?.some(k => k.key === envApiKey)) {
-          setSelectedApiKey(envApiKey);
-        }
-      }
-    }
-  }, [jcodeStatus, apiKeys]);
-
-  const checkJcodeStatus = async () => {
+  const checkJcodeStatus = useCallback(async () => {
     setCheckingJcode(true);
     try {
       const res = await fetch("/api/cli-tools/jcode-settings");
@@ -103,7 +93,49 @@ export default function JcodeToolCard({
     } finally {
       setCheckingJcode(false);
     }
-  };
+  }, []);
+
+  // Load data when expanded
+  useEffect(() => {
+    if (!isExpanded) return;
+    let cancelled = false;
+    const load = async () => {
+      if (!jcodeStatus) {
+        try {
+          const res = await fetch("/api/cli-tools/jcode-settings");
+          if (res.ok && !cancelled) {
+            const data = await res.json();
+            setJcodeStatus(data);
+          }
+        } catch (error) {
+          console.log("Error fetching status:", error);
+          if (!cancelled) setJcodeStatus({ installed: false });
+        }
+      }
+      await fetchModelAliases();
+    };
+    load();
+    return () => { cancelled = true; };
+  }, [isExpanded, jcodeStatus, fetchModelAliases]);
+
+  // Initialize model from status - only once after status loads
+  const modelInitialized = useRef(false);
+  useEffect(() => {
+    if (jcodeStatus?.installed && !modelInitialized.current && !selectedModel) {
+      modelInitialized.current = true;
+      const provider = jcodeStatus.config?.providers?.["nzrouter"];
+      if (provider) {
+        if (provider.default_model) {
+          setTimeout(() => setSelectedModel(provider.default_model), 0);
+        }
+        // Try to match API key from env file
+        const envApiKey = jcodeStatus.envApiKey;
+        if (envApiKey && apiKeysRef.current?.some(k => k.key === envApiKey)) {
+          setTimeout(() => setSelectedApiKey(envApiKey), 0);
+        }
+      }
+    }
+  }, [jcodeStatus, selectedModel]);
 
   const normalizeLocalhost = (url) => url.replace("://localhost", "://127.0.0.1");
 

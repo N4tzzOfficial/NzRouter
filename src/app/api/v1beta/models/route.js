@@ -1,4 +1,5 @@
 import { PROVIDER_MODELS } from "@/shared/constants/models";
+import { withApiKey } from "@/sse/middleware/requireApiKey.js";
 
 /**
  * Handle CORS preflight
@@ -16,8 +17,10 @@ export async function OPTIONS() {
 /**
  * GET /v1beta/models - Gemini compatible models list
  * Returns models in Gemini API format
+ *
+ * Requires a valid NzRouter API key (same `Require API key` gate as /v1/*).
  */
-export async function GET() {
+export const GET = withApiKey(async function GET() {
   try {
     const models = [];
     const seen = new Set();
@@ -34,7 +37,7 @@ export async function GET() {
         outputTokenLimit: 8192,
       });
     }
-    
+
     for (const [provider, providerModels] of Object.entries(PROVIDER_MODELS)) {
       for (const model of providerModels) {
         addModel({
@@ -59,4 +62,4 @@ export async function GET() {
     console.log("Error fetching models:", error);
     return Response.json({ error: { message: error.message } }, { status: 500 });
   }
-}
+});

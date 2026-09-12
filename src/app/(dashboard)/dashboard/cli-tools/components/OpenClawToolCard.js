@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Card, Button, ModelSelectModal, ManualConfigModal } from "@/shared/components";
 import Image from "next/image";
 import BaseUrlSelect from "./BaseUrlSelect";
@@ -49,24 +49,25 @@ export default function OpenClawToolCard({
 
   const configStatus = getConfigStatus();
 
+  // Initialize selectedApiKey from apiKeys when available - use ref to avoid effect setState
+  const selectedApiKeyInitialized = useRef(false);
   useEffect(() => {
-    if (apiKeys?.length > 0 && !selectedApiKey) {
+    if (!selectedApiKeyInitialized.current && apiKeys?.length > 0 && !selectedApiKey) {
+      selectedApiKeyInitialized.current = true;
       setSelectedApiKey(apiKeys[0].key);
     }
   }, [apiKeys, selectedApiKey]);
 
+  // Initialize status from initialStatus - only on first render
+  const initialStatusRef = useRef(initialStatus);
   useEffect(() => {
-    if (initialStatus) setOpenclawStatus(initialStatus);
-  }, [initialStatus]);
-
-  useEffect(() => {
-    if (isExpanded) {
-      if (!openclawStatus) checkOpenclawStatus();
-      fetchModelAliases();
+    if (initialStatusRef.current) {
+      setOpenclawStatus(initialStatusRef.current);
+      initialStatusRef.current = null;
     }
-  }, [isExpanded]);
+  }, []);
 
-  const fetchModelAliases = async () => {
+  const fetchModelAliases = useCallback(async () => {
     try {
       const res = await fetch("/api/models/alias");
       const data = await res.json();
@@ -74,30 +75,9 @@ export default function OpenClawToolCard({
     } catch (error) {
       console.log("Error fetching model aliases:", error);
     }
-  };
+  }, []);
 
-  useEffect(() => {
-    if (openclawStatus?.installed && !hasInitializedModel.current) {
-      hasInitializedModel.current = true;
-      const provider = openclawStatus.settings?.models?.providers?.["nzrouter"];
-      if (provider) {
-        const primaryModel = openclawStatus.settings?.agents?.defaults?.model?.primary;
-        if (primaryModel) setSelectedModel(primaryModel.replace("nzrouter/", ""));
-        if (provider.apiKey && apiKeys?.some(k => k.key === provider.apiKey)) {
-          setSelectedApiKey(provider.apiKey);
-        }
-      }
-      // Init per-agent models from enriched agents list
-      const agentList = openclawStatus.agents || [];
-      const initAgentModels = {};
-      agentList.forEach((agent) => {
-        if (agent.currentModel) initAgentModels[agent.id] = agent.currentModel;
-      });
-      setAgentModels(initAgentModels);
-    }
-  }, [openclawStatus, apiKeys]);
-
-  const checkOpenclawStatus = async () => {
+  const checkOpenclawStatus = useCallback(async () => {
     setCheckingOpenclaw(true);
     try {
       const res = await fetch("/api/cli-tools/openclaw-settings");
@@ -108,7 +88,52 @@ export default function OpenClawToolCard({
     } finally {
       setCheckingOpenclaw(false);
     }
-  };
+  }, []);
+
+  // Load data when expanded
+  useEffect(() => {
+    if (!isExpanded) return;
+    let cancelled = false;
+    const load = async () => {
+      if (!openclawStatus) {
+        try {
+          const res = await fetch("/api/cli-tools/openclaw-settings");
+          if (res.ok && !cancelled) {
+            const data = await res.json();
+            setOpenclawStatus(data);
+          }
+        } catch (error) {
+          console.log("Error fetching status:", error);
+          if (!cancelled) setOpenclawStatus({ installed: false });
+        }
+      }
+      await fetchModelAliases();
+    };
+    load();
+    return () => { cancelled = true; };
+  }, [isExpanded, openclawStatus, fetchModelAliases]);
+
+  // Initialize model/agent data from status - only on first load after status is installed
+  useEffect(() => {
+    if (openclawStatus?.installed && !hasInitializedModel.current) {
+      hasInitializedModel.current = true;
+      const provider = openclawStatus.settings?.models?.providers?.["nzrouter"];
+      if (provider) {
+        const primaryModel = openclawStatus.settings?.agents?.defaults?.model?.primary;
+        if (primaryModel) setTimeout(() => setSelectedModel(primaryModel.replace("nzrouter/", "")), 0);
+        if (provider.apiKey && apiKeys?.some(k => k.key === provider.apiKey)) {
+          setTimeout(() => setSelectedApiKey(provider.apiKey), 0);
+        }
+      }
+      // Init per-agent models from enriched agents list
+      const agentList = openclawStatus.agents || [];
+      const initAgentModels = {};
+      agentList.forEach((agent) => {
+        if (agent.currentModel) initAgentModels[agent.id] = agent.currentModel;
+      });
+      setTimeout(() => setAgentModels(initAgentModels), 0);
+    }
+  }, [openclawStatus, apiKeys]);
 
   const normalizeLocalhost = (url) => url.replace("://localhost", "://127.0.0.1");
 

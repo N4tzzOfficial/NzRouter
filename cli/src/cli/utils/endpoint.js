@@ -1,7 +1,8 @@
 const api = require("../api/client");
+const { COLORS: INPUT_COLORS } = require("./input");
 
 const COLORS = {
-  reset: "\x1b[0m",
+  reset: INPUT_COLORS.reset,
   green: "\x1b[32m"
 };
 

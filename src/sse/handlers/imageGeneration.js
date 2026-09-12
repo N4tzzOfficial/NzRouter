@@ -3,7 +3,6 @@ import {
   markAccountUnavailable,
   clearAccountError,
   extractApiKey,
-  isValidApiKey,
 } from "../services/auth.js";
 import { getSettings } from "@/lib/localDb";
 import { getModelInfo, getComboModels } from "../services/model.js";
@@ -35,13 +34,9 @@ export async function handleImageGeneration(request) {
   const binaryOutput = url.searchParams.get("response_format") === "binary";
   const modelStr = body.model;
 
+  // Auth is enforced by `withApiKey` middleware — trust it. Just read settings.
   const apiKey = extractApiKey(request);
   const settings = await getSettings();
-  if (settings.requireApiKey) {
-    if (!apiKey) return errorResponse(HTTP_STATUS.UNAUTHORIZED, "Missing API key");
-    const valid = await isValidApiKey(apiKey);
-    if (!valid) return errorResponse(HTTP_STATUS.UNAUTHORIZED, "Invalid API key");
-  }
 
   if (!modelStr) return errorResponse(HTTP_STATUS.BAD_REQUEST, "Missing model");
   if (!body.prompt) return errorResponse(HTTP_STATUS.BAD_REQUEST, "Missing required field: prompt");

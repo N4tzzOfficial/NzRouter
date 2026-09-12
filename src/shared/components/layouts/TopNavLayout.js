@@ -1,13 +1,12 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/shared/utils/cn";
-import { APP_CONFIG, GITHUB_CONFIG } from "@/shared/constants/config";
+import { UPDATER_CONFIG } from "@/shared/constants/config";
 import { useNotificationStore } from "@/store/notificationStore";
-import { useTheme } from "@/shared/hooks/useTheme";
 import HeaderMenu from "../HeaderMenu";
 import HeaderLanguage from "../HeaderLanguage";
 import ThemeToggle from "../ThemeToggle";
@@ -49,11 +48,25 @@ const NAV_DROPDOWN_ITEMS = {
   ],
 };
 
+function getActiveTabFromPath(path) {
+  const p = path || "";
+  if (p.startsWith("/dashboard/endpoint") || p.startsWith("/dashboard/providers") || p.startsWith("/dashboard/combos") || p.startsWith("/dashboard/token-saver")) return "gateway";
+  if (p.startsWith("/dashboard/usage") || p.startsWith("/dashboard/quota") || p.startsWith("/dashboard/console-log")) return "analytics";
+  if (p.startsWith("/dashboard/cli-tools") || p.startsWith("/dashboard/mitm") || p.startsWith("/dashboard/media-providers") || p.startsWith("/dashboard/pxpipe") || p.startsWith("/dashboard/translator")) return "tools";
+  if (p.startsWith("/dashboard/profile") || p.startsWith("/dashboard/proxy-pools") || p.startsWith("/dashboard/skills")) return "system";
+  return "gateway";
+}
+
 export default function TopNavLayout({ children }) {
   const pathname = usePathname();
-  const [activeTab, setActiveTab] = useState("gateway");
+  const router = useRouter();
+  const [activeTab, setActiveTab] = useState(() => getActiveTabFromPath(pathname));
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    setActiveTab(getActiveTabFromPath(pathname));
+  }
   const [hoveredTab, setHoveredTab] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showDropdown, setShowDropdown] = useState(null);
   const [notifications, setNotifications] = useState([]);
   const [updateInfo, setUpdateInfo] = useState(null);
@@ -64,9 +77,7 @@ export default function TopNavLayout({ children }) {
   const [changelogOpen, setChangelogOpen] = useState(false);
   const [shutdownOpen, setShutdownOpen] = useState(false);
   const [isShuttingDown, setIsShuttingDown] = useState(false);
-  const dropdownRef = useRef(null);
-  const { toggleTheme, isDark } = useTheme();
-  const INSTALL_CMD = "npx nzrouter@latest";
+  const INSTALL_CMD = UPDATER_CONFIG.installCmdLatest;
 
   const removeNotification = (id) => {
     setNotifications((prev) => prev.filter((n) => n.id !== id));
@@ -134,18 +145,6 @@ export default function TopNavLayout({ children }) {
     setShutdownOpen(false);
   };
 
-  const getActiveTabFromPath = (path) => {
-    if (path.startsWith("/dashboard/endpoint") || path.startsWith("/dashboard/providers") || path.startsWith("/dashboard/combos") || path.startsWith("/dashboard/token-saver")) return "gateway";
-    if (path.startsWith("/dashboard/usage") || path.startsWith("/dashboard/quota") || path.startsWith("/dashboard/console-log")) return "analytics";
-    if (path.startsWith("/dashboard/cli-tools") || path.startsWith("/dashboard/mitm") || path.startsWith("/dashboard/media-providers") || path.startsWith("/dashboard/pxpipe") || path.startsWith("/dashboard/translator")) return "tools";
-    if (path.startsWith("/dashboard/profile") || path.startsWith("/dashboard/proxy-pools") || path.startsWith("/dashboard/skills")) return "system";
-    return "gateway";
-  };
-
-  useEffect(() => {
-    setActiveTab(getActiveTabFromPath(pathname));
-  }, [pathname]);
-
   const getToastStyle = (type) => {
     if (type === "success") return { wrapper: "border-green-500/30 bg-green-500/10 text-green-600 dark:text-green-400", icon: "check_circle" };
     if (type === "error") return { wrapper: "border-red-500/30 bg-red-500/10 text-red-600 dark:text-red-400", icon: "error" };
@@ -155,6 +154,7 @@ export default function TopNavLayout({ children }) {
 
   const isTabActive = (tabId) => {
     const tab = NAV_TABS.find((t) => t.id === tabId);
+    if (!tab) return false;
     return pathname === tab.href || pathname.startsWith(tab.href + "/");
   };
 
@@ -205,10 +205,13 @@ export default function TopNavLayout({ children }) {
                       className="flex items-center justify-center size-9 rounded-xl bg-gradient-to-br from-primary via-primary-hover to-primary shadow-[0_0_20px_rgba(99,102,241,0.4)] relative overflow-hidden"
                     >
                       <div className="absolute inset-0 bg-gradient-to-tr from-white/20 to-transparent" />
+                      {/* eslint-disable-next-line @next/next/no-img-element -- remote GitHub avatar, next/image offers no benefit here */}
                       <img
                         src="https://avatars.githubusercontent.com/u/181945053?v=4"
                         alt="NzRouter"
                         className="size-8 rounded-lg relative z-10"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </motion.div>
                     <div className="hidden sm:block">
@@ -219,19 +222,27 @@ export default function TopNavLayout({ children }) {
                     </div>
                   </Link>
 
-                  <div className="hidden md:flex items-center gap-1 bg-surface/50 dark:bg-surface/30 rounded-xl border border-border-subtle p-1" role="tablist" aria-label="Main navigation">
+                  <div className="hidden md:flex items-center gap-1 bg-surface/50 dark:bg-surface/30 rounded-xl border border-border-subtle p-1" role="tablist" aria-label="Main navigation" onMouseLeave={() => { setHoveredTab(null); setShowDropdown(null); }}>
                     {NAV_TABS.map((tab) => {
                       const active = activeTab === tab.id;
                       return (
                         <motion.button
                           key={tab.id}
                           role="tab"
-                          aria-selected={active}
+                          aria-selected={isTabActive(tab.id)}
                           aria-controls={`${tab.id}-panel`}
                           id={`${tab.id}-tab`}
-                          onClick={() => setActiveTab(tab.id)}
-                          onMouseEnter={() => setHoveredTab(tab.id)}
-                          onMouseLeave={() => setHoveredTab(null)}
+                          onClick={() => {
+                            setActiveTab(tab.id);
+                            if (pathname !== tab.href) router.push(tab.href);
+                          }}
+                          onMouseEnter={() => {
+                            setHoveredTab(tab.id);
+                            setShowDropdown(tab.id);
+                          }}
+                          onMouseLeave={() => {
+                            setHoveredTab(null);
+                          }}
                           className={cn(
                             "relative flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200",
                             active
@@ -286,8 +297,6 @@ export default function TopNavLayout({ children }) {
                   <HeaderLanguage />
                   <HeaderMenu
                     onLogout={() => window.location.assign("/login")}
-                    onChangelog={() => setChangelogOpen(true)}
-                    onShutdown={() => setShutdownOpen(true)}
                   />
                 </div>
               </div>

@@ -1,6 +1,8 @@
-# N4tzzOfficial CLI
+# NzRouter CLI
 
-The launcher for the N4tzzOfficial self-hosted AI router.
+by N4tzzOfficial
+
+The launcher for the NzRouter self-hosted AI router.
 
 ```bash
 npm install -g nzrouter
@@ -14,7 +16,7 @@ First-login password: **`nzrouter123`** (change in Dashboard → Profile).
 
 ## What it does
 
-- **Installs and starts** the N4tzzOfficial server (Next.js + SQLite).
+- **Installs and starts** the NzRouter server (Next.js + SQLite).
 - **System tray** with quick links: dashboard, API key, restart, update, quit.
 - **Background / daemon mode** for headless servers.
 - **Auto-update** — every 6 h the background executor checks the GitHub release, then
@@ -143,7 +145,7 @@ or `%AppData%\npm` (Windows) to your `PATH`, then restart the shell.
 **Port 20514 already in use**
 Pick another port: `nzrouter --port 9000`. Update any CLI tools pointing at `20514` too.
 
-**`Wow, you idiot, N4tzzOfficial won't work without the API KEY, you idiot`**
+**`NzRouter won't work without the API KEY`**
 Your tool isn't sending the API key. Copy it from **Dashboard → Profile** and set it as
 `Authorization: Bearer <key>` (or the tool's *API Key* field).
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Card, Button, ModelSelectModal, ManualConfigModal } from "@/shared/components";
 import Image from "next/image";
 import BaseUrlSelect from "./BaseUrlSelect";
@@ -25,7 +25,7 @@ export default function DeepSeekTuiToolCard({
   tailscaleEnabled,
   tailscaleUrl,
 }) {
-  const [deepseekStatus, setDeepseekStatus] = useState(initialStatus || null);
+  const [deepseekStatus, setDeepseekStatus] = useState(null);
   const [checking, setChecking] = useState(false);
   const [applying, setApplying] = useState(false);
   const [restoring, setRestoring] = useState(false);
@@ -37,6 +37,12 @@ export default function DeepSeekTuiToolCard({
   const [showManualConfigModal, setShowManualConfigModal] = useState(false);
   const [customBaseUrl, setCustomBaseUrl] = useState("");
   const hasInitializedModel = useRef(false);
+  const apiKeysRef = useRef(apiKeys);
+
+  // Update ref when apiKeys change (outside render)
+  useEffect(() => {
+    apiKeysRef.current = apiKeys;
+  }, [apiKeys]);
 
   const currentBaseUrl = deepseekStatus?.settings?.["providers.openai"]?.base_url || "";
 
@@ -50,24 +56,25 @@ export default function DeepSeekTuiToolCard({
 
   const configStatus = getConfigStatus();
 
+  // Initialize selectedApiKey from apiKeys when available - use ref to avoid effect setState
+  const selectedApiKeyInitialized = useRef(false);
   useEffect(() => {
-    if (apiKeys?.length > 0 && !selectedApiKey) {
+    if (!selectedApiKeyInitialized.current && apiKeys?.length > 0 && !selectedApiKey) {
+      selectedApiKeyInitialized.current = true;
       setSelectedApiKey(apiKeys[0].key);
     }
   }, [apiKeys, selectedApiKey]);
 
+  // Initialize status from initialStatus - only on first render
+  const initialStatusRef = useRef(initialStatus);
   useEffect(() => {
-    if (initialStatus) setDeepseekStatus(initialStatus);
-  }, [initialStatus]);
-
-  useEffect(() => {
-    if (isExpanded) {
-      if (!deepseekStatus) checkStatus();
-      fetchModelAliases();
+    if (initialStatusRef.current) {
+      setDeepseekStatus(initialStatusRef.current);
+      initialStatusRef.current = null;
     }
-  }, [isExpanded]);
+  }, []);
 
-  const fetchModelAliases = async () => {
+  const fetchModelAliases = useCallback(async () => {
     try {
       const res = await fetch("/api/models/alias");
       const data = await res.json();
@@ -75,17 +82,9 @@ export default function DeepSeekTuiToolCard({
     } catch (error) {
       console.log("Error fetching model aliases:", error);
     }
-  };
+  }, []);
 
-  useEffect(() => {
-    if (deepseekStatus?.installed && !hasInitializedModel.current) {
-      hasInitializedModel.current = true;
-      const openaiSection = deepseekStatus.settings?.["providers.openai"];
-      if (openaiSection?.model) setSelectedModel(openaiSection.model);
-    }
-  }, [deepseekStatus]);
-
-  const checkStatus = async () => {
+  const checkStatus = useCallback(async () => {
     setChecking(true);
     try {
       const res = await fetch(ENDPOINT);
@@ -96,7 +95,40 @@ export default function DeepSeekTuiToolCard({
     } finally {
       setChecking(false);
     }
-  };
+  }, []);
+
+  // Load data when expanded
+  useEffect(() => {
+    if (!isExpanded) return;
+    let cancelled = false;
+    const load = async () => {
+      if (!deepseekStatus) {
+        try {
+          const res = await fetch(ENDPOINT);
+          if (res.ok && !cancelled) {
+            const data = await res.json();
+            setDeepseekStatus(data);
+          }
+        } catch (error) {
+          console.log("Error fetching status:", error);
+          if (!cancelled) setDeepseekStatus({ installed: false });
+        }
+      }
+      await fetchModelAliases();
+    };
+    load();
+    return () => { cancelled = true; };
+  }, [isExpanded, deepseekStatus, fetchModelAliases]);
+
+  // Initialize model from status - only once after status loads
+  const modelInitialized = useRef(false);
+  useEffect(() => {
+    if (deepseekStatus?.installed && !modelInitialized.current) {
+      modelInitialized.current = true;
+      const openaiSection = deepseekStatus.settings?.["providers.openai"];
+      if (openaiSection?.model) setTimeout(() => setSelectedModel(openaiSection.model), 0);
+    }
+  }, [deepseekStatus]);
 
   const normalizeLocalhost = (url) => url.replace("://localhost", "://127.0.0.1");
 

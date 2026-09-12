@@ -54,39 +54,41 @@ const UNAUTHED_ALLOWLIST = new Set([
 
 /**
  * Decide whether a path should be key-protected.
- * Matches `/api/v1/*` and the public `/v1/*` rewrite target.
+ * Covers all LLM API surfaces: `/v1/*`, `/v1beta/*` (Gemini), and `/codex/*`
+ * plus their internal `/api/*` rewrite targets. Next.js `request.url` retains
+ * the ORIGINAL pathname (e.g. `/codex/x`) even though the handler lives under
+ * `/api/v1/responses`, so both forms must be checked.
  */
 function isV1Path(pathname) {
   return (
     pathname === "/v1" ||
     pathname.startsWith("/v1/") ||
     pathname === "/api/v1" ||
-    pathname.startsWith("/api/v1/")
+    pathname.startsWith("/api/v1/") ||
+    pathname === "/v1beta" ||
+    pathname.startsWith("/v1beta/") ||
+    pathname === "/api/v1beta" ||
+    pathname.startsWith("/api/v1beta/") ||
+    pathname === "/codex" ||
+    pathname.startsWith("/codex/") ||
+    pathname === "/api/codex" ||
+    pathname.startsWith("/api/codex/")
   );
 }
 
 /**
  * Check if API key enforcement is enabled via settings.
- * Uses dynamic import to avoid circular dependencies.
+ * Fast-fail: no cache on the /v1/* hot path — the user explicitly asked
+ * for instant 401 when `Require API key` is ON (no 30 s delay). Reads
+ * are cheap (SQLite) and the guard must honour a toggle the instant
+ * the user flips it in the dashboard. Fail-secure (true) on error.
  */
-let requireApiKeyCache = null;
-let requireApiKeyCacheTime = 0;
-const CACHE_TTL_MS = 30000; // 30 seconds
-
 async function isRequireApiKeyEnabled() {
-  const now = Date.now();
-  if (requireApiKeyCache !== null && now - requireApiKeyCacheTime < CACHE_TTL_MS) {
-    return requireApiKeyCache;
-  }
   try {
-    // Dynamic import to avoid circular dependency with settings repo
     const { getSettings } = await import("@/lib/db/repos/settingsRepo.js");
     const settings = await getSettings();
-    requireApiKeyCache = settings.requireApiKey !== false; // Default true
-    requireApiKeyCacheTime = now;
-    return requireApiKeyCache;
-  } catch (e) {
-    // On error, default to true (secure by default)
+    return settings.requireApiKey !== false; // default true
+  } catch {
     return true;
   }
 }

@@ -2,10 +2,7 @@ import {
   getProviderCredentials,
   markAccountUnavailable,
   clearAccountError,
-  extractApiKey,
-  isValidApiKey,
 } from "../services/auth.js";
-import { getSettings } from "@/lib/localDb";
 import { getModelInfo } from "../services/model.js";
 import { handleVideoProxyCore, getVideoConfig, sanitizeSecrets } from "open-sse/handlers/videoCore.js";
 import { errorResponse, unavailableResponse } from "open-sse/utils/error.js";
@@ -27,13 +24,9 @@ const CREATE_ROTATION_STATUSES = new Set([
 ]);
 
 async function requireValidApiKey(request) {
-  const apiKey = extractApiKey(request);
-  const settings = await getSettings();
-  if (settings.requireApiKey) {
-    if (!apiKey) return errorResponse(HTTP_STATUS.UNAUTHORIZED, "Missing API key");
-    const valid = await isValidApiKey(apiKey);
-    if (!valid) return errorResponse(HTTP_STATUS.UNAUTHORIZED, "Invalid API key");
-  }
+  // Auth is enforced by `withApiKey` middleware on the route — trust it.
+  // Keep helper for backward compat but do not re-check inside handler
+  // (would add a second DB read and wrong error shape).
   return null;
 }
 

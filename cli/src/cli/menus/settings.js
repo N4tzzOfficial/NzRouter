@@ -2,15 +2,16 @@ const api = require("../api/client");
 const { confirm, pause } = require("../utils/input");
 const { showStatus } = require("../utils/display");
 const { showMenuWithBack } = require("../utils/menuHelper");
+const { COLORS: INPUT_COLORS } = require("../utils/input");
 
-// ANSI colors
+// ANSI colors — use NzRouter brand cyan
 const COLORS = {
-  reset: "\x1b[0m",
+  reset: INPUT_COLORS.reset,
   green: "\x1b[32m",
   red: "\x1b[31m",
   yellow: "\x1b[33m",
-  dim: "\x1b[2m",
-  cyan: "\x1b[36m"
+  dim: INPUT_COLORS.dim,
+  cyan: INPUT_COLORS.brand
 };
 
 const DEFAULT_PASSWORD = "nzrouter123";

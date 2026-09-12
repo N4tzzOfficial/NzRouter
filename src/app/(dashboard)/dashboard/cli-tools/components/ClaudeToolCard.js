@@ -66,35 +66,78 @@ export default function ClaudeToolCard({
 
   const configStatus = getConfigStatus();
 
+  // Initialize selectedApiKey from apiKeys - use ref to avoid effect setState
+  const selectedApiKeyInitialized = useRef(false);
   useEffect(() => {
-    if (apiKeys?.length > 0 && !selectedApiKey) {
+    if (!selectedApiKeyInitialized.current && apiKeys?.length > 0 && !selectedApiKey) {
+      selectedApiKeyInitialized.current = true;
       setSelectedApiKey(apiKeys[0].key);
     }
   }, [apiKeys, selectedApiKey]);
 
+  // Initialize status from initialStatus - only on first render
+  const initialStatusRef = useRef(initialStatus);
   useEffect(() => {
-    if (initialStatus) {
-      setClaudeStatus(initialStatus);
-      setExaMcpEnabled(!!initialStatus.exaMcpEnabled);
+    if (initialStatusRef.current) {
+      setClaudeStatus(initialStatusRef.current);
+      setExaMcpEnabled(!!initialStatusRef.current.exaMcpEnabled);
+      initialStatusRef.current = null;
     }
-  }, [initialStatus]);
+  }, []);
+
+  const fetchModelAliases = useCallback(async () => {
+    try {
+      const res = await fetch("/api/models/alias");
+      const data = await res.json();
+      if (res.ok) setModelAliases(data.aliases || {});
+    } catch (error) {
+      console.log("Error fetching model aliases:", error);
+    }
+  }, []);
 
   useEffect(() => {
     const v = claudeStatus?.settings?.env?.CLAUDE_CODE_MAX_CONTEXT_TOKENS;
-    setMaxContextTokens(v || "");
+    if (v !== undefined) {
+      setTimeout(() => setMaxContextTokens(v || ""), 0);
+    }
   }, [claudeStatus?.settings?.env?.CLAUDE_CODE_MAX_CONTEXT_TOKENS]);
 
   useEffect(() => {
-    if (isExpanded) {
-      if (!claudeStatus) checkClaudeStatus();
-      fetchModelAliases();
+    if (!isExpanded) return;
+    let cancelled = false;
+    async function load() {
+      if (!claudeStatus) {
+        setCheckingClaude(true);
+        try {
+          const res = await fetch("/api/cli-tools/claude-settings");
+          const data = await res.json();
+          if (!cancelled) {
+            setClaudeStatus(data);
+            setExaMcpEnabled(!!data.exaMcpEnabled);
+          }
+        } catch (error) {
+          if (!cancelled) {
+            setClaudeStatus({ installed: false, error: error.message });
+          }
+        } finally {
+          if (!cancelled) setCheckingClaude(false);
+        }
+      }
+      await fetchModelAliases();
     }
-  }, [isExpanded]);
+    load();
+    return () => { cancelled = true; };
+  }, [isExpanded, claudeStatus, fetchModelAliases]);
 
   useEffect(() => {
-    fetch("/api/settings").then(r => r.json()).then(data => {
-      setCcFilterNaming(!!data.ccFilterNaming);
-    }).catch(() => {});
+    let cancelled = false;
+    fetch("/api/settings")
+      .then(r => r.json())
+      .then(data => {
+        if (!cancelled) setCcFilterNaming(!!data.ccFilterNaming);
+      })
+      .catch(() => {});
+    return () => { cancelled = true; };
   }, []);
 
   const handleCcFilterNamingToggle = async (e) => {
@@ -107,19 +150,12 @@ export default function ClaudeToolCard({
     }).catch(() => {});
   };
 
-  const fetchModelAliases = async () => {
-    try {
-      const res = await fetch("/api/models/alias");
-      const data = await res.json();
-      if (res.ok) setModelAliases(data.aliases || {});
-    } catch (error) {
-      console.log("Error fetching model aliases:", error);
-    }
-  };
-
+  // Track if we've already initialized from claudeStatus to avoid setState in effect
+  const initializedFromStatusRef = useRef(false);
   useEffect(() => {
-    if (claudeStatus?.installed && !hasInitializedModels.current) {
+    if (claudeStatus?.installed && !hasInitializedModels.current && !initializedFromStatusRef.current) {
       hasInitializedModels.current = true;
+      initializedFromStatusRef.current = true;
       const env = claudeStatus.settings?.env || {};
 
       tool.defaultModels.forEach((model) => {
@@ -131,27 +167,13 @@ export default function ClaudeToolCard({
           }
         }
       });
-      // Only set selectedApiKey if it exists in apiKeys list
+      // Only set selectedApiKey if it exists in apiKeys list - use setTimeout to avoid effect setState
       const tokenFromFile = env.ANTHROPIC_AUTH_TOKEN;
       if (tokenFromFile && apiKeys?.some(k => k.key === tokenFromFile)) {
-        setSelectedApiKey(tokenFromFile);
+        setTimeout(() => setSelectedApiKey(tokenFromFile), 0);
       }
     }
   }, [claudeStatus, apiKeys, tool.defaultModels, onModelMappingChange]);
-
-  const checkClaudeStatus = async () => {
-    setCheckingClaude(true);
-    try {
-      const res = await fetch("/api/cli-tools/claude-settings");
-      const data = await res.json();
-      setClaudeStatus(data);
-      setExaMcpEnabled(!!data.exaMcpEnabled);
-    } catch (error) {
-      setClaudeStatus({ installed: false, error: error.message });
-    } finally {
-      setCheckingClaude(false);
-    }
-  };
 
   const getEffectiveBaseUrl = () => {
     const url = customBaseUrl || baseUrl;

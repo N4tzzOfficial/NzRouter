@@ -5,6 +5,7 @@ import { verifyDashboardAuthToken } from "@/lib/auth/dashboardSession";
 import { hasTrustedPeerHeaders } from "@/lib/auth/trustedPeer";
 
 const CLI_TOKEN_HEADER = "x-nzr-cli-token";
+const LEGACY_CLI_TOKEN_HEADER = "x-9r-cli-token";
 const CLI_TOKEN_SALT = "nzr-cli-auth";
 
 let cachedCliToken = null;
@@ -14,7 +15,7 @@ async function getCliToken() {
 }
 
 async function hasValidCliToken(request) {
-  const token = request.headers.get(CLI_TOKEN_HEADER);
+  const token = request.headers.get(CLI_TOKEN_HEADER) || request.headers.get(LEGACY_CLI_TOKEN_HEADER);
   if (!token) return false;
   return token === await getCliToken();
 }
@@ -34,7 +35,7 @@ const PUBLIC_API_PATHS = [
 ];
 
 // Public top-level prefixes (LLM API endpoints with their own API key auth).
-const PUBLIC_PREFIXES = ["/v1", "/v1beta", "/api/v1", "/api/v1beta", "/codex"];
+const PUBLIC_PREFIXES = ["/v1", "/v1beta", "/api/v1", "/api/v1beta", "/codex", "/api/codex"];
 
 // Always require JWT token regardless of requireLogin setting
 const ALWAYS_PROTECTED = [
@@ -152,9 +153,18 @@ async function hasValidApiKey(request) {
 }
 
 async function canAccessPublicLlmApi(request) {
-  if (isLocalRequest(request)) return true;
+  // Internal machine-token calls (self-checks) always pass — but the /v1
+  // middleware still enforces a real key for external clients.
   if (await hasValidCliToken(request)) return true;
-  return await hasValidApiKey(request);
+  // Honour the `Require API key` toggle instantly (no localhost bypass).
+  // When ON: /v1/* from anywhere — including localhost — needs a valid key.
+  // When OFF: data returns immediately without any key. No cache on hot path.
+  const settings = await loadSettings();
+  if (settings && settings.requireApiKey === false) return true;
+  const apiKey = extractApiKey(request);
+  if (!apiKey) return "no_key";
+  const valid = await validateApiKey(apiKey);
+  return valid ? true : "bad_key";
 }
 
 async function canAccessLocalOnlyRoute(request) {
@@ -236,12 +246,22 @@ export async function proxy(request) {
   }
 
   if (isPublicLlmApi(pathname)) {
-    if (await canAccessPublicLlmApi(request)) return NextResponse.next();
+    const llmAuth = await canAccessPublicLlmApi(request);
+    if (llmAuth === true) return NextResponse.next();
+    // Unified 401 shape with middleware — exact message the CLI/dashboard expect.
+    const noKey = llmAuth === "no_key";
     return NextResponse.json({
-      error: "API key required for remote API access",
-      message: "Wow, you idiot, NzRouter won't work without the API KEY, you idiot",
-      creator: "N4tzzOfficial"
-    }, { status: 401 });
+      error: {
+        message: noKey
+          ? "Wow, you idiot, the NzRouter won't work without the API KEY, you idiot"
+          : "Wow, you idiot, the API KEY you sent is wrong. Check the dashboard Endpoint & Key page, you idiot",
+        type: "authentication_error",
+        code: "invalid_api_key",
+      },
+    }, {
+      status: 401,
+      headers: { "Access-Control-Allow-Origin": "*" },
+    });
   }
 
   // Deny-by-default for /api/* — public allow-list bypasses, everything else requires auth.

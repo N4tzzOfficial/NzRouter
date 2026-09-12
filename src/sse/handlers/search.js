@@ -3,7 +3,6 @@ import {
   markAccountUnavailable,
   clearAccountError,
   extractApiKey,
-  isValidApiKey,
 } from "../services/auth.js";
 import { getSettings, getCombos } from "@/lib/localDb";
 import { AI_PROVIDERS, resolveProviderId } from "@/shared/constants/providers.js";
@@ -36,7 +35,7 @@ export async function handleSearch(request) {
 
   log.request("POST", `${url.pathname} | ${providerInput}`);
 
-  // Log API key (masked)
+  // Auth is enforced by `withApiKey` middleware — trust it. Just log.
   const apiKey = extractApiKey(request);
   if (apiKey) {
     log.debug("AUTH", `API Key: ${log.maskKey(apiKey)}`);
@@ -44,19 +43,8 @@ export async function handleSearch(request) {
     log.debug("AUTH", "No API key provided (local mode)");
   }
 
-  // Enforce API key if enabled in settings
+  // Single settings read for combo strategies etc.
   const settings = await getSettings();
-  if (settings.requireApiKey) {
-    if (!apiKey) {
-      log.warn("AUTH", "Missing API key (requireApiKey=true)");
-      return errorResponse(HTTP_STATUS.UNAUTHORIZED, "Missing API key");
-    }
-    const valid = await isValidApiKey(apiKey);
-    if (!valid) {
-      log.warn("AUTH", "Invalid API key (requireApiKey=true)");
-      return errorResponse(HTTP_STATUS.UNAUTHORIZED, "Invalid API key");
-    }
-  }
 
   if (!providerInput || typeof providerInput !== "string") {
     log.warn("SEARCH", "Missing provider/model");

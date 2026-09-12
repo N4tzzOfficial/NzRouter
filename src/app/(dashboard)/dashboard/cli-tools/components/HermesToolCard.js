@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Card, Button, ModelSelectModal, ManualConfigModal } from "@/shared/components";
 import Image from "next/image";
 import BaseUrlSelect from "./BaseUrlSelect";
@@ -25,7 +25,7 @@ export default function HermesToolCard({
   tailscaleEnabled,
   tailscaleUrl,
 }) {
-  const [hermesStatus, setHermesStatus] = useState(initialStatus || null);
+  const [hermesStatus, setHermesStatus] = useState(null);
   const [checking, setChecking] = useState(false);
   const [applying, setApplying] = useState(false);
   const [restoring, setRestoring] = useState(false);
@@ -37,6 +37,12 @@ export default function HermesToolCard({
   const [showManualConfigModal, setShowManualConfigModal] = useState(false);
   const [customBaseUrl, setCustomBaseUrl] = useState("");
   const hasInitializedModel = useRef(false);
+  const apiKeysRef = useRef(apiKeys);
+
+  // Update ref when apiKeys change (outside render)
+  useEffect(() => {
+    apiKeysRef.current = apiKeys;
+  }, [apiKeys]);
 
   const currentBaseUrl = hermesStatus?.settings?.model?.base_url || "";
 
@@ -50,24 +56,25 @@ export default function HermesToolCard({
 
   const configStatus = getConfigStatus();
 
+  // Initialize selectedApiKey from apiKeys when available - use ref to avoid effect setState
+  const selectedApiKeyInitialized = useRef(false);
   useEffect(() => {
-    if (apiKeys?.length > 0 && !selectedApiKey) {
+    if (!selectedApiKeyInitialized.current && apiKeys?.length > 0 && !selectedApiKey) {
+      selectedApiKeyInitialized.current = true;
       setSelectedApiKey(apiKeys[0].key);
     }
   }, [apiKeys, selectedApiKey]);
 
+  // Initialize status from initialStatus - only on first render
+  const initialStatusRef = useRef(initialStatus);
   useEffect(() => {
-    if (initialStatus) setHermesStatus(initialStatus);
-  }, [initialStatus]);
-
-  useEffect(() => {
-    if (isExpanded) {
-      if (!hermesStatus) checkStatus();
-      fetchModelAliases();
+    if (initialStatusRef.current) {
+      setHermesStatus(initialStatusRef.current);
+      initialStatusRef.current = null;
     }
-  }, [isExpanded]);
+  }, []);
 
-  const fetchModelAliases = async () => {
+  const fetchModelAliases = useCallback(async () => {
     try {
       const res = await fetch("/api/models/alias");
       const data = await res.json();
@@ -75,17 +82,9 @@ export default function HermesToolCard({
     } catch (error) {
       console.log("Error fetching model aliases:", error);
     }
-  };
+  }, []);
 
-  useEffect(() => {
-    if (hermesStatus?.installed && !hasInitializedModel.current) {
-      hasInitializedModel.current = true;
-      const cfg = hermesStatus.settings?.model;
-      if (cfg?.default) setSelectedModel(cfg.default);
-    }
-  }, [hermesStatus]);
-
-  const checkStatus = async () => {
+  const checkStatus = useCallback(async () => {
     setChecking(true);
     try {
       const res = await fetch(ENDPOINT);
@@ -96,7 +95,40 @@ export default function HermesToolCard({
     } finally {
       setChecking(false);
     }
-  };
+  }, []);
+
+  // Load data when expanded
+  useEffect(() => {
+    if (!isExpanded) return;
+    let cancelled = false;
+    const load = async () => {
+      if (!hermesStatus) {
+        try {
+          const res = await fetch(ENDPOINT);
+          if (res.ok && !cancelled) {
+            const data = await res.json();
+            setHermesStatus(data);
+          }
+        } catch (error) {
+          console.log("Error fetching status:", error);
+          if (!cancelled) setHermesStatus({ installed: false });
+        }
+      }
+      await fetchModelAliases();
+    };
+    load();
+    return () => { cancelled = true; };
+  }, [isExpanded, hermesStatus, fetchModelAliases]);
+
+  // Initialize model from status - only once after status loads
+  const modelInitialized = useRef(false);
+  useEffect(() => {
+    if (hermesStatus?.installed && !modelInitialized.current && !selectedModel) {
+      modelInitialized.current = true;
+      const cfg = hermesStatus.settings?.model;
+      if (cfg?.default) setTimeout(() => setSelectedModel(cfg.default), 0);
+    }
+  }, [hermesStatus, selectedModel]);
 
   const normalizeLocalhost = (url) => url.replace("://localhost", "://127.0.0.1");
 

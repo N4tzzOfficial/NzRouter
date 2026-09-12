@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Card, Button, ModelSelectModal, ManualConfigModal } from "@/shared/components";
 import Image from "next/image";
 import BaseUrlSelect from "./BaseUrlSelect";
@@ -26,34 +26,25 @@ export default function CopilotToolCard({ tool, isExpanded, onToggle, baseUrl, a
     selectedModelsRef.current = selectedModels;
   }, [selectedModels]);
 
+  // Initialize selectedApiKey from apiKeys - use ref to avoid effect setState
+  const selectedApiKeyInitialized = useRef(false);
   useEffect(() => {
-    if (apiKeys?.length > 0 && !selectedApiKey) {
+    if (!selectedApiKeyInitialized.current && apiKeys?.length > 0 && !selectedApiKey) {
+      selectedApiKeyInitialized.current = true;
       setSelectedApiKey(apiKeys[0].key);
     }
   }, [apiKeys, selectedApiKey]);
 
+  // Initialize status from initialStatus - only on first render
+  const initialStatusRef = useRef(initialStatus);
   useEffect(() => {
-    if (initialStatus) setStatus(initialStatus);
-  }, [initialStatus]);
-
-  useEffect(() => {
-    if (isExpanded) {
-      if (!status) checkStatus();
-      fetchModelAliases();
+    if (initialStatusRef.current) {
+      setStatus(initialStatusRef.current);
+      initialStatusRef.current = null;
     }
-  }, [isExpanded]);
+  }, []);
 
-  // Pre-fill from existing config
-  useEffect(() => {
-    if (status?.config && Array.isArray(status.config) && selectedModels.length === 0) {
-      const entry = status.config.find((e) => e.name === "NzRouter");
-      if (entry?.models?.length > 0) {
-        setSelectedModels(entry.models.map((m) => m.id));
-      }
-    }
-  }, [status]);
-
-  const fetchModelAliases = async () => {
+  const fetchModelAliases = useCallback(async () => {
     try {
       const res = await fetch("/api/models/alias");
       const data = await res.json();
@@ -61,7 +52,39 @@ export default function CopilotToolCard({ tool, isExpanded, onToggle, baseUrl, a
     } catch (error) {
       console.log("Error fetching model aliases:", error);
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    if (!isExpanded) return;
+    let cancelled = false;
+    async function load() {
+      if (!status) {
+        setChecking(true);
+        try {
+          const res = await fetch("/api/cli-tools/copilot-settings");
+          const data = await res.json();
+          if (!cancelled) setStatus(data);
+        } catch (error) {
+          if (!cancelled) setStatus({ error: error.message });
+        } finally {
+          if (!cancelled) setChecking(false);
+        }
+      }
+      await fetchModelAliases();
+    }
+    load();
+    return () => { cancelled = true; };
+  }, [isExpanded, status, fetchModelAliases]);
+
+  // Pre-fill from existing config - use setTimeout to avoid effect setState
+  useEffect(() => {
+    if (status?.config && Array.isArray(status.config) && selectedModels.length === 0) {
+      const entry = status.config.find((e) => e.name === "NzRouter");
+      if (entry?.models?.length > 0) {
+        setTimeout(() => setSelectedModels(entry.models.map((m) => m.id)), 0);
+      }
+    }
+  }, [status, selectedModels.length]);
 
   const saveModels = async (models) => {
     try {
@@ -97,19 +120,6 @@ export default function CopilotToolCard({ tool, isExpanded, onToggle, baseUrl, a
   const getDisplayUrl = () => customBaseUrl || `${baseUrl}/v1`;
 
   const removeModel = (id) => setSelectedModels((prev) => prev.filter((m) => m !== id));
-
-  const checkStatus = async () => {
-    setChecking(true);
-    try {
-      const res = await fetch("/api/cli-tools/copilot-settings");
-      const data = await res.json();
-      setStatus(data);
-    } catch (error) {
-      setStatus({ error: error.message });
-    } finally {
-      setChecking(false);
-    }
-  };
 
   const handleApply = async () => {
     setApplying(true);

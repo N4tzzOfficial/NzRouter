@@ -337,21 +337,20 @@ export async function clearAccountError(connectionId, currentConnection, model =
 }
 
 /**
- * Extract API key from request headers
+ * Extract API key from request headers (supports OpenAI, Anthropic, Google conventions)
  */
 export function extractApiKey(request) {
-  // Check Authorization header first
   const authHeader = request.headers.get("Authorization");
-  if (authHeader?.startsWith("Bearer ")) {
-    return authHeader.slice(7);
-  }
-
-  // Check Anthropic x-api-key header
+  if (authHeader?.startsWith("Bearer ")) return authHeader.slice(7);
   const xApiKey = request.headers.get("x-api-key");
-  if (xApiKey) {
-    return xApiKey;
-  }
-
+  if (xApiKey) return xApiKey;
+  const googKey = request.headers.get("x-goog-api-key");
+  if (googKey) return googKey;
+  try {
+    const url = new URL(request.url);
+    const q = url.searchParams.get("key");
+    if (q) return q;
+  } catch {}
   return null;
 }
 

@@ -2,7 +2,9 @@ import pkg from "../../../package.json" with { type: "json" };
 
 // App configuration
 export const APP_CONFIG = {
-  name: "N4tzzOfficial",
+  name: "NzRouter",
+  brand: "NzRouter",
+  author: "N4tzzOfficial",
   description: "AI Infrastructure Management",
   version: pkg.version,
 };

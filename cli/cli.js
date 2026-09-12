@@ -663,9 +663,9 @@ killAllAppProcesses(port)
   .then(() => killProcessOnPort(port))
   .then(() => startServer(updatePromise));
 
-// Show interface selection menu
+// Show interface selection menu — NzRouter Control Center
 async function showInterfaceMenu(latestVersion) {
-  const { selectMenu } = require("./src/cli/utils/input");
+  const { selectMenu, COLORS } = require("./src/cli/utils/input");
   const { clearScreen } = require("./src/cli/utils/display");
   const { getEndpoint } = require("./src/cli/utils/endpoint");
 
@@ -682,7 +682,11 @@ async function showInterfaceMenu(latestVersion) {
     serverUrl = `http://${displayHost}:${port}`;
   }
 
-  const subtitle = `🚀 Server: \x1b[32m${serverUrl}\x1b[0m`;
+  // NzRouter cyan brand — never orange/terracotta. Subtitle carries the live
+  // server URL (green) plus a dim attribution line so the menu is instantly
+  // recognisable as NzRouter even in a screenshot.
+  const subtitle = `🚀 Server: \x1b[32m${serverUrl}\x1b[0m  ${COLORS.dim}· by N4tzzOfficial${COLORS.reset}`;
+  const headerContent = `${COLORS.dim}One endpoint · 40+ providers · RTK token saver — n4tzzofficial.my.id/nzrouter${COLORS.reset}`;
 
   const menuItems = [];
 
@@ -691,13 +695,14 @@ async function showInterfaceMenu(latestVersion) {
   }
 
   menuItems.push(
-    { label: "Web UI (Open in Browser)", icon: "🌐" },
+    { label: "Open Dashboard (Web UI)", icon: "🌐" },
     { label: "Terminal UI (Interactive CLI)", icon: "💻" },
     { label: "Hide to Tray (Background)", icon: "🔔" },
     { label: "Exit", icon: "🚪" }
   );
 
-  const selected = await selectMenu(`Choose Interface (v${pkg.version})`, menuItems, 0, subtitle);
+  const title = `◆ NzRouter  Control Center  v${pkg.version}`;
+  const selected = await selectMenu(title, menuItems, 0, subtitle, headerContent);
 
   const offset = latestVersion ? 1 : 0;
 

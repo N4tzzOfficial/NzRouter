@@ -4,13 +4,14 @@ const { clearScreen, showStatus, showHeader } = require("../utils/display");
 const { formatDate, getRelativeTime } = require("../utils/format");
 const { showMenuWithBack } = require("../utils/menuHelper");
 const { copyToClipboard } = require("../utils/clipboard");
+const { COLORS: INPUT_COLORS } = require("../utils/input");
 
-// ANSI colors for styling
+// ANSI colors for styling — use NzRouter brand cyan
 const COLORS = {
-  reset: "\x1b[0m",
-  bold: "\x1b[1m",
-  cyan: "\x1b[36m",
-  dim: "\x1b[2m"
+  reset: INPUT_COLORS.reset,
+  bold: INPUT_COLORS.bright,
+  cyan: INPUT_COLORS.brand,
+  dim: INPUT_COLORS.dim
 };
 
 // Provider models - static config (synced from open-sse/config/providerModels.js)

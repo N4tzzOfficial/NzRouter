@@ -4,13 +4,14 @@ const { showStatus } = require("../utils/display");
 const { selectModelFromList } = require("../utils/modelSelector");
 const { showMenuWithBack } = require("../utils/menuHelper");
 const { getEndpoint } = require("../utils/endpoint");
+const { COLORS: INPUT_COLORS } = require("../utils/input");
 
 const COLORS = {
-  reset: "\x1b[0m",
+  reset: INPUT_COLORS.reset,
   green: "\x1b[32m",
   red: "\x1b[31m",
-  dim: "\x1b[2m",
-  cyan: "\x1b[36m"
+  dim: INPUT_COLORS.dim,
+  cyan: INPUT_COLORS.brand
 };
 
 // Claude model types with defaults (matching Web UI)

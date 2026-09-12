@@ -3,9 +3,7 @@ import {
   markAccountUnavailable,
   clearAccountError,
   extractApiKey,
-  isValidApiKey,
 } from "../services/auth.js";
-import { getSettings } from "@/lib/localDb";
 import { getModelInfo } from "../services/model.js";
 import { handleEmbeddingsCore } from "open-sse/handlers/embeddingsCore.js";
 import { errorResponse, unavailableResponse } from "open-sse/utils/error.js";
@@ -43,26 +41,12 @@ export async function handleEmbeddings(request) {
 
   log.request("POST", `${url.pathname} | ${modelStr}`);
 
-  // Log API key (masked)
+  // Auth is enforced by `withApiKey` middleware — trust it. Just log.
   const apiKey = extractApiKey(request);
   if (apiKey) {
     log.debug("AUTH", `API Key: ${log.maskKey(apiKey)}`);
   } else {
     log.debug("AUTH", "No API key provided (local mode)");
-  }
-
-  // Enforce API key if enabled in settings
-  const settings = await getSettings();
-  if (settings.requireApiKey) {
-    if (!apiKey) {
-      log.warn("AUTH", "Missing API key (requireApiKey=true)");
-      return errorResponse(HTTP_STATUS.UNAUTHORIZED, "Missing API key");
-    }
-    const valid = await isValidApiKey(apiKey);
-    if (!valid) {
-      log.warn("AUTH", "Invalid API key (requireApiKey=true)");
-      return errorResponse(HTTP_STATUS.UNAUTHORIZED, "Invalid API key");
-    }
   }
 
   if (!modelStr) {

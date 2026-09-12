@@ -7,7 +7,8 @@ import { DATA_DIR } from '@/lib/dataDir';
 const MACHINE_ID_FILE = path.join(DATA_DIR, 'machine-id');
 const AUTH_DIR = path.join(DATA_DIR, 'auth');
 const CLI_SECRET_FILE = path.join(AUTH_DIR, 'cli-secret');
-const CLI_AUTH_SALT = '9r-cli-auth';
+const CLI_AUTH_SALT = 'nzr-cli-auth';
+const LEGACY_CLI_AUTH_SALT = '9r-cli-auth';
 let cachedRawId = null;
 let cachedCliSecret = null;
 
@@ -49,7 +50,7 @@ function loadCliSecret() {
 export async function getConsistentMachineId(salt = null) {
   const saltValue = salt || process.env.MACHINE_ID_SALT || 'endpoint-proxy-salt';
   const raw = loadRawMachineId();
-  const extra = saltValue === CLI_AUTH_SALT ? loadCliSecret() : '';
+  const extra = (saltValue === CLI_AUTH_SALT || saltValue === LEGACY_CLI_AUTH_SALT) ? loadCliSecret() : '';
   return crypto.createHash('sha256').update(raw + saltValue + extra).digest('hex').substring(0, 16);
 }
 

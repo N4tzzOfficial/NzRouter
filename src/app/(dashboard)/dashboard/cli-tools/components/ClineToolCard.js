@@ -22,26 +22,25 @@ export default function ClineToolCard({ tool, isExpanded, onToggle, baseUrl, api
   const [showManualConfigModal, setShowManualConfigModal] = useState(false);
   const [customBaseUrl, setCustomBaseUrl] = useState("");
 
+  // Initialize selectedApiKey from apiKeys - use ref to avoid effect setState
+  const selectedApiKeyInitialized = useRef(false);
   useEffect(() => {
-    if (apiKeys?.length > 0 && !selectedApiKey) setSelectedApiKey(apiKeys[0].key);
+    if (!selectedApiKeyInitialized.current && apiKeys?.length > 0 && !selectedApiKey) {
+      selectedApiKeyInitialized.current = true;
+      setSelectedApiKey(apiKeys[0].key);
+    }
   }, [apiKeys, selectedApiKey]);
 
+  // Initialize status from initialStatus - only on first render
+  const initialStatusRef = useRef(initialStatus);
   useEffect(() => {
-    if (initialStatus) setStatus(initialStatus);
-  }, [initialStatus]);
-
-  useEffect(() => {
-    if (isExpanded) {
-      if (!status) checkStatus();
-      fetchModelAliases();
+    if (initialStatusRef.current) {
+      setStatus(initialStatusRef.current);
+      initialStatusRef.current = null;
     }
-  }, [isExpanded]);
+  }, []);
 
-  useEffect(() => {
-    if (status?.settings?.openAiModelId) setSelectedModel(status.settings.openAiModelId);
-  }, [status]);
-
-  const fetchModelAliases = async () => {
+  const fetchModelAliases = useCallback(async () => {
     try {
       const res = await fetch("/api/models/alias");
       const data = await res.json();
@@ -49,7 +48,49 @@ export default function ClineToolCard({ tool, isExpanded, onToggle, baseUrl, api
     } catch (error) {
       console.log("Error fetching model aliases:", error);
     }
-  };
+  }, []);
+
+  const checkStatus = useCallback(async () => {
+    setChecking(true);
+    try {
+      const res = await fetch("/api/cli-tools/cline-settings");
+      const data = await res.json();
+      setStatus(data);
+    } catch (error) {
+      setStatus({ installed: false, error: error.message });
+    } finally {
+      setChecking(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isExpanded) return;
+    let cancelled = false;
+    async function load() {
+      if (!status) {
+        setChecking(true);
+        try {
+          const res = await fetch("/api/cli-tools/cline-settings");
+          const data = await res.json();
+          if (!cancelled) setStatus(data);
+        } catch (error) {
+          if (!cancelled) setStatus({ installed: false, error: error.message });
+        } finally {
+          if (!cancelled) setChecking(false);
+        }
+      }
+      await fetchModelAliases();
+    }
+    load();
+    return () => { cancelled = true; };
+  }, [isExpanded, status, fetchModelAliases]);
+
+  // Initialize model from status - use setTimeout to avoid effect setState
+  useEffect(() => {
+    if (status?.settings?.openAiModelId) {
+      setTimeout(() => setSelectedModel(status.settings.openAiModelId), 0);
+    }
+  }, [status]);
 
   const currentBaseUrl = status?.settings?.openAiBaseUrl || "";
 
@@ -68,19 +109,6 @@ export default function ClineToolCard({ tool, isExpanded, onToggle, baseUrl, api
   };
 
   const getDisplayUrl = () => customBaseUrl || `${baseUrl}/v1`;
-
-  const checkStatus = async () => {
-    setChecking(true);
-    try {
-      const res = await fetch("/api/cli-tools/cline-settings");
-      const data = await res.json();
-      setStatus(data);
-    } catch (error) {
-      setStatus({ installed: false, error: error.message });
-    } finally {
-      setChecking(false);
-    }
-  };
 
   const handleApply = async () => {
     setApplying(true);

@@ -10,11 +10,13 @@ const versionCache = (global.__npmVersionCache ??= { value: null, fetchedAt: 0 }
 const githubCache = (global.__githubVersionCache ??= { value: null, fetchedAt: 0 });
 
 function compareVersions(a, b) {
-  const pa = a.split(".").map(Number);
-  const pb = b.split(".").map(Number);
+  const pa = String(a || "").split(".").map((n) => parseInt(n, 10));
+  const pb = String(b || "").split(".").map((n) => parseInt(n, 10));
   for (let i = 0; i < 3; i++) {
-    if (pa[i] > pb[i]) return 1;
-    if (pa[i] < pb[i]) return -1;
+    const na = Number.isNaN(pa[i]) ? 0 : pa[i];
+    const nb = Number.isNaN(pb[i]) ? 0 : pb[i];
+    if (na > nb) return 1;
+    if (na < nb) return -1;
   }
   return 0;
 }
@@ -30,11 +32,13 @@ function fetchLatestVersion() {
         res.on("data", (chunk) => (data += chunk));
         res.on("end", () => {
           try {
+            if (res.statusCode < 200 || res.statusCode >= 300) return resolve(null);
             resolve(JSON.parse(data).version || null);
           } catch {
             resolve(null);
           }
         });
+        res.on("error", () => resolve(null));
       }
     );
     req.on("error", () => resolve(null));
@@ -53,9 +57,10 @@ function fetchGitHubVersion() {
         res.on("data", (chunk) => (data += chunk));
         res.on("end", () => {
           try {
+            if (res.statusCode < 200 || res.statusCode >= 300) return resolve(null);
             const release = JSON.parse(data);
             if (release.tag_name) {
-              resolve(release.tag_name.replace('v', ''));
+              resolve(String(release.tag_name).replace(/^v/, ""));
             } else {
               resolve(null);
             }
@@ -63,6 +68,7 @@ function fetchGitHubVersion() {
             resolve(null);
           }
         });
+        res.on("error", () => resolve(null));
       }
     );
     req.on("error", () => resolve(null));
@@ -95,11 +101,19 @@ async function getGitHubVersionCached() {
 }
 
 export async function GET() {
-  // Check both npm and GitHub, use the newer one
-  const [npmLatest, githubLatest] = await Promise.all([
-    getLatestVersionCached(),
-    getGitHubVersionCached()
-  ]);
+  // Check both npm and GitHub, use the newer one.
+  // Each source already resolves failures to null; never let one rejection kill the check.
+  let npmLatest = null;
+  let githubLatest = null;
+  try {
+    [npmLatest, githubLatest] = await Promise.all([
+      getLatestVersionCached().catch(() => null),
+      getGitHubVersionCached().catch(() => null),
+    ]);
+  } catch {
+    npmLatest = null;
+    githubLatest = null;
+  }
 
   const currentVersion = pkg.version;
   let latestVersion = currentVersion;

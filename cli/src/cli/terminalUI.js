@@ -5,13 +5,14 @@ const { showApiKeysMenu } = require("./menus/apiKeys");
 const { showCombosMenu } = require("./menus/combos");
 const { showSettingsMenu } = require("./menus/settings");
 const { showCliToolsMenu } = require("./menus/cliTools");
+const { COLORS: INPUT_COLORS } = require("./utils/input");
 
 const COLORS = {
-  reset: "\x1b[0m",
+  reset: INPUT_COLORS.reset,
   green: "\x1b[32m",
   red: "\x1b[31m",
-  dim: "\x1b[2m",
-  cyan: "\x1b[36m"
+  dim: INPUT_COLORS.dim,
+  cyan: INPUT_COLORS.brand
 };
 
 // Cached header (SWR): show last value instantly, refresh in background.

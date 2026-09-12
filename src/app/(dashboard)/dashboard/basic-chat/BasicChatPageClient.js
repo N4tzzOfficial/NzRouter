@@ -207,15 +207,18 @@ export default function BasicChatPageClient() {
   const historyMenuRef = useRef(null);
 
   useEffect(() => {
-    setIsHydrated(true);
+    const timer = setTimeout(() => setIsHydrated(true), 0);
+    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     let cancelled = false;
 
     async function loadData() {
-      setLoadingData(true);
-      setLoadError("");
+      if (!cancelled) {
+        setLoadingData(true);
+        setLoadError("");
+      }
 
       try {
         const providersRes = await fetch("/api/providers", { cache: "no-store" });
@@ -390,9 +393,12 @@ export default function BasicChatPageClient() {
         ? modelIndex.get(session.modelId)
         : savedModel;
       initializedRef.current = true;
-      setActiveSessionId(session.id);
-      setActiveProviderId(sessionModel?.providerId || savedProvider.providerId);
-      setActiveModelId(sessionModel?.id || savedModel.id);
+      // Use setTimeout to avoid synchronous setState in effect
+      setTimeout(() => {
+        setActiveSessionId(session.id);
+        setActiveProviderId(sessionModel?.providerId || savedProvider.providerId);
+        setActiveModelId(sessionModel?.id || savedModel.id);
+      }, 0);
       return;
     }
 
@@ -409,10 +415,13 @@ export default function BasicChatPageClient() {
     };
 
     initializedRef.current = true;
-    setSessions([session]);
-    setActiveSessionId(session.id);
-    setActiveProviderId(savedProvider.providerId);
-    setActiveModelId(savedModel.id);
+    // Use setTimeout to avoid synchronous setState in effect
+    setTimeout(() => {
+      setSessions([session]);
+      setActiveSessionId(session.id);
+      setActiveProviderId(savedProvider.providerId);
+      setActiveModelId(savedModel.id);
+    }, 0);
   }, [isHydrated, loadingData, providerGroups, modelIndex, sessions, activeSessionId, activeProviderId, activeModelId]);
 
   const updateSession = (sessionId, updater) => {

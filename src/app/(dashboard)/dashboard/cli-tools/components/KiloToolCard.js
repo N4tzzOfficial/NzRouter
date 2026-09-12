@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import { Card, Button, ModelSelectModal, ManualConfigModal } from "@/shared/components";
 import Image from "next/image";
 import BaseUrlSelect from "./BaseUrlSelect";
@@ -22,22 +22,25 @@ export default function KiloToolCard({ tool, isExpanded, onToggle, baseUrl, apiK
   const [showManualConfigModal, setShowManualConfigModal] = useState(false);
   const [customBaseUrl, setCustomBaseUrl] = useState("");
 
+  // Initialize selectedApiKey from apiKeys when available - use ref to avoid effect setState
+  const selectedApiKeyInitialized = useRef(false);
   useEffect(() => {
-    if (apiKeys?.length > 0 && !selectedApiKey) setSelectedApiKey(apiKeys[0].key);
+    if (!selectedApiKeyInitialized.current && apiKeys?.length > 0 && !selectedApiKey) {
+      selectedApiKeyInitialized.current = true;
+      setSelectedApiKey(apiKeys[0].key);
+    }
   }, [apiKeys, selectedApiKey]);
 
+  // Initialize status from initialStatus - only on first render
+  const initialStatusRef = useRef(initialStatus);
   useEffect(() => {
-    if (initialStatus) setStatus(initialStatus);
-  }, [initialStatus]);
-
-  useEffect(() => {
-    if (isExpanded) {
-      if (!status) checkStatus();
-      fetchModelAliases();
+    if (initialStatusRef.current) {
+      setStatus(initialStatusRef.current);
+      initialStatusRef.current = null;
     }
-  }, [isExpanded]);
+  }, []);
 
-  const fetchModelAliases = async () => {
+  const fetchModelAliases = useCallback(async () => {
     try {
       const res = await fetch("/api/models/alias");
       const data = await res.json();
@@ -45,7 +48,43 @@ export default function KiloToolCard({ tool, isExpanded, onToggle, baseUrl, apiK
     } catch (error) {
       console.log("Error fetching model aliases:", error);
     }
-  };
+  }, []);
+
+  const checkStatus = useCallback(async () => {
+    setChecking(true);
+    try {
+      const res = await fetch("/api/cli-tools/kilo-settings");
+      const data = await res.json();
+      setStatus(data);
+    } catch (error) {
+      setStatus({ installed: false, error: error.message });
+    } finally {
+      setChecking(false);
+    }
+  }, []);
+
+  // Load data when expanded
+  useEffect(() => {
+    if (!isExpanded) return;
+    let cancelled = false;
+    const load = async () => {
+      if (!status) {
+        try {
+          const res = await fetch("/api/cli-tools/kilo-settings");
+          if (res.ok && !cancelled) {
+            const data = await res.json();
+            setStatus(data);
+          }
+        } catch (error) {
+          console.log("Error fetching status:", error);
+          if (!cancelled) setStatus({ installed: false });
+        }
+      }
+      await fetchModelAliases();
+    };
+    load();
+    return () => { cancelled = true; };
+  }, [isExpanded, status, fetchModelAliases]);
 
   const getConfigStatus = () => {
     if (!status?.installed) return null;
@@ -60,19 +99,6 @@ export default function KiloToolCard({ tool, isExpanded, onToggle, baseUrl, apiK
   };
 
   const getDisplayUrl = () => customBaseUrl || `${baseUrl}/v1`;
-
-  const checkStatus = async () => {
-    setChecking(true);
-    try {
-      const res = await fetch("/api/cli-tools/kilo-settings");
-      const data = await res.json();
-      setStatus(data);
-    } catch (error) {
-      setStatus({ installed: false, error: error.message });
-    } finally {
-      setChecking(false);
-    }
-  };
 
   const handleApply = async () => {
     setApplying(true);

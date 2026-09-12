@@ -76,7 +76,8 @@ export default function BaseUrlSelect({
       });
     };
     sync();
-    setPresetsLoaded(true);
+    // Use setTimeout to avoid synchronous setState in effect
+    setTimeout(() => setPresetsLoaded(true), 0);
     return subscribePresets(sync);
   }, []);
 
@@ -96,10 +97,16 @@ export default function BaseUrlSelect({
       : null;
     const target = matched || options.find((o) => o.value !== CUSTOM_VALUE);
     if (target) {
-      setMode(target.value);
-      onChange(target.url);
+      // Use setTimeout to avoid synchronous setState in effect
+      setTimeout(() => {
+        setMode(target.value);
+        onChange(target.url);
+      }, 0);
     } else {
-      setMode(CUSTOM_VALUE);
+      // Use setTimeout to avoid synchronous setState in effect
+      setTimeout(() => {
+        setMode(CUSTOM_VALUE);
+      }, 0);
     }
   }, [presetsLoaded, options, onChange, currentUrl]);
 

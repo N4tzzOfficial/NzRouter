@@ -2,7 +2,7 @@ import { getApiKeys } from "@/lib/localDb";
 import { UPDATER_CONFIG } from "@/shared/constants/config";
 import { getConsistentMachineId } from "@/shared/utils/machineId";
 
-const CLI_TOKEN_SALT = "9r-cli-auth";
+const CLI_TOKEN_SALT = "nzr-cli-auth";
 
 function createSilentWavFile() {
   const sampleRate = 16000;
@@ -46,7 +46,9 @@ async function getInternalHeaders() {
 
   const headers = { "Content-Type": "application/json" };
   if (apiKey) headers["Authorization"] = `Bearer ${apiKey}`;
-  headers["x-9r-cli-token"] = await getConsistentMachineId(CLI_TOKEN_SALT);
+  headers["x-nzr-cli-token"] = await getConsistentMachineId(CLI_TOKEN_SALT);
+  // Legacy header for rolling deploys still running old dashboardGuard
+  headers["x-9r-cli-token"] = headers["x-nzr-cli-token"];
   return headers;
 }
 
